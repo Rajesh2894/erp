@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd 
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop.xsd  
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd">
+						
+	
+<aop:aspectj-autoproxy />
+<context:component-scan  base-package="com.abm.mainet.common.utility,com.abm.mainet.common.util,
+                                             com.abm.mainet.common.dao,
+                                             com.abm.mainet.common.service,
+                                             com.abm.mainet.common.audit.service,
+                                             com.abm.mainet.common.logging,
+                                             com.abm.mainet.common.ui.model,
+                                             com.abm.mainet.common.master.mapper,
+                                             com.abm.mainet.common.ui.validator,
+                                             com.abm.mainet.common.checklist.dao,
+                                             com.abm.mainet.common.checklist.service,
+                                             com.abm.mainet.common.checklist.ui.model,
+                                             com.abm.mainet.dms.dao,
+                                             com.abm.mainet.dms.service,
+                                             com.abm.mainet.dms.ui.model,
+                                             com.abm.mainet.dms.utility,
+                                             com.abm.mainet.payment.dao,
+                                             com.abm.mainet.payment.service,
+                                             com.abm.mainet.payment.ui.model,
+                                             com.abm.mainet.quartz.dao,
+                                             com.abm.mainet.quartz.service,
+                                             com.abm.mainet.quartz.ui.model,
+                                             com.abm.mainet.quartz.util,
+                                             com.abm.mainet.smsemail.dao,
+                                             com.abm.mainet.smsemail.service,
+                                             com.abm.mainet.smsemail.ui.model,
+                                             com.abm.mainet.smsemail.ui.validator,
+                                             com.abm.mainet.common.activity.ui.model,
+                                             com.abm.mainet.common.activity.ui.validator,
+                                             com.abm.mainet.common.helpdesk.ui.model,
+                                             com.abm.mainet.common.helpdesk.ui.validator,
+                                             com.abm.mainet.cfc.objection.service,
+                                             com.abm.mainet.cfc.objection.ui.model,
+                                             com.abm.mainet.cfc.objection.ui.validator,
+                                             com.abm.mainet.common.pg.ui.model,
+                                             com.abm.mainet.security,
+                                             com.abm.mainet.integration.ws.DmsRestfulClient" annotation-config="true">
+
+  </context:component-scan>
+   
+<bean id="logAspect" class="com.abm.mainet.common.logging.LoggingAspect" />
+<bean id="loggingFilter" class="com.abm.mainet.common.logging.MainetRequestLoggingFilter"></bean>
+</beans>

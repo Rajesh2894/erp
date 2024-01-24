@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="LocationMaster">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Loc_Seq_No" type="xsd:double"/>
+<xsd:element name="Acc_Unit_Mapping_ID" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Attachment" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="La_Running_No" type="xsd:double"/>
+<xsd:element name="Duplicate_Msg" type="xsd:string"/>
+<xsd:element name="msg_content" type="xsd:string"/>
+<xsd:element name="Taluk" type="xsd:string"/>
+<xsd:element name="Lstatus" type="xsd:string"/>
+<xsd:element name="Loc_Area" type="xsd:string"/>
+<xsd:element name="ISAccUnit" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="Location_Name" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="Loc_Landmark" type="xsd:string"/>
+<xsd:element name="Loc_Address" type="xsd:string"/>
+<xsd:element name="Seq_no" type="xsd:double"/>
+<xsd:element name="mob_no" type="xsd:string"/>
+<xsd:element name="City" type="xsd:string"/>
+<xsd:element name="Ward" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="District" type="xsd:string"/>
+<xsd:element name="Last_Run_no" type="xsd:string"/>
+<xsd:element name="Pincode" type="xsd:double"/>
+<xsd:element name="Len_Acc_Unit" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="ULB_Name" type="xsd:string"/>
+<xsd:element name="Location_Code" type="xsd:string"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="Lower_Location" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Loc_Category" type="xsd:string"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Loc_Address_Reg" type="xsd:string"/>
+<xsd:element name="UserID" type="xsd:string"/>
+<xsd:element name="Loc_Name_Reg" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="Division" type="xsd:string"/>
+<xsd:element name="Accounting_Unit" type="xsd:string"/>
+<xsd:element name="userid_Ref" type="xsd:string"/>
+<xsd:element name="Loc_Area_Reg" type="xsd:string"/>
+<xsd:element name="SheetName_Lower" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Zone" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="Len_AcUnit_Id" type="xsd:double"/>
+<xsd:element name="AccUnitMap_Context" type="xsd:string"/>
+<xsd:element name="Duplicate_Check" type="xsd:string"/>
+<xsd:element name="Active_Status" type="xsd:string"/>
+<xsd:element name="Is_Acc_Unit_1" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+
+<!-- <xsd:element name="LocationMasterUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Loc_Seq_No" type="xsd:double"/>
+<xsd:element name="Acc_Unit_Mapping_ID" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Attachment" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="La_Running_No" type="xsd:double"/>
+<xsd:element name="Duplicate_Msg" type="xsd:string"/>
+<xsd:element name="msg_content" type="xsd:string"/>
+<xsd:element name="Taluk" type="xsd:string"/>
+<xsd:element name="Lstatus" type="xsd:string"/>
+<xsd:element name="Loc_Area" type="xsd:string"/>
+<xsd:element name="ISAccUnit" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="Location_Name" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="Loc_Landmark" type="xsd:string"/>
+<xsd:element name="Loc_Address" type="xsd:string"/>
+<xsd:element name="Seq_no" type="xsd:double"/>
+<xsd:element name="mob_no" type="xsd:string"/>
+<xsd:element name="City" type="xsd:string"/>
+<xsd:element name="Ward" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="District" type="xsd:string"/>
+<xsd:element name="Last_Run_no" type="xsd:string"/>
+<xsd:element name="Pincode" type="xsd:double"/>
+<xsd:element name="Len_Acc_Unit" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="ULB_Name" type="xsd:string"/>
+<xsd:element name="Location_Code" type="xsd:string"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="Lower_Location" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Loc_Category" type="xsd:string"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Loc_Address_Reg" type="xsd:string"/>
+<xsd:element name="UserID" type="xsd:string"/>
+<xsd:element name="Loc_Name_Reg" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="Division" type="xsd:string"/>
+<xsd:element name="Accounting_Unit" type="xsd:string"/>
+<xsd:element name="userid_Ref" type="xsd:string"/>
+<xsd:element name="Loc_Area_Reg" type="xsd:string"/>
+<xsd:element name="SheetName_Lower" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Zone" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="Len_AcUnit_Id" type="xsd:double"/>
+<xsd:element name="AccUnitMap_Context" type="xsd:string"/>
+<xsd:element name="Duplicate_Check" type="xsd:string"/>
+<xsd:element name="Active_Status" type="xsd:string"/>
+<xsd:element name="Is_Acc_Unit_1" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element> -->
+</xsd:schema>
+</types>
+<message name="LocationMasterRequest">
+<part name="parameters" element="tns:LocationMaster"/>
+</message>
+<message name="LocationMasterResponse">
+<part name="parameters" element="tns:LocationMaster"/>
+</message>
+
+<message name="LocationMasterRequestUp">
+<part name="parameters" element="tns:LocationMaster"/>
+</message>
+<message name="LocationMasterResponseUp">
+<part name="parameters" element="tns:LocationMaster"/>
+</message>
+<portType name="LocationMasterServer">
+<operation name="Update">
+<input message="tns:LocationMasterRequestUp"/>
+<output message="tns:LocationMasterResponseUp"/>
+</operation>
+<operation name="Submit">
+<input message="tns:LocationMasterRequest"/>
+<output message="tns:LocationMasterResponse"/>
+</operation>
+</portType>
+<binding name="LocationMasterServer" type="tns:LocationMasterServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="LocationMasterServer">
+<port name="LocationMasterServer" binding="tns:LocationMasterServer">
+<soap:address location="http://192.168.100.13:8080/Ap9c05e72b_e6ca_11e7_9e59_0f492f6da096/1/Shd7d0406a8e588462f164df8d855767e0/Ac0662667e22563aae36b953be30624f3e/Shd7d0406a8e588462f164df8d855767e0/ws"/>
+</port>
+</service>
+</definitions>

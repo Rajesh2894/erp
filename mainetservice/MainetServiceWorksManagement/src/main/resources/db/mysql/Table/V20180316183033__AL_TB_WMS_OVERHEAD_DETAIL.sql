@@ -1,0 +1,4 @@
+--liquibase formatted sql
+--changeset shamik:V20180316183033__AL_TB_WMS_OVERHEAD_DETAIL1.sql
+ALTER TABLE TB_WMS_OVERHEAD_DETAIL
+ADD COLUMN OV_ACTIVE CHAR(1) NULL COMMENT 'Status (Y-> Active,N->Inactive)' AFTER ORGID;

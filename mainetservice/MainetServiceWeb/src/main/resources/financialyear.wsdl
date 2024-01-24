@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="CalendarYear">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Fa_tomonth" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="ULB_Name" type="xsd:string"/>
+<xsd:element name="UserID_Ref" type="xsd:string"/>
+<xsd:element name="Cal_Ref" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Calendar_Year" type="xsd:double"/>
+<xsd:element name="From_Date" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="fa_monstatus" type="xsd:double"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="fa_yearstatus" type="xsd:string"/>
+<xsd:element name="Search_Year" type="xsd:string"/>
+<xsd:element name="Calendar_Year_End" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Duplicate_Value" type="xsd:double"/>
+<xsd:element name="fa_fromyear" type="xsd:double"/>
+<xsd:element name="Cal_Ctx" type="xsd:string"/>
+<xsd:element name="FY" type="xsd:string"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Chk_Year_len" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="Financial_Year" type="xsd:string"/>
+<xsd:element name="Map_Status" type="xsd:string"/>
+<xsd:element name="child_cnt" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="To_Date" type="xsd:dateTime"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="Fa_toyear" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Fa_YearId" type="xsd:double"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Map_Id" type="xsd:double"/>
+<xsd:element name="Active_Flag" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="Duplicate_Check" type="xsd:string"/>
+<xsd:element name="Chk_Calendar_Year" type="xsd:string"/>
+<xsd:element name="Active_Status" type="xsd:string"/>
+<xsd:element name="Configuration_Master_Ref" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="Fa_frommonth" type="xsd:double"/>
+<xsd:element name="User_Id" type="xsd:string"/>
+<xsd:element name="Holiday_days" type="xsd:double"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+
+<!-- <xsd:element name="CalendarYearUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Fa_tomonth" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="ULB_Name" type="xsd:string"/>
+<xsd:element name="UserID_Ref" type="xsd:string"/>
+<xsd:element name="Cal_Ref" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Calendar_Year" type="xsd:double"/>
+<xsd:element name="From_Date" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="fa_monstatus" type="xsd:double"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="fa_yearstatus" type="xsd:double"/>
+<xsd:element name="Search_Year" type="xsd:string"/>
+<xsd:element name="Calendar_Year_End" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Duplicate_Value" type="xsd:double"/>
+<xsd:element name="fa_fromyear" type="xsd:double"/>
+<xsd:element name="Cal_Ctx" type="xsd:string"/>
+<xsd:element name="FY" type="xsd:string"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Chk_Year_len" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="Financial_Year" type="xsd:string"/>
+<xsd:element name="Map_Status" type="xsd:string"/>
+<xsd:element name="child_cnt" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="To_Date" type="xsd:dateTime"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="Fa_toyear" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Fa_YearId" type="xsd:double"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Map_Id" type="xsd:double"/>
+<xsd:element name="Active_Flag" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="Duplicate_Check" type="xsd:string"/>
+<xsd:element name="Chk_Calendar_Year" type="xsd:string"/>
+<xsd:element name="Active_Status" type="xsd:string"/>
+<xsd:element name="Configuration_Master_Ref" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="Fa_frommonth" type="xsd:double"/>
+<xsd:element name="User_Id" type="xsd:string"/>
+<xsd:element name="Holiday_days" type="xsd:double"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element> -->
+
+
+</xsd:schema>
+</types>
+<message name="CalendarYearRequest">
+<part name="parameters" element="tns:CalendarYear"/>
+</message>
+<message name="CalendarYearResponse">
+<part name="parameters" element="tns:CalendarYear"/>
+</message>
+
+<message name="CalendarYearRequestUp">
+<part name="parameters" element="tns:CalendarYear"/>
+</message>
+<message name="CalendarYearResponseUp">
+<part name="parameters" element="tns:CalendarYear"/>
+</message>
+<portType name="CalendarYearServer">
+<operation name="Update">
+<input message="tns:CalendarYearRequestUp"/>
+<output message="tns:CalendarYearResponseUp"/>
+</operation>
+<operation name="Submit">
+<input message="tns:CalendarYearRequest"/>
+<output message="tns:CalendarYearResponse"/>
+</operation>
+</portType>
+<binding name="CalendarYearServer" type="tns:CalendarYearServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="CalendarYearServer">
+<port name="CalendarYearServer" binding="tns:CalendarYearServer">
+<soap:address location="http://localhost:8092/Ap9c05e72b_e6ca_11e7_9e59_0f492f6da096/1/Sh8ea007dffb7a2482138e28ce5da3f0fa/Ac4cfa6a183365d539308ca8c966618013/Sh8ea007dffb7a2482138e28ce5da3f0fa/ws"/>
+</port>
+</service>
+</definitions>

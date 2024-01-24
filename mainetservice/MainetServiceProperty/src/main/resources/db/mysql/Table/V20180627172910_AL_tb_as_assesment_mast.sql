@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset nilima:V20180627172910_AL_tb_as_assesment_mast.sql
+ALTER TABLE tb_as_assesment_mast 
+CHANGE COLUMN MN_PARENT_PROP MN_PARENT_PROP VARCHAR(20) NULL DEFAULT NULL ,
+ADD COLUMN MN_PROPID BIGINT(12) NULL AFTER FA_YEARID;

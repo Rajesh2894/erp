@@ -1,0 +1,18 @@
+--liquibase formatted sql
+--changeset Kanchan:V20210302205237__CR_TB_MTL_NOTICE_MAS_02032021.sql
+create table TB_MTL_NOTICE_MAS(
+NT_ID bigint(12) PRIMARY KEY NOT NULL,	
+NT_NO bigint(12) NOT NULL,	
+NT_DATE	DATE NOT NULL,
+NT_TYPE_ID bigint(12) NOT NULL, 
+TRD_ID bigint(12) NOT NULL,
+NR_REASON varchar(1000) NULL,
+NT_REMARKS varchar(2000) NULL,
+NT_CLEARED varchar(1) NULL,
+NT_NOTICEBY bigint(7) NULL,	
+ORGID bigint(12) NOT NULL,
+CREATED_BY bigint(12) NOT NULL,
+CREATED_DATE date NOT NULL,
+UPDATED_BY bigint(12) NULL,
+UPDATED_DATE date NULL,
+LG_IP_MAC Varchar(100) NOT NULL);

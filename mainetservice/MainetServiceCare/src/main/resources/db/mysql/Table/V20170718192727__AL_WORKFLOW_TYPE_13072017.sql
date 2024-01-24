@@ -1,0 +1,19 @@
+--liquibase formatted sql
+--changeset nilima:V20170718192727__AL_WORKFLOW_TYPE_130720171.sql
+delete from WORKFLOW_MAPPING;
+delete from WORKFLOW_TYPE;
+commit;
+
+--liquibase formatted sql
+--changeset nilima:V20170718192727__AL_WORKFLOW_TYPE_13072017.sql
+ALTER TABLE WORKFLOW_TYPE
+CHANGE COLUMN DEPARTMENT DEPARTMENT BIGINT(12) NOT NULL COMMENT 'department' ;
+
+--liquibase formatted sql
+--changeset nilima:V20170718192727__AL_WORKFLOW_TYPE_130720173.sql
+ALTER TABLE workflow_type 
+ADD CONSTRAINT FK_DEPARTMENT_ID
+  FOREIGN KEY (DEPARTMENT)
+  REFERENCES tb_department (DP_DEPTID)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

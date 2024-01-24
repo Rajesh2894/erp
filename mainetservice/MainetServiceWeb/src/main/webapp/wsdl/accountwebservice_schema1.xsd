@@ -1,0 +1,120 @@
+<xs:schema xmlns:tns="http://service.soap.account.mainet.abm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.soap.account.mainet.abm.com/">
+  <xs:complexType name="voucherPostDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="billVouPostingDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="departmentId" type="xs:long"/>
+      <xs:element minOccurs="0" name="entryType" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldId" type="xs:long"/>
+      <xs:element minOccurs="0" name="financialYearId" type="xs:long"/>
+      <xs:element name="langId" type="xs:int"/>
+      <xs:element minOccurs="0" name="lgIpMac" type="xs:string"/>
+      <xs:element minOccurs="0" name="narration" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgId" type="xs:long"/>
+      <xs:element minOccurs="0" name="payEntryMakerFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="payerOrPayee" type="xs:string"/>
+      <xs:element minOccurs="0" name="propertyIntFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="templateType" type="xs:string"/>
+      <xs:element minOccurs="0" name="voucherDate" type="xs:dateTime"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="voucherDetails" nillable="true" type="tns:voucherPostDetailDTO"/>
+      <xs:element minOccurs="0" name="voucherReferenceDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="voucherReferenceNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="voucherSubTypeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="voucherType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="voucherPostDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="budgetCodeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="drCrId" type="xs:long"/>
+      <xs:element minOccurs="0" name="payModeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="sacHeadId" type="xs:long"/>
+      <xs:element minOccurs="0" name="voucherAmount" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="voucherReversePostDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authRemark" type="xs:string"/>
+      <xs:element minOccurs="0" name="authoDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="authoFlg" type="xs:string"/>
+      <xs:element minOccurs="0" name="authoId" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="details" nillable="true" type="tns:voucherReversePostDetailDTO"/>
+      <xs:element minOccurs="0" name="dpDeptid" type="xs:long"/>
+      <xs:element minOccurs="0" name="entryType" type="xs:long"/>
+      <xs:element minOccurs="0" name="fi04Lo1" type="xs:string"/>
+      <xs:element minOccurs="0" name="fi04N1" type="xs:long"/>
+      <xs:element minOccurs="0" name="fieldId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lgIpMac" type="xs:string"/>
+      <xs:element minOccurs="0" name="lgIpMacUpd" type="xs:string"/>
+      <xs:element minOccurs="0" name="lmodDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="narration" type="xs:string"/>
+      <xs:element minOccurs="0" name="org" type="xs:long"/>
+      <xs:element minOccurs="0" name="payerPayee" type="xs:string"/>
+      <xs:element minOccurs="0" name="updatedDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="updatedby" type="xs:long"/>
+      <xs:element minOccurs="0" name="vouDate" type="xs:dateTime"/>
+      <xs:element name="vouId" type="xs:long"/>
+      <xs:element minOccurs="0" name="vouNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="vouPostingDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="vouReferenceNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="vouReferenceNoDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="vouSubtypeCpdId" type="xs:long"/>
+      <xs:element minOccurs="0" name="vouTypeCpdId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="voucherReversePostDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="budgetCode" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="drcrCpdId" type="xs:long"/>
+      <xs:element minOccurs="0" name="fieldCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="functionCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="fundCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="lgIpMac" type="xs:string"/>
+      <xs:element minOccurs="0" name="lgIpMacUpd" type="xs:string"/>
+      <xs:element minOccurs="0" name="lmodDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="master" type="tns:voucherReversePostDTO"/>
+      <xs:element minOccurs="0" name="orgId" type="xs:long"/>
+      <xs:element minOccurs="0" name="primaryHeadCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="sacHeadId" type="xs:long"/>
+      <xs:element minOccurs="0" name="secondaryHeadCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="updatedBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="updatedDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="voudetAmt" type="xs:decimal"/>
+      <xs:element name="voudetId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="doVoucherPosting" type="tns:doVoucherPosting"/>
+  <xs:complexType name="doVoucherPosting">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="voucherPostDTO" type="tns:voucherPostDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="doVoucherPostingResponse" type="tns:doVoucherPostingResponse"/>
+  <xs:complexType name="doVoucherPostingResponse">
+    <xs:sequence>
+    	<xs:element minOccurs="1" name="resMsg" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="doVoucherReversePosting" type="tns:doVoucherReversePosting"/>
+  <xs:complexType name="doVoucherReversePosting">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="voucherPostDTO" type="tns:voucherReversePostDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="doVoucherReversePostingResponse" type="tns:doVoucherReversePostingResponse"/>
+  <xs:complexType name="doVoucherReversePostingResponse">
+    <xs:sequence>
+    	<xs:element minOccurs="1" name="resMsg" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

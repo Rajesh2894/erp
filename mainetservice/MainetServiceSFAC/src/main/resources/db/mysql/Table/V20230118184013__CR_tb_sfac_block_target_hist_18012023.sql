@@ -1,0 +1,24 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230118184013__CR_tb_sfac_block_target_hist_18012023.sql
+CREATE TABLE tb_sfac_block_target_hist (
+  BT_ID_H bigint(20) NOT NULL,
+  BLCK_ID_H bigint(20) NOT NULL,
+  BT_ID bigint(20) NOT NULL,
+  FIN_YR_ID bigint(20) DEFAULT NULL,
+  ALLOCATION_CATEGORY bigint(20) DEFAULT NULL,
+  ALLOCATION_SUB_CATEGORY bigint(20) DEFAULT NULL,
+  ALLOCATION_TARGET bigint(20) DEFAULT NULL,
+  STATUS varchar(50) DEFAULT NULL,
+  H_STATUS char(1) DEFAULT NULL,
+  APPLICATION_ID bigint(20) DEFAULT NULL,
+  ORGID bigint(20) NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (BT_ID_H),
+  KEY FK_KEY_BLCK_ID_H_1 (BLCK_ID_H),
+  CONSTRAINT FK_KEY_BLCK_ID_H_1 FOREIGN KEY (BLCK_ID_H) REFERENCES tb_sfac_block_allocation_hist (BLCK_ID_H)
+) ;

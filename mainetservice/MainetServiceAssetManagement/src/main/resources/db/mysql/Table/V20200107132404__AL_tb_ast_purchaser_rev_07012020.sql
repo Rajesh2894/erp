@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset Anil:V20200107132404__AL_tb_ast_purchaser_rev_07012020.sql
+ALTER TABLE tb_ast_purchaser_rev 
+ADD COLUMN LICENSE_NO VARCHAR(100) NULL AFTER LG_IP_MAC_UPD,
+ADD COLUMN LICENSE_DATE DATE NULL AFTER LICENSE_NO;

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="AC_Bill_Mas">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="LG_IP_MAC" type="xsd:string"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="DP_DEPTID" type="xsd:double"/>
+<xsd:element name="Bill_Reverse_Flag" type="xsd:string"/>
+<xsd:element name="CREATED_DATE" type="xsd:dateTime"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="BM_ID" type="xsd:double"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="BM_NARRATION" type="xsd:string"/>
+<xsd:element name="BillEntryDet" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="BM_INVOICEVALUE" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="INT_FLAG" type="xsd:string"/>
+<xsd:element name="INT_DATE" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="BM_BILLTYPE_CPD_ID" type="xsd:double"/>
+<xsd:element name="Pay_Bill_Ref" type="xsd:string"/>
+<xsd:element name="CREATED_BY" type="xsd:double"/>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="FIELD_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="BM_DEL_FLAG" type="xsd:string"/>
+<xsd:element name="BM_BILLNO" type="xsd:string"/>
+<xsd:element name="VM_VENDORID" type="xsd:double"/>
+<xsd:element name="BM_INVOICENUMBER" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="BM_ENTRYDATE" type="xsd:dateTime"/>
+<xsd:element name="CREATED_DEt" type="xsd:string"/>
+<xsd:element name="INT_REF_ID" type="xsd:double"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="VM_VENDORNAME" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="BM_INVOICEDATE" type="xsd:dateTime"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="AC_Bill_Mas_Sub">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="LG_IP_MAC" type="xsd:string"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="DP_DEPTID" type="xsd:double"/>
+<xsd:element name="Bill_Reverse_Flag" type="xsd:string"/>
+<xsd:element name="CREATED_DATE" type="xsd:dateTime"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="BM_ID" type="xsd:double"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="BM_NARRATION" type="xsd:string"/>
+<xsd:element name="BillEntryDet" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="BM_INVOICEVALUE" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="INT_FLAG" type="xsd:string"/>
+<xsd:element name="INT_DATE" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="BM_BILLTYPE_CPD_ID" type="xsd:double"/>
+<xsd:element name="Pay_Bill_Ref" type="xsd:string"/>
+<xsd:element name="CREATED_BY" type="xsd:double"/>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="FIELD_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="BM_DEL_FLAG" type="xsd:string"/>
+<xsd:element name="BM_BILLNO" type="xsd:string"/>
+<xsd:element name="VM_VENDORID" type="xsd:double"/>
+<xsd:element name="BM_INVOICENUMBER" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="BM_ENTRYDATE" type="xsd:dateTime"/>
+<xsd:element name="CREATED_DEt" type="xsd:string"/>
+<xsd:element name="INT_REF_ID" type="xsd:double"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="VM_VENDORNAME" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="BM_INVOICEDATE" type="xsd:dateTime"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="AC_Bill_MasRequest">
+<part name="parameters" element="tns:AC_Bill_Mas"/>
+</message>
+<message name="AC_Bill_MasRequestSub">
+<part name="parameters" element="tns:AC_Bill_Mas_Sub"/>
+</message>
+<message name="AC_Bill_MasResponse">
+<part name="parameters" element="tns:AC_Bill_Mas"/>
+</message>
+<portType name="AC_Bill_MasServer">
+<operation name="Update">
+<input message="tns:AC_Bill_MasRequest"/>
+<output message="tns:AC_Bill_MasResponse"/>
+</operation>
+<operation name="Submit">
+<input message="tns:AC_Bill_MasRequestSub"/>
+<output message="tns:AC_Bill_MasResponse"/>
+</operation>
+</portType>
+<binding name="AC_Bill_MasServer" type="tns:AC_Bill_MasServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="AC_Bill_MasServer">
+<port name="AC_Bill_MasServer" binding="tns:AC_Bill_MasServer">
+<soap:address location="http://192.168.100.215:9080/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Sh66ec6852_43c0_4de9_99ba_dfc2cca531a0/Ac2e1615a2c0ab437dad5208161a9d8cc9/Sh66ec6852_43c0_4de9_99ba_dfc2cca531a0/ws"/>
+</port>
+</service>
+</definitions>

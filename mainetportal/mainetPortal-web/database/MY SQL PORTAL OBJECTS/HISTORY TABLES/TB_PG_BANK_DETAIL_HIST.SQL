@@ -1,0 +1,13 @@
+CREATE TABLE `tb_pg_bank_detail_hist` (
+  `H_BMBANKID` decimal(12,0) DEFAULT NULL,
+  `BM_BANKID` decimal(12,0) DEFAULT NULL,
+  `CPD_ID` decimal(12,0) DEFAULT NULL,
+  `PB_BANKURL` varchar(200) DEFAULT NULL,
+  `PB_TABLENAME` varchar(50) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `LANG_ID` int(11) DEFAULT NULL,
+  `LMODDATE` datetime DEFAULT NULL,
+  `ORGID` int(11) DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset nilima:V20180704205155__AL_TB_CFC_APPLICATION_ADDRESS_04072018.sql
+ALTER TABLE TB_CFC_APPLICATION_ADDRESS 
+CHANGE COLUMN APA_AREANM APA_AREANM VARCHAR(1000) NULL COMMENT 'for care ->Complete Address ,other module ->Area Name' ;
+
+

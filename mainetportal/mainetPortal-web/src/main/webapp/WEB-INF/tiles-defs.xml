@@ -1,0 +1,1460 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+		<definition name="baseLayout" template="/jsp/tiles/baseLayout.jsp">
+				<put-attribute name="page-title" value="" />
+				<put-attribute name="app-header" value="/jsp/tiles/citizen-top-header.jsp" />
+			<!-- 	<put-attribute name="app-body" value="/jsp/tiles/body.jsp" /> -->
+ 				<put-attribute name="app-footer" value="/jsp/tiles/footer.jsp" />
+		</definition>
+		<definition name="homeLayout" template="/jsp/tiles/baseLayout.jsp">
+				<put-attribute name="page-title" value="" />
+				<put-attribute name="app-header" value="/jsp/tiles/top-header.jsp" />
+ 				<put-attribute name="app-footer" value="/jsp/tiles/footer.jsp" />
+		</definition>
+		<definition name="formLayout" template="/jsp/tiles/formBaseLayout.jsp">
+				<put-attribute name="app-body" value="" />
+		</definition>
+		<definition name="ServerError" extends="formLayout">
+				<put-attribute name="page-title" value="Internal Server Error" />
+				<put-attribute name="app-body" value="/jsp/errorpages/InternalServer.jsp" />
+		</definition>
+		
+		<!-- <definition name="Autherization" template="/jsp/autherization/autherizationFail.jsp" /> -->
+		
+		<definition name="AutherizationFail" extends="baseLayout">
+		<put-attribute name="page-title" value="Access Denied : Un-Autherized" />
+		<put-attribute name="app-body" value="/jsp/autherization/autherizationFail.jsp" />
+		</definition>
+		
+		<!-- Assign role & tree START -->
+		<definition name="entitlement" extends="baseLayout">
+				<put-attribute name="page-title" value="Manage Role and Tree"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/menu/entitlement.jsp"></put-attribute>
+		</definition>
+		<definition name="existEntitle" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/menu/existEntitlement.jsp"></put-attribute>
+		</definition>
+		<definition name="addNode" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/menu/addNode.jsp"></put-attribute>
+		</definition>
+		<definition name="ActiveNewNode" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/menu/activeNewNode.jsp"></put-attribute>
+		</definition>
+		<definition name="assignDataEntitle" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/menu/assignDataEntitle.jsp"></put-attribute>
+		</definition>
+		<definition name="assignSubPage" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/menu/assignSubPage.jsp"></put-attribute>
+		</definition>
+		<!-- Assign role & tree END -->
+		<definition name="EmployeeDesignation" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Quick Links Section" />
+				<put-attribute name="app-body" value="/jsp/mainet/EmployeeDesignation.jsp" />
+		</definition>
+		<definition name="EmployeeDesignationForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/mainet/EmployeeDesignationForm.jsp" />
+		</definition>
+		<definition name="EmployeeSearch" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/EmployeeSearch.jsp" />
+		</definition>
+		<definition name="AdminQuickLink" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Quick Links Section" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminQuickLink.jsp" />
+		</definition>
+		<definition name="AdminQuickLinkForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminQuickLinkForm.jsp" />
+		</definition>
+		<definition name="CommonHelpDocs" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/helpDocsSearch.jsp" />
+		</definition>
+		<definition name="HelpDoc" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/helpDocDetails.jsp" />
+		</definition>
+		<definition name="HelpDocEdit" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/helpDocEdit.jsp" />
+		</definition>
+		<definition name="HelpDocEditValidn" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/helpDocEdit.jsp" />
+		</definition>
+		<definition name="HelpDocValidn" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/helpDocDetails.jsp" />
+		</definition>
+		<definition name="CommonHelpDocsValidn" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/helpDocsSearch.jsp" />
+		</definition>
+		<definition name="viewHelp" template="/jsp/eip/admin/viewHelp.jsp" />
+		<definition name="viewHelpNotFound" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Help Docs " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/viewHelpNotFound.jsp" />
+		</definition>
+		<!-- Section for EIP Home Page Image Upload [START] -->
+		<definition name="EIPHomeImagesSearch" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Home Page Images" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/EIPHomePageImageUploadSearch.jsp" />
+		</definition>
+		<definition name="EIPHomeImagesSearchValidn" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Home Page Images" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/EIPHomePageImageUploadSearch.jsp" />
+		</definition>
+		<definition name="EIPHomeImages" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Home Page Images" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/EIPHomePageImageUpload.jsp" />
+		</definition>
+		<definition name="EIPLogoImages" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Home Page Images" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/EIPHomePageImageUpload.jsp" />
+		</definition>
+		<!-- Section for EIP Home Page Image Upload [END] -->
+		<definition name="AdminEvents" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Events " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminEventsList.jsp" />
+		</definition>
+		<definition name="AdminEventsForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminEventsForm.jsp" />
+		</definition>
+		<definition name="AdminCategory" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Events " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminCategoryList.jsp" />
+		</definition>
+		<definition name="AdminCategoryForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminCategoryForm.jsp" />
+		</definition>
+		<definition name="AdminFeedback" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: FeedBack " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminFeedBackList.jsp" />
+		</definition>
+		<definition name="AdminFeedbackForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminFeedbackForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminMayor" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP ::  Mayor Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminMayor.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminMayorForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminMayorForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminDeputyMayorList" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP ::  Deputy Mayor Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminDeputyMayorList.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminDeputyMayorForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminDeputyMayorForm.jsp"></put-attribute>
+		</definition>
+		<definition name="ZonalOfficeDetail" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Zonal Office"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/zonalOfficeDetail.jsp"></put-attribute>
+		</definition>
+		<definition name="ZonalOfficeEntryForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/zonalOfficeEntryForm.jsp"></put-attribute>
+		</definition>
+		<definition name="MerchantDetail" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Merchant Master"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/merchantDetail.jsp"></put-attribute>
+		</definition>
+		<definition name="MerchantEntryForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/merchantEntryForm.jsp"></put-attribute>
+		</definition>
+		<!-- <definition name="BankDetail" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Bank Master"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/bankDetail.jsp"></put-attribute>
+		</definition> -->
+		<definition name="AdminCommissioner" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP ::   Commissioner Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminCommissioner.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminCommissionerForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminCommissionerForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminCorporatorsList" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Admin Corporator Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminCorporatorsList.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminCorporatorsForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminCorporatorsForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminDeputyCommissioner" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Admin Deputy Commissioner Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminDeputyCommissioner.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminDeputyCommissionerForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminDeputyCommissionerForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminStandingCommittee" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Admin Standing Committee Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminStandingCommittee.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminStandingCommitteeForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminStandingCommitteeForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminCommitteeList" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP ::  Committee Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminCommitteeList.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminCommitteeForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminCommitteeForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminAdditionalCommissioner" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Admin Additional Commissioner Form Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminAdditionalCommissioner.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminAdditionalCommissionerForm" extends="formLayout">
+				<put-attribute name="app-body"	value="/jsp/eip/admin/AdminAdditionalCommissionerForm.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminFAQSearch" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: FAQ " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminFAQSearch.jsp" />
+		</definition>
+		<definition name="AdminFAQ" template="/jsp/eip/admin/adminFAQ.jsp" />
+		<definition name="CitizenFAQ" extends="homeLayout">
+				<put-attribute name="page-title" value="EIP :: FAQ " />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenFAQ.jsp" />
+		</definition>
+		<definition name="CitizenFAQLogin" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: FAQ " />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenFAQLogin.jsp" />
+		</definition>
+		<!--Citizen EIP added by swapnil shirke 3 Feb 2014 start -->
+		<definition name="CitizenEvents" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Events " />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/CitizenEvent.jsp" />
+		</definition>
+		<definition name="CitizenFeedBack" template="/jsp/eip/citizen/CitizenFeedBack.jsp" />
+		<definition name="CitizenFeedbackLogin" template="/jsp/eip/citizen/CitizenFeedBackLogin.jsp" />
+		<definition name="CitizenPublishFeedback" template="/jsp/eip/citizen/CitizenPublishFeedback.jsp" />
+		<definition name="DeptHomeEIP" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Department Home Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminHomePage.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminLogin" template="/jsp/eip/admin/adminLoginForm.jsp" />
+		<definition name="AdminRegistration" template="/jsp/eip/admin/adminRegistrationForm.jsp" />
+		<definition name="AgencyLogin" template="/jsp/eip/agency/agencyLoginForm.jsp" />
+		<definition name="AdminOTPVerification" template="/jsp/eip/admin/adminOTPVerification.jsp" />
+		<definition name="AdminSetPassword" template="/jsp/eip/admin/adminSetPassword.jsp" />
+		<definition name="AgencyRegistration" template="/jsp/eip/agency/agencyRegistrationForm.jsp" />
+		<definition name="AgencyOTPVerification" template="/jsp/eip/agency/agencyOTPVerification.jsp" />
+		<definition name="AgencySetPassword" template="/jsp/eip/agency/agencySetPassword.jsp" />
+		<definition name="AgencyResetValidateMobile" template="/jsp/eip/agency/agencyValidateMobile.jsp" />
+		<definition name="AgencyOTPResetPassword" template="/jsp/eip/agency/agencyOTPResetPassword.jsp" />
+		<definition name="AgencyResetPassword" template="/jsp/eip/agency/agencyResetPassword.jsp" />
+		<definition name="AgencyForgotPassword" template="/jsp/eip/agency/agencyForgotPassword.jsp" />
+		<definition name="AgencyOTPForgotPassword" template="/jsp/eip/agency/agencyOTPForgotPassword.jsp" />
+		<definition name="AgencySetForgotPassword" template="/jsp/eip/agency/agencySetForgotPassword.jsp" />
+		<definition name="AgencyDOCVerification" extends="baseLayout"></definition>
+		<definition name="AgencyDOCVerification" extends="baseLayout">
+				<put-attribute name="page-title" value="Agency Document Verification: " />
+				<put-attribute name="app-body" value="/jsp/eip/agency/commonAgencyRegistrationForm.jsp" />
+		</definition>
+		<definition name="AgencyDOCVerificationValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Agency Document Verification: " />
+				<put-attribute name="app-body" value="/jsp/eip/agency/commonAgencyRegistrationForm.jsp" />
+		</definition>
+		<definition name="AgencyDOCVerificationSuccess" extends="baseLayout">
+				<put-attribute name="page-title" value="Agency Document Verification: " />
+				<put-attribute name="app-body" value="/jsp/eip/agency/agencyDOCVerification.jsp" />
+		</definition>
+		<definition name="ProjectDetail" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/projectDetail.jsp" />
+		</definition>
+		<definition name="HomePage" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenHome.jsp" />
+		</definition>
+		<definition name="DeptDocUploadSuccess" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminDocVerifSuccess.jsp" />
+		</definition>
+		<definition name="AdminAuthorization" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Department Authorization " />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminAuthorization.jsp" />
+		</definition>
+		<definition name="DeptAuthorizationForm" template="/jsp/eip/admin/deptAuthorizationForm.jsp" />
+		<definition name="EipAnnouncement" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: EIP Announcements" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/eipAnnouncement.jsp" />
+		</definition>
+		<definition name="EipAnnouncementForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/eipAnnouncementForm.jsp" />
+		</definition>
+		<definition name="EipAnnouncementLanding" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: EIP Announcements" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/eipAnnouncementLanding.jsp" />
+		</definition>
+		<definition name="EipAnnouncementLandingForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/eipAnnouncementLandingForm.jsp" />
+		</definition>
+		<definition name="CitizenLogin" template="/jsp/eip/citizen/citizenLoginForm.jsp" />
+		<definition name="CitizenRegistration" extends="formLayout">
+				<put-attribute name="page-title" value="Citizen Registration" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenRegistrationForm.jsp" />
+		</definition>
+		<definition name="CitizenOTPVerification" template="/jsp/eip/citizen/citizenOTPVerification.jsp" />
+		<definition name="citizenUpdateEmail" template="/jsp/eip/citizen/citizenUpdateEmail.jsp" />
+		<definition name="CitizenSetPassword" template="/jsp/eip/citizen/citizenSetPassword.jsp" />
+		<definition name="CitizenForgotPassword" template="/jsp/eip/citizen/citizenForgotPassword.jsp" />
+		<definition name="CitizenOTPForgotPassword" template="/jsp/eip/citizen/citizenOTPForgotPassword.jsp" />
+		<definition name="CitizenSetForgotPassword"	template="/jsp/eip/citizen/citizenSetForgotPassword.jsp" />
+		<definition name="AdminForgotPassword" template="/jsp/eip/admin/adminForgotPassword.jsp" />
+		<definition name="AdminOTPForgotPassword" template="/jsp/eip/admin/adminOTPForgotPassword.jsp" />
+		<definition name="AdminSetForgotPassword" template="/jsp/eip/admin/adminSetForgotPassword.jsp" />
+		<definition name="CResetValidateMobile"	template="/jsp/eip/citizen/citizenValidateMobile.jsp" />
+		<definition name="CitizenOTPResetPassword" template="/jsp/eip/citizen/citizenOTPResetPassword.jsp" />
+		<definition name="CitizenResetPassword" template="/jsp/eip/citizen/citizenResetPassword.jsp" />
+		<definition name="AdminResetValidateMobile" template="/jsp/eip/citizen/adminValidateMobile.jsp" />
+		<definition name="AdminOTPResetPassword" template="/jsp/eip/citizen/adminOTPResetPassword.jsp" />
+		<definition name="AdminResetPassword" template="/jsp/eip/citizen/adminResetPassword.jsp" />
+		<definition name="AdminResetValidateMobile" template="/jsp/eip/citizen/adminValidateMobile.jsp" />
+		<definition name="AdminOTPResetPassword" template="/jsp/eip/citizen/adminOTPResetPassword.jsp" />
+		<definition name="AdminResetPassword" template="/jsp/eip/citizen/adminResetPassword.jsp" />
+		<definition name="CitizenHome" extends="homeLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/mainet/guest-home.jsp" />
+		</definition>
+		<definition name="CitizenHomeEIP" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Citizen Home Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/admin/citizenHomePage.jsp"></put-attribute>
+		</definition>
+		<definition name="CitizenEditProfile" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Citizen Edit Profile"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenEditProfile.jsp"></put-attribute>
+		</definition>
+		<definition name="CitizenEditProfileValidn" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Citizen Edit Profile"></put-attribute>
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/citizenEditProfile.jsp"></put-attribute>
+		</definition>
+		<definition name="AgencyHome" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Agency Home Page"></put-attribute>
+				<put-attribute name="app-body" value="/jsp/eip/agency/agencyHomePage.jsp"></put-attribute>
+		</definition>
+		<!-- END -->
+		<definition name="generatePDFNextTab" extends="baseLayout">
+				<put-attribute name="app-body" value="/jsp/mainet/openOnNextTab.jsp" />
+		</definition>
+		<!-- Birth registration end -->
+		<definition name="LogOut" extends="baseLayout">
+				<put-attribute name="app-body" value="/jsp/logOut.jsp"></put-attribute>
+		</definition>
+		<definition name="AdminHome" extends="baseLayout">
+				<put-attribute name="page-title" value="Admin :: Home Page Entry Form" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminhome.jsp" />
+		</definition>
+		<definition name="CitizenAboutUs" extends="homeLayout">
+				<put-attribute name="page-title" value="Citizen :: About Us" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenAboutUs.jsp" />
+		</definition>
+		<definition name="CitizenAboutUSLogin" extends="baseLayout">
+				<put-attribute name="page-title" value="Citizen :: About Us" />
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/citizenAboutUSLogin.jsp" />
+		</definition>
+		<definition name="Accessibility" extends="homeLayout">
+				<put-attribute name="page-title" value="Accessibility home" />
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/accessibillity.jsp" />
+		</definition>
+		<definition name="AccessibilityLanding" extends="baseLayout">
+				<put-attribute name="page-title" value="Accessibility home" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/accessiblityLanding.jsp" />
+		</definition>
+		<definition name="AccessiBility" extends="baseLayout">
+				<put-attribute name="page-title" value="AccessiBility home" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/accessiblityB.jsp" />
+		</definition>
+		<definition name="ScreenReaderlanding" extends="baseLayout">
+				<put-attribute name="page-title" value="Screen-Reader" />
+				<put-attribute name="app-body" value="/jsp/tiles/ScreenReader.jsp" />
+		</definition>
+		<definition name="ScreenReader" extends="homeLayout">
+				<put-attribute name="page-title" value="Screen-Reader" />
+				<put-attribute name="app-body" value="/jsp/tiles/ScreenReader.jsp" />
+		</definition>
+		<definition name="ScreenReaderb" extends="baseLayout">
+				<put-attribute name="page-title" value="Screen-Reader" />
+				<put-attribute name="app-body" value="/jsp/tiles/ScreenReader.jsp" />
+		</definition>
+		<definition name="landingPrivacyPolicy" extends="baseLayout">
+				<put-attribute name="page-title" value="Privacy and Policy" />
+				<put-attribute name="app-body" value="/jsp/tiles/PrivacyPolicy.jsp" />
+		</definition>
+		<definition name="PrivacyPolicy" extends="homeLayout">
+				<put-attribute name="page-title" value="Privacy and Policy" />
+				<put-attribute name="app-body" value="/jsp/tiles/PrivacyPolicy.jsp" />
+		</definition>
+		<definition name="PrivacyPolicyb" extends="baseLayout">
+				<put-attribute name="page-title" value="Privacy and Policy" />
+				<put-attribute name="app-body" value="/jsp/tiles/PrivacyPolicy.jsp" />
+		</definition>
+		<definition name="landingTermsCondition" extends="baseLayout">
+				<put-attribute name="page-title" value="Terms and Condition" />
+				<put-attribute name="app-body" value="/jsp/tiles/TermsCondition.jsp" />
+		</definition>
+		<definition name="TermsCondition" extends="homeLayout">
+				<put-attribute name="page-title" value="Terms and Condition" />
+				<put-attribute name="app-body" value="/jsp/tiles/TermsCondition.jsp" />
+		</definition>
+		<definition name="TermsConditionb" extends="baseLayout">
+				<put-attribute name="page-title" value="Terms and Condition" />
+				<put-attribute name="app-body" value="/jsp/tiles/TermsCondition.jsp" />
+		</definition>
+		<definition name="landingRefundCancellation" extends="baseLayout">
+				<put-attribute name="page-title" value="Refund and Cancellation" />
+				<put-attribute name="app-body" value="/jsp/tiles/RefundCancellation.jsp" />
+		</definition>
+		<definition name="RefundCancellation" extends="homeLayout">
+				<put-attribute name="page-title" value="Refund and Cancellation" />
+				<put-attribute name="app-body" value="/jsp/tiles/RefundCancellation.jsp" />
+		</definition>
+		<definition name="RefundCancellationb" extends="baseLayout">
+				<put-attribute name="page-title" value="Refund and Cancellation" />
+				<put-attribute name="app-body" value="/jsp/tiles/RefundCancellation.jsp" />
+		</definition>
+		<definition name="AdminAboutUs" extends="baseLayout">
+				<put-attribute name="page-title" value="Admin :: About Us" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminAboutUs.jsp" />
+		</definition>
+		<definition name="AdminAboutUsValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Admin :: About Us" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminAboutUs.jsp" />
+		</definition>
+		<definition name="AboutProject" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: About Project" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/aboutProject.jsp" />
+		</definition>
+		<definition name="ProjectValidator" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: About Project" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/aboutProject.jsp" />
+		</definition>
+		<definition name="CitizenContactUs" extends="homeLayout">
+				<put-attribute name="page-title" value="Citizen :: Contact Us" />
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/citizenContactUs.jsp" />
+		</definition>
+		<definition name="CitizenContactUsValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Citizen :: Contact Us" />
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/citizenContactUs.jsp" />
+		</definition>
+		<definition name="CitizenContactUsLogin" extends="baseLayout">
+				<put-attribute name="page-title" value="Citizen :: Contact Us" />
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/citizenContactUsLogin.jsp" />
+		</definition>
+		<definition name="CitizenContactUsLoginValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Citizen :: Contact Us" />
+				<put-attribute name="app-body"	value="/jsp/eip/citizen/citizenContactUsLogin.jsp" />
+		</definition>
+		<definition name="AdminContactUs" extends="formLayout">
+				<put-attribute name="page-title" value="Admin :: Contact Us" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/adminContactUs.jsp" />
+		</definition>
+		<definition name="AdminContactUsList" extends="baseLayout">
+				<put-attribute name="page-title" value="Admin :: Contact Us" />
+				<put-attribute name="app-body"	value="/jsp/eip/admin/AdminContactUsList.jsp" />
+		</definition>
+		<definition name="SectionEntry" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Add New Setion" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/sectionlist.jsp" />
+		</definition>
+		<definition name="SectionEntryForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/sectionDetails.jsp" />
+		</definition>
+		<definition name="SectionEntryFormElement" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/sectionElements.jsp" />
+		</definition>
+		<definition name="SectionDetails" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Upload Section Information" />
+				<put-attribute name="app-body"	value="/jsp/eip/admin/sectiondetailslist.jsp" />
+		</definition>
+		<definition name="SectionDetailsValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Upload Section Information" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/sectiondetailslist.jsp" />
+		</definition>
+		<definition name="SectionDetailsForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/sectionDetailsForm.jsp" />
+		</definition>
+		<definition name="SectionInformation" extends="homeLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: View Information" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/sectionInformation.jsp" />
+		</definition>
+		<definition name="SectionInformationDetail" extends="homeLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Citizen Information" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/sectionInformation.jsp" />
+		</definition>
+	<!-- 	<definition name="BankDeatil" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Bank Detail" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/bankDetail.jsp" />
+		</definition> -->
+	<!-- 	<definition name="BankEntry" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Bank Entry" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/bankEntryFrom.jsp" />
+		</definition> -->
+		<definition name="RighToInformation" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+		</definition>
+		<definition name="RightToInfoEntry" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/righToInformationEntry.jsp" />
+		</definition>
+		<definition name="CitizenRtInfo" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+		</definition>
+		<definition name="RtInfoDocDepartment" template="/jsp/eip/citizen/downLoadFactTemplate.jsp"></definition>
+		<definition name="ZoneInfo" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/zoneInfo.jsp" />
+		</definition>
+		<definition name="ZoneEntry" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/zoneEntry.jsp" />
+		</definition>
+		<definition name="AreaInfo" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/areaInfo.jsp" />
+		</definition>
+		<definition name="AreaEntry" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/areaEntry.jsp" />
+		</definition>
+		<definition name="WardInfo" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/wardInfo.jsp" />
+		</definition>
+		<definition name="WardEntry" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/wardEntry.jsp" />
+		</definition>
+		<definition name="EIPTouristLocation" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/touristLocation.jsp" />
+		</definition>
+		<definition name="EIPTouristLocationEntry" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/touristLocationEntry.jsp" />
+		</definition>
+		<definition name="CitizenTouristLocation" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal" />
+		</definition>
+		<definition name="CitizenTouristLocationTemplt" template="/jsp/eip/citizen/touristLocationTemplt.jsp"></definition>
+		<!-- PAYMENT GATWAY [START] -->
+		<definition name="PayForm" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/payForm.jsp" />
+		</definition>
+		<definition name="cancelPayment" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Online Services" />
+				<put-attribute name="app-body" value="/jsp/payment/cancelPay.jsp" />
+		</definition>
+		<definition name="OnlineServices" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Online Services" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/onlineServices.jsp" />
+		</definition>
+		<definition name="redirectAfterConfirm" template="/jsp/payment/redirectAfterConfirm.jsp" />
+		<!-- PAYMENT GATWAY [END] -->
+		<definition name="AdminPublicNotices" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: AdminPublicNotices Section" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminPublicNotices.jsp" />
+		</definition>
+		<definition name="AdminPublicNoticesForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/admin/AdminPublicNoticesForm.jsp" />
+		</definition>
+		<definition name="CitizenPublicNotices" extends="homeLayout">
+				<put-attribute name="page-title" value="EIP :: Public Notices" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/CitizenPublicNotices.jsp" />
+		</definition>
+		<definition name="CitizenPublicNoticesLogin" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: Public Notices" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/citizenPublicNoticesLogin.jsp" />
+		</definition>
+		<definition name="CitizenPublicNoticesForm" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/eip/citizen/CitizenPublicNoticesForm.jsp" />
+		</definition>
+		<definition name="CommonLoiPayment" extends="baseLayout">
+				<put-attribute name="page-title" value="Common Loi Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/CommonLoiPaymentJSP.jsp" />
+		</definition>
+		<definition name="CommonLoiPaymentValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Common Loi Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/CommonLoiPaymentJSP.jsp" />
+		</definition>
+		<definition name="CommonLoiPaymentEditMode" extends="formLayout">
+				<put-attribute name="page-title" value="Common Loi Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/CommonLoiPaymentEditMode.jsp" />
+		</definition>
+		<definition name="CommonLoiPaymentEditModeValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Common Loi Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/CommonLoiPaymentEditMode.jsp" />
+		</definition>
+		<!-- PAYU [START] -->
+		<definition name="successPayU" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/payU/successPayU.jsp" />
+		</definition>
+		<definition name="failPayU" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/payU/failPayU.jsp" />
+		</definition>
+		<definition name="cancelPayU" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/payU/cancelPayU.jsp" />
+		</definition>
+		<definition name="payExceptionView" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/paymentException.jsp" />
+		</definition>
+		<definition name="defaultExceptionView" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Error" />
+				<put-attribute name="app-body" value="/jsp/mainet/defaultExceptionView.jsp" />
+		</definition>
+		<definition name="defaultExceptionFormView" extends="formLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Error" />
+				<put-attribute name="app-body" value="/jsp/mainet/defaultExceptionView.jsp" />
+		</definition>
+		<definition name="PayFormDetail" extends="baseLayout">
+				<put-attribute name="page-title" value="Mainet Portal :: Payment" />
+				<put-attribute name="app-body" value="/jsp/payment/payU/payFormDetail.jsp" />
+		</definition>
+		<!-- PAYU [END] -->
+		<!--@start@ definitions for email and sms templetes @start@ -->
+		<!--@start@ definitions for EMAIL AND SMS TEMPLETES @start@ -->
+		<definition name="SMSAndEmail" extends="baseLayout">
+			<put-attribute name="page-title" value="Email And SMS " />
+			<put-attribute name="app-body" value="/jsp/SmsAndEmail/smsAndEmail.jsp" />
+		</definition>
+		<definition name="smsAndEmailAdd" extends="formLayout">
+			<put-attribute name="page-title" value="Email And SMS " />
+			<put-attribute name="app-body"
+				value="/jsp/SmsAndEmail/smsAndEmailAdd.jsp" />
+		</definition>
+		<definition name="smsAndEmailEdit" extends="formLayout">
+			<put-attribute name="page-title" value="Email And SMS " />
+			<put-attribute name="app-body"
+				value="/jsp/SmsAndEmail/smsAndEmailEdit.jsp" />
+		</definition>
+		<definition name="smsAndEmailAddValidn" extends="baseLayout">
+			<put-attribute name="page-title" value="Email And SMS " />
+			<put-attribute name="app-body"
+				value="/jsp/SmsAndEmail/smsAndEmailAdd.jsp" />
+		</definition>
+		<definition name="smsAndEmailEditValidn" extends="baseLayout">
+			<put-attribute name="page-title" value="Email And SMS " />
+			<put-attribute name="app-body"
+				value="/jsp/SmsAndEmail/smsAndEmailEdit.jsp" />
+		</definition>
+		<definition name="SMSAndEmailValidn" extends="formLayout">
+			<put-attribute name="page-title" value="Email And SMS " />
+			<put-attribute name="app-body" value="/jsp/SmsAndEmail/smsAndEmail.jsp" />
+		</definition>
+		<!--@End@ definitions for EMAIL AND SMS TEMPLETES @End@ -->
+		
+		<!--@End@ definitions for email and sms templetes @End@ -->
+		<definition name="SiteMap" extends="homeLayout">
+				<put-attribute name="page-title" value="Site Map " />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/SiteMap.jsp" />
+		</definition>
+		<definition name="SiteMapLogin" extends="baseLayout">
+				<put-attribute name="page-title" value="Site Map " />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/SiteMapLogin.jsp" />
+		</definition>
+		<!-- Dynamic label Properties -->
+		<definition name="DynamicLabelProperties" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: CommonLabel" />
+				<put-attribute name="app-body" value="/jsp/labels/dynamicProperties.jsp" />
+		</definition>
+		<definition name="DynamicLabelPropertiesValidn" extends="baseLayout">
+				<put-attribute name="page-title" value="EIP :: CommonLabel" />
+				<put-attribute name="app-body" value="/jsp/labels/dynamicProperties.jsp" />
+		</definition>
+		<definition name="AgencyLocation" extends="formLayout">
+				<put-attribute name="page-title" value="EIP :: Agency Location " />
+				<put-attribute name="app-body" value="/jsp/eip/agency/agencyLocation.jsp" />
+		</definition>
+		<definition name="SqlFormulaMaster" extends="baseLayout">
+				<put-attribute name="page-title" value="SQL Code Formula" />
+				<put-attribute name="app-body" value="/jsp/mainet/SqlFormulaMaster.jsp" />
+		</definition>
+		<definition name="SqlFormulaMasterValidn" template="/jsp/mainet/Formula.jsp" />
+		<definition name="AddSqlFormula" template="/jsp/mainet/Formula.jsp" />
+		<definition name="EditFormula" template="/jsp/mainet/Formula.jsp" />
+		<definition name="ViewFormula" template="/jsp/mainet/Formula.jsp" />
+		<definition name="LableUpdateSearch" extends="baseLayout">
+				<put-attribute name="page-title" value="Label Update" />
+				<put-attribute name="app-body" value="/jsp/labels/lableUpdateSearch.jsp" />
+		</definition>
+		<definition name="LabelUpdateEdit" extends="formLayout">
+				<put-attribute name="page-title" value="Label Update" />
+				<put-attribute name="app-body" value="/jsp/labels/lableUpdateEdit.jsp" />
+		</definition>
+		<definition name="EIPguidelines" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/tiles/EIPguidelines.jsp" />
+		</definition>
+		<definition name="Citizenguidelines" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/tiles/citizenguidelines.jsp" />
+		</definition>
+		<definition name="SearchContent" extends="homeLayout">
+				<put-attribute name="page-title" value="Citizen :: Search Content Us" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/SearchContent.jsp" />
+		</definition>
+		<definition name="SearchContentLogin" extends="baseLayout">
+				<put-attribute name="page-title" value="Citizen :: Search Content Us" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/SearchContent.jsp" />
+		</definition>
+		
+		<!-- Master Start -->
+		<definition name="index" extends="baseLayout">
+				<put-attribute name="body" value="/WEB-INF/views/index.jspx" />
+		</definition>
+		<definition name="dataAccessFailure" extends="baseLayout">
+				<put-attribute name="app-body" value="/WEB-INF/views/dataAccessFailure.jspx" />
+		</definition>
+		<definition name="resourceNotFound" extends="baseLayout">
+				<put-attribute name="app-body" value="/WEB-INF/views/resourceNotFound.jspx" />
+		</definition>
+		<definition name="uncaughtException" extends="baseLayout">
+				<put-attribute name="app-body" value="/WEB-INF/views/uncaughtException.jspx" />
+		</definition>
+		<!-- Customer Bank Entry Master End -->
+		<!-- Department Master Start -->
+		<definition name="redirectToPayUPG" template="/jsp/payment/payU/redirectAfterConfirmToPayU.jsp" />
+		<definition name="redirectToTPPG" template="/jsp/payment/payU/redirectAfterConfirmToTP.jsp" />
+		<definition name="redirectToMHPG" template="/jsp/payment/payU/redirectAfterConfirmToMH.jsp" />
+		<definition name="redirectToHDFCPG" template="/jsp/payment/payU/redirectAfterConfirmToHDFC.jsp" />
+		<definition name="redirectToCCA" template="/jsp/payment/payU/redirectAfterConfirmToCCA.jsp" />
+		<definition name="redirectToAtompay" template="/jsp/payment/payU/redirectAfterConfirmToAtomPay.jsp" />
+		<definition name="redirectToISGPay" template="/jsp/payment/payU/redirectAfterConfirmToISGPay.jsp" />
+		<definition name="ServiceApplicationStatus" template="/jsp/eip/citizen/ServiceApplicationStatus.jsp" />
+		<!-- Quartz Scheduler [START] -->
+		<definition name="QuartzSchedulerMaster" extends="formLayout">
+				<put-attribute name="page-title" value="Batch Job Master"></put-attribute>
+				<put-attribute name="app-body"	value="/jsp/quartz/quartzSchedulerMaster.jsp"></put-attribute>
+		</definition>
+		<definition name="QuartzSchedulerMasterValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Batch Job Master" />
+				<put-attribute name="app-body" value="/jsp/quartz/quartzSchedulerMaster.jsp" />
+		</definition>
+		<definition name="BatchJobsMasterGrid" extends="baseLayout">
+				<put-attribute name="page-title" value="Batch Job Master" />
+				<put-attribute name="app-body" value="/jsp/quartz/batchJobMasterGrid.jsp" />
+		</definition>
+		<definition name="BatchJobsMasterEdit" template="/jsp/quartz/batchJobMasterEdit.jsp" />
+		<definition name="BatchJobsMasterEditValidn" template="/jsp/quartz/batchJobMasterEdit.jsp" />
+		<!-- Quartz Scheduler [END] -->
+		<definition name="NewWaterConnectionForm" extends="baseLayout">
+				<put-attribute name="page-title" value="New Water Connection Form" />
+				<put-attribute name="app-body" value="/jsp/water/newWaterConnectionForm.jsp" />
+		</definition>
+		<definition name="NewWaterConnectionFormValidn" extends="formLayout">
+				<put-attribute name="page-title" value="New Water Connection Form" />
+				<put-attribute name="app-body" value="/jsp/water/newWaterConnectionForm.jsp" />
+		</definition>
+			<definition name="NewWaterConnectionApplicationFormView" extends="formLayout">
+		<put-attribute name="page-title" value="New Water Connection Form View" />
+		<put-attribute name="app-body"
+			value="/jsp/water/NewWaterConnectionViewApplication.jsp" />
+	</definition>
+	<definition name="NewWaterConnectionApplicationFormPrint" extends="formLayout">
+		<put-attribute name="page-title" value="New Water Connection Form View" />
+		<put-attribute name="app-body"
+			value="/jsp/water/ApplicantInformationToPrint.jsp" />
+	</definition>
+	<definition name="newWaterConnectionFormDashboardView" extends="formLayout">
+		<put-attribute name="page-title" value="New Water Connection Form View" />
+		<put-attribute name="app-body"
+			value="/jsp/water/newWaterDashboardViewApplication.jsp" />
+	</definition>
+	
+		
+		<definition name="WaterDisconnectionForm" extends="baseLayout">
+				<put-attribute name="page-title" value=" Water Disconnection" />
+				<put-attribute name="app-body" value="/jsp/water/waterDisconnectionForm.jsp" />
+		</definition>
+		<definition name="WaterDisconnectionFormValidn" extends="formLayout">
+				<put-attribute name="page-title" value=" Water Disconnection" />
+				<put-attribute name="app-body" value="/jsp/water/waterDisconnectionForm.jsp" />
+		</definition>
+		<definition name="waterDisconnectionDashboardView" extends="formLayout">
+				<put-attribute name="page-title" value=" Water Disconnection" />
+				<put-attribute name="app-body" value="/jsp/water/waterDisconnectionDashboardViewForm.jsp" />
+		</definition>
+		<definition name="SearchWaterConnectionNo" extends="formLayout">
+				<put-attribute name="page-title" value=" Water Disconnection" />
+				<put-attribute name="app-body" value="/jsp/water/searchWaterConnectionNo.jsp" />
+		</definition>
+		<definition name="WaterReconnectionForm" extends="baseLayout">
+				<put-attribute name="page-title" value=" Water Reconnection Form" />
+				<put-attribute name="app-body" value="/jsp/water/waterReconnectionForm.jsp" />
+		</definition>
+		<definition name="WaterReconnectionFormValidn" extends="formLayout">
+				<put-attribute name="page-title" value=" Water Reconnection Form" />
+				<put-attribute name="app-body" value="/jsp/water/waterReconnectionForm.jsp" />
+		</definition>
+		<definition name="waterReconnectionViewApplication" extends="formLayout">
+				<put-attribute name="page-title" value=" Water Reconnection Form" />
+				<put-attribute name="app-body" value="/jsp/water/waterReconnectionDashboardViewForm.jsp" />
+		</definition>
+		
+		<definition name="PlumberLicenseForm" extends="baseLayout">
+				<put-attribute name="page-title" value="Plumber License Form" />
+				<put-attribute name="app-body" value="/jsp/water/plumberLicenseForm.jsp" />
+		</definition>
+		<definition name="PlumberLicenseFormValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Plumber License Form" />
+				<put-attribute name="app-body" value="/jsp/water/plumberLicenseForm.jsp" />
+		</definition>
+		<definition name="plumberLicenseDashboardView" extends="formLayout">
+				<put-attribute name="page-title" value="Plumber License Form" />
+				<put-attribute name="app-body" value="/jsp/water/plumberLicenseDashboardViewApplication.jsp" />
+		</definition>
+		
+		<!-- TOWN PLAN TECHNICAL PERSON [START] -->
+		<definition name="TPTechnicalPerson" extends="baseLayout">
+				<put-attribute name="page-title" value="Technical Person" />
+				<put-attribute name="app-body"
+			value="/jsp/eip/agency/townPlanning/technicalPerson/tpLicenseRegistration.jsp" />
+		</definition>
+		<definition name="TPTechnicalPersonValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Technical Person" />
+				<put-attribute name="app-body" value="/jsp/eip/agency/townPlanning/technicalPerson/tpLicenseRegistration.jsp" />
+		</definition>
+		<!-- TOWN PLAN TECHNICAL PERSON [END] -->
+		<definition name="ChangeOfOwnership" extends="baseLayout">
+				<put-attribute name="page-title" value="Change Of Ownership" />
+				<put-attribute name="app-body" value="/jsp/water/changeofownership.jsp" />
+		</definition>
+		<definition name="ChargesDetail" extends="formLayout">
+				<put-attribute name="page-title" value="Charges Detail" />
+				<put-attribute name="app-body" value="/jsp/payment/chargeDetails.jsp" />
+		</definition>
+		<definition name="ConnectionDetails" extends="formLayout">
+				<put-attribute name="page-title" value="Change Of Ownership" />
+				<put-attribute name="app-body" value="/jsp/water/ConnectionDetails.jsp" />
+		</definition>
+		<definition name="OldOwnerDetails" extends="formLayout">
+				<put-attribute name="page-title" value="Change Of Ownership" />
+				<put-attribute name="app-body" value="/jsp/water/changeofownership.jsp" />
+		</definition>
+		<definition name="ChangeOfOwnershipValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Change Of Ownership" />
+				<put-attribute name="app-body" value="/jsp/water/changeofownership.jsp" />
+		</definition>
+		<definition name="changeOwnershipViewApplication" extends="formLayout">
+				<put-attribute name="page-title" value="Change Of Ownership" />
+				<put-attribute name="app-body" value="/jsp/water/changeOfOwnershipDashboardViewApplication.jsp" />
+		</definition>
+		
+		<definition name="CommonChallanULBReport" extends="formLayout">
+				<put-attribute name="page-title" value="Challan At ULB Report" />
+				<put-attribute name="app-body" value="/jsp/challan/challanAtULBReport.jsp" />
+		</definition>
+		<definition name="CommonChallanBankReport" extends="formLayout">
+				<put-attribute name="page-title" value="Challan At Bank Report" />
+				<put-attribute name="app-body" value="/jsp/challan/challanAtBankReport.jsp" />
+		</definition>
+		<!-- DashBoard View -->
+		<definition name="NewWaterConnectionFormDashBoard" extends="formLayout">
+				<put-attribute name="page-title" value="New Water Connection Form" />
+				<put-attribute name="app-body" value="/jsp/water/newWaterConnectionForm.jsp" />
+		</definition>
+		<!-- DashBoard View -->
+		<definition name="ReconnectionDetails" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/water/reconnectionDetails.jsp" />
+		</definition>
+		<!--CHECKLIST RESUBMISSION [START] -->
+		<definition name="ChecklistResubmission" extends="formLayout">
+				<put-attribute name="page-title" value="Document Resubmission" />
+				<put-attribute name="app-body" value="/jsp/checklist/DocumentResubmission.jsp" />
+		</definition>
+		<definition name="ChecklistResubmissionValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Document Resubmission" />
+				<put-attribute name="app-body" value="/jsp/checklist/DocumentResubmission.jsp" />
+		</definition>
+		<!-- CHECKLIST RESUBMISSION [END] -->
+		<!-- CHANGE OF USAGE [START] -->
+		<definition name="ChangeOfUsage" extends="baseLayout">
+				<put-attribute name="page-title" value="Change Of Usage" />
+				<put-attribute name="app-body" value="/jsp/water/ChangeOfUsage.jsp" />
+		</definition>
+		<definition name="ChangeOfUsageValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Change Of Usage" />
+				<put-attribute name="app-body" value="/jsp/water/ChangeOfUsage.jsp" />
+		</definition>
+		
+		<definition name="changeOfUasgeApplicationView" extends="formLayout">
+				<put-attribute name="page-title" value="Change Of Usage" />
+				<put-attribute name="app-body" value="/jsp/water/changeOfUsageViewApplication.jsp" />
+		</definition>
+		<!-- CHANGE OF USAGE [END] -->
+		<definition name="WaterBillPayment" extends="baseLayout">
+				<put-attribute name="page-title" value="Bill Payment" />
+				<put-attribute name="app-body" value="/jsp/water/WaterBillPayment.jsp" />
+		</definition>
+		<definition name="WaterBillPaymentValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Bill Payment" />
+				<put-attribute name="app-body" value="/jsp/water/WaterBillPayment.jsp" />
+		</definition>
+		<definition name="WaterBillPaymentUlbHome" template="/jsp/water/WaterBillPayment.jsp" />
+		
+		
+		<definition name="AgencyRegistrationRedirect" extends="baseLayout">
+				<put-attribute name="page-title" value="Agency Registration" />
+				<put-attribute name="app-body" value="/jsp/eip/agency/agencyRegistrationRedirect.jsp" />
+		</definition>
+		<definition name="AgencyRegistrationRedirectValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Agency Registration" />
+				<put-attribute name="app-body" value="/jsp/eip/agency/townPlanning/technicalPerson/tpLicenseRegistration.jsp" />
+		</definition>
+		<!-- TOWN PLAN TECHNICAL PERSON [END] -->
+		
+		<!-- Start No Dues Certificate Pages pages -->
+		<definition name="NoDuesCertificateForm" extends="baseLayout">
+				<put-attribute name="page-title" value="No Dues Certificate" />
+				<put-attribute name="app-body" value="/jsp/water/waterNoDuesCertificateForm.jsp" />
+		</definition>
+		<definition name="NoDuesCertificateFormValid" extends="formLayout">
+				<put-attribute name="page-title" value="No Dues Certificate" />
+				<put-attribute name="app-body" value="/jsp/water/waterNoDuesCertificateForm.jsp" />
+		</definition>
+		
+		<definition name="NoDuesCertiFormPrint" extends="formLayout">
+		<put-attribute name="page-title"
+			value="No Dues Certificate Execution Print " />
+		<put-attribute name="app-body"
+			value="/jsp/water/noDuesCertificatePrintForm.jsp" />
+	</definition>
+	<!-- No Dues Certificate Pages [END] -->
+	
+		<!-- Start Grievance related pages -->
+		<definition name="NewComplaintRegistrationForm" extends="baseLayout">
+				<put-attribute name="page-title" value="New Complaint Registration Form" />
+				<put-attribute name="app-body" value="/jsp/care/complaintHome.jsp" />
+		</definition>
+		
+		<definition name="NewComplaintRegistrationFormPreLogin" extends="homeLayout">
+				<put-attribute name="page-title" value="New Complaint Registration Form" />
+				<put-attribute name="app-body" value="/jsp/care/complaintHome.jsp" />
+		</definition>
+		
+		
+		<definition name="NewComplaintRegistrationFormValid" extends="formLayout">
+				<put-attribute name="page-title" value="New Complaint Registration Form" />
+				<put-attribute name="app-body" value="/jsp/care/complaintHome.jsp" />
+		</definition>
+		
+		<definition name="organisation" template="/jsp/care/organisation.jsp" />
+		
+		<definition name="department" template="/jsp/care/department.jsp" />
+		
+		<definition name="grievanceComplaintTypes" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/care/complaintType.jsp" />
+		</definition>
+		<definition name="grievanceLocations" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/care/Location.jsp" />
+		</definition>
+		
+		<definition name="ReopenGrievanceform" extends="baseLayout">
+				<put-attribute name="page-title" value="Reopen Complaint Registration Form" />
+				<put-attribute name="app-body" value="/jsp/care/reopenComplaint.jsp" />
+		</definition>
+		<definition name="RegistrationAcknowledgementReceipt" extends="formLayout">
+				<put-attribute name="page-title" value="Complaint Registration Acknowledgement Receipt" />
+				<put-attribute name="app-body" value="/jsp/care/Complaint-Acknowledgement-Receipt.jsp" />
+		</definition>
+		<definition name="RegistrationStatus" extends="baseLayout">
+				<put-attribute name="page-title" value="Complaint Registration Status" />
+				<put-attribute name="app-body" value="/jsp/care/grievance-status.jsp" />
+		</definition>
+		
+		<definition name="RegistrationStatusPreLogin" extends="homeLayout">
+				<put-attribute name="page-title" value="Complaint Registration Status" />
+				<put-attribute name="app-body" value="/jsp/care/grievance-status-preLogin.jsp" />
+		</definition>
+		
+		<definition name="RegistrationAcknowledgementReceiptStatus" extends="formLayout">
+				<put-attribute name="page-title" value="Complaint Registration Acknowledgement Receipt Status" />
+				<put-attribute name="app-body" value="/jsp/care/grievance-status_receipt.jsp" />
+		</definition>
+		
+		<definition name="grievanceComplaintAckList" extends="formLayout">
+				<put-attribute name="page-title" value="Complaint Registration Acknowledgement Receipt Status" />
+				<put-attribute name="app-body" value="/jsp/care/grievanceComplaintAckList.jsp" />
+		</definition>
+		
+		<definition name="grievanceResubmission" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/care/grievanceResubmission.jsp" />
+		</definition>
+		<definition name="ComplaintFeedback" extends="baseLayout">
+				<put-attribute name="page-title" value="Complaint Feedback" />
+				<put-attribute name="app-body" value="/jsp/care/feedback.jsp" />
+		</definition>
+		<!-- End Grievance related pages -->
+		<!-- Start Rent and Lease related pages -->
+		<definition name="estateBookingHome" extends="baseLayout">
+				<put-attribute name="app-body" value="/jsp/rnl/service/estateBookingHome.jsp" />
+		</definition>
+		<definition name="EstateBooking" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/rnl/service/estateBookingForm.jsp" />
+		</definition>
+		<definition name="EstateBookingValidn" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/rnl/service/estateBookingForm.jsp" />
+		</definition>
+		<definition name="paymantAndCheckListRent" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/rnl/service/paymentCheckList.jsp" />
+		</definition>
+		<definition name="RNLTermAndCondition" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/rnl/service/termAndConditin.jsp" />
+		</definition>
+		<definition name="propInfo" extends="formLayout">
+				<put-attribute name="app-body" value="/jsp/rnl/service/propInfoForm.jsp" />
+		</definition>
+		<!--  End of Rent and Lease related pages -->
+		
+		<!-- Organisation  Master Creation -->
+		
+		<definition name="tbOrganisation/list" extends="baseLayout">
+		    <put-attribute name="app-body" value="/jsp/tborganisation/orgentrylist.jsp"/>
+		</definition>
+		
+		<definition extends="formLayout" name="tbOrganisation/form">
+		<put-attribute name="app-body"
+			value="/jsp/tborganisation/orgentryform.jsp" />
+	    </definition>
+	    
+	    <!-- Theme Master  -->
+	    <definition name="ThemeMaster" extends="baseLayout">
+				<put-attribute name="page-title" value="Theme Master" />
+				<put-attribute name="app-body" value="/jsp/tiles/themeMaster.jsp" />
+		</definition>
+	    <definition name="ThemeMasterValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Theme Master" />
+				<put-attribute name="app-body" value="/jsp/tiles/themeMaster.jsp" />
+		</definition>
+		
+		<!--Key InitiativeDetails  -->
+		<definition name="KeyInitiativeDetails" extends="homeLayout">
+				<put-attribute name="page-title" value="Key Initiative" />
+				<put-attribute name="app-body" value="/jsp/KeyInitiative/keyInitiativeDetails.jsp" />
+		</definition>
+		
+
+	   <definition name="ActionHistory" extends="formLayout">
+				<put-attribute name="page-title" value="Action History" />
+				<put-attribute name="app-body" value="/jsp/workflow/actionHistory.jsp" />
+		</definition>
+
+		<definition name="NewsLetterSubscription" template="/jsp/eip/admin/subscribeNewsLetter.jsp" />
+		<definition name="NewsLetter" template="/jsp/eip/admin/NewsLetter.jsp" />
+		<definition name="Unsubscribe" template="/jsp/eip/admin/Unsubscribe.jsp" />
+		
+		<definition name="NewsLetterView" extends="homeLayout">
+				<put-attribute name="page-title" value="NewsLetter" />
+				<put-attribute name="app-body" value="/jsp/eip/admin/NewsLetter.jsp" />
+		</definition>
+		
+		<!-- SEO Master  -->
+	    <definition name="SEOMetaDataMaster" extends="baseLayout">
+				<put-attribute name="page-title" value="Theme Master" />
+				<put-attribute name="app-body" value="/jsp/eip/seo/seoMaster.jsp" />
+		</definition>
+	    <definition name="SEOMetaDataMasterValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Theme Master" />
+				<put-attribute name="app-body" value="/jsp/eip/seo/seoMaster.jsp" />
+		</definition>
+
+		 <definition name="ExcelImportExportForDashboard" extends="baseLayout">
+				<put-attribute name="page-title" value="Excel For Dashboard" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/ExcelImportAndExportForDashboard.jsp"/>
+		</definition>
+		 <definition name="ExcelImportExportForDashboardValidn" extends="formLayout">
+				<put-attribute name="page-title" value="Excel For Dashboard" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/ExcelImportAndExportForDashboard.jsp"/>
+		</definition>
+
+	<definition name="NewsAndEvent" extends="homeLayout">
+				<put-attribute name="page-title" value="News And Event" />
+				<put-attribute name="app-body" value="/jsp/eip/citizen/NewsAndEvent.jsp" />
+	</definition>
+
+	<!-- EMPLOYEE MASTERS [START] -->
+	<definition extends="baseLayout" name="employee/list">
+		<put-attribute name="app-body" value="/jsp/tbemployee/employee_list.jsp" />
+	</definition>
+
+	<definition extends="formLayout" name="employee/form">
+		<put-attribute name="app-body" value="/jsp/tbemployee/employee_form.jsp" />
+	</definition>
+	
+	<definition extends="formLayout" name="employee/list_form">
+		<put-attribute name="app-body" 	value="/jsp/tbemployee/employee_list.jsp" />
+	</definition>
+
+		<!-- EMPLOYEE MASTERS [END] -->
+		
+		<!-- Property Service [START] -->
+
+	<definition name="ShowAssessmentDetails" extends="baseLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentView.jsp" />
+	</definition>
+	<definition name="SelfAssessmentForm" extends="baseLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentFormNew.jsp" />
+	</definition>
+	<definition name="SelfAssessmentFormValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentFormNew.jsp" />
+	</definition>
+	
+	<definition name="SelfAssessmentTermCondition" extends="baseLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentTermsConditions.jsp" />
+	</definition>
+	<definition name="SelfAssessmentUnitSpecificAdditionalInfo"
+		extends="formLayout">
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentUnitSpecificAdditionalInfo.jsp"></put-attribute>
+	</definition>
+
+<definition name="SelfAssessmentOwnershipDetailForm"
+		extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentOwnershipDetailForm.jsp" />
+	</definition>
+
+<definition name="SelfAssessmentFormEdit" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentFormNew.jsp" />
+	</definition>
+	
+	<definition name="SelfAssessmentView" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentView.jsp" />
+	</definition>
+	<definition name="SelfAssessmentViewValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/SelfAssessmentView.jsp" />
+	</definition>
+	
+	<definition name="NoChangeInAssessmentSearch" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/NoChnageInAssessmentSearch.jsp" />
+	</definition>
+
+	<definition name="NoChangeInAssessmentSearchValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/NoChnageInAssessmentSearch.jsp" />
+	</definition>
+	<definition name="NoChangeTermCondition" extends="baseLayout">
+		<put-attribute name="page-title" value="No Change In Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/NoChangeAssessmentTermsConditions.jsp" />
+	</definition>
+	
+	<definition name="ChangeAssessmentTermCondition" extends="baseLayout">
+		<put-attribute name="page-title" value="Change In Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/ChangeAssessmentTermCondtions.jsp" />
+	</definition>
+	
+	<definition name="ChangeInAssessmentForm" template="/jsp/property/ChangeInAssessmentForm.jsp">
+		<put-attribute name="app-body" value="" />
+	</definition>
+
+	<definition name="PropertyAssessmentType" extends="baseLayout">
+		<put-attribute name="page-title" value="Property Assessment Type" />
+		<put-attribute name="app-body"
+			value="/jsp/property/ChangeAssessmentTermCondtions.jsp" />
+	</definition>
+	
+	<definition name="PropertyAssessmentTypeView" extends="formLayout">
+		<put-attribute name="page-title" value="Property Assessment Type" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyAssessmentType.jsp" />
+	</definition>
+
+
+	<definition name="PropertyBillPaymentSearch" extends="baseLayout">
+		<put-attribute name="page-title" value="property Bill Payment" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyBillPaymentSearch.jsp" />
+	</definition>
+	
+	<definition name="PropertyBillPaymentHome" template="/jsp/property/PropertyBillPayment.jsp" />
+
+		<definition name="propertyBillPaymentSearchValidn" extends="formLayout">
+		<put-attribute name="page-title" value="property Bill Payment" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyBillPaymentSearch.jsp" />
+	</definition>
+	
+	<definition name="PropertyBillPayment" extends="formLayout">
+		<put-attribute name="page-title" value="property Bill Payment" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyBillPayment.jsp" />
+	</definition>
+	
+		<definition name="propertyBillPaymentValidn" extends="formLayout">
+		<put-attribute name="page-title" value="property Bill Payment" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyBillPayment.jsp" />
+	</definition>
+	
+	<definition name="PropertyAssessmentView" extends="formLayout">
+		<put-attribute name="page-title" value="Self Assessment Form New" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyAssessmentViewFromDashboard.jsp" />
+	</definition>
+		
+	<definition name="ViewPropertyDetail" extends="baseLayout">
+		<put-attribute name="page-title" value="View Property Details" />
+		<put-attribute name="app-body"
+			value="/jsp/property/ViewPropertyDetails.jsp" />
+	</definition>
+
+	<definition name="ViewPropertyDetailValidn" extends="formLayout">
+		<put-attribute name="page-title" value="View Property Details" />
+		<put-attribute name="app-body"
+			value="/jsp/property/ViewPropertyDetails.jsp" />
+	</definition>
+
+	<definition name="ViewBillCollectionDetails" extends="formLayout">
+		<put-attribute name="page-title" value="View Property Details" />
+		<put-attribute name="app-body"
+			value="/jsp/property/ViewBillCollectionDetails.jsp" />
+	</definition>
+	
+		<definition name="PropertyBillHistory" extends="formLayout">
+		<put-attribute name="page-title" value="property Bill History" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyBillHistory.jsp" />
+	</definition>
+	
+	
+	<definition name="PropertyPaymentHistory" extends="formLayout">
+		<put-attribute name="page-title" value="property payment History" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyPaymentHistory.jsp" />
+	</definition>
+	
+	
+	<definition name="viewPropertyAppDetails" extends="formLayout">
+		<put-attribute name="page-title" value="property App Details" />
+		<put-attribute name="app-body"
+			value="/jsp/property/viewPropertyAppDetails.jsp" />
+	</definition>
+
+	<definition name="ViewPropertyTaxDetails" extends="formLayout">
+		<put-attribute name="page-title" value="View Property Details" />
+		<put-attribute name="app-body"
+			value="/jsp/property/ViewPropertyTaxDetails.jsp" />
+	</definition>
+	
+	<definition name="showPropertyKhasaraDetails"
+		extends="formLayout">
+		<put-attribute name="page-title" value="Assessment Form " />
+		<put-attribute name="app-body"
+			value="/jsp/property/propertyApiDetails.jsp" />
+	</definition>
+
+	<definition name="PropertyLandDetails"
+		extends="formLayout">
+		<put-attribute name="page-title" value="Form" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyLandTypeDetails.jsp" />
+	</definition>
+	
+	<definition name="PropertyTaxCalculator" extends="baseLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculator.jsp" />
+	</definition>
+	
+	<definition name="PropertyTaxCalculatorAfterUlBSelection" extends="formLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculator.jsp" />
+	</definition>
+	
+	<definition name="PropertyTaxCalculatorDiv"
+		extends="formLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculatorDiv.jsp" />
+	</definition>
+	
+	<definition name="PropertyTaxCalculatorMainPage" extends="baseLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculatorMainPage.jsp" />
+	</definition>
+	
+	<definition name="PropertyTaxCalculatorMain" extends="formLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculatorMainPage.jsp" />
+	</definition>
+	
+	<definition name="PropertyTaxCalculatorView" extends="formLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculatorView.jsp" />
+	</definition>
+	
+	<definition name="BackToPropertyTaxCalculator" extends="formLayout">
+		<put-attribute name="page-title" value="Property tax calculator" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyTaxCalculator.jsp" />
+	</definition>
+	
+	<definition name="MutationForm" extends="baseLayout">
+		<put-attribute name="page-title" value="Mutation Form" />
+		<put-attribute name="app-body"
+			value="/jsp/property/MutationForm.jsp" />
+	</definition>
+
+	<definition name="MutationFormValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Mutation Form" />
+		<put-attribute name="app-body"
+			value="/jsp/property/MutationForm.jsp" />
+	</definition>
+	
+	<definition name="PropTransferOwner" extends="formLayout">
+		<put-attribute name="page-title"
+			value="Property transfer owner" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropTransferOwner.jsp" />
+	</definition>
+	
+	<definition name="PropertyNoDuesCertificate" extends="baseLayout">
+		<put-attribute name="page-title"
+			value="Property No Dues Certificate" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyNoDuesCertificate.jsp" />
+	</definition>
+	
+	<definition name="PropertyNoDuesCertificateValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Property No Dues Certificate" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyNoDuesCertificate.jsp" />
+	</definition>
+	
+	<definition name="PropertyNoDuesCertificateReport"
+		extends="baseLayout">
+		<put-attribute name="page-title"
+			value="No Dues certificate report" />
+		<put-attribute name="app-body"
+			value="/jsp/property/PropertyNoDuesCerticateReport.jsp" />
+	</definition>
+	
+	<definition name="AssessmentCertificateGenrator" extends="baseLayout">
+		<put-attribute name="page-title"
+			value="Assessment Certificate" />
+		<put-attribute name="app-body"
+			value="/jsp/property/assessmentCertificateGenerationForm.jsp" />
+	</definition>
+	
+	<definition name="AssessmentCertificateGenratorValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Assessment Certificate" />
+		<put-attribute name="app-body"
+			value="/jsp/property/assessmentCertificateGenerationForm.jsp" />
+	</definition>
+	
+		<!-- Property Service [End] -->
+
+	
+<!-- 	OBJECTION START -->
+	<definition name="ObjectionDetails" extends="baseLayout">
+		<put-attribute name="page-title" value="Objection Details" />
+		<put-attribute name="app-body"
+			value="/jsp/objection/ObjectionIssuerAppealDetails.jsp" />
+	</definition>
+	
+	<definition name="objectionDetailFormValdin" extends="formLayout">
+		<put-attribute name="app-body"
+			value="/jsp/objection/ObjectionIssuerAppealDetails.jsp" />
+	</definition>
+
+
+<!-- 	OBJECTION END -->
+	<!-- 	Construction & Demolition Start -->
+	<definition name="WasteCollector" extends="baseLayout">
+		<put-attribute name="page-title" value="Waste Collector Tab" />
+		<put-attribute name="app-body" value="/jsp/swm/constructNDemoWasteCollector.jsp" />
+	</definition>
+	
+	<definition name="ChargesDetailSWM" extends="formLayout">
+		<put-attribute name="page-title" value="Charges Detail" />
+		<put-attribute name="app-body" value="/jsp/swm/chargeDetails.jsp" />
+	</definition>
+	<definition name="WasteCollectorValidn" extends="formLayout">
+		<put-attribute name="app-body"
+			value="/jsp/swm/constructNDemoWasteCollector.jsp" />
+	</definition>
+
+	<definition name="WasteCollectorForm" extends="formLayout">
+		<put-attribute name="page-title" value="Waste Collector Tab" />
+		<put-attribute name="app-body" value="/jsp/swm/constructNDemoWasteCollector.jsp" />
+	</definition>
+	<!-- 	Construction & Demolition End -->
+	
+	<!-- Road Cutting forms start -->
+	<definition name="RoadCutting" extends="baseLayout">
+		<put-attribute name="page-title" value="Road Cutting Tab" />
+		<put-attribute name="app-body"
+			value="/jsp/roadcutting/roadcuttingHome.jsp" />
+	</definition>
+	<definition name="RoadCuttingValidn" extends="formLayout">
+		<put-attribute name="page-title" value="Road Cutting CheckList" />
+		<put-attribute name="app-body"
+			value="/jsp/roadcutting/roadcuttingHome.jsp" />
+	</definition>
+	<definition name="RoadCuttingView"  extends="formLayout">
+		<put-attribute name="page-title" value="Road Cutting CheckList" />
+		<put-attribute name="app-body" value="/jsp/roadcutting/roadcuttingView.jsp"/>
+	</definition>
+	<!-- Road Cutting forms end -->
+	
+	<!-- Social Security Start -->
+	
+	
+	<definition name="SchemeApplicationForm" extends="baseLayout">
+		<put-attribute name="page-title" value="Scheme Application Form " />
+		<put-attribute name="app-body"
+			value="/jsp/social_security/applicationForm.jsp" />
+	</definition>
+	
+	<definition name="RenewalForm" extends="baseLayout">
+		<put-attribute name="page-title" value="Renewal of Life Certificate Form " />
+		<put-attribute name="app-body"
+			value="/jsp/social_security/renewalForm.jsp" />
+	</definition>
+	
+	<!-- Social Security End -->
+
+<definition name="revenueReceiptPrint"
+		extends="baseLayout">
+		<put-attribute name="page-titl"
+			value="revenue Receipt="></put-attribute>
+		<put-attribute name="app-body"
+			value="/jsp/challan/revenueReceipt.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Advertising and Hoarding Start  -->
+	
+	<definition name="NewAdvertisementApplication" extends="baseLayout">
+	    <put-attribute name="page-title" value="Advertisement Application" />
+		<put-attribute name="app-body" value="/jsp/adh/newAdvertisementApplication.jsp" />
+	</definition>
+	
+    <!-- Advertising and Hoarding End  -->
+	
+</tiles-definitions>

@@ -1,0 +1,177 @@
+package com.abm.mainet.swm.domain;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.GenericGenerator;
+
+/**
+ * @author Ajay.Kumar
+ *
+ */
+@Entity
+@Table(name = "TB_SW_MRF_VECHICLE_DET_HIST")
+public class MRFVehicleHistory implements Serializable {
+    private static final long serialVersionUID = 6881488044505278691L;
+    @Id
+    @GenericGenerator(name = "MyCustomGenerator", strategy = "com.abm.mainet.common.utility.SequenceIdGenerator")
+    @GeneratedValue(generator = "MyCustomGenerator")
+    @Column(name = "MRFV_ID_H", unique = true, nullable = false)
+    private Long mrfvIdh;
+
+    @Column(name = "MRFV_ID")
+    private Long mrfvId;
+
+    @Column(name = "VE_VETYPE")
+    private Long veVeType;
+
+    @Column(name = "MRFV_AVALCNT")
+    private Long mrfvAvalCnt;
+
+    @Column(name = "MRFV_REQCNT")
+    private Long mrfvReqCnt;
+
+    @Column(name = "H_STATUS")
+    private String hStatus;
+
+    @Column(name = "ORGID", nullable = false)
+    private Long orgId;
+
+    @Column(name = "CREATED_BY", nullable = false)
+    private Long createdBy;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATED_DATE", nullable = false)
+    private Date createdDate;
+
+    @Column(name = "UPDATED_BY")
+    private Long updatedBy;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATED_DATE")
+    private Date updatedDate;
+
+    @Column(name = "LG_IP_MAC", nullable = false, length = 100)
+    private String lgIpMac;
+
+    @Column(name = "LG_IP_MAC_UPD", length = 100)
+    private String lgIpMacUpd;
+
+    public Long getMrfvIdh() {
+        return mrfvIdh;
+    }
+
+    public void setMrfvIdh(Long mrfvIdh) {
+        this.mrfvIdh = mrfvIdh;
+    }
+
+    public Long getMrfvId() {
+        return mrfvId;
+    }
+
+    public void setMrfvId(Long mrfvId) {
+        this.mrfvId = mrfvId;
+    }
+
+    public Long getVeVeType() {
+        return veVeType;
+    }
+
+    public void setVeVeType(Long veVeType) {
+        this.veVeType = veVeType;
+    }
+
+    public Long getMrfvAvalCnt() {
+        return mrfvAvalCnt;
+    }
+
+    public void setMrfvAvalCnt(Long mrfvAvalCnt) {
+        this.mrfvAvalCnt = mrfvAvalCnt;
+    }
+
+    public Long getMrfvReqCnt() {
+        return mrfvReqCnt;
+    }
+
+    public void setMrfvReqCnt(Long mrfvReqCnt) {
+        this.mrfvReqCnt = mrfvReqCnt;
+    }
+
+    public String gethStatus() {
+        return hStatus;
+    }
+
+    public void sethStatus(String hStatus) {
+        this.hStatus = hStatus;
+    }
+
+    public Long getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
+    }
+
+    public Long getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Long createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Long getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(Long updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public String getLgIpMac() {
+        return lgIpMac;
+    }
+
+    public void setLgIpMac(String lgIpMac) {
+        this.lgIpMac = lgIpMac;
+    }
+
+    public String getLgIpMacUpd() {
+        return lgIpMacUpd;
+    }
+
+    public void setLgIpMacUpd(String lgIpMacUpd) {
+        this.lgIpMacUpd = lgIpMacUpd;
+    }
+
+    public String[] getPkValues() {
+
+        return new String[] { "SWM", "TB_SW_MRF_VECHICLE_DET_HIST", "MRFV_ID_H" };
+    }
+
+}

@@ -1,0 +1,7 @@
+--liquibase formatted sql
+--changeset nilima:V20180919154110__CR_STATE_BOUNDARY_19092018.sql
+CREATE TABLE STATE_BOUNDARY (
+  STATCODE varchar(4) NOT NULL COMMENT 'Statecode',
+  LATITUDE varchar(45) DEFAULT NULL COMMENT 'Latitude',
+  LONGITUDE varchar(45) DEFAULT NULL COMMENT 'Longitude'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

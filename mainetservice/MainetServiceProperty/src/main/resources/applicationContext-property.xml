@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<import resource="./cxf-beans-property.xml"/>
+	<context:component-scan
+		base-package="
+		com.abm.mainet.property.dao,
+		com.abm.mainet.property.mapper,
+		com.abm.mainet.property.service,
+		com.abm.mainet.property.repository,
+		com.abm.mainet.property.ui.model,
+		com.abm.mainet.property.ui.validator,
+		com.abm.mainet.property.utility"
+		annotation-config="true">
+	</context:component-scan>
+
+</beans>

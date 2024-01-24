@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropertyTaxBillPrintingEnglish_subreport1" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7df8b7a2-41bd-49c1-9a79-14fc62672677">
+	<property name="ireport.zoom" value="1.2100000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="taxNameV" class="java.lang.String"/>
+	<field name="arrearsAmountV" class="java.lang.Double"/>
+	<field name="totalAmountV" class="java.lang.Double"/>
+	<field name="currentAmountV" class="java.lang.Double"/>
+	<detail>
+		<band height="10" splitType="Stretch">
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="342" height="10" uuid="0b66c606-db05-4ea4-a2fe-15951b311876"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="219" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="af04263f-f18a-43cf-bd21-110740b7df85"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="158" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="9f9d8283-56a5-45fa-9c5c-dd15c2778809"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="2" y="0" width="159" height="10" isPrintWhenDetailOverflows="true" uuid="23bca5d6-8321-44be-bdc0-73075ba8cba9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taxNameV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.00">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="159" y="0" width="58" height="10" isPrintWhenDetailOverflows="true" uuid="b8b190fb-21c4-407c-bfa5-92a1a903632d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arrearsAmountV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.00">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="220" y="0" width="58" height="10" isPrintWhenDetailOverflows="true" uuid="035f5a06-cfcb-48f2-8995-ede8ed772743"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currentAmountV}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="280" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="c0547d3e-b215-4b00-bdba-4b3e99613d16"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="###0.00">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="281" y="0" width="58" height="10" isPrintWhenDetailOverflows="true" uuid="14eabafe-e05a-4ce2-ae82-237b417879cf"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAmountV}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

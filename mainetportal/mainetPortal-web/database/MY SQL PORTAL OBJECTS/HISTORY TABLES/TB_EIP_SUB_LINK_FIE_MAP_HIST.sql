@@ -1,0 +1,23 @@
+CREATE TABLE `tb_eip_sub_link_fie_map_hist` (
+  `H_SUBLINK_FIELD` double NOT NULL,
+  `SUB_LINK_FIELD_ID` double NOT NULL,
+  `SUB_LINK_MAS_ID` double DEFAULT NULL,
+  `FIELD_NAME_EN` varchar(100) NOT NULL,
+  `FIELD_TYPE_ID` double NOT NULL,
+  `FIELD_SEQ` double NOT NULL,
+  `FIELD_NAME_MAP` varchar(20) NOT NULL,
+  `IS_USED` char(1) NOT NULL,
+  `IS_MANDATORY` char(1) NOT NULL,
+  `FIELD_NAME_RG` varchar(150) NOT NULL,
+  `ISDELETED` char(1) DEFAULT NULL,
+  `ORGID` decimal(12,0) DEFAULT NULL,
+  `USER_ID` decimal(12,0) DEFAULT NULL,
+  `LANG_ID` int(11) DEFAULT NULL,
+  `CREATED_DATE` datetime DEFAULT NULL,
+  `UPDATED_BY` decimal(12,0) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(100) DEFAULT NULL,
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

@@ -1,0 +1,10 @@
+--liquibase formatted sql
+--changeset nilima:V20170725194715__AL_DESIGNATION_250720171.sql
+ALTER TABLE DESIGNATION
+CHANGE COLUMN AUT_V1 DSG_DEFAULT CHAR(1) NULL DEFAULT NULL COMMENT 'Default Designation Flag' ;
+
+--liquibase formatted sql
+--changeset nilima:V20170725194715__AL_DESIGNATION_25072017.sql
+update DESIGNATION set DSG_DEFAULT='Y' where DSGNAME='ADMIN';
+COMMIT;
+

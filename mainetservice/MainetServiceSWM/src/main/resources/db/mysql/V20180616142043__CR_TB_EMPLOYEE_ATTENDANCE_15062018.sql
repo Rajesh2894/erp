@@ -1,0 +1,25 @@
+--liquibase formatted sql
+--changeset nilima:V20180616142043__CR_TB_EMPLOYEE_ATTENDANCE_15062018.sql
+CREATE TABLE TB_EMPLOYEE_ATTENDANCE (
+  EMPATTID bigint(12) NOT NULL,
+  EMPID bigint(12) NOT NULL,
+  CHECKIN decimal(10,2) NOT NULL,
+  CHECKIN_LATITUDE varchar(100) NOT NULL COMMENT 'CheckIn latitude',
+  CHECKIN_LONGITUDE varchar(100) NOT NULL,
+  CHECKIN_ADDRESS varchar(500) DEFAULT NULL COMMENT 'Check In Address',
+  CHECKOUT decimal(10,2) DEFAULT NULL COMMENT 'CheckOut',
+  CHECKOUT_LATITUDE varchar(100) DEFAULT NULL,
+  CHECKOUT_LONGITUDE varchar(100) DEFAULT NULL,
+  CHECKOUT_ADDRESS varchar(500) DEFAULT NULL,
+  ORGID bigint(12) DEFAULT NULL COMMENT 'organization id',
+  CREATED_BY bigint(12) DEFAULT NULL COMMENT 'user id who created the record',
+  CREATED_DATE datetime DEFAULT NULL COMMENT 'record creation date',
+  UPDATED_BY bigint(12) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) DEFAULT NULL COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (EMPATTID),
+  KEY FK_ATTEMPID_idx (EMPID),
+  CONSTRAINT FK_ATTEMPID FOREIGN KEY (EMPID) REFERENCES employee (EMPID) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Employee Attendance';
+

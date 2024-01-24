@@ -1,0 +1,38 @@
+package com.abm.mainet.common.dashboard.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class HRMSStoreCountEntity {
+
+	@Id
+	@Column(name = "num")
+	private long id;
+
+	@Column(name = "CNT")
+	private long count;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getCount() {
+		return count;
+	}
+
+	public void setCount(long count) {
+		this.count = count;
+	}
+
+	@Override
+	public String toString() {
+		return "HRMSStoreCountEntity [id=" + id + ", count=" + count + "]";
+	}
+
+}

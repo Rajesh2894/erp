@@ -1,0 +1,21 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230207165943__CR_Tb_Sfac_Equipment_Info_Detail_07022023.sql
+create table Tb_Sfac_Equipment_Info_Detail
+(
+EQP_ID bigint(20) NOT NULL,
+FPM_ID Bigint(20) NOT NULL,
+EQIP_NAME Varchar(100) NULL DEFAULT NULL,
+NO_OF_EQIP bigint(20) NULL DEFAULT NULL,
+PRICE_OF_EQIP Decimal(15,2) NULL DEFAULT NULL,
+EQIP_DESC Varchar(500) NULL DEFAULT NULL,
+ORGID bigint(20) NOT NULL,
+CREATED_BY bigint(20) NOT NULL,
+CREATED_DATE datetime NOT NULL,
+UPDATED_BY bigint(20) NULL DEFAULT NULL,
+UPDATED_DATE datetime NULL DEFAULT NULL,
+LG_IP_MAC varchar(100) NOT NULL,
+LG_IP_MAC_UPD varchar(100) NULL DEFAULT NULL,
+primary key(EQP_ID),
+KEY FK_FPM_ID_idx_67 (FPM_ID),
+CONSTRAINT FK_FPM_ID_67 FOREIGN KEY (FPM_ID) REFERENCES Tb_Sfac_Fpo_Profile_Mgmt_Mast (FPM_ID)
+);

@@ -1,0 +1,25 @@
+CREATE TABLE `tb_com_help_docs_hist` (
+  `H_DOC_ID` decimal(12,0) NOT NULL,
+  `HELP_DOC_ID` decimal(12,0) NOT NULL,
+  `MODULE_NAME` varchar(200) NOT NULL,
+  `FILE_NAME_ENG` varchar(100) NOT NULL,
+  `FILE_PATH_ENG` varchar(2000) DEFAULT NULL,
+  `FILE_TYPE_ENG` varchar(1) NOT NULL,
+  `FILE_NAME_REG` varchar(100) DEFAULT NULL,
+  `FILE_PATH_REG` varchar(2000) DEFAULT NULL,
+  `FILE_TYPE_REG` varchar(1) DEFAULT NULL,
+  `DEPTNAME` varchar(50) DEFAULT NULL,
+  `ATTACH_BY` decimal(12,0) DEFAULT NULL,
+  `ATTACH_ON` datetime DEFAULT NULL,
+  `ISDELETED` varchar(1) NOT NULL,
+  `ORGID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_BY` int(11) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(100) DEFAULT NULL,
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL,
+  `H_STATUS` varchar(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

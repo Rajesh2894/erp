@@ -1,0 +1,8 @@
+DROP FUNCTION IF EXISTS FN_RESET_ID;
+CREATE FUNCTION `FN_RESET_ID`() RETURNS int(11)
+begin
+    
+    SET @var=0;
+    return @var;
+    
+ end;

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropertyTaxIDB" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71273553-6bb1-49a1-a8bd-18e19a408d12">
+	<property name="ireport.zoom" value="1.0000000000000036"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="58958810-a3ad-4877-aa6a-17601ab1b64a">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["F:\\Paresh\\Project_product_Docs\\Product\\requirements\\Property\\Property_Tax_JAsper_Reports\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="orgName" class="java.lang.String"/>
+	<field name="deptNameL" class="java.lang.String"/>
+	<field name="noticeNoL" class="java.lang.String"/>
+	<field name="noticeDateL" class="java.lang.String"/>
+	<field name="propNoL" class="java.lang.String"/>
+	<field name="oldPropNoL" class="java.lang.String"/>
+	<field name="usageType1L" class="java.lang.String"/>
+	<field name="rvL" class="java.lang.String"/>
+	<field name="alvL" class="java.lang.String"/>
+	<field name="addressL" class="java.lang.String"/>
+	<field name="ward1L" class="java.lang.String"/>
+	<field name="ward2L" class="java.lang.String"/>
+	<field name="ward3L" class="java.lang.String"/>
+	<field name="ward4L" class="java.lang.String"/>
+	<field name="ward5L" class="java.lang.String"/>
+	<field name="ward1V" class="java.lang.String"/>
+	<field name="ward2V" class="java.lang.String"/>
+	<field name="ward3V" class="java.lang.String"/>
+	<field name="ward4V" class="java.lang.String"/>
+	<field name="ward5V" class="java.lang.String"/>
+	<field name="footerBody" class="java.lang.String"/>
+	<field name="noticeNoV" class="java.lang.String"/>
+	<field name="noticeDateV" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="addressV" class="java.lang.String"/>
+	<field name="totalRv" class="java.lang.Double"/>
+	<field name="totalAlv" class="java.lang.Double"/>
+	<field name="propNoV" class="java.lang.String"/>
+	<field name="oldPropNoV" class="java.lang.String"/>
+	<field name="footerSing" class="java.lang.String"/>
+	<field name="footerName" class="java.lang.String"/>
+	<field name="letterHeading" class="java.lang.String"/>
+	<field name="to" class="java.lang.String"/>
+	<field name="subjectL" class="java.lang.String"/>
+	<field name="subjectV" class="java.lang.String"/>
+	<field name="referenceL" class="java.lang.String"/>
+	<field name="referenceV" class="java.lang.String"/>
+	<field name="nameTitle" class="java.lang.String"/>
+	<field name="letterBody" class="java.lang.String"/>
+	<field name="propDetailsL" class="java.lang.String"/>
+	<field name="idNoL" class="java.lang.String"/>
+	<field name="floorL" class="java.lang.String"/>
+	<field name="constructionClassL" class="java.lang.String"/>
+	<field name="assessAreaL" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<field name="totalArea" class="java.lang.String"/>
+	<field name="usageType2L" class="java.lang.String"/>
+	<field name="usageType3L" class="java.lang.String"/>
+	<field name="usageType4L" class="java.lang.String"/>
+	<field name="usageType5L" class="java.lang.String"/>
+	<field name="noticeDueDateL" class="java.lang.String"/>
+	<field name="noticeDueDateV" class="java.lang.String"/>
+	<field name="assessmentDateL" class="java.lang.String"/>
+	<field name="assessmentDateV" class="java.lang.String"/>
+	<field name="specNotDetDtoList" class="java.util.List"/>
+	<background>
+		<band height="802">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="5c0f4f3a-83e9-4d95-b57b-b4fc08f820c5"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="800" uuid="17640099-6f94-41bc-baa5-13eb2b1e1976"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="800" uuid="34323b01-018c-4178-82f2-aa9cacc17cfe"/>
+			</line>
+			<line>
+				<reportElement x="0" y="800" width="555" height="1" uuid="e2a4dd67-37ed-4931-83b7-bf16bdeb5076"/>
+			</line>
+		</band>
+	</background>
+	<detail>
+		<band height="625" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="81" width="555" height="1" uuid="44ac071f-3b21-477c-90b5-6160939be3eb"/>
+			</line>
+			<textField>
+				<reportElement x="78" y="18" width="404" height="20" uuid="bb8aca03-3f1e-49f6-bf11-bb6651a72a3d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Unicode MS" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orgName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="48" width="283" height="20" uuid="46197a27-fb15-4e0a-a438-1149a5ee68b6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Unicode MS" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deptNameL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="155" width="100" height="15" uuid="ba6b7b66-48e7-4554-a664-074ce7be7441"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{to} + " , "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="28" y="517" width="496" height="32" uuid="b8d52fd7-6aa7-4a2c-a5d3-87c4f9a8cb9d"/>
+				<textElement>
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{footerBody} != null ? $F{footerBody} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="171" width="496" height="37" uuid="7d32b7bc-3552-4a09-ae49-57468e0387d9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name} != null ? $F{name} : "" + ","]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="19" y="419" width="509" height="1" uuid="9690bc83-1572-461c-8d44-e854a83cd8bd"/>
+			</line>
+			<subreport>
+				<reportElement x="18" y="494" width="511" height="20" uuid="464ce5cc-c5bc-40a5-aa6a-1700901305a0"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{specNotDetDtoList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "PropertyTaxSpecialNotice_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="54" y="449" width="50" height="20" uuid="e197f752-917d-4607-b58d-3a8f8c276093"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{floorL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="422" width="70" height="70" uuid="5a01fa5d-12d4-4a75-8b79-f5e459444765"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usageType1L} != null ? $F{usageType1L}: "" + "<br>" +
+$F{usageType2L} != null ? $F{usageType2L}: "" + "<br>" +
+$F{usageType3L} != null ? $F{usageType3L}: "" + "<br>" +
+$F{usageType4L} != null ? $F{usageType4L}: "" + "<br>" +
+$F{usageType5L} != null ? $F{usageType5L}: ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="449" width="150" height="20" uuid="36edb630-61ea-4183-97bf-9fbf86a0659b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{constructionClassL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="449" width="60" height="20" uuid="8b0f0f89-f030-4d14-9443-ddbda60b6e15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alvL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="105" y="419" width="1" height="74" uuid="08629ee7-683f-4668-ba29-bdfc1743dab5"/>
+			</line>
+			<line>
+				<reportElement x="178" y="419" width="1" height="74" uuid="4be60520-a0d6-4889-aa03-17c1f7aaec30"/>
+			</line>
+			<line>
+				<reportElement x="334" y="419" width="1" height="74" uuid="50c92898-dd34-41af-8fb6-d7f2b95ad0af"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="18" y="419" width="1" height="75" uuid="847435a7-98b1-4263-942c-2054ede889f1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="528" y="419" width="1" height="75" uuid="d7e18fe1-d6c5-4172-84b2-d3f8afef4f81"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="28" y="549" width="100" height="15" uuid="87562a08-aa30-406c-b198-226b6c86acae"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noticeDueDateL} + ":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="128" y="549" width="60" height="15" uuid="0baac5f7-bca5-42e1-a363-858d774e8ec1"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noticeDueDateV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="87" width="496" height="20" uuid="289d8242-1486-4002-9bc1-a6425e56d7c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{letterHeading}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="117" width="70" height="15" uuid="84e319aa-93dd-4bdd-8766-343a354ce19c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noticeNoL} != null ? $F{noticeNoL}+ " : " : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="132" width="70" height="15" uuid="512eed71-ead9-4a1b-8197-f6cf52dd39bd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noticeDateL} != null ? $F{noticeDateL}+ " : " : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="217" width="319" height="25" uuid="74c72d5d-10a6-4d5b-87d5-0992df409dc9"/>
+				<textElement>
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{addressV} != null ? $F{addressV} : "" +"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="263" width="70" height="15" uuid="1d5eb340-a913-45db-86d3-1d3ebd1eb6d1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subjectL} != null ? $F{subjectL}+ " : " : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="281" width="70" height="15" uuid="69e16610-c69e-47b1-bcb4-d7ed453a1cf7"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referenceL} + " : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="359" width="100" height="20" uuid="9756a6b4-58aa-4ddb-9586-89f79aef52c6"/>
+				<textElement>
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nameTitle} != null ? $F{nameTitle} + ",": " ,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="380" width="500" height="30" uuid="f227f4c8-7ea5-4940-8609-3d83b97a53e1"/>
+				<textElement>
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA["            "+$F{letterBody} != null ? $F{letterBody} + "." : ""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="52" y="419" width="1" height="74" uuid="0af46f63-3364-4367-bc51-b86ffb28d58e"/>
+			</line>
+			<textField>
+				<reportElement x="20" y="444" width="30" height="30" uuid="73704b60-a4cc-4b7b-8a6b-a2dc72c4cd04"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idNoL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="439" width="60" height="40" uuid="c47fda62-20f2-4496-8411-19b785cff1a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assessAreaL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="398" y="419" width="1" height="74" uuid="e8cfa7e4-43c3-4e97-a8c7-d0e5803b2d97"/>
+			</line>
+			<textField>
+				<reportElement x="465" y="449" width="60" height="20" uuid="4ed00bfd-fac7-41fd-9339-b8ddec894d71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rvL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="462" y="419" width="1" height="74" uuid="e4a34f31-eed6-49d7-a9b8-14efd1d586d6"/>
+			</line>
+			<textField>
+				<reportElement x="417" y="117" width="80" height="15" uuid="a20d479b-cd43-4761-84df-ee8bfb3570f8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noticeNoV} != null ? $F{noticeNoV} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="132" width="80" height="15" uuid="c6a9873f-a5c7-444a-922a-55cec383a7c4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noticeDateV} != null ? $F{noticeDateV} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="263" width="345" height="15" uuid="1756ad7f-ba6f-4220-8aa8-ed9b64e3a65e"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subjectV} != null ? $F{subjectV} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="281" width="80" height="15" uuid="95b678ec-5c32-4529-ba18-807738d008f6"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{propNoL} != null ? $F{propNoL} + " : " : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="281" width="112" height="15" uuid="681e5c29-ccb2-4e74-a2fa-72fcd997ba26"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{propNoV} != null ? $F{propNoV} + " ," : " ,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="281" width="97" height="15" uuid="bd448624-20ec-44dc-98b4-240be1bbf3dc"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assessmentDateL} != null ? $F{assessmentDateL} + " : "  : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="281" width="80" height="15" uuid="28377645-41f2-4b35-95d4-bce557fba2ca"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assessmentDateV} !=null ? $F{assessmentDateV} + "." : " ."]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="298" width="80" height="15" isRemoveLineWhenBlank="true" uuid="1cc14f61-a847-4c11-96b0-31b743a39a3a"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward1L} != null ? $F{ward1L} + ":" : null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="390" y="298" width="80" height="15" uuid="65764572-e6ff-439c-a1e1-dad730fab22f"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward2V} != null ? $F{ward2V}: null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="230" y="298" width="80" height="15" uuid="7e79a990-3c9b-40d7-879c-ad35341546b7"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward1V} != null ? $F{ward1V}: null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="310" y="298" width="80" height="15" isRemoveLineWhenBlank="true" uuid="f5ed9b6b-5c82-415d-bec5-7db9c0e8cf42"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward2L} != null ? $F{ward2L} + ":" : null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="310" y="314" width="80" height="15" isRemoveLineWhenBlank="true" uuid="178bb27c-a218-4abf-b27d-bd5bed955bb0"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward4L} != null ? $F{ward4L}+ ":" : null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="314" width="80" height="15" isRemoveLineWhenBlank="true" uuid="bdd8f254-c639-4dd7-8e71-05fb2500da88"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward3L} != null ? $F{ward3L}+ ":" : null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="390" y="314" width="80" height="15" isRemoveLineWhenBlank="true" uuid="9e8cc666-f389-49e2-9ed9-4b35c51c5964"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward4V} != null ? $F{ward4V}: null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="230" y="314" width="80" height="15" isRemoveLineWhenBlank="true" uuid="1600b496-4220-4347-a190-0e504ab95366"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward3V} != null ? $F{ward3V}: null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="230" y="330" width="80" height="15" isRemoveLineWhenBlank="true" uuid="ee483ca6-0e7a-4f2a-803d-36d2325c4acc"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="false"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward5V} != null ? $F{ward5V}: null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="330" width="80" height="15" isRemoveLineWhenBlank="true" uuid="a29eca5a-7c9a-4fdf-9797-93ed79ebf380"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward5L} != null ? $F{ward5L}+ ":": null]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="19" y="493" width="509" height="1" uuid="25bb6076-7d81-42ac-bff9-2efba473e969"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="80">
+			<textField>
+				<reportElement positionType="Float" x="373" y="55" width="169" height="20" uuid="f648a003-346b-4577-9d01-9797ea6b729a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orgName}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement positionType="Float" x="425" y="6" width="75" height="32" uuid="799fa050-8988-48fd-acfe-3fa29161eddf"/>
+				<imageExpression><![CDATA[$F{footerSing}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement positionType="Float" x="373" y="38" width="169" height="17" uuid="7914b309-639b-41f4-97b0-69eba3c12719"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{footerName} != null ? $F{footerName} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

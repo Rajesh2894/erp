@@ -1,0 +1,1 @@
+Copy com folder to [WILD_FLY_HOME_DIR]/modules/

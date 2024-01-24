@@ -1,0 +1,19 @@
+--liquibase formatted sql
+--changeset Kanchan:V20221222112629__CR_tb_vm_vehicle_maintenance_22122022.sql
+CREATE TABLE tb_vm_vehicle_maintenance (
+  VE_MEID bigint(12) NOT NULL,
+  VE_VETYPE bigint(12) DEFAULT NULL,
+  VE_MAINDAY bigint(3) DEFAULT NULL,
+  VE_MAINUNIT bigint(12) DEFAULT NULL,
+  VE_DOWNTIME bigint(3) DEFAULT NULL,
+  VE_DOWNTIMEUNIT bigint(12) DEFAULT NULL,
+  VE_MEACTIVE char(1) DEFAULT NULL,
+  ORGID bigint(12) DEFAULT NULL,
+  CREATED_BY bigint(12) DEFAULT NULL,
+  CREATED_DATE datetime DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  UPDATED_BY bigint(12) DEFAULT NULL,
+  LG_IP_MAC varchar(100) DEFAULT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (VE_MEID)
+) ;

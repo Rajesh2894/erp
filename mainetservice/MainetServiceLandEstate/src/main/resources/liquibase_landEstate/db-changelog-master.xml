@@ -1,0 +1,14 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<!--	<include file="src\main\resources\db\mysql\Table\V20190801114252__CR_TB_LN_AQUISN_01082019.sql"/>
+		<include file="src\main\resources\db\mysql\Table\V20190813142541__AL_TB_EST_AQUISN_13082019.sql"/>
+		<include file="src\main\resources\db\mysql\Table\V20190813145441__AL_tb_est_aquisn_13082019.sql"/>
+		<include file="src\main\resources\db\mysql\Table\V20190827110913__AL_tb_est_aquisn_27082019.sql"/>
+		<include file="src\main\resources\db\mysql\Table\V20190905132538__AL_tb_est_aquisn_05092019.sql"/>
+		<include file="src\main\resources\db\mysql\Table\V20190910112723__AL_tb_est_aquisn_10092019.sql"/> -->
+	
+</databaseChangeLog>

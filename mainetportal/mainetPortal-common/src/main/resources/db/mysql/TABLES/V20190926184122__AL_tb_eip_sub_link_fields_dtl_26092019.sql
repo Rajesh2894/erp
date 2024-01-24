@@ -1,0 +1,10 @@
+--liquibase formatted sql
+--changeset Anil:V20190926184122__AL_tb_eip_sub_link_fields_dtl_26092019.sql
+ALTER TABLE tb_eip_sub_link_fields_dtl
+CHANGE COLUMN PROFILE_IMG_PATH PROFILE_IMG_PATH LONGTEXT NULL DEFAULT NULL COMMENT 'Image Path of Profile' ,
+CHANGE COLUMN ATT_VIDEO_PATH ATT_VIDEO_PATH LONGTEXT NULL DEFAULT NULL COMMENT 'Video Upload Path' ;
+--liquibase formatted sql
+--changeset Anil:V20190926184122__AL_tb_eip_sub_link_fields_dtl_260920191.sql
+ALTER TABLE tb_eip_sub_link_fields_dtl_hist
+CHANGE COLUMN PROFILE_IMG_PATH PROFILE_IMG_PATH LONGTEXT NULL DEFAULT NULL COMMENT 'Image Path of Profile' ,
+CHANGE COLUMN ATT_VIDEO_PATH ATT_VIDEO_PATH LONGTEXT NULL DEFAULT NULL COMMENT 'Video Upload Path' ;

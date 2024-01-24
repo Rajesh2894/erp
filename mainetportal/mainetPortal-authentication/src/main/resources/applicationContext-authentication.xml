@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ldap="http://www.springframework.org/schema/ldap"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-4.2.xsd
+						http://www.springframework.org/schema/ldap 
+						http://www.springframework.org/schema/ldap/spring-ldap.xsd">
+
+
+	<ldap:context-source id="ldapContextSource" url="${ldap.url}"
+		username="${ldap.securityPrincipal}" password="${ldap.securityCredential}"
+		base="${ldap.userContextParentDN}" anonymous-read-only="false" />
+
+	<ldap:ldap-template id="ldapTemplate"
+		context-source-ref="ldapContextSource" />
+	<bean id="springLDAPAuthModule"
+		class="com.abm.mainet.common.authentication.ldap.SpringLDAPAuthenticationModule">
+		<property name="ldapTemplate" ref="ldapTemplate" />
+		<property name="userBaseDN">
+			<value>${ldap.userContextParentDN}</value>
+		</property>
+		<property name="userAccountKey">
+			<value>${ldap.userAccountKey}</value>
+		</property>
+	</bean>
+	<!-- <bean id="mockAuthModule" class="com.abm.mainet.common.authentication.ldap.MockAuthenticationModule" 
+		/> -->
+	<bean id="authManager"
+		class="com.abm.mainet.common.authentication.ldap.AuthenticationManager">
+		<property name="authModule" ref="springLDAPAuthModule" />
+		<!-- <property name="authModule" ref="mockAuthModule" /> -->
+		<property name="useLdap">
+			<value>${ldap.enabled}</value>
+		</property>
+		<!-- <property name="jWTManager" ref="jWTManager" /> -->
+	</bean>
+	<!-- <bean id="ldapManager" class="com.abm.mainet.common.authentication.ldap.MockLDAPManager"/> -->
+	<bean id="ldapManager" class="com.abm.mainet.common.authentication.ldap.LDAPManager">
+		<property name="ldapTemplate" ref="ldapTemplate" />
+		<property name="userBaseDN">
+			<value>${ldap.userContextParentDN}</value>
+		</property>
+		<property name="userAccountKey">
+			<value>${ldap.userAccountKey}</value>
+		</property>
+		<property name="useLdap">
+			<value>${ldap.enabled}</value>
+		</property>
+	</bean>
+
+	<context:component-scan
+		base-package="com.abm.mainet.authentication.security.configuration,
+                                       com.abm.mainet.authentication.admin.service,
+                                       com.abm.mainet.authentication.admin.ui.model,
+                                       com.abm.mainet.authentication.agency.service,
+                                       com.abm.mainet.authentication.agency.ui.model,
+                                       com.abm.mainet.authentication.agency.ui.validator,
+                                       com.abm.mainet.authentication.citizen.service,
+                                       com.abm.mainet.authentication.citizen.ui.model,
+                                       com.abm.mainet.autherization.service,
+                                       com.abm.mainet.autherization.dao"
+		annotation-config="true">
+
+	</context:component-scan>
+
+</beans>

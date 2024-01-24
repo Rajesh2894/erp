@@ -1,0 +1,187 @@
+delete from tb_challan_det;
+delete from tb_challan_det_hist;
+delete from tb_challan_master;
+delete from tb_challan_master_hist;
+delete from tb_attach_cfc;
+delete from tb_attach_cfc_hist;
+delete from tb_attach_document
+delete from tb_hearing_mas;
+delete from tb_holiday_mas;
+delete from tb_mobile_onl_payment_trans;
+delete from tb_notice_mas;
+delete from tb_inspection_mas;
+delete from tb_objection_mast;
+delete from tb_receipt_det;
+delete from tb_receipt_mode;
+delete from tb_receipt_mas;
+delete from tb_attach_cfc;
+delete from tb_attach_document;
+delete from tb_rti_media_details;
+delete from tb_rti_application;
+delete from tb_cfc_application_address;
+delete from tb_cfc_application_mst;
+delete from tb_workflow_action;
+delete from tb_workflow_task;
+delete from tb_workflow_request;
+delete from TB_CONTRACT_DETAIL;
+delete from TB_CONTRACT_INSTALMENT_DETAIL;
+delete from TB_CONTRACT_PART1_DETAIL;
+delete from TB_CONTRACT_PART2_DETAIL;
+delete from TB_CONTRACT_TERMS_DETAIL;
+delete from TB_CONTRACT_MAST;
+delete from designation_hist;
+delete from employee_hist;
+delete from tb_workflow_det;
+delete from tb_workflow_mas;
+commit;
+
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_document');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_hearing_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_holiday_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_mobile_onl_payment_trans');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_notice_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_objection_mast');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_det');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mode');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_media_details');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_application');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_inspection_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_address');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_mst');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_action');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_task');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_request');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_INSTALMENT_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_MAST');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART1_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART2_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_TERMS_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='employee_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='designation_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_det');
+delete from _sequences where  name in (select sq_seq_name  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_mas');
+commit;
+
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det_hist';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master_hist';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc_hist';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_document';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_hearing_mas';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_holiday_mas';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_mobile_onl_payment_trans';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_notice_mas';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_inspection_mas';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_objection_mast';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_det';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mode';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mas';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_media_details';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_application';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_address';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_mst';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_action';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_task';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_request';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_DETAIL';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_INSTALMENT_DETAIL';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART1_DETAIL';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART2_DETAIL';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_TERMS_DETAIL';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_MAST';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='employee_hist';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='designation_hist';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_det';
+delete  from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_mas';
+
+commit;
+
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_document');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_hearing_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_holiday_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_mobile_onl_payment_trans');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_notice_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_objection_mast');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_det');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mode');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_media_details');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_application');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_inspection_mas');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_address');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_mst');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_action');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_task');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_request');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_INSTALMENT_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_MAST');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART1_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART2_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_TERMS_DETAIL');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='employee_hist');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_det');
+delete from _sequences where  name in (select sq_seq_name  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_mas');
+
+
+commit;
+
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_det_hist';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_challan_master_hist';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_cfc_hist';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_attach_document';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_hearing_mas';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_holiday_mas';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_mobile_onl_payment_trans';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_notice_mas';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_inspection_mas';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_objection_mast';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_det';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mode';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_receipt_mas';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_media_details';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_rti_application';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_address';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_cfc_application_mst';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_action';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_task';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_request';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_DETAIL';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_INSTALMENT_DETAIL';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_MAST';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART1_DETAIL';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_PART2_DETAIL';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='TB_CONTRACT_TERMS_DETAIL';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='employee_hist';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='designation_hist';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_det';
+delete  from TB_SEQ_GENERATION where SQ_TBL_NAME='tb_workflow_mas';
+commit;
+
+
+
+
+
+
+
+
+

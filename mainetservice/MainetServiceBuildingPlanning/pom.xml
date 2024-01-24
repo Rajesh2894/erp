@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>MainetServiceBuildingPlanning</artifactId>
+	<version>${mainet.service.buildingplanning.version}</version>
+	<packaging>jar</packaging>
+  
+	  <parent>
+	    <groupId>com.abm.mainet</groupId>
+	    <artifactId>MainetServiceParent</artifactId>
+	    <version>${mainet.service.parent.version}</version>
+	  </parent>
+  
+  <dependencies>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceCommon</artifactId>
+			<version>${mainet.service.common.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.liquibase</groupId>
+					<artifactId>liquibase-maven-plugin</artifactId>
+					<version>3.5.3</version>
+					<configuration>
+						<skip>false</skip>
+						<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+						<propertyFile>${liquibaseProperty}</propertyFile>
+						<changeLogFile>src/main/resources/liquibase_building-plan/db-changelog-master.xml</changeLogFile>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>process-resources</phase>
+							<goals>
+								<goal>update</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+ 
+</project>

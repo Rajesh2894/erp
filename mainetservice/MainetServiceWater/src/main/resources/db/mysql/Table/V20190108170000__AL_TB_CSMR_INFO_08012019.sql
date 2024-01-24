@@ -1,0 +1,21 @@
+--liquibase formatted sql
+--changeset nilima:V20190108170000__AL_TB_CSMR_INFO_08012019.sql
+ALTER TABLE tb_csmr_info 
+ADD COLUMN CS_TAXPAYER_PANNO VARCHAR(10) NULL COMMENT 'Tax Payer Pan Numer ' AFTER CS_DCLNU;
+
+--liquibase formatted sql
+--changeset nilima:V20190108170000__AL_TB_CSMR_INFO_080120191.sql
+ALTER TABLE tb_csmr_info_hist 
+ADD COLUMN CS_TAXPAYER_PANNO VARCHAR(10) NULL COMMENT 'Tax Payer Pan Numer ' AFTER CS_DCLNU;
+
+
+--liquibase formatted sql
+--changeset nilima:V20190108170000__AL_TB_CSMR_INFO_080120192.sql
+ALTER TABLE TB_CSMR_INFO 
+ADD COLUMN CS_PTYPE VARCHAR(1) NULL COMMENT 'U->Ulb l->License Pulmber' AFTER CS_TAXPAYER_PANNO ;
+
+--liquibase formatted sql
+--changeset nilima:V20190108170000__AL_TB_CSMR_INFO_080120193.sql
+ALTER TABLE TB_CSMR_INFO_HIST
+ADD COLUMN CS_PTYPE VARCHAR(1) NULL COMMENT 'U->Ulb l->License Pulmber' AFTER CS_TAXPAYER_PANNO ;
+

@@ -1,0 +1,25 @@
+CREATE TABLE `tb_ac_secondaryhead_master` (
+  `sac_head_id` bigint(20) NOT NULL COMMENT 'Primary Key',
+  `codcofdet_id` bigint(20) DEFAULT NULL COMMENT 'FK TB_AC_CODINGSTRUCTURE_DET',
+  `pac_head_id` bigint(20) DEFAULT NULL COMMENT 'FK TB_AC_PRIMARYHEAD_MASTER',
+  `sac_leddger_type_cpd_id` bigint(20) DEFAULT NULL COMMENT 'CPD_id Ledger type Bank/Vendor/other',
+  `sac_sub_leddger_type_cpd_id` bigint(20) DEFAULT NULL COMMENT 'CPD_id Ledger type - SubLedger type for other',
+  `vm_vendorid` bigint(20) DEFAULT NULL COMMENT 'FK TB_AC_VENDORMASTER',
+  `ba_accountid` bigint(20) DEFAULT NULL COMMENT 'FK  TB_BANKACCOUNT',
+  `sac_head_code` varchar(10) DEFAULT NULL COMMENT 'SECONDARY  ACCOUNT Code',
+  `sac_head_desc` varchar(500) CHARACTER SET utf8 DEFAULT NULL COMMENT 'SECONDARY  ACCOUNT Description',
+  `orgid` smallint(6) NOT NULL COMMENT 'Organization id',
+  `user_id` int(11) NOT NULL COMMENT 'User id',
+  `lang_id` smallint(6) NOT NULL COMMENT 'Language id',
+  `lmoddate` datetime NOT NULL COMMENT 'Entry Date',
+  `updated_by` int(11) DEFAULT NULL COMMENT 'Updated by',
+  `updated_date` datetime DEFAULT NULL COMMENT 'Updated Date',
+  `lg_ip_mac` varchar(100) DEFAULT NULL COMMENT 'Client Machine?s Login Name | IP Address | Physical Address',
+  `lg_ip_mac_upd` varchar(100) DEFAULT NULL COMMENT 'Updated Client Machine?s Login Name | IP Address | Physical Address',
+  `fi04_n1` bigint(20) DEFAULT NULL COMMENT 'Additional number FI04_N1 to be used in future',
+  `fi04_v1` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Additional nvarchar2 FI04_V1 to be used in future',
+  `fi04_d1` datetime DEFAULT NULL COMMENT 'Additional Date FI04_D1 to be used in future',
+  `fi04_lo1` char(1) DEFAULT NULL COMMENT 'Additional Logical field FI04_LO1 to be used in future',
+  PRIMARY KEY (`sac_head_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

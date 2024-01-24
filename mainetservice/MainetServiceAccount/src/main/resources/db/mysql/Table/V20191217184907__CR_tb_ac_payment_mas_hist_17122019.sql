@@ -1,0 +1,50 @@
+--liquibase formatted sql
+--changeset Anil:V20191217184907__CR_tb_ac_payment_mas_hist_17122019.sql
+drop table if exists tb_ac_payment_mas_hist;
+--liquibase formatted sql
+--changeset Anil:V20191217184907__CR_tb_ac_payment_mas_hist_171220191.sql
+CREATE TABLE tb_ac_payment_mas_hist(
+  PAYMENT_ID_H bigint(12) NOT NULL COMMENT 'Primary Key',
+  PAYMENT_ID bigint(12) NOT NULL COMMENT 'payment id',
+  PAYMENT_NO varchar(24) DEFAULT NULL COMMENT 'Payment number system generated',
+  PAYMENT_DATE datetime DEFAULT NULL COMMENT 'payment Date',
+  CPD_ID_BILLTYPE bigint(12) DEFAULT NULL COMMENT 'Bill type prefix BBT - ref tb_comparam_det ',
+  DPS_SLIPID bigint(12) DEFAULT NULL COMMENT 'Deposit Slip id',
+  VM_VENDORID bigint(12) DEFAULT NULL COMMENT 'Vendor id- ref tb_vendormaster ',
+  CPD_ID_PAYMENT_MODE bigint(12) DEFAULT NULL COMMENT 'Payment Mode  from PAY prefix',
+  BA_ACCOUNTID bigint(12) DEFAULT NULL COMMENT 'Ref. Key -TB_BANK_ACCOUN',
+  INSTRUMENT_NUMBER bigint(12) DEFAULT NULL COMMENT 'Cheque Number/ RTGS ref. Number/ NFT ref. Number etc.',
+  INSTRUMENT_DATE datetime DEFAULT NULL COMMENT 'Cheque Date/ RTGS Date/ NFT Date etc.',
+  PAYMENT_AMOUNT decimal(15,2) DEFAULT NULL COMMENT 'Payment Amount',
+  NARRATION varchar(2000) DEFAULT NULL COMMENT 'Narration / Remark',
+  ORGID bigint(12) DEFAULT NULL COMMENT 'Organisation Id',
+  CREATED_BY bigint(12) NOT NULL COMMENT 'user id who created the record',
+  CREATED_DATE datetime NOT NULL COMMENT 'record creation date',
+  UPDATED_BY bigint(12) DEFAULT NULL COMMENT 'User id who update the data',
+  UPDATED_DATE datetime DEFAULT NULL COMMENT 'Date on which data is going to update',
+  LG_IP_MAC varchar(100) NOT NULL COMMENT 'client machine''s login name | ip address | physical address',
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL COMMENT 'Updated Client Machine?s Login Name | IP Address | Physical Address',
+  AUTHO_ID int(11) DEFAULT NULL COMMENT 'Authoer Id',
+  AUTHO_DATE datetime DEFAULT NULL COMMENT 'Sysdate',
+  AUTHO_FLG char(1) DEFAULT NULL COMMENT 'Flag',
+  PAYMENT_TYPE_FLAG int(1) DEFAULT NULL COMMENT 'Payment Type flag (0->Bill Payment 1->Direct Payment)',
+  PAYMENT_DEL_FLAG char(1) DEFAULT NULL COMMENT 'Payment Deletion Flag',
+  PAYMENT_DEL_DATE datetime DEFAULT NULL COMMENT 'Payment Deletion Date',
+  PAYMENT_DEL_ORDER_NO varchar(20) DEFAULT NULL COMMENT 'Payment Deletion order no',
+  FIELDID bigint(12) DEFAULT NULL COMMENT 'Update from Reconciliation form  - if discrepancy is found update "Y" else default "N"',
+  DPAYBILLREF_NO varchar(1000) DEFAULT NULL COMMENT 'Update from Reconciliation form - if discrepancy is found then enter discrepancy details.',
+  CHEQUE_CLEARANCE_DATE datetime DEFAULT NULL COMMENT 'Clearance Date / Date of Realization update from Bank Reconciliation Entry ',
+  PAYMENT_DEL_POSTING_DATE datetime DEFAULT NULL COMMENT 'Payment Deletion posting date',
+  PAYMENT_DEL_AUTH_BY bigint(12) DEFAULT NULL COMMENT 'Payment Deletion Authorised by',
+  PAYMENT_DEL_REMARK varchar(500) DEFAULT NULL COMMENT 'Payment Deletion Remark',
+  PDM_ID bigint(12) DEFAULT NULL,
+  TRAN_REFNO varchar(16) DEFAULT NULL,
+  H_STATUS varchar(2) DEFAULT NULL,
+  PRIMARY KEY (PAYMENT_ID_H),
+  KEY FK_CONTRA_DPS_SLIPID1(DPS_SLIPID),
+  KEY FK_CPD_ID_BILLTYPE1 (CPD_ID_BILLTYPE),
+  KEY FK_CPD_ID_PAYMENT_MODE1 (CPD_ID_PAYMENT_MODE),
+  KEY FK_PAYMENT_BA_ACCOUNTID1 (BA_ACCOUNTID),
+  KEY FK_PAYMENT_VM_VENDORID1 (VM_VENDORID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

@@ -1,0 +1,34 @@
+$(document).ready(function() {
+
+});
+
+function backPage() {
+
+	window.location.href = getLocalMessage("AdminHome.html");
+}
+
+function printdiv(printpage) {
+
+	var headstr = "<html><head><title></title></head><body>";
+	var footstr = "</body>";
+	var newstr = document.all.item(printpage).innerHTML;
+	var oldstr = document.body.innerHTML;
+	document.body.innerHTML = headstr + newstr + footstr;
+	window.print();
+	document.body.innerHTML = oldstr;
+	return false;
+}
+
+function cancelLicenseNumber(obj) {
+	
+	var errorList = [];
+	if (errorList.length == 0) {
+		return saveOrUpdateForm(obj,
+				"License Cancelled Successfully", "CancellationLicense.html?getLicensePrint",
+				'cancelLicenseNumber');
+		
+	}else {
+		displayErrorsOnPage(errorList);
+	}
+	}
+

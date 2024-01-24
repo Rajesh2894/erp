@@ -1,0 +1,32 @@
+--liquibase formatted sql
+--changeset nilima:V20181201143038__CR_TB_SW_SLRM2_30112018.sql
+CREATE TABLE TB_SW_SLRM2(
+SLRM_ID bigint(12) NOT NULL,
+SLRM_CName varchar(200),	
+SLRM_CNO   varchar(200),	
+SLRM_Date  Date,	
+SLRM_TAPAW decimal(15,2) ,	
+SLRM_TAPW	decimal(15,2) ,
+SLRM_TACBW	decimal(15,2) ,
+SLRM_TAGW	decimal(15,2) ,
+SLRM_TAMW	decimal(15,2) ,
+SLRM_TARW	decimal(15,2) ,
+SLRM_TALW	decimal(15,2) ,
+SLRM_TATW	decimal(15,2) ,
+SLRM_TACW	decimal(15,2) ,
+SLRM_TAWW	decimal(15,2) ,
+SLRM_TAPVCW	decimal(15,2) ,
+SLRM_TAPoW	decimal(15,2) ,
+SLRM_TACEW	decimal(15,2) ,
+SLRM_TCOM   decimal(15,2) ,
+SLRM_TBP	decimal(15,2) ,
+SLRM_TLAND  decimal(15,2) ,
+ORGID bigint(12) ,
+CREATED_BY bigint(12) ,
+CREATED_DATE datetime ,
+UPDATED_BY bigint(12) ,
+UPDATED_DATE datetime ,
+LG_IP_MAC varchar(100) ,
+LG_IP_MAC_UPD varchar(100) ,
+PRIMARY KEY (SLRM_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

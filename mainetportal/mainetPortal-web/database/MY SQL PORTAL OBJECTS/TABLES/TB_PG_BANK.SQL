@@ -1,0 +1,10 @@
+CREATE TABLE `tb_pg_bank` (
+  `BM_BANKID` decimal(12,0) NOT NULL,
+  `PB_MERCHANTID` varchar(40) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `LANG_ID` int(11) DEFAULT NULL,
+  `LMODDATE` datetime DEFAULT NULL,
+  `ORGID` int(11) DEFAULT NULL,
+  `BM_ACTIVE` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

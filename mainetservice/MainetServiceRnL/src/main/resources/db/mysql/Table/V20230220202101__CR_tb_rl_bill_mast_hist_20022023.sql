@@ -1,0 +1,31 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230220202101__CR_tb_rl_bill_mast_hist_20022023.sql
+CREATE TABLE tb_rl_bill_mast_hist (
+  bm_bmno_h bigint(20) NOT NULL,
+  bm_bmno bigint(20) NOT NULL,
+  cont_id bigint(20) NOT NULL,
+  bm_billdate date NOT NULL,
+  bm_amount decimal(15,2) NOT NULL,
+  bm_paid_amt decimal(15,2) DEFAULT NULL,
+  bm_balance_amt decimal(15,2) DEFAULT NULL,
+  bm_paid_flag char(1) NOT NULL,
+  bm_active char(1) NOT NULL,
+  orgid bigint(20) NOT NULL,
+  created_by bigint(20) NOT NULL,
+  updated_by bigint(20) DEFAULT NULL,
+  updated_date datetime DEFAULT NULL,
+  lg_ip_mac varchar(100) DEFAULT NULL,
+  lg_ip_mac_upd varchar(100) DEFAULT NULL,
+  conit_id bigint(20) NOT NULL,
+  bm_billno bigint(20) DEFAULT NULL,
+  bm_due_date date DEFAULT NULL,
+  bm_paymnet_date date DEFAULT NULL,
+  Created_date date DEFAULT NULL,
+  TAX_ID bigint(20) NOT NULL,
+  bm_start_date date DEFAULT NULL,
+  bm_type char(1) DEFAULT NULL,
+  bm_remark varchar(45) DEFAULT NULL,
+  partial_paid_amt decimal(15,2) DEFAULT NULL,
+  partial_paid_flag char(1) DEFAULT NULL,
+  PRIMARY KEY (bm_bmno_h)
+);

@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220308132127__AL_TB_WMS_WORKDEFINATION_YEAR_DET_08032022.sql
+Alter table TB_WMS_WORKDEFINATION_YEAR_DET modify column YE_FINANCE_CODE_DESC varchar(100) NULL DEFAULT NULL;

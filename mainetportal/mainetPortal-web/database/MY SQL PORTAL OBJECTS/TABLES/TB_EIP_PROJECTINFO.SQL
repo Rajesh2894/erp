@@ -1,0 +1,17 @@
+CREATE TABLE `tb_eip_projectinfo` (
+  `INFO_ID` decimal(12,0) NOT NULL,
+  `TTL_DESC_EN` varchar(1000) NOT NULL,
+  `TTL_DESC_REG` varchar(1000) NOT NULL,
+  `INFO_DESC_EN` varchar(1000) NOT NULL,
+  `INFO_DESC_REG` varchar(1000) NOT NULL,
+  `ISDELETED` varchar(1) NOT NULL,
+  `ORGID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `CREATED_DATE` datetime DEFAULT NULL,
+  `UPDATED_BY` varchar(1000) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(1000) DEFAULT NULL,
+  `LG_IP_MAC_UPD` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

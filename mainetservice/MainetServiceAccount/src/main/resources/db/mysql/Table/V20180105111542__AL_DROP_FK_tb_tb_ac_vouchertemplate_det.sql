@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset jinea:V20180105111542__AL_DROP_FK_tb_tb_ac_vouchertemplate_det.sql
+ALTER TABLE tb_ac_vouchertemplate_det DROP KEY FK_TEMP_BUDGETCODE_ID;

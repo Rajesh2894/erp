@@ -1,0 +1,1 @@
+alter table TB_AS_ASSESMENT_OWNER_DTL change asso_addharno BIGINT not null;

@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="adhSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/rest/adh"></property>
+		<property name="title" value=" ADH Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>	
+	</bean>
+    <bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+    
+    <jaxrs:server address="/rest/adh" id="adh">
+   	 <jaxrs:serviceBeans>
+   		<bean class="com.abm.mainet.adh.service.NewAdvertisementApplicationServiceImpl" id="newAdvertisementApplication" /> 
+   	    <bean class="com.abm.mainet.adh.service.AdvertiserMasterServiceImpl" id="agencyMasterService"/> 
+   	    <bean class="com.abm.mainet.adh.service.NewHoardingApplicationServiceImpl" id="newHoardingApplication" /> 
+   	    <bean class="com.abm.mainet.adh.service.BRMSADHServiceImpl" id="brmsAdhService"/> 	
+   	</jaxrs:serviceBeans>
+   	<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" >
+				<property name="mapper">
+					<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+					  <property name="serializationConfig.dateFormat">
+					    <bean class="java.text.SimpleDateFormat">
+					      <constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+					    </bean>
+					  </property>
+					</bean>
+				</property>
+			</bean>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler" />
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="adhSwagger2Feature" />
+            <ref bean="commonValidationFeature"/>
+        </jaxrs:features>       
+    </jaxrs:server>
+       <jaxws:endpoint address="/newAdvApplicationService" id="newAdvApplicationService" implementor="com.abm.mainet.adh.service.NewAdvertisementApplicationServiceImpl"/> 
+      <jaxws:endpoint  address="/newAgencyService" id="newAgencyService" implementor="com.abm.mainet.adh.service.AdvertiserMasterServiceImpl"/>
+      <jaxws:endpoint  address="/newHoardingAppService" id="newHoardingAppService" implementor="com.abm.mainet.adh.service.NewHoardingApplicationServiceImpl"/>
+      <jaxws:endpoint  address="/brmsAdhService" id="brmsAdhService" implementor="com.abm.mainet.adh.service.BRMSADHServiceImpl"/>
+</beans>

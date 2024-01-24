@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="mailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
+		<property name="host" value="${host}" />
+		<property name="port" value="${port}" />
+		<property name="username" value="${emailUsername}" />
+		<property name="password" value="${emailPassword}" />
+		<property name="javaMailProperties">
+		<props>
+		    <prop key="mail.transport.protocol">${mail.transport.protocol}</prop>
+			<prop key="mail.smtp.starttls.enable">${mail.smtp.auth}</prop>
+			<prop key="mail.smtp.auth">${mail.smtp.starttls.enable}</prop>
+		</props>
+		</property>
+	</bean>
+</beans>  
+

@@ -1,0 +1,31 @@
+--liquibase formatted sql
+--changeset jinea:V20180105111711__AL_TB_WMS_SCHEME_MAST_HIST.sql
+CREATE TABLE TB_WMS_ROAD_CUTTING_DET_HIST (
+  RCD_ID_H bigint(12) NOT NULL,
+  RCD_ID bigint(12) ,
+  RC_ID bigint(12) ,
+  RCD_TECTYPE bigint(12)  COMMENT 'Type of Technology',
+  RCD_STARTPOINT varchar(500)  COMMENT 'ROAD/ROUTE DESC',
+  RCD_ENDPOINT varchar(500) ,
+  RCD_ROADtYPE bigint(12)  COMMENT 'Road Type ',
+  RCD_NO bigint(12)  COMMENT 'Numbers',
+  RCD_LENGTH decimal(15,3)  COMMENT 'Length in (Meter)',
+  RCD_BREADTH decimal(15,3)  COMMENT 'Breadth (Meter)',
+  RCD_HEIGHT decimal(15,3)  COMMENT 'Height ',
+  RCD_DIAMETER decimal(15,3)  COMMENT 'Diameter ',
+  LOC_ID bigint(12)  COMMENT 'Location ',
+  RCD_COMPLETIONDT date ,
+  RCD_STARTLOGITUDE varchar(100) ,
+  RCD_STARTLATITUDE varchar(100) ,
+  RCD_ENDLOGITUDE varchar(100) ,
+  RCD_QTY decimal(15,2) ,
+  H_STATUS char(1) COMMENT 'History Status',
+  ORGID bigint(12)  COMMENT 'organization id',
+  CREATED_BY bigint(12)  COMMENT 'user id who created the record',
+  CREATED_DATE datetime  COMMENT 'record creation date',
+  UPDATED_BY bigint(12)  COMMENT 'user id who updated the record',
+  UPDATED_DATE datetime  COMMENT 'date on which updated the record',
+  LG_IP_MAC varchar(100)  COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD varchar(100)  COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (RCD_ID_H)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,30 @@
+--liquibase formatted sql
+--changeset nilima:V20180818160510__CR_tb_lgl_advocate_mas_hist.sql
+CREATE TABLE tb_lgl_advocate_mas_hist (
+  adv_id_h BIGINT(12) NOT NULL COMMENT 'primary key',
+  adv_id BIGINT(12)  COMMENT 'primary key',
+  adv_first_nm VARCHAR(100)  COMMENT 'Advocate First Name',
+  adv_middle_nm VARCHAR(100)  COMMENT 'advocate middle name',
+  adv_last_nm VARCHAR(100)  COMMENT 'advocate last name',
+  adv_gen BIGINT(12)  COMMENT 'Gender',
+  adv_dob DATE  COMMENT 'Date of Birth',
+  adv_mobile VARCHAR(30)  COMMENT 'Mobile No',
+  adv_email VARCHAR(100)  COMMENT 'Email Id',
+  adv_address VARCHAR(200)  COMMENT 'Address',
+  adv_panno VARCHAR(10)  COMMENT 'Pan number',
+  adv_uid VARCHAR(28)  COMMENT 'Adhar no.',
+  adv_experience BIGINT(3)  COMMENT 'Experience',
+  adv_appfromdate DATE  COMMENT 'Appointment From Date',
+  adv_apptodate DATE  COMMENT 'Appointment Todate',
+  adv_maritalstatus CHAR(1) ,
+  adv_status CHAR(1)  COMMENT 'Active->Y,InActive->N',
+  H_STATUS   CHAR(1)  COMMENT 'Update->U,Delete->D',
+  orgid BIGINT(12)  COMMENT 'Organisation',
+  created_by BIGINT(12)  COMMENT 'user id who created the record',
+  created_date DATETIME  COMMENT 'record creation date',
+  updated_by BIGINT(12)  COMMENT 'user id who updated the record',
+  updated_date DATETIME  COMMENT 'date on which updated the record',
+  lg_ip_mac VARCHAR(100)  COMMENT 'machine ip address from where user has created the record',
+  lg_ip_mac_upd VARCHAR(100)  COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (adv_id_h))
+COMMENT = 'Advocate Master Hist';

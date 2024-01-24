@@ -1,0 +1,214 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/jee 
+	    http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/jdbc
+		http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/data/jpa
+		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+	    http://www.springframework.org/schema/tool/tool
+	    http://www.springframework.org/schema/tool/spring-tool.xsd">
+
+
+	<!-- <bean id="defaultDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> <property name="driverClass" value="${database.driverClassName}" 
+		/> <property name="jdbcUrl" value="${default_database.url}" /> <property 
+		name="user" value="${default_database.username}" /> <property name="password" 
+		value="${default_database.password}" /> <property name="minPoolSize" value="${database.minpoolsize}" 
+		/> <property name="maxPoolSize" value="${database.maxpoolsize}" /> <property 
+		name="acquireIncrement" value="${database.acquireIncrement}" /> <property 
+		name="maxStatements" value="${database.maxStatements}" /> <property name="idleConnectionTestPeriod" 
+		value="${database.idleConnectionTestPeriod}" /> <property name="loginTimeout" 
+		value="${database.loginTimeout}" /> </bean> -->
+
+
+	<!-- <bean id="dataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> Connection properties <property name="driverClass" 
+		value="${database.driverClassName}" /> <property name="jdbcUrl" value="${database1.url}" 
+		/> <property name="user" value="${database1.username}" /> <property name="password" 
+		value="${database1.password}" /> Pool properties <property name="minPoolSize" 
+		value="${database.minpoolsize}" /> <property name="maxPoolSize" value="${database.maxpoolsize}" 
+		/> <property name="acquireIncrement" value="${database.acquireIncrement}" 
+		/> <property name="maxStatements" value="${database.maxStatements}" /> <property 
+		name="idleConnectionTestPeriod" value="${database.idleConnectionTestPeriod}" 
+		/> <property name="loginTimeout" value="${database.loginTimeout}" /> </bean> -->
+	<!-- <bean id="dataSource2" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> Connection properties <property name="driverClass" 
+		value="${database.driverClassName}" /> <property name="jdbcUrl" value="${database2.url}" 
+		/> <property name="user" value="${database2.username}" /> <property name="password" 
+		value="${database2.password}" /> Pool properties <property name="minPoolSize" 
+		value="${database.minpoolsize}" /> <property name="maxPoolSize" value="${database.maxpoolsize}" 
+		/> <property name="acquireIncrement" value="${database.acquireIncrement}" 
+		/> <property name="maxStatements" value="${database.maxStatements}" /> <property 
+		name="idleConnectionTestPeriod" value="${database.idleConnectionTestPeriod}" 
+		/> <property name="loginTimeout" value="${database.loginTimeout}" /> </bean> -->
+
+	<!-- <jee:jndi-lookup id="defaultDataSource" jndi-name="java:jboss/datasources/ServiceDS"
+		expected-type="javax.sql.DataSource" /> -->
+		
+	 <jee:jndi-lookup id="defaultDataSource" jndi-name="java:jboss/datasources/ServiceMySqlDS" expected-type="javax.sql.DataSource"/>	
+
+
+	<jpa:repositories
+		base-package="com.abm.mainet.common.master.repository,
+                                    com.abm.mainet.cfc.loi.repository,
+                                    com.abm.mainet.common.repository,
+                                    com.abm.mainet.cfc.objection.repository,
+                                    com.abm.mainet.bill.repository,
+                                    com.abm.mainet.common.integration.dms.repository,
+                                    com.abm.mainet.common.integration.acccount.repository,
+                                    com.abm.mainet.common.workflow.repository,
+                                    com.abm.mainet.common.formbuilder.repository,
+                                    com.abm.mainet.complaint.repository,
+                                    com.abm.mainet.rentlease.repository,
+                                    com.abm.mainet.account.repository,
+                                    com.abm.mainet.water.repository,
+                                    com.abm.mainet.mobile.repository,
+                                    com.abm.mainet.rnl.repository,
+                                    com.abm.mainet.property.repository,
+                                    com.abm.mainet.care.repository,
+                                    com.abm.mainet.workManagement.repository,
+                                    com.abm.mainet.quartz.repository,
+									com.abm.mainet.asset.repository,
+                                    com.abm.mainet.rti.repository,
+                                    com.abm.mainet.swm.repository,
+                                    com.abm.mainet.legal.repository,
+                                    com.abm.mainet.tradeLicense.repository,
+                                    com.abm.mainet.workManagement.roadcutting.repository,
+                                    com.abm.mainet.socialsecurity.repository,
+                                    com.abm.mainet.council.repository,
+                                    com.abm.mainet.landEstate.repository,
+                                    com.abm.mainet.adh.repository,
+                                    com.abm.mainet.validitymaster.repository,
+									com.abm.mainet.audit.repository,
+                                    com.abm.mainet.disastermanagement.repository,
+                                    com.abm.mainet.intranet.repository,
+                                    com.abm.mainet.vehiclemanagement.repository,
+                                    com.abm.mainet.rts.repository,
+                                    com.abm.mainet.lqp.repository,
+                                    com.abm.mainet.common.integration.payment.repository,
+                                    com.abm.mainet.mrm.repository,
+                                    com.abm.mainet.common.exception.repository,
+                                    com.abm.mainet.common.leavemanagement.repository,
+                                    com.abm.mainet.materialmgmt.repository,
+                                    com.abm.mainet.sfac.repository"
+		entity-manager-factory-ref="entityManagerFactory"
+		transaction-manager-ref="transactionManager" />
+
+
+
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+		<property name="nestedTransactionAllowed" value="true" />
+
+	</bean>
+
+	<bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="entityManagerFactory"></property>
+		<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="database" value="${database.database}" />
+				<property name="databasePlatform" value="${database.databasePlatform}" />
+				<property name="showSql" value="${database.showSql}" />
+				<!-- <property name="generateDdl" value="${database.generateDdl}"/> -->
+			</bean>
+		</property>
+		<property name="jpaProperties">
+			<map>
+				<entry key="hibernate.multiTenancy" value="DATABASE" />
+				<entry key="hibernate.multi_tenant_connection_provider"
+					value-ref="tenantConnectionProvider" />
+					<entry key="hibernate.connection.release_mode" value="after_transaction" />
+				<entry key="hibernate.tenant_identifier_resolver" value-ref="tenantResolver" />
+			</map>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.abm.mainet.common.domain</value>
+				<value>com.abm.mainet.common.integration.dms.domain</value>
+				<value>com.abm.mainet.common.integration.acccount.domain</value>
+				<value>com.abm.mainet.cfc.challan.domain</value>
+				<value>com.abm.mainet.cfc.checklist.domain</value>
+				<value>com.abm.mainet.cfc.loi.domain</value>
+				<value>com.abm.mainet.cfc.scrutiny.domain</value>
+				<value>com.abm.mainet.common.entitlement.domain</value>
+				<value>com.abm.mainet.common.integration.payment.entity</value>
+				<value>com.abm.mainet.common.workflow.domain</value>
+				<value>com.abm.mainet.complaint.domain</value>
+				<value>com.abm.mainet.rentlease.domain</value>
+				<value>com.abm.mainet.smsemail.domain</value>
+				<value>com.abm.mainet.account.domain</value>
+			    <value>com.abm.mainet.materialmgmt.domain</value>
+				<value>com.abm.mainet.water.domain</value>
+				<value>com.abm.mainet.mobile.domain</value>
+				<value>com.abm.mainet.rnl.domain</value>
+				<value>com.abm.mainet.care.domain</value>
+				<value>com.abm.mainet.common.jbpm.domain</value>
+				<value>com.abm.mainet.property.domain</value>
+				<value>com.abm.mainet.workManagement.domain</value>
+				<value>com.abm.mainet.quartz.domain</value>
+				<value>com.abm.mainet.rti.domain</value>
+				<value>com.abm.mainet.asset.domain</value>
+				<value>com.abm.mainet.swm.domain</value>
+				<value>com.abm.mainet.legal.domain</value>
+				<value>com.abm.mainet.cfc.objection.domain</value>
+				<value>com.abm.mainet.common.formbuilder.domain</value>
+				<value>com.abm.mainet.tradeLicense.domain</value>
+				<value>com.abm.mainet.workManagement.roadcutting.domain</value>
+				<value>com.abm.mainet.socialsecurity.domain</value>
+				<value>com.abm.mainet.council.domain</value>
+				<value>com.abm.mainet.landEstate.domain</value>
+				<value>com.abm.mainet.adh.domain</value>
+				<value>com.abm.mainet.validitymaster.domain</value>
+				<value>com.abm.mainet.audit.domain</value>
+				<value>com.abm.mainet.disastermanagement.domain</value>
+				<value>com.abm.mainet.rts.domain</value>
+				<value>com.abm.mainet.intranet.domain</value>
+				<value>com.abm.mainet.vehiclemanagement.domain</value>
+				<value>com.abm.mainet.lqp.domain</value>
+				<value>com.abm.mainet.mrm.domain</value>
+				<value>com.abm.mainet.common.exception.domain</value>
+				<value>com.abm.mainet.common.dashboard.domain</value>
+				<value>com.abm.mainet.common.dashboard.domain.skdcl</value>
+				<value>com.abm.mainet.common.leavemanagement.domain</value>
+				<value>com.abm.mainet.materialmgmt.domain</value>
+				<value>com.abm.mainet.sfac.domain</value>
+				
+			</list>
+		</property>
+		<!-- <property name="persistenceUnitName" value="org.jbpm.persistence.jpa.local"/> 
+			<property name="persistenceXmlLocation" value="classpath:persistence.xml" 
+			/> -->
+	</bean>
+
+
+	<bean id="tenantConnectionProvider"
+		class="com.abm.mainet.common.utility.MainetMultiTenantConnectionProvider">
+		<property name="dsMap">
+			<map>
+				<entry key="defaultDataSource" value-ref="defaultDataSource" />
+				<!-- <entry key="KDNET" value-ref="dataSource1"/> -->
+				<!-- <entry key="KDNET_MRG" value-ref="dataSource2"/> -->
+			</map>
+		</property>
+	</bean>
+
+	<bean id="tenantResolver"
+		class="com.abm.mainet.common.utility.MainetTenantIdentifierResolver" />
+
+
+</beans>

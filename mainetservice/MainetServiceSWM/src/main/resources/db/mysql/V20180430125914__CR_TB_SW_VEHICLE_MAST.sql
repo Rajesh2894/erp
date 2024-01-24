@@ -1,0 +1,32 @@
+--liquibase formatted sql
+--changeset nilima:V20180430125914__CR_TB_SW_VEHICLE_MAST.sql
+CREATE TABLE TB_SW_VEHICLE_MAST (
+  VE_ID BIGINT(12) NOT NULL COMMENT 'primary key',
+  VE_GPS_DEVICEID VARCHAR(15) NULL COMMENT 'Vehicle GPS Tracking Device ID',
+  VE_VETYPE BIGINT(12) NOT NULL COMMENT 'vehicle type (\'VHT\')',
+  VE_REG_NO VARCHAR(15) NOT NULL COMMENT 'vehicle registration number',
+  VE_ENG_SRNO VARCHAR(20) NOT NULL COMMENT 'vehicle engine serial number',
+  VE_CAPACITY DECIMAL(10,2) NOT NULL COMMENT 'vehicle capacity',
+  VE_CAUNIT BIGINT(12) NOT NULL COMMENT 'vehicle capacity unit',
+  VE_STD_WEIGHT DECIMAL(15,2) NOT NULL COMMENT 'standard weight of vehicle',
+  VE_WEUNIT BIGINT(12) NOT NULL COMMENT 'vehicle weight unit',
+  VE_CHASIS_SRNO VARCHAR(20) NOT NULL COMMENT 'vehicle chasis serial number',
+  VE_MODEL VARCHAR(200) NOT NULL COMMENT 'make/model/manufacturer of the vehicle',
+  VE_FLAG CHAR(1) NOT NULL COMMENT 'department owned vehicle y/n',
+  VE_PUR_DATE DATE NULL COMMENT 'purchase date of the vehicle',
+  VE_PUR_PRICE DECIMAL(15,2) NULL COMMENT 'purchase price of the vehicle',
+  VE_PUR_SOURCE VARCHAR(200) NULL COMMENT 'source of purchase of the vehicle',
+  VE_RENT_FROMDATE DATE NULL COMMENT 'Rented From Date',
+  VE_RENT_TODATE DATE NULL COMMENT 'Rented To Date',
+  VM_VENDORID BIGINT(12) NULL COMMENT 'Vender Name',
+  VE_RENTAMT DECIMAL(15,2) NULL COMMENT 'Vechicle Rent Amount',
+  VE_REMARKS VARCHAR(200) NULL COMMENT 'purpose of (purchase/Rent)',
+  ORGID BIGINT(12) NOT NULL COMMENT 'organization id',
+  CREATED_BY BIGINT(12) NOT NULL COMMENT 'user id who created the record',
+  CREATED_DATE DATETIME NOT NULL COMMENT 'record creation date',
+  UPDATED_BY BIGINT(12) NULL COMMENT 'user id who updated the record',
+  UPDATED_DATE DATETIME NULL COMMENT 'date on which updated the record',
+  LG_IP_MAC VARCHAR(100) NOT NULL COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD VARCHAR(100) NULL COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (VE_ID))
+COMMENT = 'Vechical Master';

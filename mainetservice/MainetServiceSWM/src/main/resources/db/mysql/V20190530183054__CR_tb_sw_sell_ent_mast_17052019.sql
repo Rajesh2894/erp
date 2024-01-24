@@ -1,0 +1,47 @@
+--liquibase formatted sql
+--changeset nilima:V20190530183054__CR_tb_sw_sell_ent_mast_17052019.sql
+drop table if exists tb_sw_sell_ent_mast;
+
+--liquibase formatted sql
+--changeset nilima:V20190530183054__CR_tb_sw_sell_ent_mast_170520193.sql
+CREATE TABLE tb_sw_sell_ent_mast(
+  SEL_ID BIGINT(12) NOT NULL COMMENT 'Primary Key',
+  COD_WAST1 BIGINT(12) NOT NULL,
+  COD_WAST  BIGINT(12) NOT NULL,
+  WRAT_RATE DECIMAL(7,2) ,
+  SEL_STOCK BIGINT(12),
+  SEL_ENT_STOCK BIGINT(12),
+  SEL_BAL_STOCK BIGINT(12),
+  ORGID BIGINT(12) NULL,
+  CREATED_BY BIGINT(12) NULL,
+  CREATED_DATE BIGINT(12) NULL,
+  UPDATED_BY BIGINT(12) NULL,
+  UPDATED_DATE DATETIME NULL,
+  LG_IP_MAC VARCHAR(100) NULL,
+  LG_IP_MAC_UPD VARCHAR(100) NULL,
+  PRIMARY KEY (SEL_ID));
+
+ --liquibase formatted sql
+--changeset nilima:V20190530183054__CR_tb_sw_sell_ent_mast_170520191.sql
+ drop table if exists tb_sw_sell_ent_mast_hist;
+ 
+--liquibase formatted sql
+--changeset nilima:V20190530183054__CR_tb_sw_sell_ent_mast_170520192.sql
+  CREATE TABLE tb_sw_sell_ent_mast_hist(
+  SEL_ID_HIST BIGINT(12) NOT NULL COMMENT 'Primary Key',
+  SEL_ID BIGINT(12) NOT NULL COMMENT 'Primary Key',
+  COD_WAST1 BIGINT(12) NOT NULL,
+  COD_WAST  BIGINT(12) NOT NULL,
+  WRAT_RATE DECIMAL(7,2) ,
+  SEL_STOCK BIGINT(12),
+  SEL_ENT_STOCK BIGINT(12),
+  SEL_BAL_STOCK BIGINT(12),
+  H_STATUS CHAR(1), 
+  ORGID BIGINT(12) NULL,
+  CREATED_BY BIGINT(12) NULL,
+  CREATED_DATE BIGINT(12) NULL,
+  UPDATED_BY BIGINT(12) NULL,
+  UPDATED_DATE DATETIME NULL,
+  LG_IP_MAC VARCHAR(100) NULL,
+  LG_IP_MAC_UPD VARCHAR(100) NULL,
+  PRIMARY KEY (SEL_ID));

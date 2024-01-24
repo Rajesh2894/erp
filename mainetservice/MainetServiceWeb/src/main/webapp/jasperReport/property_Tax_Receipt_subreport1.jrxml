@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="property_Tax_Receipt_subreport1" pageWidth="595" pageHeight="844" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cdc74887-1279-4651-87d8-7ca516efa15b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="detailsV" class="java.lang.String">
+		<fieldDescription><![CDATA[detailsV]]></fieldDescription>
+	</field>
+	<field name="paymentAmtV" class="java.lang.String">
+		<fieldDescription><![CDATA[paymentAmtV]]></fieldDescription>
+	</field>
+	<field name="receivedAmtV" class="java.lang.String">
+		<fieldDescription><![CDATA[receivedAmtV]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="355" y="0" width="1" height="30" uuid="8b076bc1-b3d0-4296-8beb-c5b8e7103aae"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="455" y="0" width="1" height="30" uuid="c2c02e96-2795-46c2-93c9-fa3b3c89db8b"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="3" y="3" width="351" height="25" isPrintWhenDetailOverflows="true" uuid="c703550a-741b-40f4-ad12-67c4681f1029"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detailsV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="356" y="3" width="96" height="25" isPrintWhenDetailOverflows="true" uuid="55b2f0fa-8ad9-4d68-9fc0-92707fadc9a9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paymentAmtV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="457" y="3" width="96" height="25" isPrintWhenDetailOverflows="true" uuid="ecdf191b-bb88-4d35-bd40-035cc5154de7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{receivedAmtV}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="29" width="555" height="1" uuid="0e578198-58cd-442d-babe-b26141524c0e"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

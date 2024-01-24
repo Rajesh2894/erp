@@ -1,0 +1,224 @@
+@media print {
+	@page { margin: 0; }
+	/* ----- Common CSS starts ----- */
+	.overflow-hidden {
+		overflow: hidden !important;
+	}
+	.padding-horizontal-10 {
+		padding: 0px 10px !important;
+	}
+	.padding-vertical-5 {
+		padding: 5px 0px !important;
+	}
+	.margin-0 {
+		margin: 0px !important;
+	}
+		.line-height-1rem {
+		line-height: 1.8rem !important;
+	}
+	/* ----- Common CSS starts ----- */
+	/* ---------- B&D Certificate Print CSS starts ---------- */
+	.width-auto { width: auto !important; }
+	.height-logo { height: 10rem; }
+	.cert-outer-div-2 > div > span {
+		margin-top: 0rem !important;
+	}
+	.form-horizontal .form-group label {
+		font-size: 0.8em;
+	}
+	.form-horizontal .form-group div p.bnd-p-tag {
+		padding: 0px 12px;
+		font-size: 0.9rem !important;
+	}
+	.form-horizontal .form-group.eng-text div p.bnd-p-tag {
+		padding: 0px 12px;
+	}
+	.form-horizontal .form-group.mar-text {
+		margin-bottom: 0px !important;
+	}
+	.form-horizontal .form-group.eng-text {
+		margin-bottom: 5px !important;
+	}
+	.form-horizontal .form-group.eng-text label {
+		padding-top: 0px;
+	}
+	.widget .widget-content {
+		padding: 0.8rem !important;
+	}
+	.widget .widget-content.widget-content-print {
+	    padding: 0 1em;
+	}
+	.first-section p.bnd-p-tag {
+		text-indent: 6em;
+		margin-bottom: 5px !important;
+		font-size: 12px;
+	}
+	.bnd-seal {
+		border: 1px solid #000000;
+		padding: 10px;
+		display:inline-block;
+		height: 100px;
+		width: 100px;
+	}
+	.cert-outer-div {
+		border: 3px solid #000000 !important;
+		padding: 3px;
+	}
+	.cert-outer-div-2 {
+		border: 1px solid #000000;
+		padding: 0.8em !important;
+	}
+	.cert-outer-div-2 .border-bottom-black span,
+	.cert-outer-div-2 .border-bottom-black div h5,
+	.cert-outer-div-2 .border-bottom-black p.bnd-p-tag {
+		font-size: 12px;
+	}
+	.cert-outer-div-2 .border-bottom-black div h3,
+	.cert-outer-div-2 .border-bottom-black div h5 {
+		margin: 5px 0px !important;
+	}
+	.cert-outer-div-2 .border-bottom-black div h3 {
+		font-size: 15px;
+		line-height: 15px;
+	}
+	.border-bottom-black { border-bottom: 1px solid #000000; }
+	.bottom-section {
+		background-color: #000000;
+		padding: 10px;
+	}
+	.bottom-section div {
+		color: #ffffff;
+		font-size: 12px;
+	}
+	.bnd-acknowledgement .cert-outer-div {
+		padding: 0rem !important;
+	}
+	.bnd-acknowledgement .border-bottom-black { 
+	     border-bottom: 3px solid #000000 !important;
+	}
+	.bnd-acknowledgement h5 {
+		font-size: 1rem;
+	}
+	/* ---------- B&D Certificate Print CSS ends ---------- */
+	
+	/* ---------- Marriage Certificate Print CSS Starts ---------- */
+	.height-100 {
+		height: 100px !important;
+	}
+	.cert-head .candidate-img img {
+		height: 80px;
+	}
+	.cert-head .cert-head-center-content img.nat-emblem {
+		margin: auto;
+	}
+	.cert-head .cert-head-center-content h3 {
+		font-size: 20px;
+		margin: 5px 0px;
+	}
+	.cert-head .candidate-img.right img {
+		float: right;
+	}
+	.cert-inner-div .cert-head h4,
+	.cert-inner-div h4 {
+		font-size: inherit;
+		background: none !important;
+		border: unset !important;
+		margin: 2px 0px;
+	}
+	.cert-inner-div .cert-head h4 {
+		padding: 2px;
+	}
+	.cert-inner-div .cert-body h4 {
+		padding: 0px;
+	}
+	.mrg-acknowledgement .cert-outer-div {
+		padding: 0rem !important;
+	}
+	.mrg-acknowledgement .border-bottom-black { 
+	     border-bottom: 3px solid #000000 !important; 
+	}
+	.mrg-acknowledgement h5 {
+		font-size: 1rem;
+	}
+	/* ---------- Marriage Certificate Print CSS Ends ---------- */
+	
+	/* ---------- Background Water-mark Starts ---------- */
+	.background-watermark-1,
+	.background-watermark-2 {
+		text-align: center;
+		opacity: 0.2;
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	.background-watermark-1 {
+		top: 12%;
+	}
+	.background-watermark-2 {
+		top: 49%;
+	}
+	.background-watermark-1 img,
+	.background-watermark-2 img {
+		height: 200px !important;
+	}
+	h3.org-name ~ p {
+		font-weight: 600;
+	}
+	.receipt-main.widget table {
+		z-index: 2;
+	}
+	.receipt-main.widget table tr th {
+		background: rgba(238, 238, 238, 0.5) !important;
+	}
+	/* ---------- Background Water-mark Ends ---------- */
+	
+	/* ----- Portal Print Css starts ----- */
+	a[href]:after {
+		content: none !important;
+	}
+	.header-1 .website-name-main .website-logo img {
+		height: 5.5rem;
+	}
+	.header-1 .website-name-main .website-name {
+		line-height: 24px;
+		padding: 1rem 0rem;
+	}
+	/* ----- Portal Print Css ends ----- */
+	#mainHeader{
+		position: static;
+		width: 100%;
+	}
+	#navbar .slimScrollDiv,
+	#navbar .nav-scroll {
+		height: 100%;
+	}
+	header {
+		z-index: 1030;
+		top: 0;
+		page-break-inside: avoid;
+	}
+	.header-1,
+	.header-2,
+	.header-3 {
+		clear: both;
+	}
+	.header-1 .website-header,
+	.header-2 .navbar {
+	    max-width: 1170px;
+		margin: 0 auto;
+	}
+	.printReceipt{
+		padding: 2rem;
+	}
+	.printReceipt h2 {
+		font-size: 1.4em;
+		text-align: center;
+		padding: 2rem;
+	}
+	
+}

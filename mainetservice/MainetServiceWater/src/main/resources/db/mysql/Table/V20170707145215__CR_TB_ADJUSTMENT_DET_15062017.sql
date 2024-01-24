@@ -1,0 +1,22 @@
+CREATE TABLE `TB_ADJUSTMENT_DET` (
+  `adjd_id` bigint(12) NOT NULL COMMENT 'Primary Key',
+  `adj_id` bigint(12) NOT NULL COMMENT 'Foregin Key (TB_ADJUSTMENT_MAS)',
+  `tax_id` bigint(12) NOT NULL COMMENT 'Tax Id',
+  `adj_amount` decimal(15,2) NOT NULL COMMENT 'Adjustment Amount',
+  `adj_adjusted_amount` decimal(15,2) NOT NULL COMMENT 'Adjusted Amount',
+  `adj_balance_amount` decimal(15,2) NOT NULL COMMENT 'Balance Adjustment Amount',
+  `adj_remark` varchar(500) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Adjustment Remark',
+  `adj_adjusted_flag` char(1) COLLATE utf8_unicode_ci NOT NULL COMMENT 'N->not adjusted Y->Adjusted',
+  `orgid` bigint(12) NOT NULL COMMENT 'Organisation Id',
+  `created_by` bigint(12) NOT NULL COMMENT 'created by user',
+  `created_date` date NOT NULL,
+  `updated_by` bigint(12) DEFAULT NULL COMMENT 'updated by user',
+  `updated_date` date DEFAULT NULL,
+  `lg_ip_mac` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `lg_ip_mac_upd` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`adjd_id`),
+  KEY `FK_ADJ_ID_idx` (`adj_id`),
+  KEY `FK_ADJ_TAX_ID_idx` (`tax_id`),
+  CONSTRAINT `FK_ADJ_ID` FOREIGN KEY (`adj_id`) REFERENCES `TB_ADJUSTMENT_MAS` (`adj_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_ADJ_TAX_ID` FOREIGN KEY (`tax_id`) REFERENCES `TB_TAX_MAS` (`TAX_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

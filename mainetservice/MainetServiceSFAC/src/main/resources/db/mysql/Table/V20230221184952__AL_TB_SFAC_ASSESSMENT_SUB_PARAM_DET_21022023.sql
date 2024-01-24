@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230221184952__AL_TB_SFAC_ASSESSMENT_SUB_PARAM_DET_21022023.sql
+Alter table TB_SFAC_ASSESSMENT_SUB_PARAM_DET change column `CONDITION` CONDITIONS bigint(20) NULL DEFAULT NULL;

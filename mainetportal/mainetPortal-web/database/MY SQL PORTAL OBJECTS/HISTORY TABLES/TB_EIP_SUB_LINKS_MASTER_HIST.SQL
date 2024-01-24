@@ -1,0 +1,26 @@
+CREATE TABLE `tb_eip_sub_links_master_hist` (
+  `H_SUBLINKID` double NOT NULL,
+  `SUB_LINK_PAR_ID` double DEFAULT NULL,
+  `LINK_ID` decimal(10,0) DEFAULT NULL,
+  `HAS_SUB_LINK` char(1) NOT NULL,
+  `SUB_LINK_NAME_EN` varchar(100) NOT NULL,
+  `SUB_LINK_MAS_ID` double NOT NULL,
+  `IS_CUSTOM` char(1) DEFAULT NULL,
+  `ISDELETED` char(1) NOT NULL,
+  `SUB_LINK_NAME_RG` varchar(2000) NOT NULL,
+  `ORGID` decimal(12,0) NOT NULL,
+  `USER_ID` decimal(12,0) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_BY` decimal(12,0) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(100) NOT NULL,
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL,
+  `PAGE_URL` varchar(200) DEFAULT NULL,
+  `CPD_SECION_TYPE` decimal(12,0) DEFAULT NULL,
+  `CPD_IMG_LINK_TYPE` decimal(12,0) DEFAULT NULL,
+  `SUB_LINK_ORDER` decimal(10,2) NOT NULL,
+  `IS_LINK_MODIFY` varchar(2) DEFAULT NULL,
+  `IS_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

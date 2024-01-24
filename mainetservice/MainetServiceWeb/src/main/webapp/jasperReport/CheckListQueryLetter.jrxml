@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CheckListQueryLetter" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a977e0a-87fa-4fbe-95a3-c5e718413e0f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Jugnu.Pandey\\bihar report\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="applicantName" class="java.lang.String">
+		<fieldDescription><![CDATA[applicantName]]></fieldDescription>
+	</field>
+	<field name="applicationAdd" class="java.lang.String">
+		<fieldDescription><![CDATA[applicationAdd]]></fieldDescription>
+	</field>
+	<field name="subject" class="java.lang.String">
+		<fieldDescription><![CDATA[subject]]></fieldDescription>
+	</field>
+	<field name="applicationDate" class="java.lang.String">
+		<fieldDescription><![CDATA[applicationDate]]></fieldDescription>
+	</field>
+	<field name="topRightImage" class="java.lang.String">
+		<fieldDescription><![CDATA[topRightImage]]></fieldDescription>
+	</field>
+	<field name="topLeftImage" class="java.lang.String">
+		<fieldDescription><![CDATA[topLeftImage]]></fieldDescription>
+	</field>
+	<field name="orgLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[orgLabel]]></fieldDescription>
+	</field>
+	<field name="signPath" class="java.lang.String">
+		<fieldDescription><![CDATA[signPath]]></fieldDescription>
+	</field>
+	<field name="childDTO" class="java.util.List">
+		<fieldDescription><![CDATA[childDTO]]></fieldDescription>
+	</field>
+	<field name="lHeading" class="java.lang.String">
+		<fieldDescription><![CDATA[lHeading]]></fieldDescription>
+	</field>
+	<field name="lTo" class="java.lang.String">
+		<fieldDescription><![CDATA[lTo]]></fieldDescription>
+	</field>
+	<field name="lRejSub" class="java.lang.String">
+		<fieldDescription><![CDATA[lRejSub]]></fieldDescription>
+	</field>
+	<field name="lRejRef" class="java.lang.String">
+		<fieldDescription><![CDATA[lRejRef]]></fieldDescription>
+	</field>
+	<field name="lRefLine" class="java.lang.String">
+		<fieldDescription><![CDATA[lRefLine]]></fieldDescription>
+	</field>
+	<field name="refFill" class="java.lang.String">
+		<fieldDescription><![CDATA[refFill]]></fieldDescription>
+	</field>
+	<field name="lSrNo" class="java.lang.String">
+		<fieldDescription><![CDATA[lSrNo]]></fieldDescription>
+	</field>
+	<field name="lDocName" class="java.lang.String">
+		<fieldDescription><![CDATA[lDocName]]></fieldDescription>
+	</field>
+	<field name="lSirMadam" class="java.lang.String">
+		<fieldDescription><![CDATA[lSirMadam]]></fieldDescription>
+	</field>
+	<field name="lLastLine" class="java.lang.String">
+		<fieldDescription><![CDATA[lLastLine]]></fieldDescription>
+	</field>
+	<field name="lletterNo" class="java.lang.String">
+		<fieldDescription><![CDATA[lletterNo]]></fieldDescription>
+	</field>
+	<field name="lObsDetail" class="java.lang.String">
+		<fieldDescription><![CDATA[lObsDetail]]></fieldDescription>
+	</field>
+	<field name="ldate" class="java.lang.String">
+		<fieldDescription><![CDATA[ldate]]></fieldDescription>
+	</field>
+	<field name="tletterno" class="java.lang.String">
+		<fieldDescription><![CDATA[tletterno]]></fieldDescription>
+	</field>
+	<field name="lUlbAddr" class="java.lang.String">
+		<fieldDescription><![CDATA[lUlbAddr]]></fieldDescription>
+	</field>
+	<field name="lLastLine2" class="java.lang.String">
+		<fieldDescription><![CDATA[lLastLine2]]></fieldDescription>
+	</field>
+	<field name="parent" class="java.lang.String">
+		<fieldDescription><![CDATA[parent]]></fieldDescription>
+	</field>
+	<field name="colon" class="java.lang.String">
+		<fieldDescription><![CDATA[colon]]></fieldDescription>
+	</field>
+	<field name="page" class="java.lang.String">
+		<fieldDescription><![CDATA[page]]></fieldDescription>
+	</field>
+	<field name="of" class="java.lang.String">
+		<fieldDescription><![CDATA[of]]></fieldDescription>
+	</field>
+	<field name="subject1" class="java.lang.String">
+		<fieldDescription><![CDATA[subject1]]></fieldDescription>
+	</field>
+	<field name="subject2" class="java.lang.String">
+		<fieldDescription><![CDATA[subject2]]></fieldDescription>
+	</field>
+	<field name="refFill1" class="java.lang.String">
+		<fieldDescription><![CDATA[refFill1]]></fieldDescription>
+	</field>
+	<field name="refFill2" class="java.lang.String">
+		<fieldDescription><![CDATA[refFill2]]></fieldDescription>
+	</field>
+	<field name="refFill3" class="java.lang.String">
+		<fieldDescription><![CDATA[refFill3]]></fieldDescription>
+	</field>
+	<field name="lRefLine1" class="java.lang.String">
+		<fieldDescription><![CDATA[lRefLine1]]></fieldDescription>
+	</field>
+	<field name="lRefLine2" class="java.lang.String">
+		<fieldDescription><![CDATA[lRefLine2]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="c96de467-c353-44dc-a9f9-3fd7d50242b1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="785" uuid="28e50e31-6525-4cc1-8a8f-f773bfb1f5a9"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="785" width="555" height="1" uuid="b61b5b05-02cf-49a2-b414-a1689d94294f"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="555" y="0" width="1" height="785" uuid="19d628d5-4bc8-484a-a653-f66b591e2ac3"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="76">
+			<line>
+				<reportElement positionType="Float" x="0" y="70" width="555" height="1" uuid="e990e64a-f15c-4b2b-af32-f4910f931f12"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="109" y="6" width="341" height="29" uuid="b0589e25-e71a-4c5a-8987-ec57b8ab452a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{orgLabel}+"</style>"]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" x="1" y="5" width="108" height="50" uuid="775a10c6-5c72-4fcc-a2eb-56f3df0c974a"/>
+				<imageExpression><![CDATA[$F{topLeftImage}]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" x="450" y="5" width="105" height="50" uuid="0a54042e-02f6-416b-8711-92c6bae3ccdb"/>
+				<imageExpression><![CDATA[$F{topRightImage}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="109" y="34" width="341" height="20" uuid="3a453e27-0e5d-42dd-85ad-45979517fca6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lUlbAddr}+"</style>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="481" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="376" width="475" height="41" uuid="c16393a2-dc46-4f20-920e-08eefea224ff"/>
+				<textElement>
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lLastLine2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="106" y="140" width="402" height="18" uuid="4d8be34b-4d64-4bdb-b203-5cc2ba384234"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subject}+" "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{subject1}+"</style>"+" "+$F{subject2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="55" y="98" width="315" height="18" uuid="0712b4ab-bdf2-4431-a324-3f43cfb64f2e"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{applicantName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" mode="Transparent" x="55" y="116" width="315" height="18" uuid="2338f6aa-ac2e-4e63-a09a-35b1bb3ee27c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{applicationAdd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="1" y="5" width="554" height="20" uuid="55242c55-adce-4635-86dc-391562e116be"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lHeading}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" x="40" y="83" width="54" height="15" uuid="a656f0b8-d55d-4d55-8608-28b7c0bbff19"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lTo}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="106" y="171" width="402" height="18" uuid="67e77621-b08d-4fbf-a82b-54baf047ac0a"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{refFill}+" "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{refFill1}+"</style>"+" "+$F{refFill2}+" "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{refFill3}+"</style>"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement positionType="Float" x="40" y="272" width="475" height="20" uuid="7d3b0ae8-3d49-4718-b6d3-01ef77ff52f1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement positionType="Float" x="112" y="272" width="1" height="20" uuid="2deffa49-70f8-48c1-b037-404f88817c6a"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="39" y="272" width="70" height="20" uuid="d1f8bce1-c20f-44a1-a59d-f4d336f73934"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lSrNo}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="113" y="272" width="210" height="20" uuid="74bb46a2-e9d1-4598-b8c1-27a688dde35b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lDocName}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="231" width="475" height="41" uuid="9e7e0859-1cfc-4f3b-8589-675c708a8c94"/>
+				<textElement markup="styled">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lRefLine}+" "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lRefLine1}+"</style>"+" "+$F{lRefLine2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="202" width="475" height="18" uuid="db4990c4-47d3-4d2a-b170-e6aff8f7605c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lSirMadam}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="325" width="475" height="38" uuid="0918ee77-4287-4170-b45c-f5b085d2a38e"/>
+				<textElement>
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lLastLine}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="323" y="272" width="1" height="20" uuid="a5d08c73-1662-49b6-b5e7-4632962a336b"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="324" y="272" width="191" height="20" uuid="ca94cae7-b5af-4c65-b1d1-023516857ce3"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lObsDetail}+"</style>"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="292" width="555" height="20" uuid="7ced3dee-db1d-4b25-80fc-a5be3ce99759"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{childDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CheckListQueryLetter_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isBlankWhenNull="true">
+				<reportElement x="105" y="25" width="83" height="20" uuid="45118a06-c446-46c1-8e62-0b3f882becba"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tletterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="93" y="45" width="12" height="20" uuid="14f8c05c-cabe-4c3c-b530-2f747038fa56"/>
+				<textElement markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{colon}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" x="40" y="45" width="57" height="20" uuid="4ad7e3ff-80a6-4e4b-b362-086b3fc61140"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{ldate}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="105" y="45" width="83" height="20" uuid="fe707ae2-ebab-46ac-a200-4ac50486706e"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="93" y="25" width="12" height="20" uuid="939206c0-7975-42fc-b288-d86792948a30"/>
+				<textElement markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{colon}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" x="40" y="25" width="57" height="20" uuid="8e355f43-0aa2-49ea-acd2-43846d8accf9"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lletterNo}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="94" y="140" width="12" height="18" uuid="e28079b0-c419-41f4-9291-00e678e7a135"/>
+				<textElement markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{colon}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="140" width="57" height="18" uuid="5497f08c-96a6-423e-8187-a7c9cddde135"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lRejSub}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="94" y="171" width="179" height="18" uuid="5496acda-3766-4548-9b41-2951faf01f87"/>
+				<textElement markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{colon}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="171" width="57" height="18" uuid="ebfec453-ddb2-401e-a877-bd402a185099"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lRejRef}+"</style>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15">
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="15" forecolor="#666666" backcolor="#FFFFFF" uuid="93fe8516-bdf3-4be7-9ede-777789e06e59"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="402" height="15" forecolor="#666666" uuid="ca062ad4-0576-4c18-b94e-3a87eba16235"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Unicode MS" size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="15" forecolor="#666666" backcolor="#FFFFFF" uuid="12207e0e-a66c-478b-b8ef-e982210191a0"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial Unicode MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{page}+" "+$V{PAGE_NUMBER}+" "+$F{of}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="138" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="323" y="61" width="230" height="23" uuid="4bf0bb41-974f-4e15-8e6e-f987e6aeb0d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial Unicode MS" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{orgLabel}+"</style>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="323" y="84" width="230" height="20" uuid="38fa164c-1e55-4470-af88-927f7a51af1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial Unicode MS" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{lUlbAddr}+"</style>"]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" x="385" y="31" width="100" height="28" uuid="07b83a78-b803-4d97-afad-ed323d1056e3"/>
+				<imageExpression><![CDATA[$F{signPath}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="1" y="123" width="402" height="15" forecolor="#666666" uuid="9e0ca0eb-6ffc-45ab-849f-70fea9aa7428"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Unicode MS" size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="123" width="80" height="15" forecolor="#666666" uuid="929f466d-684d-40a8-b810-18bdbfe883cb"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial Unicode MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{page}+" "+$V{PAGE_NUMBER}+" "+$F{of}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="123" width="40" height="15" forecolor="#666666" uuid="9eaee3a1-b089-4fde-a2af-0a6f347e2bda"/>
+				<textElement>
+					<font fontName="Arial Unicode MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

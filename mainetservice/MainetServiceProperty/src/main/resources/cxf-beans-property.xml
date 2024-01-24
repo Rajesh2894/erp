@@ -1,0 +1,64 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="propertySwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/property/rest"></property>
+		<property name="title" value="Property Module API Documentation" />
+	</bean>
+	<!-- <bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>
+	</bean> -->
+	<!-- <bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" /> -->
+	<jaxrs:server address="/property/rest" id="property">
+		<jaxrs:serviceBeans>
+			<bean class="com.abm.mainet.property.service.PropertyTaxSelfAssessmentServiceImpl" id="SelfAssessmentService" />
+			<bean class="com.abm.mainet.property.service.ViewPropertyDetailsServiceImpl" id="ViewPropertyDetail" />
+			<bean class="com.abm.mainet.property.service.MutationServiceImpl" id="mutation" />
+			<bean class="com.abm.mainet.property.service.NewPropertyRegistrationServiceImpl" id="NewPropReg" />
+			<bean class="com.abm.mainet.property.service.DataEntrySuiteServiceImpl" id="DataEntrySuite" />
+			<bean class="com.abm.mainet.property.service.MutationIntimationServiceImpl" id="MutationIntimation" />
+			<bean class="com.abm.mainet.property.service.PropertyNoDuesCertificateServiceImpl" id="NoDuesCertificateService" />
+			<bean class="com.abm.mainet.property.service.PropertyTaxMutationServiceImpl" id="propertyTax"/>
+			<bean class="com.abm.mainet.property.service.PropertyDashboardServiceImpl" id="propertyDashboard"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<!-- <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" >
+				<property name="mapper">
+					<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+					  <property name="serializationConfig.dateFormat">
+					    <bean class="java.text.SimpleDateFormat">
+					      <constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+					    </bean>
+					  </property>
+					</bean>
+				</property>
+			</bean> -->
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler" />
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="propertySwagger2Feature" />
+            <!-- <ref bean="commonValidationFeature"/> -->
+        </jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint  address="/selfassessmentservice" id="selfAssessment" implementor="com.abm.mainet.property.service.PropertyTaxSelfAssessmentServiceImpl" />
+	<jaxws:endpoint  address="/viewPropertyDetail" id="viewPropertyDetail" implementor="com.abm.mainet.property.service.ViewPropertyDetailsServiceImpl" />
+	<jaxws:endpoint  address="/mutation" id="mutationDetail" implementor="com.abm.mainet.property.service.MutationServiceImpl" />
+	<jaxws:endpoint  address="/newPropertyReg" id="NewPropertyReg" implementor="com.abm.mainet.property.service.NewPropertyRegistrationServiceImpl" />
+	<jaxws:endpoint  address="/dataEntrySuite" id="DataEntrySuite" implementor="com.abm.mainet.property.service.DataEntrySuiteServiceImpl" />
+	<jaxws:endpoint  address="mutationIntimationService" id="MutationIntimationService" implementor="com.abm.mainet.property.service.MutationIntimationServiceImpl" />
+	<jaxws:endpoint  address="/NoDuesCertificateService" id="NoDuesCertificateService" implementor="com.abm.mainet.property.service.PropertyNoDuesCertificateServiceImpl" />
+	<jaxws:endpoint  address="/PropertyTax" id="propertyTax" implementor="com.abm.mainet.property.service.PropertyTaxMutationServiceImpl"/>
+	<jaxws:endpoint address="/propertyDashboard" id="propertyDashboard" implementor="com.abm.mainet.property.service.PropertyDashboardServiceImpl" />
+	
+</beans>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions  xmlns="http://schemas.xmlsoap.org/wsdl/"  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape"
+ targetNamespace="urn:orangescape" >
+  <types>
+  <xsd:schema elementFormDefault="qualified" targetNamespace="urn:orangescape" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape">
+      <xsd:element name="Employee">
+          <xsd:complexType>
+              <xsd:sequence>
+                      <xsd:element name="LG_IP_MAC" type="xsd:string"/>
+                      <xsd:element name="ModifiedIn" type="xsd:string"/>
+                      <xsd:element name="DP_DEPTID" type="xsd:double"/>
+                      <xsd:element name="CreatedAt" type="xsd:dateTime"/>
+                      <xsd:element name="Metadata" type="xsd:string"/>
+                      <xsd:element name="empmobno" type="xsd:double"/>
+                      <xsd:element name="SheetName" type="xsd:string"/>
+                      <xsd:element name="ModifiedBy" type="xsd:string"/>
+                      <xsd:element name="EMPNAME" type="xsd:string"/>
+                      <xsd:element name="emplname" type="xsd:string"/>
+                      <xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+                      <xsd:element name="Tenant" type="xsd:string"/>
+                      <xsd:element name="DSGID" type="xsd:double"/>
+                      <xsd:element name="ORGID" type="xsd:double"/>
+                      <xsd:element name="Status" type="xsd:string"/>
+                      <xsd:element name="CreatedBy" type="xsd:string"/>
+                      <xsd:element name="EMPLOGINNAME" type="xsd:string"/>
+                      <xsd:element name="SheetId" type="xsd:string"/>
+                      <xsd:element name="LOCID" type="xsd:double"/>
+                      <xsd:element name="empemail" type="xsd:string"/>
+                      <xsd:element name="Caption" type="xsd:string"/>
+                      <xsd:element name="AssignedTo" type="xsd:string"/>
+                      <xsd:element name="EMPID" type="xsd:double"/>
+                      <xsd:element name="ProcessInstance" type="xsd:string"/>
+                      <xsd:element name="SheetMetadataName" type="xsd:string"/>
+              </xsd:sequence>
+          </xsd:complexType>
+      </xsd:element>
+
+  </xsd:schema>
+  </types>
+
+  <message name="EmployeeRequest">
+    <part name="parameters" element="tns:Employee" />
+  </message>
+  
+  <message name="EmployeeRequestUp">
+    <part name="parameters" element="tns:Employee" />
+  </message>
+
+  <message name="EmployeeResponse">
+    <part name="parameters" element="tns:Employee"/>
+  </message>
+
+  <portType name="EmployeeServer">
+     <operation name="Update">
+      <input message="tns:EmployeeRequestUp"/>
+      <output message="tns:EmployeeResponse"/>
+    </operation>
+    <operation name="Submit">
+      <input message="tns:EmployeeRequest"/>
+      <output message="tns:EmployeeResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="EmployeeServer" type="tns:EmployeeServer">
+    <soap:binding style="document"
+                 transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Update">
+      <soap:operation soapAction="Update"/>
+        <input>
+          <soap:body use="literal"/>
+        </input>
+        <output>
+          <soap:body use="literal"/>
+        </output>
+    </operation>
+    <operation name="Submit">
+      <soap:operation soapAction="Submit"/>
+        <input>
+          <soap:body use="literal"/>
+        </input>
+        <output>
+          <soap:body use="literal"/>
+        </output>
+    </operation>
+  </binding>
+  <service name="EmployeeServer">
+    <port name="EmployeeServer" binding="tns:EmployeeServer">
+      <soap:address location="http://192.168.100.215:9080/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Shaaa1d27f4db1473583f1359583a78403/Ac21577f78b24a413482c512a59bb54c2b/Shaaa1d27f4db1473583f1359583a78403/ws"/>
+    </port>
+  </service>
+</definitions>

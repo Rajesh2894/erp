@@ -1,0 +1,53 @@
+--liquibase formatted sql
+--changeset Anil:V20191112154203__CR_tb_hrms_leave_details_12112019.sql
+drop table if exists tb_hrms_leave_details;
+--liquibase formatted sql
+--changeset Anil:V20191112154203__CR_tb_hrms_leave_details_121120191.sql
+CREATE TABLE tb_hrms_leave_details(
+  Leave_id bigint(12) NOT NULL,
+  EmployeeMaster_Id varchar(255) NOT NULL,
+  Employee_ID varchar(20) NOT NULL,
+  Employee_Name varchar(152) NOT NULL,
+  Date_of_Joining datetime NOT NULL,
+  Date_of_Retirement datetime NOT NULL,
+  Mobile_No varchar(10) NOT NULL,
+  Email_Id varchar(50) NOT NULL,
+  Designation_Name varchar(50) NOT NULL,
+  Reporting_UserId varchar(255) NOT NULL,
+  Reporting_ID varchar(255) NOT NULL,
+  Reporting_Manager_Name varchar(152) NOT NULL,
+  Balance double NOT NULL,
+  CL_Balance double DEFAULT NULL,
+  EL_Balance double DEFAULT NULL,
+  HPL_Balance double DEFAULT NULL,
+  PL_Balance double DEFAULT NULL,
+  ML_Balance double DEFAULT NULL,
+  SL_Balance double DEFAULT NULL,
+  Leave_Code varchar(255) NOT NULL,
+  Leave_Type varchar(255) NOT NULL,
+  Min_Service_Period double NOT NULL,
+  Payment_Impact varchar(255) DEFAULT NULL,
+  ORGID bigint(12) NOT NULL,
+  Purpose_of_leave varchar(255) NOT NULL,
+  House_No varchar(10) DEFAULT NULL,
+  Building_No varchar(10) DEFAULT NULL,
+  Address1 varchar(100) DEFAULT NULL,
+  Address2 varchar(100) DEFAULT NULL,
+  Address3 varchar(100) DEFAULT NULL,
+  Leave_From datetime NOT NULL,
+  Leave_To datetime NOT NULL,
+  Portion_of_the_Day varchar(255) NOT NULL,
+  Day_Session varchar(255) DEFAULT NULL,
+  No_of_days double NOT NULL,
+  Is_MC_Provided varchar(255) DEFAULT NULL,
+  MC_Attachment varchar(1000) DEFAULT NULL,
+  Description varchar(100) DEFAULT NULL,
+  created_date date NOT NULL,
+  created_by bigint(12) NOT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  updated_date date NOT NULL,
+  updated_by bigint(12) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) NOT NULL,
+  PRIMARY KEY(Leave_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

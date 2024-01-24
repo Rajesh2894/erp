@@ -1,0 +1,4 @@
+--liquibase formatted sql
+--changeset nilima:V20181124184128__AL_tb_sw_tripsheet_21112018.sql
+ALTER TABLE TB_SW_CONSTDEMO_GARBAGECOLL 
+ADD COLUMN MRF_ID BIGINT(12) NULL AFTER LOC_ID;

@@ -1,0 +1,26 @@
+--liquibase formatted sql
+--changeset nilima:V20180518114803__CR_TB_SW_SANITATION_MAST_HIST_15052018.sql
+CREATE TABLE TB_SW_SANITATION_MAST_HIST (
+  SAN_ID_H BIGINT(12) NOT NULL  COMMENT 'Primary Key',
+  SAN_ID BIGINT(12)  COMMENT 'Primary Key',
+  ASSET_ID BIGINT(12) COMMENT 'ASSET_ID' ,
+  SAN_TYPE BIGINT(12)  COMMENT 'Public Toilet Type',
+  SAN_NAME VARCHAR(200)  COMMENT 'Public Toilet Name',
+  COD_WARD1 BIGINT(12)  COMMENT 'zone',
+  COD_WARD2 BIGINT(12) COMMENT 'ward',
+  COD_WARD3 BIGINT(12) COMMENT 'road/street',
+  COD_WARD4 BIGINT(12) COMMENT 'colony/society/complex',
+  COD_WARD5 BIGINT(12),
+  SAN_SEAT_CNT VARCHAR(45) COMMENT 'seat count',
+  SAN_GISNO VARCHAR(50) COMMENT 'gis no' ,
+  LATTIUDE VARCHAR(100) COMMENT 'LATTIUDE',
+  LONGITUDE VARCHAR(100) COMMENT 'LONGITUDE',
+  H_STATUS char(1)  COMMENT 'Status I->Insert,update',  
+  ORGID BIGINT(12)  COMMENT 'organization id',
+  CREATED_BY BIGINT(12)  COMMENT 'user id who created the record',
+  CREATED_DATE DATETIME  COMMENT 'record creation date',
+  UPDATED_BY BIGINT(12) COMMENT 'user id who updated the record',
+  UPDATED_DATE DATETIME COMMENT 'date on which updated the record' ,
+  LG_IP_MAC VARCHAR(100)  COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD VARCHAR(100) NULL COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (SAN_ID_H));

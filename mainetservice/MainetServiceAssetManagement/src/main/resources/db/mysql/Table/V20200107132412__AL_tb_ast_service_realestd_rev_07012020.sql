@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Anil:V20200107132412__AL_tb_ast_service_realestd_rev_07012020.sql
+ALTER TABLE tb_ast_service_realestd_rev 
+ADD COLUMN MAN_TYPID BIGINT(12) NULL AFTER LG_IP_MAC_UPD,
+ADD COLUMN MAN_CATID BIGINT(12) NULL AFTER MAN_TYPID,
+ADD COLUMN MAN_DATE DATE NULL AFTER MAN_CATID;

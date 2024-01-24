@@ -1,0 +1,50 @@
+--liquibase formatted sql
+--changeset Kanchan:V20221122172210__CR_tb_sfac_cbbo_master_22112022.sql
+CREATE TABLE tb_sfac_cbbo_master (
+  CBBO_ID bigint(20) NOT NULL,
+  CBBO_NAME varchar(200) NOT NULL,
+  CBBO_UNIQUE_ID varchar(50) NOT NULL,
+  IA_NAME varchar(200) DEFAULT NULL,
+  IA_ALLOCATION_YEAR varchar(250) DEFAULT NULL,
+  ALLOCATION_CATEGORY varchar(250) NOT NULL,
+  SDB1 varchar(250) DEFAULT NULL,
+  STATE_CATEGORY varchar(50) NOT NULL,
+  ODOP varchar(200) NOT NULL,
+  ORGID bigint(20) NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  IA_ID bigint(20) DEFAULT NULL,
+  PAN_NO varchar(10) DEFAULT NULL,
+  ADDRESS varchar(350) DEFAULT NULL,
+  PIN_CODE varchar(20) DEFAULT NULL,
+  TYPE_OF_PROM_AGE bigint(20) DEFAULT NULL,
+  PRIMARY KEY (CBBO_ID)
+) ;
+--liquibase formatted sql
+--changeset Kanchan:V20221122172210__CR_tb_sfac_cbbo_master_221120221.sql
+CREATE TABLE tb_sfac_cbbo_mast_det (
+  CBBOD_ID bigint(20) NOT NULL,
+  CBBO_ID bigint(20) NOT NULL,
+  DSG_ID bigint(20) DEFAULT NULL,
+  TITLE_ID bigint(20) DEFAULT NULL,
+  F_NAME varchar(250) DEFAULT NULL,
+  M_NAME varchar(250) DEFAULT NULL,
+  L_NAME varchar(250) DEFAULT NULL,
+  EMAIL_ID varchar(250) DEFAULT NULL,
+  CONTACT_NO varchar(20) DEFAULT NULL,
+  ORGID bigint(20) NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  STATUS char(1) DEFAULT NULL,
+  PRIMARY KEY (CBBOD_ID),
+  KEY FK_CBBO_ID1 (CBBO_ID),
+  CONSTRAINT FK_CBBO_ID1 FOREIGN KEY (CBBO_ID) REFERENCES tb_sfac_cbbo_master (CBBO_ID)
+) ;

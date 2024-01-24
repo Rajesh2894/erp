@@ -1,0 +1,4 @@
+--liquibase formatted sql
+--changeset shamik:V20180316183036__AL_TB_WORKFLOW_MAS1.sql
+ALTER TABLE TB_WORKFLOW_MAS
+DROP COLUMN WF_TASK_MANAGER;

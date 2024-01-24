@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220908133258__AL_tb_as_assesment_owner_dtl_08092022.sql
+alter table tb_as_assesment_owner_dtl add column effective_owner_change_date datetime DEFAULT NULL;

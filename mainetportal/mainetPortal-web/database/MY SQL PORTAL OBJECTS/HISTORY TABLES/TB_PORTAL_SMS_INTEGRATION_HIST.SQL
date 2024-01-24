@@ -1,0 +1,19 @@
+CREATE TABLE `tb_portal_sms_integration_hist` (
+  `H_SEID` decimal(12,0) NOT NULL,
+  `SE_ID` decimal(12,0) NOT NULL,
+  `DP_DEPTID` decimal(12,0) NOT NULL,
+  `SMFID` decimal(12,0) NOT NULL,
+  `ALERT_TYPE` varchar(3) DEFAULT NULL,
+  `ISTRANSACTIONAL` varchar(3) DEFAULT NULL,
+  `ISDELETED` varchar(1) NOT NULL,
+  `ORGID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_BY` int(11) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(100) DEFAULT NULL,
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

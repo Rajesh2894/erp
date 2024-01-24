@@ -1,0 +1,963 @@
+@media print {
+	@page { margin: 0; }
+	/* ----- Common Css starts ----- */
+	.line-height-1rem {
+		line-height: 1.8rem !important;
+	}
+	.overflow-hidden {
+		overflow: hidden;
+	}
+	
+	.width-6{
+	width:6% !important;
+	}
+	.width-8{
+		width:8% !important;
+	}
+	.width-12{
+		width:12% !important;
+	}
+	.table-responsive{
+		border: none;
+		overflow-x: hidden !important; 
+	}
+	/* ----- Common Css ends ----- */
+	
+	/* ---------- B&D Certificate Print CSS starts ---------- */
+	.width-auto { width: auto !important; }
+	.height-logo { height: 10rem; }
+	.cert-outer-div-2 > div > span {
+		margin-top: 0rem !important;
+	}
+	.form-horizontal .form-group label {
+		font-size: 0.8em;
+	}
+	.form-horizontal .form-group div p.bnd-p-tag {
+		padding: 0px 12px;
+		font-size: 0.9rem !important;
+	}
+	.form-horizontal .form-group.eng-text div p.bnd-p-tag {
+		padding: 0px 12px;
+	}
+	.form-horizontal .form-group.mar-text {
+		margin-bottom: 0px !important;
+	}
+	.form-horizontal .form-group.eng-text {
+		margin-bottom: 5px !important;
+	}
+	.form-horizontal .form-group.eng-text label {
+		padding-top: 0px;
+	}
+	.widget .widget-content {
+		padding: 0.8rem !important;
+	}
+	.widget .widget-content.widget-content-print {
+	    padding: 0 1em;
+	}
+	.first-section p.bnd-p-tag {
+		text-indent: 6em;
+		margin-bottom: 5px !important;
+		font-size: 12px;
+	}
+	.bnd-seal {
+		border: 1px solid #000000;
+		padding: 10px;
+		display:inline-block;
+		height: 100px;
+		width: 100px;
+	}
+	.cert-outer-div {
+		border: 3px solid #000000 !important;
+		padding: 3px;
+	}
+	.cert-outer-div-2 {
+		border: 1px solid #000000;
+		padding: 0.8em !important;
+	}
+	.cert-outer-div-2 .border-bottom-black span,
+	.cert-outer-div-2 .border-bottom-black div h5,
+	.cert-outer-div-2 .border-bottom-black p.bnd-p-tag {
+		font-size: 12px;
+	}
+	.cert-outer-div-2 .border-bottom-black div h3,
+	.cert-outer-div-2 .border-bottom-black div h5 {
+		margin: 5px 0px !important;
+	}
+	.cert-outer-div-2 .border-bottom-black div h3 {
+		font-size: 15px;
+		line-height: 15px;
+	}
+	.border-bottom-black { border-bottom: 1px solid #000000; }
+	.bottom-section {
+		background-color: #000000;
+		padding: 10px;
+	}
+	.bottom-section div {
+		color: #ffffff;
+		font-size: 14px;
+	}
+	.bnd-acknowledgement .cert-outer-div {
+		padding: 0rem !important;
+	}
+	.bnd-acknowledgement .border-bottom-black { 
+	     border-bottom: 3px solid #000000 !important;
+	}
+	.bndSign .width-25{width: 5rem; !important; }
+	/* ---------- B&D Certificate Print CSS ends ---------- */
+	
+	/* ---------- Marriage Certificate Print CSS Starts ---------- */
+	.height-100 {
+		height: 100px !important;
+	}
+	.height-120 {
+		height: 120px !important;
+	}
+	.cert-head .candidate-img img {
+		height: 80px;
+	}
+	.cert-head .cert-head-center-content img.nat-emblem {
+		margin: auto;
+	}
+	.cert-head .cert-head-center-content h3 {
+		font-size: 20px;
+		margin: 5px 0px;
+	}
+	.cert-head .candidate-img.right img {
+		float: right;
+	}
+	.cert-inner-div .cert-head h4,
+	.cert-inner-div h4 {
+		font-size: inherit;
+		background: none !important;
+		border: unset !important;
+		margin: 2px 0px;
+	}
+	.cert-inner-div .cert-head h4 {
+		padding: 2px;
+	}
+	.cert-inner-div .cert-body h4 {
+		padding: 0px;
+	}
+	.cert-inner-div .cert-body{
+		padding: 40px;
+	}
+	.line-height-2 {
+		line-height: 2rem;
+	}
+	.info-2 > h4,
+	.info-3 {
+		font-size: 14px !important;
+	}
+	.info-4 {
+		font-size: 12px !important;
+	}
+	/* ---------- Marriage Certificate Print CSS Ends ---------- */
+	
+	/* ----- LOI Printing CSS starts ----- */
+	#loiPrint h5.sub-heading {
+		font-size: 1.1rem !important;
+	}
+	#loiPrint .cert-outer-div {
+		border: 3px solid #000000;
+		padding: 0.4rem;
+	}
+	#loiPrint .row {
+		margin: 0rem -0.8rem;
+	}
+	.colon {
+		position: relative;
+	}
+	.colon::after {
+		content:'\003A';
+		position: absolute;
+		top: 0rem;
+	    right: 0rem;
+	}
+	#loiprintform .loiPaymentTable{
+		overflow: hidden;
+		border: none !important;
+	}
+	#loiprintform .loiPaymentTable table{
+		margin: 0 auto;
+	    width: 70%;
+	}
+	#loiprintform .cert-outer-div{
+		padding: 1.5rem;
+	}
+	#loiprintform .loiPaymentTable table tr th{
+		text-align: center;
+	}
+	/* ----- LOI Printing CSS ends ----- */
+	
+	/* ---------- Background Water-mark Starts ---------- */
+	.background-watermark-1,
+	.background-watermark-2 {
+		text-align: center;
+		opacity: 0.2;
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	.background-watermark-1 {
+		top: 12%;
+	}
+	.background-watermark-2 {
+		top: 49%;
+	}
+	.background-watermark-1 img,
+	.background-watermark-2 img {
+		height: 200px !important;
+	}
+	h3.org-name ~ p {
+		font-weight: 600;
+	}
+	.receipt-main.widget table {
+		z-index: 2;
+	}
+	.receipt-main.widget table tr th {
+		background: rgba(238, 238, 238, 0.5) !important;
+	}
+	/* ---------- Background Water-mark Ends ---------- */
+	
+	/* ----- Completion Certificate Css starts ----- */
+	.completion-cert .org-logo {
+		position: relative;
+	}
+	.completion-cert .org-logo img {
+		position: absolute;
+	}
+	.completion-cert ol li,
+	.completion-cert ol li:first-child {
+		margin-top: 0.3rem !important;
+		margin-left: 1.5rem;
+	}
+	.completion-cert ol li {
+		margin-bottom: 0.3rem !important;
+	}
+	.completion-cert ol[type="i"] li {
+		margin-left: 2rem !important;
+	}
+	.completion-cert .cert-outer-div {
+		border: 1px solid #000000 !important;
+		padding: 1.5rem !important;
+	}
+	.completion-cert h3 {
+	    font-size: 1.7rem !important;
+	    margin-top: 0rem !important;
+	    margin-bottom: 0rem !important;
+	}
+	.completion-cert h3.smaller-h3 {
+		font-size: 1.5rem !important;
+	}
+	.completion-cert .signtr {
+		width: 36% !important;
+	}
+	/* ----- Completion Certificate Css ends ----- */
+	
+	/* ----- Complaint Report css starts ----- */
+	.padding-left-10-per {
+		padding-left:10%;
+	}	
+	.padding-left-5-per {
+		padding-left:5%;
+	}
+	.zone-ward > label[for="careWardNo1"],
+	.zone-ward > label[for="careWardNo2"] {
+		width: 16%;
+	}
+	.zone-ward > label[for="careWardNo1"] + div,
+	.zone-ward > label[for="careWardNo2"] + div {
+		width: 25%;
+	}
+	.zone-ward > label[for="careWardNo2"] {
+		margin-left: 0.6rem;
+	}
+	.zone-ward > label[for="careWardNo1"] + div {
+		padding-left: 2rem;
+	}
+	.zone-ward > label[for="careWardNo2"] + div {
+		margin-left: 6.5rem;
+	}
+	.zone-ward > label[for="careWardNo3"] {
+		clear: both;
+	}
+	.zone-ward > label[for="careWardNo3"],
+	.zone-ward > label[for="careWardNo3"] + div {
+		margin-top: 1rem;
+	}
+	/* ----- Complaint Report css ends ----- */
+	
+	/* ----- Self Assessment Form css starts ----- */ 
+	.self-assessment{
+		margin: 0rem 1rem;
+	}
+	.self-assessment input[type="text"].form-control {
+		border: 0;
+		font-weight: 600;
+		border-bottom: 1px dotted #333;
+		padding-left: 0;
+		background: none;
+	}
+	.self-assessment input[type="text"].form-control:focus {
+		outline: none;
+	}
+	.self-assessment textarea.form-control {
+		border: 0;
+		font-weight: 600;
+		border-bottom: 1px dotted #333;
+		padding-left: 0;
+		background: none;
+	}
+	.self-assessment textarea.form-control:focus {
+		outline: none;
+	}
+	.self-assessment select.form-control {
+		border: 0;
+		font-weight: 600;
+		border-bottom: 1px dotted #333;
+		padding-left: 0;
+		background: none;
+	}
+	.self-assessment select.form-control:focus {
+		outline: none;
+	}
+	.self-assessment .propInfo > label,
+	.self-assessment .propInfo > div,
+	.self-assessment .OcupierDetails > label,
+	.self-assessment .OcupierDetails > div{
+		float: left;
+	}
+	.self-assessment .propInfo > label[for="assNo"],
+	.self-assessment .propInfo > label[for="refPropNo"],
+	.self-assessment .propInfo > label[for="assGisId"],
+	.self-assessment .propInfo > label[for="assWardDesc1"],
+	.self-assessment .propInfo > label[for="assWardDesc2"],
+	.self-assessment .propInfo > label[for="proAssdRoadfactorDesc"],
+	.self-assessment .propInfo > label[for="billMethod"],
+	.self-assessment .OcupierDetails > label {
+		width: 16.66666667%;
+	}   
+	.self-assessment .propInfo > label[for="assNo"] + div,
+	.self-assessment .propInfo > label[for="refPropNo"] + div,
+	.self-assessment .propInfo > label[for="assGisId"] + div,
+	.self-assessment .propInfo > label[for="assWardDesc1"] + div,
+	.self-assessment .propInfo > label[for="assWardDesc2"] + div,
+	.self-assessment .propInfo > label[for="proAssdRoadfactorDesc"] + div,
+	.self-assessment .propInfo > label[for="billMethod"] + div,
+	.self-assessment .OcupierDetails > label + div {
+		width: 33.33333333%;
+	}
+	.self-assessment #UnitDetail {
+		margin-left: -0.5rem;
+	}
+	/* ----- Self Assessment Form css ends ----- */
+	
+	/*-------------work order print starts------------*/
+	
+	/*------------NWC Work order print-------------*/
+	#workprintnwc .cert-outer-div ,
+	#workprintusage .cert-outer-div ,
+	#workprintrecon .cert-outer-div {
+		border: 3px solid #000000;
+		margin: 2rem !important;
+	}
+	#signexecu{
+	padding-top: 180px !important;
+	}
+	#signnwc{
+		padding-top:100px !important;
+	}
+	#signusage{
+		padding-top:100px !important;
+	}
+	/*-------------work order print ends------------*/
+	
+	/*------------- accountBillEntryPrintForm css starts (For TMC) ------------*/
+	.account-bill-entry-print-form .org-logo {
+		width: 5rem;
+	}
+	.account-bill-entry-print-form .form-content-2 {
+		padding: 0;
+	}
+	.account-bill-entry-print-form .form-content-2 span,
+	.account-bill-entry-print-form .form-content-2 ol li::marker {
+		font-size: 0.8em;
+		line-height: 30px;
+	}
+	.account-bill-entry-print-form .form-content-2 span.control-label,
+	.account-bill-entry-print-form .form-content-2 ol li {
+		font-weight: 600;
+	}
+	.account-bill-entry-print-form .form-content-2 span.control-label:before {
+	    color: #333;
+	    content: ":";
+	    position: absolute;
+	    right: 0;
+	}
+	.account-bill-entry-print-form .form-content-2 .text-underline,
+	.account-bill-entry-print-form .form-content-2 .text-dotted {
+		display: inline-block;
+	}
+	.account-bill-entry-print-form .form-content-2 .text-underline {
+		text-decoration: unset;
+		border-bottom: 1px solid;
+	}
+	.account-bill-entry-print-form .form-content-2 .text-dotted {
+		border-bottom: 1px dotted;
+	}
+	.account-bill-entry-print-form .width-15 {
+		width: 15%;
+	}
+	.account-bill-entry-print-form .width-20 {
+		width: 20%;
+	}
+	.account-bill-entry-print-form .width-24.print-sect {
+		width: 16%;
+	}
+	.account-bill-entry-print-form .width-59.print-sect {
+		width: 54%;
+	}
+	.account-bill-entry-print-form .width-64.print-sect {
+		width: 61%;
+	}
+	.account-bill-entry-print-form .width-100 {
+		width: 100%;
+	}
+	/*------------- accountBillEntryPrintForm css ends (For TMC) ------------*/
+	
+	/* ===== CBBO assessmentDetailsPrint page starts ===== */
+	ul.imp-notes {
+		margin: 0 0 0 1rem;
+	}
+	ul.imp-notes li {
+		font-size: 0.75em;
+		list-style-type: disc;
+	}
+	table#cbboAssessEntTable > thead > tr > :is(:not(th:nth-child(1), th:nth-child(2))),
+	table#cbboAssessEntTable > tbody > tr > :is(:not(th:nth-child(1), th:nth-child(2), td:nth-child(1), td:nth-child(2))),
+	table#cbboAssessEntTable > tfoot > tr > :is(:not(th:nth-child(1), th:nth-child(2))) {
+		padding: 0;
+	}
+	table#cbboAssessEntTable tr th {
+		text-align: center;
+	}
+	table#cbboAssessEntTable tbody tr th.text-left {
+		text-align: left;
+	}
+	table.inner-table,
+	table.inner-table-2 {
+		width: 100%;
+	}
+	table.inner-table tbody tr th,
+	table.inner-table tbody tr td,
+	table.inner-table-2 thead tr th {
+		border: solid rgb(8 131 55 / 94%) !important;
+	}
+	table.inner-table thead tr th:not(:nth-child(2)),
+	table.inner-table tbody tr :is(th:not(:nth-child(2)), td:not(:nth-child(2))),
+	table.inner-table-2 thead tr > th,
+	table.inner-table-2 tbody tr > :is(th, td) {
+		padding: 0.3rem;
+	}
+	table.inner-table > tbody > tr:not(:last-child) > th,
+	table.inner-table > tbody > tr:not(:last-child) > td {
+		border-width: 0 0 1px 0 !important;
+	}
+	table.inner-table > tbody > tr:last-child > th,
+	table.inner-table > tbody > tr:last-child > td {
+		border-width: 0 !important;
+	}
+	table.inner-table-2 thead tr th,
+	table.inner-table-2:last-child tbody tr th,
+	table.inner-table-2:last-child tbody tr td {
+		border-width: 0 1px 0 1px !important;
+	}
+	table.inner-table-2:not(:last-child) tbody tr th,
+	table.inner-table-2:not(:last-child) tbody tr td {
+		border-width: 0 1px 1px 1px !important;
+	}
+	table#cbboAssessEntTable > thead > tr:nth-child(2) > th:nth-child(1),
+	table#cbboAssessEntTable > thead > tr:nth-child(2) > th:nth-child(2) {
+		width: 5.8rem;
+	}
+	table.inner-table thead tr th:nth-child(1),
+	table.inner-table tbody tr :is(th:nth-child(1), td:nth-child(1)) {
+		width: 21.16rem;
+	}
+	table.inner-table thead tr th:nth-child(3),
+	table.inner-table tbody tr :is(th:nth-child(3), td:nth-child(3)) {
+		width: 11rem;
+	}
+	table.inner-table-2 thead tr th:nth-child(1),
+	table.inner-table-2 tbody tr :is(th:nth-child(1), td:nth-child(1)) {
+		width: 40%;
+	}
+	table.inner-table-2 thead tr th:nth-child(2),
+	table.inner-table-2 tbody tr :is(th:nth-child(2), td:nth-child(2)) {
+		width: 15%;
+	}
+	table.inner-table-2 thead tr th:nth-child(3),
+	table.inner-table-2 tbody tr :is(th:nth-child(3), td:nth-child(3)) {
+		width: 15%;
+	}
+	table.inner-table-2 thead tr th:nth-child(4),
+	table.inner-table-2 tbody tr :is(th:nth-child(4), td:nth-child(4)) {
+		width: 15%;
+	}
+	table.inner-table-2 thead tr th:nth-child(5),
+	table.inner-table-2 tbody tr :is(th:nth-child(5), td:nth-child(5)) {
+		width: 15%;
+	}
+	/* ===== CBBO assessmentDetailsPrint page ends ===== */
+	
+	
+	/* ===== FPO fpoAssDetailsPrint page starts ===== */
+	ul.imp-notes {
+		margin: 0 0 0 1rem;
+	}
+	ul.imp-notes li {
+		font-size: 0.75em;
+		list-style-type: disc;
+	}
+	table#fpoAssessEntTable > thead > tr > :is(:not(th:nth-child(1), th:nth-child(2))),
+	table#fpoAssessEntTable > tbody > tr > :is(:not(th:nth-child(1), th:nth-child(2), td:nth-child(1), td:nth-child(2))),
+	table#fpoAssessEntTable > tfoot > tr > :is(:not(th:nth-child(1), th:nth-child(2))) {
+		padding: 0;
+	}
+	table#fpoAssessEntTable tr th {
+		text-align: center;
+	}
+	table#fpoAssessEntTable tbody tr th.text-left {
+		text-align: left;
+	}
+	table.inner-table,
+	table.inner-table-2 {
+		width: 100%;
+	}
+	table.inner-table tbody tr th,
+	table.inner-table tbody tr td,
+	table.inner-table-2 thead tr th {
+		border: solid rgb(8 131 55 / 94%) !important;
+	}
+	table.inner-table thead tr th:not(:nth-child(2)),
+	table.inner-table tbody tr :is(th:not(:nth-child(2)), td:not(:nth-child(2))),
+	table.inner-table-2 thead tr > th,
+	table.inner-table-2 tbody tr > :is(th, td) {
+		padding: 0.3rem;
+	}
+	table.inner-table > tbody > tr:not(:last-child) > th,
+	table.inner-table > tbody > tr:not(:last-child) > td {
+		border-width: 0 0 1px 0 !important;
+	}
+	table.inner-table > tbody > tr:last-child > th,
+	table.inner-table > tbody > tr:last-child > td {
+		border-width: 0 !important;
+	}
+	table.inner-table-2 thead tr th,
+	table.inner-table-2:last-child tbody tr th,
+	table.inner-table-2:last-child tbody tr td {
+		border-width: 0 1px 0 1px !important;
+	}
+	table.inner-table-2:not(:last-child) tbody tr th,
+	table.inner-table-2:not(:last-child) tbody tr td {
+		border-width: 0 1px 1px 1px !important;
+	}
+	table#fpoAssessEntTable > thead > tr:nth-child(2) > th:nth-child(1),
+	table#fpoAssessEntTable > thead > tr:nth-child(2) > th:nth-child(2) {
+		width: 5.8rem;
+	}
+	table.inner-table thead tr th:nth-child(1),
+	table.inner-table tbody tr :is(th:nth-child(1), td:nth-child(1)) {
+		width: 21.16rem;
+	}
+	table.inner-table thead tr th:nth-child(3),
+	table.inner-table tbody tr :is(th:nth-child(3), td:nth-child(3)) {
+		width: 11rem;
+	}
+	table.inner-table-2 thead tr th:nth-child(1),
+	table.inner-table-2 tbody tr :is(th:nth-child(1), td:nth-child(1)) {
+		width: 40%;
+	}
+	table.inner-table-2 thead tr th:nth-child(2),
+	table.inner-table-2 tbody tr :is(th:nth-child(2), td:nth-child(2)) {
+		width: 15%;
+	}
+	table.inner-table-2 thead tr th:nth-child(3),
+	table.inner-table-2 tbody tr :is(th:nth-child(3), td:nth-child(3)) {
+		width: 15%;
+	}
+	table.inner-table-2 thead tr th:nth-child(4),
+	table.inner-table-2 tbody tr :is(th:nth-child(4), td:nth-child(4)) {
+		width: 15%;
+	}
+	table.inner-table-2 thead tr th:nth-child(5),
+	table.inner-table-2 tbody tr :is(th:nth-child(5), td:nth-child(5)) {
+		width: 15%;
+	}
+	/* ===== FPO fpoAssDetailsPrint page ends ===== */
+}
+
+
+.care-report-table-header{
+	width:100%;
+	margin-left :2rem;
+	padding :0px;
+}
+.care-report-table-header tr td, .care-report-table-header tr th{
+	padding :4px;
+	background:none !important;
+	text-align:left !important;
+}
+.logo_heading h3{
+	text-align:center;
+	padding-bottom:3rem;
+}
+
+/* ----- Details and Summary Reports css starts ----- */
+.widget-content.padding.detail-summary-reports {
+	padding: 2rem;
+}
+.textleft{
+	text-align: left !important;
+}
+.detail-summary-reports .org-logo-div > img {
+	height: 115px;
+	min-width: 125px;
+}
+.detail-summary-reports .org-name-div {
+	margin-left: -3rem;
+}
+.detail-summary-reports .label-text {
+	padding-left: 4rem;
+}
+.detail-summary-reports .label-text > div,
+.detail-summary-reports .label-text > span,
+.detail-summary-reports .label-text .care-report-table-header tr th,
+.detail-summary-reports .label-text .care-report-table-header tr td {
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+.detail-summary-reports .date-time-div .control-label {
+	min-width: 3rem;
+	display: inline-block;
+}
+.detail-summary-reports .care-report-table-header .control-label{
+	color: #4b4b4b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0px;
+}
+.detail-summary-reports .ward-zone > label[for="careWardNo2"] + div,
+.detail-summary-reports .ward-zone > label[for="careWardNo3"] + div{
+	width: 25%;
+}
+.detail-summary-reports .ward-zone > label[for="careWardNo3"]{
+	clear: both;
+}
+.detail-summary-reports .ward-zone > label[for="careWardNo3"],
+.detail-summary-reports .ward-zone > label[for="careWardNo3"] + div{
+	margin-top: 0.5rem;
+}
+.detail-summary-reports #tlExcel{
+	display: none;
+}
+
+
+
+/* ----- Details and Summary Reports css ends ----- */
+
+/*-------------Rejection Letter on scrutiny css starts-------*/
+
+#SiteInspectionletter .cert-outer-div {
+	border: 3px solid #000000;
+}
+
+#SiteInspectionletter .border-bottom-black { 
+     border-bottom: 3px solid #000000;
+     margin:-2px;
+}
+#SiteInspectionletter .overflow-hidden {
+	overflow: hidden;
+}
+#SiteInspectionletter .pgmargin {
+
+	margin : 2rem;
+}
+.fontsz{
+	font-size: 16px !important;
+}
+
+
+/*-------------Rejection Letter on scrutiny css ends-------*/
+
+/*-------------New water connection form css starts-------*/
+
+.zone-ward > label[for="codDwzid3"] {
+	clear: both;
+}
+.zone-ward > label[for="codDwzid3"],
+.zone-ward > label[for="codDwzid3"] + div {
+	margin-top: 1rem;
+}
+
+/*-------------New water connection form css ends-------*/
+
+/* ----- Trade License css starts ----- */
+.trade-license-report-printing .border-black {
+	border: 1px solid #000;
+}
+.trade-license-report-printing .print-content {
+	margin-top: 10px;
+}
+.trade-license-report-printing .date-section {
+	margin-left: -0.75rem;
+}
+.trade-license-cert .trade-license-cert-content {
+    border: 1px solid #000 !important; 
+    padding: 1rem !important;
+}
+/* ----- Trade License css ends ----- */
+
+/* ----- complaint receipt  css starts ----- */
+.complaintReceipt .cert-outer-div {
+	border: 3px solid #000000;
+	padding: 1.5rem;
+}
+.complaintReceipt .width-15 {
+	width: 15rem !important;
+}
+.complaintReceipt .width-25 {
+	width: 25rem !important;
+}
+/* ----- complaint receipt  css ends ----- */
+
+/*----------Provisional Certificate css starts--------------*/
+#provisional .width-50{
+	width:"50% !important";
+}
+/* #provisional .cert-outer-div {
+	border: 3px solid #000000;
+	margin:50px !important;
+}
+ */
+#footer {
+   bottom:0;
+   width:100%;
+   height:30px;   /* Height of the footer */
+   background:#4F2BC1;
+   color:white;
+   padding-top: 0.5rem;
+}
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+@page {
+  margin-top: 1in;
+  margin-bottom: 0.5in; 
+}
+
+@page :first {
+  margin-top: 0in; 
+}
+
+/*----------Provisional Certificate css starts--------------*/
+
+/*----------Account receipt css starts--------------*/
+.accountReceipt .cert-outer-div-rcpt{
+	border: 1px solid #000000;
+	padding: 1.5rem;
+}
+/*----------Account receipt css ends--------------*/
+
+/*----------revenue receipt css starts--------------*/
+table.revenueDetails tr th{
+	text-align:center !important
+}
+.revenue p {
+	font-size: 1em;
+}
+.revenue{
+    padding-top: 2rem !important;
+}
+/*----------revenue receipt css ends--------------*/
+
+
+.trade-license-cert-div .form-horizontal p.tlc-label::after{
+content: '\003A';
+position: absolute !important;
+right: 0 !important;
+top: 0 !important;
+}
+/*----------account bill register css starts--------------*/
+.billRegisterDiv .padding-left20{
+	padding-left: 13rem !important;
+}
+.billRegisterDiv .padding-left10{
+	padding-left: 4rem !important;
+}
+.billRegisterDiv{
+	margin-top: 2rem;
+}
+/*----------account bill register css ends--------------*/
+
+/*----------deduction register css starts--------------*/
+.deductionReport{
+	padding: 1rem !important;
+}
+/*----------deduction register css ends--------------*/
+/*----------work-order css starts--------------*/
+.nwc-work-order .applDate{
+	float: right;
+}
+.nwc-work-order .payment-details-table table tr th{
+	background: #044c87 !important;
+    color: #fff !important;
+}
+.nwc-work-order .payment-details-table{
+	padding: 0 10rem;
+}
+.nwc-work-order .plumber-table{
+	padding: 0 15rem;
+}
+.nwc-work-order table>tbody>tr>td{
+    border: 1px solid #000 !important;
+}
+/*----------work-order css ends--------------*/
+
+/*----------BnD  CSS Starts--------------*/
+.bnd-logo-div img{
+			height:4.5rem;
+			width:5rem;
+	}
+	.bnd-logo-div{
+		text-align: center;
+	}
+	.fontSize{
+		font-size: 11px !important;
+	}
+	
+.emblem_logo img{
+		height:12rem;
+		width:12rem;
+		padding-left: 30px;
+	}
+
+.background-water-mark {
+		position: absolute;
+		background: transparent;
+		display: block;
+		z-index:99;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.background-water-mark .water-mark-content {
+		text-align: center;
+		opacity: 0.05;
+	}
+	.background-water-mark .water-mark-content img{
+		width: 80rem;
+	}
+.bndFontSize .form-horizontal .form-group label {
+		font-size: 1.45rem;
+	}
+	.bndSeal {
+		border: 1px solid #000000;
+		padding: 10px;
+		display:inline-block;
+		height: 60px;
+		width: 70px;
+		margin-left:300px;
+	}
+	.mainheading > h3{
+		font-size: 19px;
+	}
+.mainheadingcorporation h3{
+	position: absolute;
+	z-index:12;
+	left:180px;
+	top:-35px;
+	font-size:14px !important;
+}
+.sealPosition{
+	position: absolute;
+	z-index:12;
+	bottom:80px;
+}
+.mainheading .thaneMarathiText {
+	font-size:14px !important;
+}
+.form-horizontal .mainbndContent p{
+	font-size: 1.5rem;
+}
+.bndFontSize .control-label {
+	position: relative;
+}
+.bndFontSize .control-label:before {
+	color: #333;
+	content: ":";
+	position: absolute;
+	right: 0;
+}
+.bndFontSize .form-horizontal .form-group div p.bnd-p-tag {
+	padding: 0px 12px 0px;
+	font-size: 1.4rem !important;
+}
+.bndFontSize label{
+	font-weight: 100;
+}
+.mainheading{
+	padding-bottom:30px;
+}
+.bndeng, .bndhindi {
+	font-size: 15px;
+}
+.certificateNform span p{
+	font-size:15px ;
+}
+/*----------BnD  CSS Ends --------------*/
+/*----------Drainage Connection CSS Start--------------*/
+.outer-border {
+	width:75rem !important;
+	border: 1px solid #000000;
+	margin: 20px auto;
+}
+.margin-bottom-20{
+	padding-bottom: 20px !important;
+}
+.drainageTableFont table thead tr td{
+	font-size: 13px !important;
+}
+.drainageBorderDivide{
+	border :1px solid #5b5b5b;
+}
+.letterFontSize h3{
+	font-size: 20px;
+}
+table tr .verticalMiddle{
+	vertical-align: middle !important;
+}
+/*----------Drainage Connection CSS Ends--------------*/
+
+/*----------Account Deposit Slip Report CSS Starts--------------*/
+.bankTableFont tr th span, .bankTableFont tr td span{
+	font-size: 12px !important;
+}
+.accountSlip .control-label {
+	position: relative;
+}
+.accountSlip .control-label:before {
+	color: #333;
+	content: ":";
+	position: absolute;
+	right: 0;
+	top:10px;
+}
+/*----------Account Deposit Slip Report CSS Ends--------------*/

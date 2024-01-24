@@ -1,0 +1,20 @@
+CREATE TABLE `tb_eip_faq_hist` (
+  `H_FAQID` decimal(12,0) NOT NULL,
+  `FAQ_ID` decimal(12,0) NOT NULL,
+  `ANSWER_EN` varchar(500) NOT NULL,
+  `ANSWER_REG` varchar(2000) DEFAULT NULL,
+  `QUESTION_EN` varchar(250) NOT NULL,
+  `QUESTION_REG` varchar(2000) DEFAULT NULL,
+  `SEQ_NO` decimal(19,0) DEFAULT NULL,
+  `ISDELETED` varchar(1) NOT NULL,
+  `ORGID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_BY` int(11) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(100) DEFAULT NULL,
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

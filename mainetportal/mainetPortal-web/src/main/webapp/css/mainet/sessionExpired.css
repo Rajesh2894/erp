@@ -1,0 +1,47 @@
+.ui-dialog 
+        {
+            font-family: Trebuchet MS;
+            background-color: #D8D8D8;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background:#fff;
+            z-index:222 !important;
+       }
+     
+  	.ui-button-text{
+  	background:#63b2f5;
+  	color:#fff;
+  	}
+      
+        .ui-dialog-titlebar
+        {
+            font-size: large;
+            font-weight: bold;
+            background:#63b2f5;
+            color:#fff;
+            
+        }
+      /*   .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+	{
+	background:#63b2f5;
+	border: 1px solid #3ea1f6;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	height: 30px;
+	line-height: 26.5px;
+	margin-right: 5px;
+	padding: 0 5px;
+	z-index: 3;
+	transition:all 0.2s;
+	}      */  
+   .ui-dialog-titlebar-close {
+            visibility: hidden;
+        }
+        
+      /*  .ui-widget-content{ background:#fff;} */ 
+        
+        .ui-widget-overlay{position:fixed; width:100% !important; height:100% !important; z-index:221!important;} 

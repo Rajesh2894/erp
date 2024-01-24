@@ -1,0 +1,1 @@
+<a href="#">${userSession.loggedInMessage}</a>

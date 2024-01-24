@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropertyTaxBillPrintingEnglish_subreport1" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7df8b7a2-41bd-49c1-9a79-14fc62672677">
+	<property name="ireport.zoom" value="1.2100000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="taxNameV" class="java.lang.String"/>
+	<field name="arrearsAmountV" class="java.lang.Double"/>
+	<field name="totalAmountV" class="java.lang.Double"/>
+	<field name="currentAmountV" class="java.lang.Double"/>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="190" y="0" width="1" height="20" isPrintWhenDetailOverflows="true" uuid="9f9d8283-56a5-45fa-9c5c-dd15c2778809"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="5" y="0" width="180" height="20" uuid="23bca5d6-8321-44be-bdc0-73075ba8cba9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taxNameV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="391" y="0" width="99" height="20" uuid="46ba3d9b-7b06-4aa3-bc6a-b3dd6d58d2dc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAmountV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="191" y="0" width="95" height="20" uuid="b8b190fb-21c4-407c-bfa5-92a1a903632d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arrearsAmountV}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="290" y="0" width="1" height="20" isPrintWhenDetailOverflows="true" uuid="af04263f-f18a-43cf-bd21-110740b7df85"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="390" y="0" width="1" height="20" isPrintWhenDetailOverflows="true" uuid="a42e1d85-db43-4828-96c2-2417007c5c27"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="291" y="0" width="95" height="20" uuid="035f5a06-cfcb-48f2-8995-ede8ed772743"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Unicode MS" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currentAmountV}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="494" height="1" uuid="7227e17c-d567-4f23-9ba3-e3b54326f013"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true" uuid="3db82865-56dc-4818-8f97-bba890376723"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="493" y="0" width="1" height="20" isPrintWhenDetailOverflows="true" uuid="51fee86f-9892-4190-87d4-9085a2a8789a"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

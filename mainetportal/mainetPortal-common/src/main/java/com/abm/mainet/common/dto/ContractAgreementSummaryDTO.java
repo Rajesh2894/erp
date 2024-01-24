@@ -1,0 +1,279 @@
+package com.abm.mainet.common.dto;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * @author apurva.salgaonkar
+ *
+ */
+public class ContractAgreementSummaryDTO implements Serializable {
+
+    private static final long serialVersionUID = -1045129310751501377L;
+    private long contId;
+    private String contNo;
+    private String contDate;
+    private String contDept;
+    private String contFromDate;
+    private String contToDate;
+    private String contp1Name;
+    private String contp2Name;
+    private String address;
+    private String emailId;
+    private String mobileNo;
+    private BigDecimal contAmount;
+    private String contTndNo;
+    private String contLoaNo;
+    private BigDecimal balanceAmount;
+    private BigDecimal overdueAmount;
+    private Long orgId;
+    private String status;
+    private String errorMsg;
+    private Double inputAmount;
+    private Long serviceId;
+    private Long deptId;
+    private Double billBalanceAmount;
+    private String contDeptSc;
+    private BigDecimal arrearsAmt;
+    private BigDecimal sumOfCurrentAmt;
+    private BigDecimal arrearsAndCurrentAmt;
+    // Tax List
+    List<ChargeDetailDTO> chargeList;
+    private List<Object[]> propertyDetails = new ArrayList<Object[]>();
+
+    public String getContLoaNo() {
+        return contLoaNo;
+    }
+
+    public void setContLoaNo(String contLoaNo) {
+        this.contLoaNo = contLoaNo;
+    }
+
+    public String getContTndNo() {
+        return contTndNo;
+    }
+
+    public void setContTndNo(String contTndNo) {
+        this.contTndNo = contTndNo;
+    }
+
+    public String getContFromDate() {
+        return contFromDate;
+    }
+
+    public void setContFromDate(final String contFromDate) {
+        this.contFromDate = contFromDate;
+    }
+
+    public String getContToDate() {
+        return contToDate;
+    }
+
+    public void setContToDate(final String contToDate) {
+        this.contToDate = contToDate;
+    }
+
+    public long getContId() {
+        return contId;
+    }
+
+    public void setContId(final long contId) {
+        this.contId = contId;
+    }
+
+    public String getContNo() {
+        return contNo;
+    }
+
+    public void setContNo(final String contNo) {
+        this.contNo = contNo;
+    }
+
+    public String getContp1Name() {
+        return contp1Name;
+    }
+
+    public void setContp1Name(final String contp1Name) {
+        this.contp1Name = contp1Name;
+    }
+
+    public String getContp2Name() {
+        return contp2Name;
+    }
+
+    public void setContp2Name(final String contp2Name) {
+        this.contp2Name = contp2Name;
+    }
+
+    public String getContDept() {
+        return contDept;
+    }
+
+    public void setContDept(final String contDept) {
+        this.contDept = contDept;
+    }
+
+    public String getContDate() {
+        return contDate;
+    }
+
+    public void setContDate(final String contDate) {
+        this.contDate = contDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(final String address) {
+        this.address = address;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(final String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(final String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public BigDecimal getContAmount() {
+        return contAmount;
+    }
+
+    public void setContAmount(BigDecimal contAmount) {
+        this.contAmount = contAmount;
+    }
+
+    public BigDecimal getBalanceAmount() {
+        return balanceAmount;
+    }
+
+    public void setBalanceAmount(BigDecimal balanceAmount) {
+        this.balanceAmount = balanceAmount;
+    }
+
+    public BigDecimal getOverdueAmount() {
+        return overdueAmount;
+    }
+
+    public void setOverdueAmount(BigDecimal overdueAmount) {
+        this.overdueAmount = overdueAmount;
+    }
+
+    public Long getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
+    public List<ChargeDetailDTO> getChargeList() {
+        return chargeList;
+    }
+
+    public void setChargeList(List<ChargeDetailDTO> chargeList) {
+        this.chargeList = chargeList;
+    }
+
+	public List<Object[]> getPropertyDetails() {
+		return propertyDetails;
+	}
+
+	public void setPropertyDetails(List<Object[]> propertyDetails) {
+		this.propertyDetails = propertyDetails;
+	}
+
+	public Double getInputAmount() {
+		return inputAmount;
+	}
+
+	public void setInputAmount(Double inputAmount) {
+		this.inputAmount = inputAmount;
+	}
+
+	public Long getServiceId() {
+		return serviceId;
+	}
+
+	public void setServiceId(Long serviceId) {
+		this.serviceId = serviceId;
+	}
+
+	public Long getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(Long deptId) {
+		this.deptId = deptId;
+	}
+
+	public Double getBillBalanceAmount() {
+		return billBalanceAmount;
+	}
+
+	public void setBillBalanceAmount(Double billBalanceAmount) {
+		this.billBalanceAmount = billBalanceAmount;
+	}
+
+	public String getContDeptSc() {
+		return contDeptSc;
+	}
+
+	public void setContDeptSc(String contDeptSc) {
+		this.contDeptSc = contDeptSc;
+	}
+
+	public BigDecimal getArrearsAmt() {
+		return arrearsAmt;
+	}
+
+	public void setArrearsAmt(BigDecimal arrearsAmt) {
+		this.arrearsAmt = arrearsAmt;
+	}
+
+	public BigDecimal getSumOfCurrentAmt() {
+		return sumOfCurrentAmt;
+	}
+
+	public void setSumOfCurrentAmt(BigDecimal sumOfCurrentAmt) {
+		this.sumOfCurrentAmt = sumOfCurrentAmt;
+	}
+
+	public BigDecimal getArrearsAndCurrentAmt() {
+		return arrearsAndCurrentAmt;
+	}
+
+	public void setArrearsAndCurrentAmt(BigDecimal arrearsAndCurrentAmt) {
+		this.arrearsAndCurrentAmt = arrearsAndCurrentAmt;
+	}
+
+}

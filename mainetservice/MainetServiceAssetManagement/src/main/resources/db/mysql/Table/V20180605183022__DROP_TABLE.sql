@@ -1,0 +1,36 @@
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE1.SQL
+DROP TABLE IF EXISTS TB_AST_CHAOFDEP_MAS;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE2.SQL
+DROP TABLE IF EXISTS TB_AST_FUNC_LOCATION_MAS;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE3.SQL
+DROP TABLE IF EXISTS TB_AST_LINEAR;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE4.SQL
+DROP TABLE IF EXISTS TB_AST_CHART_OF_DEPRETN;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE5.SQL
+DROP TABLE IF EXISTS TB_AST_LEASING;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE6.SQL
+DROP TABLE IF EXISTS TB_AST_INSURANCE;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE7.SQL
+DROP TABLE IF EXISTS TB_AST_SERVICE_REALESTD;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE8.SQL
+DROP TABLE IF EXISTS TB_AST_PURCHASER;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE9.SQL
+DROP TABLE IF EXISTS TB_AST_CLASSFCTN;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE10.SQL
+DROP TABLE IF EXISTS TB_AST_TRANSFER;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE11.SQL
+DROP TABLE IF EXISTS TB_AST_RETIRE;
+--liquibase formatted sql
+--changeset priya:V20180605183022__DROP_TABLE12.SQL
+DROP TABLE IF EXISTS TB_AST_INFO_MST;

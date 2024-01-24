@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<include file="src/main/resources/db/mysql/Table/V20200528110430__CR_tb_lqp_query_registration_28052020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200528110711__CR_tb_lqp_query_answer_28052020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200605112233__AL_tb_lqp_query_registration_05062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200605112259__AL_tb_lqp_query_answer_05062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200609132729__AL_tb_lqp_query_answer_09062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200609133018__AL_tb_lqp_query_registration_09062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200623103535__AL_tb_lqp_query_registration_230620200.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200710172927__AL_tb_lqp_query_registration_10072020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200715113802__AL_tb_lqp_query_registration_15072020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200824122601__AL_tb_lqp_query_registration_24082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210412191229__AL_TB_LQP_QUERY_ANSWER_12042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210412191305__AL_TB_LQP_QUERY_REGISTRATION_12042021.sql"/>
+</databaseChangeLog>
+
+

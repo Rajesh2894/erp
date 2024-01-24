@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset priya:V20180201121449__AL_tb_eip_profile_master_29012018_portal.sql
+ALTER TABLE tb_eip_profile_master 
+CHANGE COLUMN IMAGE_NAME IMAGE_NAME VARCHAR(200) NULL DEFAULT NULL COMMENT 'Image file Name' ,
+ADD COLUMN IMAGE_PATH VARCHAR(1000) NULL DEFAULT NULL COMMENT '' AFTER DMS_FOLDER_PATH;

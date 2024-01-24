@@ -1,0 +1,4 @@
+--liquibase formatted sql
+--changeset nilima:V20171109211924__AL_PORTAL_TB_ORGANISATION_09112017.sql
+ALTER TABLE tb_organisation
+ADD COLUMN ULB_ORG_ID BIGINT(12) NULL COMMENT '' AFTER ORG_GST_NO;

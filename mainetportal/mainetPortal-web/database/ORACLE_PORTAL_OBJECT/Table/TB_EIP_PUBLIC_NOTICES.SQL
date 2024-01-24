@@ -1,0 +1,38 @@
+-- Create table
+create table TB_EIP_PUBLIC_NOTICES
+(
+  pn_id            NUMBER(12) not null,
+  dept_id          NUMBER(12),
+  notice_sub_en    VARCHAR2(250),
+  notice_sub_reg   VARCHAR2(500),
+  detail_en        VARCHAR2(500),
+  detail_reg       VARCHAR2(1000),
+  issue_date       DATE,
+  validity_date    DATE,
+  publish_flag     VARCHAR2(1),
+  profile_img_path VARCHAR2(1000),
+  isdeleted        VARCHAR2(1) default 'N' not null,
+  orgid            NUMBER(4) not null,
+  user_id          NUMBER(7) not null,
+  lang_id          NUMBER(7) not null,
+  created_date     DATE not null,
+  updated_by       NUMBER(7),
+  updated_date     DATE,
+  lg_ip_mac        VARCHAR2(100),
+  lg_ip_mac_upd    VARCHAR2(100)
+);
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TB_EIP_PUBLIC_NOTICES
+  add primary key (PN_ID);
+alter table TB_EIP_PUBLIC_NOTICES
+  add constraint FK886D7E8938B65205 foreign key (UPDATED_BY)
+  references EMPLOYEE (EMPID);
+alter table TB_EIP_PUBLIC_NOTICES
+  add constraint FK886D7E89418DADB9 foreign key (USER_ID)
+  references EMPLOYEE (EMPID);
+alter table TB_EIP_PUBLIC_NOTICES
+  add constraint FK886D7E896078ED5 foreign key (ORGID)
+  references TB_ORGANISATION (ORGID);
+alter table TB_EIP_PUBLIC_NOTICES
+  add constraint FK886D7E8985D4DEA3 foreign key (DEPT_ID)
+  references TB_DEPARTMENT (DP_DEPTID);

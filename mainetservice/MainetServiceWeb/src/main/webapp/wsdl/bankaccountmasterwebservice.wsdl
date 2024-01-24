@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="Bank_Account">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="BA_Accountid" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="BA_Account_No" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="AC_CPD_ID_STATUS" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CPD_ACCOUNTTYPE" type="xsd:double"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="BA_Accountname" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="BANKID" type="xsd:double"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="OrgId" type="xsd:double"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Bank_AccountUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="BA_Accountid" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="BA_Account_No" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="AC_CPD_ID_STATUS" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CPD_ACCOUNTTYPE" type="xsd:double"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="BA_Accountname" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="BANKID" type="xsd:double"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="OrgId" type="xsd:double"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="Bank_AccountRequest">
+<part name="parameters" element="tns:Bank_Account"/>
+</message>
+<message name="Bank_AccountRequestUp">
+<part name="parameters" element="tns:Bank_AccountUp"/>
+</message>
+<message name="Bank_AccountResponse">
+<part name="parameters" element="tns:Bank_Account"/>
+</message>
+<portType name="Bank_AccountServer">
+<operation name="Submit">
+<input message="tns:Bank_AccountRequest"/>
+<output message="tns:Bank_AccountResponse"/>
+</operation>
+<operation name="Update">
+<input message="tns:Bank_AccountRequestUp"/>
+<output message="tns:Bank_AccountResponse"/>
+</operation>
+</portType>
+<binding name="Bank_AccountServer" type="tns:Bank_AccountServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="Bank_AccountServer">
+<port name="Bank_AccountServer" binding="tns:Bank_AccountServer">
+<soap:address location="http://192.168.100.215:9080/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Sh8ca468477a5a459d88f456a8106cccd3/Ac061ddcec8ea14b5a96eed8b33fe5290f/Sh8ca468477a5a459d88f456a8106cccd3/ws"/>
+</port>
+</service>
+</definitions>

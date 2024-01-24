@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Anil:V20191118150239__AL_tb_cmt_council_resolution_18112019.sql
+ALTER TABLE tb_cmt_council_resolution CHANGE COLUMN RESOLUTION_COMMENTS RESOLUTION_COMMENTS VARCHAR(5000) NOT NULL COMMENT 'RESOLUTION COMMENTS';
+--liquibase formatted sql
+--changeset Anil:V20191118150239__AL_tb_cmt_council_resolution_181120191.sql
+ALTER TABLE tb_cmt_council_resolution_hist CHANGE COLUMN RESOLUTION_COMMENTS RESOLUTION_COMMENTS VARCHAR(5000) NOT NULL COMMENT 'RESOLUTION COMMENTS';

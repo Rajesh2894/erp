@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+		version="2.0">
+
+	<description>ABM Framework JSP Form Tag Library</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>abmtag</short-name>
+	<uri>www.ABMFrameworkTag.org</uri>
+
+	<tag>
+		<description>Renders an HTML 'File Upload' tag with type 'text' using the bound value.</description>
+		<name>input</name>
+		<tag-class>com.abm.mainet.dms.service.FileUploadClass</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Path to property for data binding</description>
+			<name>path</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>HTML Standard Attribute</description>
+			<name>fileType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Validation Function</description>
+			<name>validnfn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Current file count</description>
+			<name>currentCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>File Size</description>
+			<name>fileSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Error Message if file size exceed</description>
+			<name>fileErrorMsg</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Maximum number file to be Upload</description>
+			<name>maxFileCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+			
+		<attribute>
+			<description>Folder Name to be generate</description>
+			<name>folderName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Delete OPtion </description>
+			<name>removeDeleteOption</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Classic Style </description>
+			<name>allowClassicStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Custom String </description>
+			<name>allowClassicStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>checkListMandatoryDoc</description>
+			<name>checkListMandatoryDoc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>checkListDesc </description>
+			<name>checkListDesc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>checkListId</description>
+			<name>checkListId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>checkListMStatus</description>
+			<name>checkListMStatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>checkListSStatus</description>
+			<name>checkListSStatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		
+		<attribute>
+			<description>checkListSrNo</description>
+			<name>checkListSrNo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>callbackOtherTask</description>
+			<name>callbackOtherTask</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>Checklist File Size</description>
+			<name>checklistDocSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>checkListDocDesc</description>
+			<name>checkListDocDesc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+	
+		<dynamic-attributes>true</dynamic-attributes>
+		
+	</tag>			
+</taglib>

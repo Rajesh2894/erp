@@ -1,0 +1,15 @@
+CREATE TABLE `role_entitlement_hist` (
+  `H_ROLE_ET_ID` double NOT NULL,
+  `ROLE_ET_ID` double NOT NULL,
+  `ROLE_ID` double DEFAULT NULL,
+  `SMFID` double DEFAULT NULL,
+  `UPDATED_BY` double DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `IS_ACTIVE` varchar(2) DEFAULT NULL,
+  `ET_PARENT_ID` double DEFAULT NULL,
+  `ORG_ID` double DEFAULT NULL,
+  `PARENT_ID` double DEFAULT NULL,
+  `DP_DEPTID` double DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

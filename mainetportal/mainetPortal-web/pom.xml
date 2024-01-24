@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>mainetPortal-web</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>com.abm.mainet</groupId>
+		<artifactId>mainetPortal</artifactId>
+		<version>1.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.abm.mainet.common</groupId>
+			<artifactId>mainetPortal-common</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.care</groupId>
+			<artifactId>mainetPortal-care</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.cms</groupId>
+			<artifactId>mainetPortal-cms</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.authentication</groupId>
+			<artifactId>mainetPortal-authentication</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.water</groupId>
+			<artifactId>mainetPortal-water</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.mobile</groupId>
+			<artifactId>mainetPortal-mobile</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.property</groupId>
+			<artifactId>mainetPortal-property</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.rti</groupId>
+			<artifactId>mainetPortal-rti</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.RnL</groupId>
+			<artifactId>mainetPortal-RnL</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.swm</groupId>
+			<artifactId>mainetPortal-swm</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.tradeLicense</groupId>
+			<artifactId>mainetPortal-tradeLicense</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.wms</groupId>
+			<artifactId>mainetPortal-wms</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet.socialsecurity</groupId>
+			<artifactId>mainetPortal-SocialSecurity</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.abm.mainet.adh</groupId>
+			<artifactId>mainetPortal-adh</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.abm.mainet.legal</groupId>
+			<artifactId>mainetPortal-legal</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>com.abm.mainet.additional</groupId>
+			<artifactId>mainetPortal-Additional</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency> -->
+		
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<!-- get all project dependencies -->
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+					</configuration>
+					<executions>
+
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>1.1.0.Alpha8</version>
+					<configuration>
+						<force>true</force>
+						<hostname>${hostname}</hostname>
+						<port>${port}</port>
+						<username>${username}</username>
+						<password>${password}</password>
+						<filename>${filename}</filename>
+						<skip>false</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.liquibase</groupId>
+					<artifactId>liquibase-maven-plugin</artifactId>
+					<version>3.5.3</version>
+					<configuration>
+						<skip>true</skip>
+						<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+						<propertyFile>${liquibaseProperty}</propertyFile>
+						<changeLogFile>src/main/resources/liquibase_web/db-changelog-master.xml</changeLogFile>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>process-resources</phase>
+							<goals>
+								<goal>update</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>MainetPortal</finalName>
+	</build>
+	<!-- <profiles> <profile> <id>update</id> <build> <plugins> <plugin> <groupId>org.liquibase</groupId> <artifactId>liquibase-maven-plugin</artifactId> <executions> <execution> <phase>install</phase> <goals> <goal>update</goal> 
+		</goals> </execution> </executions> </plugin> </plugins> </build> </profile> <profile> <id>rollback</id> <build> <plugins> <plugin> <groupId>org.liquibase</groupId> <artifactId>liquibase-maven-plugin</artifactId> 
+		<executions> <execution> <phase>install</phase> <goals> <goal>rollback</goal> </goals> </execution> </executions> </plugin> </plugins> </build> </profile> <profile> <id>tag</id> <build> <plugins> <plugin> <groupId>org.liquibase</groupId> 
+		<artifactId>liquibase-maven-plugin</artifactId> <executions> <execution> <phase>install</phase> <goals> <goal>tag</goal> </goals> </execution> </executions> </plugin> </plugins> </build> </profile> </profiles> -->
+
+</project>

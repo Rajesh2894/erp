@@ -1,0 +1,16 @@
+CREATE TABLE `tb_pg_bank_portal_hist` (
+  `H_PBPID` decimal(12,0) NOT NULL,
+  `PBP_ID` decimal(12,0) NOT NULL,
+  `PBP_NAME` varchar(1000) NOT NULL,
+  `PBP_SHORT_DESC` varchar(100) DEFAULT NULL,
+  `PBP_BANK_CODE` decimal(20,0) NOT NULL,
+  `CB_BANKID` decimal(12,0) DEFAULT NULL,
+  `ORGID` int(11) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `LANG_ID` int(11) DEFAULT NULL,
+  `LMODDATE` datetime DEFAULT NULL,
+  `ISDELETED` int(11) DEFAULT NULL,
+  `PBP_NAME_MAR` varchar(1000) DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

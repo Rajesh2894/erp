@@ -1,0 +1,100 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+						http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="commonSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/rest/common"></property>
+		<property name="title" value="Common Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>
+	</bean>
+	<bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+	<jaxrs:server address="/rest/common" id="common">
+		<jaxrs:serviceBeans>
+		 	<bean class="com.abm.mainet.common.integration.brms.service.BRMSCommonServiceImpl"/>
+		 	<bean class="com.abm.mainet.common.service.LocationMasServiceImpl"/>
+		  	<bean class="com.abm.mainet.common.master.service.TbOrganisationServiceImpl"/>
+		  	<bean class="com.abm.mainet.common.service.ApplicationServiceImpl"/>
+		  	<bean class="com.abm.mainet.cfc.objection.service.ObjectionDetailsServiceImpl"/>
+		  	<bean class="com.abm.mainet.common.service.EmployeeService"/>
+		  	<bean class="com.abm.mainet.common.workflow.service.TaskAssignmentServiceImpl"/>
+		  	<bean class="com.abm.mainet.common.workflow.service.WorkflowActionService"/>
+		  	<bean class="com.abm.mainet.common.workflow.service.TaskNotificationServiceImpl"/>
+		  	<bean class="com.abm.mainet.common.service.CitizenDashBoardServiceImpl"/>
+            <bean class="com.abm.mainet.common.service.DuplicateBillServiceImpl"/>
+            <bean class="com.abm.mainet.common.master.service.BankMasterServiceImpl"/>
+            <bean class="com.abm.mainet.common.service.ServiceMasterServiceImpl"/>
+            <bean class="com.abm.mainet.common.service.ReceivableDemandEntryServiceImpl"/>
+            <bean class="com.abm.mainet.common.master.service.CommonEncryptionAndDecryptionImpl"/>
+            <bean class="com.abm.mainet.common.dashboard.rest.ui.controller.CitizenDashboardGraphController"/>
+            <bean class="com.abm.mainet.common.dashboard.rest.ui.controller.CitizenServicesDashboardGraphController"/>
+            <bean class="com.abm.mainet.common.dashboard.rest.ui.controller.BNDDashboardGraphController"/>
+            <bean class="com.abm.mainet.common.dashboard.rest.ui.controller.AccountDashboardGraphController"/>
+            <bean class="com.abm.mainet.common.dashboard.rest.ui.controller.LicenseDashboardGraphController"/>
+            <bean class="com.abm.mainet.common.leavemanagement.rest.ui.controller.LeaveManagementController"/>
+            <bean class="com.abm.mainet.cfc.checklist.service.ChecklistSearchService"/>              
+            <bean class="com.abm.mainet.common.workflow.rest.controller.WorkflowActionController"/>
+            <bean class="com.abm.mainet.cfc.loi.service.TbLoiDetServiceImpl"/>
+            <bean class="com.abm.mainet.common.service.ReceiptDetailServiceImpl"/>
+            <bean class="com.abm.mainet.common.service.InformationHelpDeskServiceImpl"/>
+             <bean class="com.abm.mainet.common.integration.metrology.service.MetrologyApisServiceImpl"/>
+             <bean class="com.abm.mainet.common.service.DeptDashBoardServiceImpl"/>
+             
+             
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" >
+				<property name="mapper">
+					<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+					  <property name="serializationConfig.dateFormat">
+					    <bean class="java.text.SimpleDateFormat">
+					      <constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+					    </bean>
+					  </property>
+					</bean>
+				</property>
+			</bean>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler"/>
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="commonSwagger2Feature" />
+            <ref bean="commonValidationFeature"/>
+        </jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint  address="/brmscommonservice" id="brmscommonservice" implementor="com.abm.mainet.common.integration.brms.service.BRMSCommonServiceImpl" />
+	<jaxws:endpoint address="/locationservice" id="locationservice" implementor="com.abm.mainet.common.service.LocationMasServiceImpl"/>
+	<jaxws:endpoint address="/orgservice" id="orgservice" implementor="com.abm.mainet.common.master.service.TbOrganisationServiceImpl"/>
+	<jaxws:endpoint address="/applicationservice" id="applicationservice" implementor="com.abm.mainet.common.service.ApplicationServiceImpl"/>
+	<jaxws:endpoint address="/objectionservice" id="objectionservice" implementor="com.abm.mainet.cfc.objection.service.ObjectionDetailsServiceImpl"/>
+	<jaxws:endpoint address="/employeeService" id="employeeservice" implementor="com.abm.mainet.common.service.EmployeeService"/>
+	<jaxws:endpoint address="/taskAssignmentService" id="taskAssignmentService" implementor="com.abm.mainet.common.workflow.service.TaskAssignmentServiceImpl"/>
+	<jaxws:endpoint address="/workflowActionLogService" id="workflowActionLogService" implementor="com.abm.mainet.common.workflow.service.WorkflowActionService"/>
+	<jaxws:endpoint address="/taskNotificationService" id="taskNotificationService" implementor="com.abm.mainet.common.workflow.service.TaskNotificationServiceImpl"/>
+	<jaxws:endpoint address="/citizenDashboard" id="citizenDashBoardService" implementor="com.abm.mainet.common.service.CitizenDashBoardServiceImpl"/>
+	<jaxws:endpoint address="/duplicateBillService" id="duplicateBillService" implementor="com.abm.mainet.common.service.DuplicateBillServiceImpl"/>
+	<jaxws:endpoint address="/receivableDemandEntryService" id="receivableDemandEntryService" implementor="com.abm.mainet.common.service.ReceivableDemandEntryServiceImpl"/>
+	<jaxws:endpoint address="/commonEncryptAndDecrypt" id="commonEncryptAndDecrypt" implementor="com.abm.mainet.common.master.service.CommonEncryptionAndDecryptionImpl"/>
+	<jaxws:endpoint address="/citizenDashboardGraph" id="citizenDashboardGraph" implementor="com.abm.mainet.common.dashboard.rest.ui.controller.CitizenDashboardGraphController"/>
+	<jaxws:endpoint address="/citizenServicesDashboardGraph" id="citizenServicesDashboardGraph" implementor="com.abm.mainet.common.dashboard.rest.ui.controller.CitizenServicesDashboardGraphController"/>
+	<jaxws:endpoint address="/bndCitizenDashboardGraph" id="bndCitizenDashboardGraph" implementor="com.abm.mainet.common.dashboard.rest.ui.controller.BNDDashboardGraphController"/>
+	<jaxws:endpoint address="/accountDashboardGraph" id="accountDashboardGraph" implementor="com.abm.mainet.common.dashboard.rest.ui.controller.AccountDashboardGraphController"/>
+	<jaxws:endpoint address="/licenseDashboardGraph" id="licenseDashboardGraph" implementor="com.abm.mainet.common.dashboard.rest.ui.controller.LicenseDashboardGraphController"/>
+	<jaxws:endpoint address="/leaveManagementController" id="leaveManagementController" implementor="com.abm.mainet.common.leavemanagement.rest.ui.controller.LeaveManagementController"/>
+	<jaxws:endpoint address="/workflowActionController" id="workflowActionController" implementor="com.abm.mainet.common.workflow.rest.controller.WorkflowActionController"/>
+	<jaxws:endpoint address="/tbLoiDetService" id="/tbLoiDetService" implementor="com.abm.mainet.cfc.loi.service.TbLoiDetServiceImpl"/>
+	<jaxws:endpoint address="/receiptService" id="receiptService" implementor="com.abm.mainet.common.service.ReceiptDetailServiceImpl"/>
+	<jaxws:endpoint address="/informationHelpDeskService" id="informationHelpDeskService" implementor="com.abm.mainet.common.service.InformationHelpDeskServiceImpl"/>
+	<jaxws:endpoint address="imetrologyservice" id="imetrologyservice" implementor="com.abm.mainet.common.integration.metrology.service.MetrologyApisServiceImpl"/>
+	<jaxws:endpoint address="/deptDashBoardService" id="deptDashBoardService" implementor="com.abm.mainet.common.service.DeptDashBoardServiceImpl"/>
+</beans>

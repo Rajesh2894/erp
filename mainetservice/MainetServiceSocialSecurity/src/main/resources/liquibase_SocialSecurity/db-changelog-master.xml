@@ -1,0 +1,33 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+						
+<include
+		file="src/main/resources/db/mysql/Table/V20190408193750__al_tb_swd_scheme_mast_08042019.sql" />
+		
+		<include
+		file="src/main/resources/db/mysql/Table/V20190408193713__al_tb_swd_scheme_det_08042019.sql" />
+						
+		<include
+		file="src/main/resources/db/mysql/Table/V20190408193729__al_tb_swd_scheme_eligibility_08042019.sql" />
+<include file="src/main/resources/db/mysql/Table/V20190711133019__CR_tb_swd_rtgs_payment_11072019.sql" />
+<include file="src/main/resources/db/mysql/Table/V20190711133030__CR_tb_swd_scheme_application_11072019.sql" />
+<include file="src/main/resources/db/mysql/Table/V20190816113525__AL_tb_swd_scheme_application_16082019.sql" />
+<include file="src/main/resources/db/mysql/Table/V20191227132255__CR_tb_swd_Scheme_Configuration_27122019.sql" />
+<include file="src/main/resources/db/mysql/Table/V20200203125225__AL_tb_swd_rtgs_payment_03022020.sql" />
+<include file="src/main/resources/db/mysql/Table/V20200915111511__AL_TB_SWD_SCHEME_APPLICATION_15092020.sql" />
+<include file="src/main/resources/db/mysql/Table/V20200915111522__AL_TB_SWD_SCHEME_CONFIGURATION_15092020.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211101180406__AL_TB_SWD_SCHEME_MAST_01112021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211102175741__CR_TB_SWD_FAMILY_DET_02112021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211102181502__AL_TB_SWD_SCHEME_APPLICATION_02112021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211126184630__AL_TB_SWD_SCHEME_MAST_26112021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211202161018__AL_tb_swd_family_det_02122021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211221094512__AL_TB_SWD_SCHEME_DET_21122021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20211221202255__AL_TB_SWD_SCHEME_CONFIGURATION_21122021.sql" />
+<include file="src/main/resources/db/mysql/Table/V20220112103949__AL_TB_SWD_SCHEME_APPLICATION_12012022.sql" />
+<include file="src/main/resources/db/mysql/Table/V20230414195818__AL_TB_SWD_SCHEME_APPLICATION_14042023.sql" />
+<include file="src/main/resources/db/mysql/Table/V20230427115557__AL_TB_SWD_SCHEME_APPLICATION_27042023.sql" />
+<include file="src/main/resources/db/mysql/Table/V20230619094826__CR_tb_swd_sub_scheme_det_19062023.sql" />
+</databaseChangeLog>
+

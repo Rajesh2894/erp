@@ -1,0 +1,32 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<include file="src/main/resources/db/mysql/V20180221193943__CR_1_RTI_APPLICATION_MAS_MYSQL.sql"/>
+	<include file="src/main/resources/db/mysql/V20180221194005__CR_2_TB_RTI_MEDIA_DETAILS_MYSQL.sql"/>
+	<include file="src/main/resources/db/mysql/V20180223144826__AL_1_alt_rti_appno.sql"/>
+	<include file="src/main/resources/db/mysql/V20180503155556__AL_2_tb_rti_application.sql"/>
+	<include file="src/main/resources/db/mysql/V20181023150500_AL_TB_RTI_APPLICATION.sql"/>
+	<include file="src/main/resources/db/mysql/V20190617174245__AL_tb_rti_application_04062019.sql"/>
+	<include file="src/main/resources/db/mysql/V20190617174307__AL_tb_rti_media_details_17062019.sql"/>
+	<include file="src/main/resources/db/mysql/V20190819183614__AL_tb_rti_application_19082019.sql"/>
+	<include file="src/main/resources/db/mysql/V20191019101616__AL_tb_rti_media_details_19102019.sql"/>
+	<include file="src/main/resources/db/mysql/V20200522123207__AL_tb_rti_application_22052020.sql"/>
+	<include file="src/main/resources/db/mysql/V20200923142113__AL_TB_RTI_APPLICATION_23092020.sql"/>
+	<include file="src/main/resources/db/mysql/V20210326141052__AL_TB_RTI_APPLICATION_26032021.sql"/>
+	<include file="src/main/resources/db/mysql/V20210327172930__AL_TB_RTI_APPLICATION_27032021.sql"/>
+	<include file="src/main/resources/db/mysql/V20210512120842__AL_TB_RTI_APPLICATION_12052021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210520111519__AL_TB_RTI_APPLICATION_20052021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210531105245__AL_TB_RTI_APPLICATION_31052021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210601123833__CR_tb_rti_application_hist_01062021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210601124708__AL_TB_RTI_APPLICATION_HIST_01062021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210610114633__AL_tb_rti_application_10062021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210610131744__AL_tb_rti_application_10062021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210712171416__AL_TB_RTI_APPLICATION_12072021.sql"/>
+        <include file="src/main/resources/db/mysql/V20210803213724__AL_tb_rti_application_03082021.sql"/>
+        <include file="src/main/resources/db/mysql/V20211029094854__AL_TB_RTI_APPLICATION_29102021.sql"/>
+        <include file="src/main/resources/db/mysql/V20211119162555__AL_tb_rti_application_19112021.sql"/>
+		<include file="src/main/resources/db/mysql/V20230320102758__CR_TB_RTI_FWD_EMPLOYEE_20032023.sql"/>
+		<include file="src/main/resources/db/mysql/V20230411171742__AL_TB_RTI_APPLICATION_HIST_11042023.sql"/>
+		<include file="src/main/resources/db/mysql/V20230602165958__AL_TB_RTI_APPLICATION_02062023.sql"/>
+</databaseChangeLog>

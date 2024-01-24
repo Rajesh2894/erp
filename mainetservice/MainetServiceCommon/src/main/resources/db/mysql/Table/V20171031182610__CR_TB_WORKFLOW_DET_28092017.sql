@@ -1,0 +1,43 @@
+--liquibase formatted sql
+--changeset nilima:V20171031182610__CR_TB_WORKFLOW_DET_28092017.sql
+CREATE TABLE tb_workflow_det (
+  WFD_ID BIGINT(12) NOT NULL COMMENT 'primary key',
+  WF_ID BIGINT(12) NOT NULL COMMENT 'foregin key',
+  SERVICE_EVENT_ID BIGINT(12) NOT NULL COMMENT 'Event Id (fk TB_SERVICES_EVENT)',
+  WFD_ORGID BIGINT(12) NULL COMMENT 'Event Organisation',
+  DP_DEPTID BIGINT(12) NOT NULL COMMENT 'Event Department Id',
+  WFD_RE_TYPE VARCHAR(1) NOT NULL COMMENT 'RoleWise->\'R\' Employee \'E\'',
+  WFD_SLA INT(3) NOT NULL COMMENT 'SLA ',
+  WFD_UNIT BIGINT(12) NOT NULL COMMENT 'SLA ->Day,month',
+  WFD_STATUS VARCHAR(1) NOT NULL COMMENT 'Workflow Details Status',
+  ORGID BIGINT(12) NULL COMMENT 'organization id',
+  CREATED_BY BIGINT(12) NULL COMMENT 'user id who created the record',
+  CREATED_DATE DATETIME NULL COMMENT 'record creation date',
+  UPDATED_BY BIGINT(12) NULL COMMENT 'user id who updated the record',
+  UPDATED_DATE DATETIME NULL COMMENT 'user id who updated the record',
+  LG_IP_MAC VARCHAR(100) NULL COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD VARCHAR(100) NULL COMMENT 'machine ip address from where user has updated the record',
+  WFD_APPR_COUNT INT(3) NULL COMMENT 'Approval Count',
+  PRIMARY KEY (WFD_ID)  COMMENT '',
+  INDEX FK_WF_ID_idx (WF_ID ASC)  COMMENT '',
+  INDEX FK_SER_EVENTID_idx (SERVICE_EVENT_ID ASC)  COMMENT '',
+  INDEX FK_DP_DEPTID_idx (DP_DEPTID ASC)  COMMENT '',
+  CONSTRAINT FK_WF_ID
+    FOREIGN KEY (WF_ID)
+    REFERENCES tb_workflow_mas (WF_ID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT FK_SER_EVENTID
+    FOREIGN KEY (SERVICE_EVENT_ID)
+    REFERENCES tb_services_event (SERVICE_EVENT_ID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT FK_WOR_DP_DEPTID
+    FOREIGN KEY (DP_DEPTID)
+    REFERENCES tb_department (DP_DEPTID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+COMMENT = 'Workflow Detail';

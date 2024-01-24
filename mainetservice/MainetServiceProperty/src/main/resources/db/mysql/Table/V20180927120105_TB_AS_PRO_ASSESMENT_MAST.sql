@@ -1,0 +1,24 @@
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST1.sql
+alter table TB_AS_PRO_ASSESMENT_MAST change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST2.sql
+alter table TB_AS_PRO_ASSESMENT_OWNER_DTL change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST3.sql
+alter table TB_AS_PRO_MAST_HIST change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST4.sql
+alter table TB_AS_PRO_OWNER_DTL_HIST change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST5.sql
+alter table TB_AS_ASSESMENT_OWNER_DTL change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST6.sql
+alter table TB_AS_ASSESMENT_MAST change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST7.sql
+alter table TB_AS_OWNER_DTL_HIST change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';
+--liquibase formatted sql
+--changeset nilima:V20180927120105_TB_AS_PRO_ASSESMENT_MAST8.sql
+alter table TB_AS_MAST_HIST change column APM_APPLICATION_ID APM_APPLICATION_ID bigint(16) NULL COMMENT '	APPLICATION ID	';

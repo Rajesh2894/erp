@@ -1,0 +1,31 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230622201403__CR_mm_invoice_22062023.sql
+CREATE TABLE mm_invoice (
+  invoiceid bigint(12) NOT NULL,
+  invoicedate datetime NOT NULL,
+  storeid bigint(12) NOT NULL,
+  poid bigint(12) NOT NULL,
+  vendorid bigint(12) NOT NULL,
+  itemamt double(12,2) NOT NULL,
+  overheadamt double(12,2) NOT NULL,
+  invoiceamt double(12,2) NOT NULL,
+  ATD_PATH varchar(510) DEFAULT NULL,
+  ATD_FNAME varchar(100) DEFAULT NULL,
+  invoicestatus char(1) NOT NULL,
+  paymentstatus char(1) DEFAULT 'N',
+  paymentmade double(12,2) DEFAULT '0.00',
+  ORGID bigint(4) NOT NULL,
+  USER_ID bigint(7) NOT NULL,
+  LANGID bigint(4) NOT NULL,
+  LMODDATE datetime DEFAULT NULL,
+  UPDATED_BY bigint(7) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) DEFAULT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  WF_Flag varchar(10) NOT NULL,
+  PRIMARY KEY (invoiceid),
+  KEY FK_KEY_29 (storeid),
+  KEY FK_KEY_30 (poid),
+  CONSTRAINT FK_KEY_29 FOREIGN KEY (storeid) REFERENCES mm_storemaster (storeid),
+  CONSTRAINT FK_KEY_30 FOREIGN KEY (poid) REFERENCES mm_purchaseorder (poid)
+);

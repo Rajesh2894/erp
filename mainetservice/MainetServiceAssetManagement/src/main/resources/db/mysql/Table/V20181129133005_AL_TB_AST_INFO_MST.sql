@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset nilima:V20181129133005_AL_TB_AST_INFO_MST1.sql
+ALTER TABLE TB_AST_INFO_MST DROP INDEX UN_SERIAL_NO;

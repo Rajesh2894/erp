@@ -1,0 +1,64 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="tradeLicenseSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/rest/tradeLicense"></property>
+		<property name="title" value="Trade License Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>
+	</bean>
+	<bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+	<jaxrs:server address="/rest/tradeLicense" id="tradeLicense">
+		<jaxrs:serviceBeans>
+			<bean class="com.abm.mainet.tradeLicense.service.TradeLicenseApplicationServiceImpl" id="tradeLicenseApplicationService" />
+			<bean class="com.abm.mainet.tradeLicense.service.RenewalLicenseApplicationServiceImpl" id="renewalLicenseApplicationService" />
+			<bean class="com.abm.mainet.tradeLicense.service.DuplicateLicenseApplicationServiceImpl" id="duplicateLicenseApplicationService" />
+			<bean class="com.abm.mainet.tradeLicense.service.ChangeBusinessNameServiceImpl" id="changeInBusinessNameService" />
+			<bean class="com.abm.mainet.tradeLicense.service.ChangeCategorySubCategoryServiceImpl" id="changeCategorySubCategoryService" />
+			<bean class="com.abm.mainet.tradeLicense.service.HawkerLicenseApplicationServiceImpl" id="hawkerLicenseApplicationService" />
+			<bean class="com.abm.mainet.tradeLicense.service.TradeLicenseReprintServiceImpl" id="tradeLicenseApplicationReprintService" />		
+			<bean class="com.abm.mainet.tradeLicense.service.CancellationLicenseServiceImpl" id="cancellationLicenseApplicationService" />
+			<bean class="com.abm.mainet.tradeLicense.service.TransferLicenseServiceImpl" id="TransferLicenseApplicationService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" >
+				<property name="mapper">
+					<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+					  <property name="serializationConfig.dateFormat">
+					    <bean class="java.text.SimpleDateFormat">
+					      <constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+					    </bean>
+					  </property>
+					</bean>
+				</property>
+			</bean>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler" />
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="tradeLicenseSwagger2Feature" />
+            <ref bean="commonValidationFeature"/>
+        </jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint  address="/tradeLicenseApplicationService" id="tradeLicenseApplicationService" implementor="com.abm.mainet.tradeLicense.service.TradeLicenseApplicationServiceImpl" />
+	<jaxws:endpoint  address="/renewalLicenseApplicationService" id="renewalLicenseApplicationService" implementor="com.abm.mainet.tradeLicense.service.RenewalLicenseApplicationServiceImpl" />
+	<jaxws:endpoint  address="/duplicateLicenseApplicationService" id="duplicateLicenseApplicationService" implementor="com.abm.mainet.tradeLicense.service.DuplicateLicenseApplicationServiceImpl" />
+	<jaxws:endpoint  address="/changeInBusinessNameService" id="changeInBusinessNameService" implementor="com.abm.mainet.tradeLicense.service.ChangeBusinessNameServiceImpl" />
+	<jaxws:endpoint  address="/changeCategorySubCategoryService" id="changeCategorySubCategoryService" implementor="com.abm.mainet.tradeLicense.service.ChangeCategorySubCategoryServiceImpl" />
+	<jaxws:endpoint  address="/hawkerLicenseApplicationService" id="hawkerLicenseApplicationService" implementor="com.abm.mainet.tradeLicense.service.HawkerLicenseApplicationServiceImpl" />
+	<jaxws:endpoint  address="/tradeLicenseApplicationReprintService" id="tradeLicenseApplicationReprintService" implementor="com.abm.mainet.tradeLicense.service.TradeLicenseReprintServiceImpl" />
+	<jaxws:endpoint  address="/cancellationLicenseApplicationService" id="cancellationLicenseApplicationService" implementor="com.abm.mainet.tradeLicense.service.CancellationLicenseServiceImpl" />
+	<jaxws:endpoint  address="/TransferLicenseApplicationService" id="TransferLicenseApplicationService" implementor="com.abm.mainet.tradeLicense.service.TransferLicenseServiceImpl" />
+	
+</beans>

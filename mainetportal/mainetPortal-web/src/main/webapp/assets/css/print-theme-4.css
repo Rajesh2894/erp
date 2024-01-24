@@ -1,0 +1,109 @@
+@media print {
+	@page { margin: 0; }
+	body {
+		-webkit-print-color-adjust: exact !important;
+    	color-adjust: exact !important;
+	}
+		
+	.revenue .widget-content.padding {
+		padding: 0px !important;
+	}
+
+	table.table.table-bordered.revenueDetails tbody tr th {
+		color: #000000 !important;
+		background-color: #eeeeee !important;
+	}
+	
+	table.table.revenueDetails tbody tr th,
+	table.table.revenueDetails tbody tr td {
+		padding: 4px 10px !important;
+		line-height: 12px !important;
+	}
+	
+	table.table.revenueDetails tbody tr td h4,
+	table.table.revenueDetails tbody tr td h6 {
+		margin: 10px 0px;
+	}
+	
+	table.table.revenueDetails tbody tr td h4 {
+		font-size: 1.5em;
+	}
+	
+	table.table.revenueDetails tbody tr td h6 {
+		font-size: 1em;
+	}
+	
+	table.table.revenueDetails tbody tr td .not-logged-avatar {
+		height: 80px !important;
+	}
+	
+	table.table thead tr th,
+	table.table thead tr td,
+	table.dataTable thead tr th,
+	table.table-bordered>tbody>tr>th,
+	table.table thead tr th.sorting,
+	table.table thead tr td.sorting,
+	table.table thead tr th.sorting_asc,
+	table.table thead tr td.sorting_asc,
+	table.table thead tr th.sorting_desc,
+	table.table thead tr td.sorting_desc {
+		color: #ffffff !important;
+    	background-color: #1A2E47 !important;
+	}
+	
+	/* ----- New Water Connection View Application css starts ----- */
+	#frmNewWaterFormViewApplication.form-horizontal h2 {
+	    font-size: 1em;
+	    background: #dcdcdc;
+	    padding: 5px;
+	    font-weight: 600;
+	}
+	#frmNewWaterFormViewApplication.form-horizontal .form-group {
+		margin: 0 -0.5rem 1rem;
+	}
+	#frmNewWaterFormViewApplication.form-horizontal .form-group .control-label + div {
+		padding: 0.3rem 0.5rem 0;
+	}
+	#frmNewWaterFormViewApplication .panel-collapse#Paymentmode,
+	#frmNewWaterFormViewApplication .panel-collapse#DocumentDetails {
+		margin: 0;
+	}
+	#frmNewWaterFormViewApplication .panel-collapse#Paymentmode .panel-body,
+	#frmNewWaterFormViewApplication .panel-collapse#DocumentDetails .panel-body {
+		padding: 0;
+	}
+	/* ----- New Water Connection View Application css ends ----- */
+	
+	/* ----- ApplicantInformationToPrint.jsp css starts ----- */
+	.applicant-info-print {
+		margin: 20px;
+	}
+	.applicant-info-print h2 {
+		font-size: 1.4em;
+		background-color: #dcdcdc !important;
+		text-align: center;
+		margin: 0 0 10px;
+		padding: 0.4rem;
+	}
+	.applicant-info-print .control-label:before {
+	    color: #333;
+	    content: ":";
+	    position: absolute;
+	    right: 0;
+	}
+	.applicant-info-print .form-group {
+		margin: 0 -0.6rem 0.8rem;
+	}
+	.applicant-info-print .form-group > label.control-label + div {
+		font-size: 12px;
+	}
+	.applicant-info-print .zone-ward .form-group > label[for="codDwzid3"] {
+		clear: both;
+	}
+	.applicant-info-print .zone-ward .form-group > label[for="codDwzid3"],
+	.applicant-info-print .zone-ward .form-group > label[for="codDwzid3"] + div {
+		margin-top: 0.7rem;
+	}
+	/* ----- ApplicantInformationToPrint.jsp css ends ----- */
+	
+}

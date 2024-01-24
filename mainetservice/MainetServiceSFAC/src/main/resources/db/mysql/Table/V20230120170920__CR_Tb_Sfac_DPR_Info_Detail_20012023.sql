@@ -1,0 +1,20 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230120170920__CR_Tb_Sfac_DPR_Info_Detail_20012023.sql
+create table Tb_Sfac_DPR_Info_Detail
+(			
+DPR_ID	bigint(20) NOT NULL,
+FPM_ID	bigint(20) NOT NULL,
+DPR_REC_DT	datetime NULL DEFAULT NULL,
+DPR_REVIEWER	Varchar(100) NULL DEFAULT NULL,
+DPR_SCORE	bigint(20) NULL DEFAULT NULL,
+DPR_REV_SUBM_DT	datetime NULL DEFAULT NULL,	
+ORGID	bigint(20) NOT NULL,
+CREATED_BY	bigint(20) NOT NULL,	
+CREATED_DATE	datetime NOT NULL,	
+UPDATED_BY	bigint(20) NULL DEFAULT NULL,
+UPDATED_DATE	datetime NULL DEFAULT NULL,
+LG_IP_MAC	varchar(100) NOT NULL,
+LG_IP_MAC_UPD	varchar(100) NULL DEFAULT NULL,
+primary key (DPR_ID),
+FOREIGN KEY (FPM_ID) REFERENCES Tb_Sfac_Fpo_Profile_Mgmt_Mast (FPM_ID)
+);

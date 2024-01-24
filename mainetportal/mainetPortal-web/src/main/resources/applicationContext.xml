@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:util="http://www.springframework.org/schema/util"  
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-4.2.xsd  
+					    http://www.springframework.org/schema/util 
+                        http://www.springframework.org/schema/util/spring-util-4.2.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-4.2.xsd 
+						http://www.springframework.org/schema/task
+        				http://www.springframework.org/schema/task/spring-task-4.2.xsd ">
+						
+	
+   
+ <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+			<value>classpath:portalConfiguration.properties</value>
+			 <value>classpath:service-endpoints.properties</value>	
+			</list>
+		</property>
+
+	</bean>
+	 <bean id="xssFilter" class="com.abm.mainet.authentication.security.XSSContentCheckerFilter">
+		<!--  <property name="mode" value="DENY" /> -->
+     	<!--  <property name="mode" value="SAMEORIGIN" />  -->
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+    <bean id="fileSystemResourceLoader" class="org.springframework.core.io.FileSystemResourceLoader"/>  
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+
+			<list>
+			    <value>classpath:portalConfiguration</value>
+			    <value>classpath:uLBDomain</value>
+			    <value>classpath:service-endpoints</value>
+			    <value>file:///${filepathxml}messages</value>
+				<value>file:///${filepathxml}field-labels</value>
+				<value>file:///${filepathxml}labels</value>
+				<value>file:///${filepathxml}grid-lables</value>
+				<value>file:///${filepathxml}eip-admin-form-labels</value>
+				<value>file:///${filepathxml}eip-admin-form-labels_reg</value>
+				<value>file:///${filepathxml}eip-admin-validation-labels</value>
+				<value>file:///${filepathxml}eip-citizen-form-labels</value>
+				<value>file:///${filepathxml}eip-agency-form-labels</value>
+				<value>file:///${filepathxml}eip-citizen-validation-labels</value>
+				<value>file:///${filepathxml}eip-configuration</value>
+				<value>file:///${filepathxml}ValidationMessages</value>
+				<value>file:///${filepathxml}audit-labels</value>		
+				<value>file:///${filepathxml}aboutProject</value>
+				<value>file:///${filepathxml}common-buttons</value>
+				<value>file:///${filepathxml}heading-bredcrum</value>
+				<value>file:///${filepathxml}eip-landingpage-labels</value>
+				<value>file:///${filepathxml}challan-labels</value>
+				<value>file:///${filepathxml}eip-pg-validation-labels</value>
+				<value>file:///${filepathxml}labelsPath</value>
+				<value>file:///${filepathxml}search-content-nouser-login</value>
+				<value>file:///${filepathxml}search-content-user-login</value>
+				<value>file:///${filepathxml}quartz-form-labels</value>
+				<value>file:///${filepathxml}challan-service-configuration</value>
+				<value>file:///${filepathxml}menu</value>
+				<value>file:///${filepathxml}menu_reg</value>
+				<value>file:///${filepathxml}search-content-nouser-login_reg</value>
+				<value>file:///${filepathxml}search-content-user-login_reg</value>
+				<value>file:///${filepathxml}portal-common-form-labels</value>
+				<value>file:///${filepathxml}portal-common-form-labels_reg</value>
+				<value>file:///${filepathxml}water-form-labels</value>
+				<value>file:///${filepathxml}water-form-labels_reg</value>
+				<value>file:///${filepathxml}payment-form-lables</value>
+				<value>file:///${filepathxml}payment-form-lables_reg</value>	
+				<value>file:///${filepathxml}challan-labels</value>	
+				<value>file:///${filepathxml}challan-labels_reg</value>
+				<value>file:///${filepathxml}challan_generation_labels</value>
+				<value>file:///${filepathxml}challan_generation_labels_reg</value>	
+				<value>file:///${filepathxml}cfc-report-form-labels</value>							
+				<value>file:///${filepathxml}cfc-report-form-labels_reg</value>					
+				<value>file:///${filepathxml}rti-labels</value>					
+				<value>file:///${filepathxml}rti-labels_reg</value>	
+				<value>file:///${filepathxml}number-to-word</value>
+				<value>file:///${filepathxml}number-to-word_reg</value>	
+				<value>file:///${filepathxml}mobile-application_reg</value>
+				<value>file:///${filepathxml}mobile-application</value>
+				<value>file:///${filepathxml}social-media</value>
+				<value>file:///${filepathxml}care</value>
+				<value>file:///${filepathxml}care_reg</value>
+				<value>file:///${filepathxml}default</value>	   		
+				<value>file:///${filepathxml}rnl-form-labels</value>		   		
+				<value>file:///${filepathxml}rnl-form-labels_reg</value>	
+				<value>file:///${filepathxml}master</value>	  
+				<value>file:///${filepathxml}master_reg</value>
+				<value>file:///${filepathxml}property-form-label</value>	
+				<value>file:///${filepathxml}property-form-label_reg</value>	
+				<value>file:///${filepathxml}objection-labels</value>	
+				<value>file:///${filepathxml}objection-labels_reg</value>		   				  
+				<value>file:///${filepathxml}dashboard-scheme-configuration</value>	
+				<value>file:///${filepathxml}solid-waste-management-labels</value>	
+				<value>file:///${filepathxml}solid-waste-management-labels_reg</value>
+				<value>file:///${filepathxml}roadcutting</value>
+				<value>file:///${filepathxml}roadcutting_reg</value>
+				<value>file:///${filepathxml}trade-license-labels</value>
+				<value>file:///${filepathxml}trade-license-labels_reg</value>	
+				<value>file:///${filepathxml}social-security_reg</value>
+				<value>file:///${filepathxml}social-security</value>
+				<value>file:///${filepathxml}adh-labels</value>
+				<value>file:///${filepathxml}adh-labels_reg</value>
+				<value>file:///${filepathxml}rts-labels</value>
+				<value>file:///${filepathxml}rts-labels_reg</value>
+				<value>file:///${filepathxml}mrm-labels</value>
+				<value>file:///${filepathxml}mrm-labels_reg</value>
+				<value>file:///${filepathxml}birth-death-labels</value>
+				<value>file:///${filepathxml}birth-death-labels_reg</value>
+				<value>file:///${filepathxml}legal-form-labels</value>
+				<value>file:///${filepathxml}legal-form-labels_reg</value>
+			</list>
+		</property>
+		<property name="cacheSeconds" value="1"/> 
+		<property name="resourceLoader" ref="fileSystemResourceLoader"></property>
+	</bean>
+
+	
+	<util:properties id="ulbdomain" location="classpath:uLBDomain.properties" /> 
+      <bean id="webProperties" class="com.abm.mainet.common.util.WebProperties" >    	
+		<property name="propertiesMap">
+			    <map key-type="java.lang.String" value-type="java.util.Properties">
+				<entry key="ulb.domain.config" value-ref="ulbdomain"/>
+			</map>
+		</property>
+	 </bean>  
+	<bean name="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+
+		<property name="messageInterpolator">
+			<bean
+				class="org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator" />
+		</property>
+
+		<!-- <property name="traversableResolver">
+			<bean
+				class="org.hibernate.validator.engine.resolver.DefaultTraversableResolver" />
+		</property>
+         <property name="constraintValidatorFactory">
+			<bean class="org.hibernate.validator.engine.ConstraintValidatorFactoryImpl" />
+		</property> -->
+
+		
+	</bean>
+	
+	
+	<!-- This Bean is use for uploading images/files purpose -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<!-- 5MB Size -->
+		<property name="maxUploadSize" value="15728640" />
+		<property name="maxInMemorySize" value="15728640"/>
+		<property name="defaultEncoding" value="UTF-8"/>
+
+	</bean>
+
+	<!-- <context:component-scan base-package="com.abm.mainet.common.validator" />
+	<context:component-scan base-package="com.abm.mainet.validation.admin.constraints" />
+	<context:component-scan base-package="com.abm.mainet.validation.citizen.constraints" />
+	<context:component-scan base-package="com.abm.mainet.validation.agency.constraints" />
+    <context:component-scan base-package="com.abm.mainet.validation.payment.constraints" />
+	<context:component-scan base-package="com.abm.mainet.validation.department.constraints" />
+	<context:component-scan base-package="com.abm.mainet.quartz.ui.validator" />
+    <context:component-scan base-package="com.abm.mainet.validation.drainage.constraint" />
+    <context:component-scan base-package="com.abm.mainet.validation"/> -->
+	
+    <context:component-scan  base-package="com.abm.mainet.dashboard.citizen.dao,
+											com.abm.mainet.common.master.mapper,
+                                           com.abm.mainet.eip.dao,
+                                            com.abm.mainet.dashboard.citizen.ui.model,
+                                            com.abm.mainet.label.model, 
+                                           com.abm.mainet.dashboard.citizen.service,
+                                           com.abm.mainet.eip.service" annotation-config="true">
+
+     </context:component-scan>
+     <bean class="com.abm.mainet.common.audit.AsyncAspect" id="asyncAspect" />
+	 <task:executor id="executor" pool-size="8-25" queue-capacity="100" />
+	 <task:annotation-driven executor="executor"  />
+   
+   	<import resource="classpath:/applicationContext-data.xml"/>
+	<import resource="classpath:/emailbean.xml"/>
+
+</beans>

@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset nilima:V20190531183010_AL_TB_AS_PENALTY1.sql
+ALTER TABLE TB_AS_PENALTY ADD COLUMN ACTIVE_FLAG CHAR(1);

@@ -1,0 +1,3029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Tariff_Type" id="3194">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Tariff_Type</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">TariffType</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["cod_id"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["cod_desc"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Connection_Size" id="3195">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Connection Size:</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">ConnectionSize</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["cpd_id"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["cpd_desc"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Category" id="3196">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Category:</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">Category</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["cpd_id"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["cpd_desc"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ConnectionNo" id="3341">
+            <property name="hidden">false</property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">ConnectionNo</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["cs_ccn"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["cs_ccn"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Zone" id="3370">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Zone</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Ward" id="3371">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="OrgId" id="11103">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Fromdate" id="11135">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Todate" id="11136">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="New BIRT JDBC Data Source(3)" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://192.168.100.190:3306/service45</property>
+            <property name="odaUser">dev</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">RGV2XyMxMjM=</encrypted-property>
+            <property name="odaJndiName">jdbc:mysql://192.168.100.190:3306/service45</property>
+            <property name="OdaConnProfileName">New BIRT JDBC Data Source(3)</property>
+            <property name="OdaConnProfileStorePath">Service.cps</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Ward 1" id="2474">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">COD_DESC</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COD_DESC</text-property>
+                    <text-property name="heading">COD_DESC</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">OrgId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">Zone</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COD_DESC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">COD_DESC</property>
+                    <property name="nativeName">COD_DESC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select COD_DESC from tb_comparam_mas a,tb_comparent_mas b,tb_comparent_det c
+where a.CPM_PREFIX = 'WWZ' and a.cpm_id=b.CPM_ID and b.COM_ID=c.COM_ID and com_value='Z'
+and c.orgid=? and cod_id=?
+union 
+select 'All' as COD_DESC from dual
+
+
+
+
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Ward2" id="2475">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">COD_DESC</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COD_DESC</text-property>
+                    <text-property name="heading">COD_DESC</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">OrgId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">Ward</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COD_DESC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">COD_DESC</property>
+                    <property name="nativeName">COD_DESC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select COD_DESC from tb_comparam_mas a,tb_comparent_mas b,tb_comparent_det c
+where a.CPM_PREFIX = 'WWZ' and a.cpm_id=b.CPM_ID and b.COM_ID=c.COM_ID and com_value='W'
+and c.orgid=? and cod_id=?
+union 
+select 'All' as COD_DESC from dual
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="TaxInfo" id="1967">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">COD_DWZID1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">COD_DWZID1</text-property>
+                    <text-property name="heading">COD_DWZID1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COD_DWZID2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">COD_DWZID2</text-property>
+                    <text-property name="heading">COD_DWZID2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">orgid</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">orgid</text-property>
+                    <text-property name="heading">orgid</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">O_NLS_ORGNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">O_NLS_ORGNAME</text-property>
+                    <text-property name="heading">O_NLS_ORGNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cs_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cs_name</text-property>
+                    <text-property name="heading">cs_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cs_meteredccn</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cs_meteredccn</text-property>
+                    <text-property name="heading">cs_meteredccn</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Meter_Non_Meter</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Meter_Non_Meter</text-property>
+                    <text-property name="heading">Meter_Non_Meter</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TRM_GROUP1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">TRM_GROUP1</text-property>
+                    <text-property name="heading">TRM_GROUP1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tarrif_Type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Tarrif_Type</text-property>
+                    <text-property name="heading">Tarrif_Type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cs_ccnsize</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cs_ccnsize</text-property>
+                    <text-property name="heading">cs_ccnsize</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Connection_Ssize</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Connection_Ssize</text-property>
+                    <text-property name="heading">Connection_Ssize</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CS_IDN</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">CS_IDN</text-property>
+                    <text-property name="heading">CS_IDN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cs_ccn</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cs_ccn</text-property>
+                    <text-property name="heading">cs_ccn</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CS_IDN_1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CS_IDN</text-property>
+                    <text-property name="heading">CS_IDN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TAX</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TAX</text-property>
+                    <text-property name="heading">TAX</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Water_Tax</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Water_Tax</text-property>
+                    <text-property name="heading">Water_Tax</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Surcharge</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Surcharge</text-property>
+                    <text-property name="heading">Surcharge</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Penalty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Penalty</text-property>
+                    <text-property name="heading">Penalty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Advance_Payment</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Advance_Payment</text-property>
+                    <text-property name="heading">Advance_Payment</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Work_Contract_Tax</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Work_Contract_Tax</text-property>
+                    <text-property name="heading">Work_Contract_Tax</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Demand_Notice_Fee</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Demand_Notice_Fee</text-property>
+                    <text-property name="heading">Demand_Notice_Fee</text-property>
+                </structure>
+            </list-property>
+            <list-property name="filter"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">OrgId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">Zone</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">Zone</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">Ward</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">Ward</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_14</property>
+                    <property name="paramName">Fromdate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_15</property>
+                    <property name="paramName">Todate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_16</property>
+                    <property name="paramName">Fromdate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_17</property>
+                    <property name="paramName">Todate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">9</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_18</property>
+                    <property name="paramName">Fromdate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">10</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_19</property>
+                    <property name="paramName">Todate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">11</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">Tariff_Type</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">12</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_7</property>
+                    <property name="paramName">Tariff_Type</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">13</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_8</property>
+                    <property name="paramName">Category</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">14</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_9</property>
+                    <property name="paramName">Category</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">15</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_10</property>
+                    <property name="paramName">Connection_Size</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">16</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_11</property>
+                    <property name="paramName">Connection_Size</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">17</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_12</property>
+                    <property name="paramName">ConnectionNo</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">18</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_13</property>
+                    <property name="paramName">ConnectionNo</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">19</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COD_DWZID1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">COD_DWZID2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">orgid</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">O_NLS_ORGNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cs_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">cs_meteredccn</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Meter_Non_Meter</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">TRM_GROUP1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Tarrif_Type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">cs_ccnsize</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Connection_Ssize</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">CS_IDN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">cs_ccn</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">CS_IDN_1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">TAX</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">Water_Tax</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">Surcharge</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">Penalty</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">Advance_Payment</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">Work_Contract_Tax</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">Demand_Notice_Fee</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">COD_DWZID1</property>
+                    <property name="nativeName">COD_DWZID1</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">COD_DWZID2</property>
+                    <property name="nativeName">COD_DWZID2</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">orgid</property>
+                    <property name="nativeName">orgid</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">O_NLS_ORGNAME</property>
+                    <property name="nativeName">O_NLS_ORGNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">cs_name</property>
+                    <property name="nativeName">cs_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">cs_meteredccn</property>
+                    <property name="nativeName">cs_meteredccn</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Meter_Non_Meter</property>
+                    <property name="nativeName">Meter_Non_Meter</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">TRM_GROUP1</property>
+                    <property name="nativeName">TRM_GROUP1</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Tarrif_Type</property>
+                    <property name="nativeName">Tarrif_Type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">cs_ccnsize</property>
+                    <property name="nativeName">cs_ccnsize</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">Connection_Ssize</property>
+                    <property name="nativeName">Connection_Ssize</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">CS_IDN</property>
+                    <property name="nativeName">CS_IDN</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">cs_ccn</property>
+                    <property name="nativeName">cs_ccn</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">CS_IDN_1</property>
+                    <property name="nativeName">CS_IDN</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">TAX</property>
+                    <property name="nativeName">TAX</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">Water_Tax</property>
+                    <property name="nativeName">Water_Tax</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">Surcharge</property>
+                    <property name="nativeName">Surcharge</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">Penalty</property>
+                    <property name="nativeName">Penalty</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">Advance_Payment</property>
+                    <property name="nativeName">Advance_Payment</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">Work_Contract_Tax</property>
+                    <property name="nativeName">Work_Contract_Tax</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">Demand_Notice_Fee</property>
+                    <property name="nativeName">Demand_Notice_Fee</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select x.*,y.* from 
+(select b.COD_DWZID1,b.COD_DWZID2,a.orgid,a.O_NLS_ORGNAME,b.cs_name,cs_meteredccn,(select cpd_desc from tb_comparam_det where cpd_id=cs_meteredccn) Meter_Non_Meter,
+TRM_GROUP1,(select cod_desc from tb_comparent_det where cod_id=TRM_GROUP1) Tarrif_Type,cs_ccnsize,(select cpd_desc from tb_comparam_det where cpd_id=cs_ccnsize) Connection_Ssize,CS_IDN,cs_ccn from tb_organisation a join 
+(select CS_IDN,cs_ccn,orgid,cs_name,cs_meteredccn,TRM_GROUP1,cs_ccnsize,COD_DWZID1,COD_DWZID2 from tb_csmr_info) b on a.orgid=b.orgid
+where a.orgid=? and COALESCE(b.COD_DWZID1,0)=(case when COALESCE(?,0)=0 then COALESCE(b.COD_DWZID1,0) else COALESCE(?,0) end) and
+COALESCE(b.COD_DWZID2,0)=(case when COALESCE(?,0)=0 then COALESCE(b.COD_DWZID2,0) else COALESCE(?,0) end) 
+) x ,(select CS_IDN,case when TAX='1' then 'CURRENT'  when TAX='2' then 'ARREAR' when TAX='3' then "ADJ" End TAX,
+sum(Water_Tax) Water_Tax,sum(Surcharge) Surcharge,sum(Penalty) Penalty,sum(Advance_Payment) Advance_Payment,
+sum(Work_Contract_Tax) Work_Contract_Tax,sum(Demand_Notice_Fee) Demand_Notice_Fee
+ from (select CS_IDN,'1' TAX,sum(Water_Tax) Water_Tax,sum(Surcharge) Surcharge,
+sum(Penalty) Penalty,sum(Advance_Payment) Advance_Payment,
+sum(Work_Contract_Tax) Work_Contract_Tax,sum(Demand_Notice_Fee) Demand_Notice_Fee
+from (select CS_IDN,case  when tax_desc='Water Tax' then (sum(BD_CUR_BAL_TAXAMT)) else 0 end Water_Tax,case  when tax_desc='Surcharge' then (sum(BD_CUR_BAL_TAXAMT)) else 0 end Surcharge,
+case  when tax_desc='Penalty' then (sum(BD_CUR_BAL_TAXAMT)) else 0 end Penalty,case  when tax_desc='Advance Payment' then (sum(BD_CUR_BAL_TAXAMT)) else 0 end Advance_Payment,
+case  when tax_desc='Work Contract Tax' then (sum(BD_CUR_BAL_TAXAMT)) else 0 end Work_Contract_Tax,case  when tax_desc='Demand Notice Fee' then (sum(BD_CUR_BAL_TAXAMT)) else 0 end Demand_Notice_Fee
+from TB_WT_BILL_DET a,(select tax_id,tax_desc from tb_tax_mas a,tb_comparam_det b,tb_department c where cpd_id=TAX_APPLICABLE and b.cpd_value in ('BILL') and c.DP_DEPTCODE = 'WT' 
+and a.DP_DEPTID = c.DP_DEPTID) b,TB_WT_BILL_MAS c where a.TAX_ID = b.TAX_ID and a.BM_IDNO = c.BM_IDNO and c.BM_BILLDT between ? and ? 
+group by tax_desc,c.CS_IDN) x group by CS_IDN union select CS_IDN,'2',sum(Water_Tax) Water_Tax,sum(Surcharge) Surcharge,sum(Penalty) Penalty,sum(Advance_Payment) Advance_Payment,sum(Work_Contract_Tax) Work_Contract_Tax,sum(Demand_Notice_Fee) Demand_Notice_Fee from (
+select CS_IDN,case  when tax_desc='Water Tax' then (sum(BD_PRV_BAL_ARRAMT)) else 0 end Water_Tax,case  when tax_desc='Surcharge' then (sum(BD_PRV_BAL_ARRAMT)) else 0 end Surcharge,
+case  when tax_desc='Penalty' then (sum(BD_PRV_BAL_ARRAMT)) else 0 end Penalty,case  when tax_desc='Advance Payment' then (sum(BD_PRV_BAL_ARRAMT)) else 0 end Advance_Payment,
+case  when tax_desc='Work Contract Tax' then (sum(BD_PRV_BAL_ARRAMT)) else 0 end Work_Contract_Tax,case  when tax_desc='Demand Notice Fee' then (sum(BD_PRV_BAL_ARRAMT)) else 0 end Demand_Notice_Fee
+from TB_WT_BILL_DET a,(select tax_id,tax_desc from tb_tax_mas a,tb_comparam_det b,tb_department c where cpd_id=TAX_APPLICABLE and b.cpd_value in ('BILL') and c.DP_DEPTCODE = 'WT' and a.DP_DEPTID = c.DP_DEPTID) b,TB_WT_BILL_MAS c
+where a.TAX_ID = b.TAX_ID and a.BM_IDNO = c.BM_IDNO and c.BM_BILLDT between ? and ? group by tax_desc,c.CS_IDN) x group by CS_IDN 
+union select adj_ref_no,'3' TAX,sum(Water_Tax),sum(Surcharge),sum(Penalty),sum(Advance_Payment),
+sum(Work_Contract_Tax),sum(Demand_Notice_Fee) from (select adj_ref_no,case  when tax_desc='Water Tax' then (sum(adj_adjusted_amount)) else 0 end Water_Tax,
+case  when tax_desc='Surcharge' then (sum(adj_adjusted_amount)) else 0 end Surcharge, case  when tax_desc='Penalty' then (sum(adj_adjusted_amount)) else 0 end Penalty,
+case  when tax_desc='Advance Payment' then (sum(adj_adjusted_amount)) else 0 end Advance_Payment,case  when tax_desc='Work Contract Tax' then (sum(adj_adjusted_amount)) else 0 end Work_Contract_Tax,
+case  when tax_desc='Demand Notice Fee' then (sum(adj_adjusted_amount)) else 0 end Demand_Notice_Fee from tb_adjustment_mas a,tb_adjustment_det b,(select tax_id,tax_desc from tb_tax_mas a,tb_comparam_det b,tb_department c
+where cpd_id=TAX_APPLICABLE and b.cpd_value in ('BILL') and c.DP_DEPTCODE = 'WT' and a.DP_DEPTID = c.DP_DEPTID) c where dp_deptid in (select dp_deptid from tb_department where dp_deptcode='WT') 
+and a.adj_id=b.adj_id and adj_type='P' and adj_date between ? and ? and b.tax_id=c.tax_id group by adj_ref_no,c.tax_id,c.tax_desc) q group by adj_ref_no ) w group by CS_IDN,TAX
+) y where x.CS_IDN=y.CS_IDN and TRM_GROUP1 like case ? when 0 then '%' else ? end and cs_meteredccn like case ? when 0 then '%' else ? end and cs_ccnsize like case ? when 0 then '%' else ? end and cs_ccn like case ? when 0 then '%' else ? end]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>14</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>15</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>16</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>17</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>18</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>19</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="TariffType" id="3191">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cod_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cod_desc</text-property>
+                    <text-property name="heading">cod_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cod_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cod_id</text-property>
+                    <text-property name="heading">cod_id</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cod_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cod_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cod_desc</property>
+                    <property name="nativeName">cod_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cod_id</property>
+                    <property name="nativeName">cod_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select cod_desc,cod_id from TB_COMPARent_det where com_id in (
+select com_id from TB_COMPARent_MAS where CPM_ID in (
+SELECT CPM_ID FROM TB_COMPARAM_MAS WHERE CPM_PREFIX='TRF')) 
+union
+select 'All' as cod_desc,0 from dual
+]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ConnectionSize" id="3192">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cpd_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cpd_desc</text-property>
+                    <text-property name="heading">cpd_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cpd_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cpd_id</text-property>
+                    <text-property name="heading">cpd_id</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cpd_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cpd_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cpd_desc</property>
+                    <property name="nativeName">cpd_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cpd_id</property>
+                    <property name="nativeName">cpd_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select cpd_desc,cpd_id from TB_COMPARAM_det where  CPM_ID in (
+SELECT CPM_ID FROM TB_COMPARAM_MAS WHERE cpm_prefix='CSZ')
+union
+select 'All' as cpd_desc,0 from dual
+]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Category" id="3193">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cpd_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cpd_desc</text-property>
+                    <text-property name="heading">cpd_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cpd_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cpd_id</text-property>
+                    <text-property name="heading">cpd_id</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Category</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cpd_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cpd_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cpd_desc</property>
+                    <property name="nativeName">cpd_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cpd_id</property>
+                    <property name="nativeName">cpd_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[Select cpd_desc,cpd_id from TB_COMPARAM_det where orgid=? and CPM_ID in (
+SELECT CPM_ID FROM TB_COMPARAM_MAS WHERE cpm_prefix='WMN') 
+union
+select 'All' as cpd_desc,0 from dual
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ConnectionNo" id="3340">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cs_ccn</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cs_ccn</text-property>
+                    <text-property name="heading">cs_ccn</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cs_ccn</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cs_ccn</property>
+                    <property name="nativeName">cs_ccn</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct cs_ccn from tb_csmr_info
+union
+select 0 as cs_ccn from dual]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Ulb_Name" id="11082">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">O_NLS_ORGNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">O_NLS_ORGNAME</text-property>
+                    <text-property name="heading">O_NLS_ORGNAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">OrgId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">O_NLS_ORGNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">O_NLS_ORGNAME</property>
+                    <property name="nativeName">O_NLS_ORGNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[  select O_NLS_ORGNAME
+  from tb_organisation where orgid=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>O_NLS_ORGNAME</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>O_NLS_ORGNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>O_NLS_ORGNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="FinancialYear" id="11132">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">year</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">year</text-property>
+                    <text-property name="heading">year</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">from_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">from_date</text-property>
+                    <text-property name="heading">from_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">to_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">to_date</text-property>
+                    <text-property name="heading">to_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">year</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">from_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">to_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">New BIRT JDBC Data Source(3)</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">year</property>
+                    <property name="nativeName">year</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">from_date</property>
+                    <property name="nativeName">from_date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">to_date</property>
+                    <property name="nativeName">to_date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select concat(date_format(fa_fromdate,'%Y'),'-',date_format(fa_todate,'%Y')) year,
+date_format(fa_fromdate,'%Y-%m-%d') as from_date ,date_format(fa_todate,'%Y-%m-%d') as to_date
+from tb_financialyear]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="2478">
+            <property name="dimensions">
+                <tabular-dimension name="CCN_DEtails" id="2479">
+                    <property name="isTimeType">false</property>
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="2480">
+                            <property name="levels">
+                                <tabular-level name="cs_ccn" id="3197">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">cs_ccn</property>
+                                </tabular-level>
+                                <tabular-level name="cs_name" id="3198">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">cs_name</property>
+                                </tabular-level>
+                                <tabular-level name="Tarrif_Type" id="3201">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Tarrif_Type</property>
+                                </tabular-level>
+                                <tabular-level name="TAX" id="3202">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">TAX</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="2530">
+                    <property name="measures">
+                        <tabular-measure name="Water_Tax" id="2754">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Water_Tax"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="Penalty" id="2755">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Penalty"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="Surcharge" id="2756">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Surcharge"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="Work_Contract_Tax" id="2757">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Work_Contract_Tax"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="Advance_Payment" id="2758">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Advance_Payment"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="Demand_Notice_Fee" id="2759">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Demand_Notice_Fee"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="Total" id="2998">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">TaxInfo</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="crosstab-row-header" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="orientation">landscape</property>
+            <property name="height">11in</property>
+            <property name="width">11in</property>
+            <property name="headerHeight">15%</property>
+            <property name="footerHeight">0.35in</property>
+            <page-header>
+                <grid id="11072">
+                    <property name="dataSet">TaxInfo</property>
+                    <column id="11073"/>
+                    <row id="11074">
+                        <cell id="11075">
+                            <data id="11083">
+                                <property name="fontFamily">"@Arial Unicode MS"</property>
+                                <property name="fontSize">14pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="dataSet">Ulb_Name</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">Column Binding</property>
+                                        <expression name="expression" type="javascript">dataSetRow["O_NLS_ORGNAME"]</expression>
+                                        <property name="dataType">string</property>
+                                        <property name="allowExport">true</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Column Binding</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="11076">
+                        <cell id="11077">
+                            <label id="11084">
+                                <property name="fontFamily">"@Arial Unicode MS"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">Outstanding Detail Report</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="11078">
+                        <cell id="11079">
+                            <text id="11087">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<VALUE-OF>new Date()</VALUE-OF>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                    <row id="11080">
+                        <cell id="11081">
+                            <property name="textAlign">right</property>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="11126">
+                    <property name="width">10.34375in</property>
+                    <column id="11127">
+                        <property name="width">4.5in</property>
+                    </column>
+                    <column id="11128"/>
+                    <row id="11129">
+                        <cell id="11130"/>
+                        <cell id="11131">
+                            <grid id="9358">
+                                <property name="fontWeight">bold</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="verticalAlign">bottom</property>
+                                <property name="canShrink">false</property>
+                                <property name="width">1.8020833333333333in</property>
+                                <column id="9359">
+                                    <property name="width">0.8854166666666666in</property>
+                                </column>
+                                <column id="9360">
+                                    <property name="width">0.20833333333333334in</property>
+                                </column>
+                                <column id="9361">
+                                    <property name="width">0.7083333333333334in</property>
+                                </column>
+                                <row id="9362">
+                                    <cell id="9363">
+                                        <auto-text id="9364">
+                                            <property name="textAlign">right</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="9365">
+                                        <text id="9366">
+                                            <property name="textAlign">center</property>
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[/]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="9367">
+                                        <auto-text id="9368">
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="1138">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="pageBreakAfter">avoid</property>
+            <property name="width">10.447916666666666in</property>
+            <property name="dataSet">TaxInfo</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">COD_DWZID1</property>
+                    <text-property name="displayName">COD_DWZID1</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COD_DWZID1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">COD_DWZID2</property>
+                    <text-property name="displayName">COD_DWZID2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COD_DWZID2"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">orgid</property>
+                    <text-property name="displayName">orgid</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["orgid"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">O_NLS_ORGNAME</property>
+                    <text-property name="displayName">O_NLS_ORGNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["O_NLS_ORGNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cs_name</property>
+                    <text-property name="displayName">cs_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cs_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Meter_Non_Meter</property>
+                    <text-property name="displayName">Meter_Non_Meter</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Meter_Non_Meter"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Tarrif_Type</property>
+                    <text-property name="displayName">Tarrif_Type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Tarrif_Type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Connection_Ssize</property>
+                    <text-property name="displayName">Connection_Ssize</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Connection_Ssize"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CS_IDN</property>
+                    <text-property name="displayName">CS_IDN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CS_IDN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">cs_ccn</property>
+                    <text-property name="displayName">cs_ccn</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cs_ccn"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CS_IDN_1</property>
+                    <text-property name="displayName">CS_IDN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CS_IDN_1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TAX</property>
+                    <text-property name="displayName">TAX</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAX"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Water_Tax</property>
+                    <text-property name="displayName">Water_Tax</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Water_Tax"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Surcharge</property>
+                    <text-property name="displayName">Surcharge</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Surcharge"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Penalty</property>
+                    <text-property name="displayName">Penalty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Penalty"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Advance_Payment</property>
+                    <text-property name="displayName">Advance_Payment</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Advance_Payment"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Work_Contract_Tax</property>
+                    <text-property name="displayName">Work_Contract_Tax</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Work_Contract_Tax"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Demand_Notice_Fee</property>
+                    <text-property name="displayName">Demand_Notice_Fee</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Demand_Notice_Fee"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">params["Fromdate"].value</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_1</property>
+                    <expression name="expression" type="javascript">params["Connection_Size"].displayText</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_2</property>
+                    <expression name="expression" type="javascript">params["Fromdate"].value</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_3</property>
+                    <expression name="expression" type="javascript">Formatter.format(params["Todate"].value,"dd/MM/yyyy")</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_4</property>
+                    <expression name="expression" type="javascript">Formatter.format(params["Fromdate"].value,"dd/MM/yyyy")</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_5</property>
+                    <expression name="expression" type="javascript">Formatter.format(params["Fromdate"].value,"dd/MM/yyyy")</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="1200">
+                <property name="width">1.6145833333333333in</property>
+            </column>
+            <column id="1202">
+                <property name="width">1.6145833333333333in</property>
+            </column>
+            <column id="1203">
+                <property name="width">1.2604166666666667in</property>
+            </column>
+            <column id="1211">
+                <property name="width">5.958333333333333in</property>
+            </column>
+            <header>
+                <row id="2091">
+                    <cell id="2092">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"Verdana"</property>
+                        <grid id="3435">
+                            <property name="width">10.34375in</property>
+                            <column id="3436">
+                                <property name="width">5.145833333333333in</property>
+                            </column>
+                            <column id="3437">
+                                <property name="width">5.197916666666667in</property>
+                            </column>
+                            <row id="3438">
+                                <cell id="3439">
+                                    <property name="colSpan">1</property>
+                                    <property name="rowSpan">1</property>
+                                    <grid id="3445">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="width">4.489583333333333in</property>
+                                        <column id="3446">
+                                            <property name="width">0.7708333333333334in</property>
+                                        </column>
+                                        <column id="3447">
+                                            <property name="width">0.20833333333333334in</property>
+                                        </column>
+                                        <column id="3448">
+                                            <property name="width">3.5104166666666665in</property>
+                                        </column>
+                                        <row id="3449">
+                                            <cell id="3450">
+                                                <label id="3477">
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Zone</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3451">
+                                                <label id="3481">
+                                                    <text-property name="text">:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3452">
+                                                <data id="11141">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="dataSet">Ward 1</property>
+                                                    <list-property name="boundDataColumns">
+                                                        <structure>
+                                                            <property name="name">COD_DESC</property>
+                                                            <text-property name="displayName">COD_DESC</text-property>
+                                                            <expression name="expression" type="javascript">dataSetRow["COD_DESC"]</expression>
+                                                            <property name="dataType">string</property>
+                                                        </structure>
+                                                        <structure>
+                                                            <property name="name">Column Binding</property>
+                                                            <expression name="expression" type="javascript">dataSetRow["COD_DESC"]</expression>
+                                                            <property name="dataType">string</property>
+                                                            <property name="allowExport">true</property>
+                                                        </structure>
+                                                    </list-property>
+                                                    <property name="resultSetColumn">Column Binding</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="3444">
+                                    <grid id="3453">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="width">4.489583333333333in</property>
+                                        <column id="3454">
+                                            <property name="width">1.6354166666666667in</property>
+                                        </column>
+                                        <column id="3455">
+                                            <property name="width">0.1875in</property>
+                                        </column>
+                                        <column id="3456">
+                                            <property name="width">2.6666666666666665in</property>
+                                        </column>
+                                        <row id="3457">
+                                            <cell id="3458">
+                                                <label id="3478">
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Ward</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3459">
+                                                <label id="3482">
+                                                    <text-property name="text">:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3460">
+                                                <data id="11142">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="dataSet">Ward2</property>
+                                                    <list-property name="boundDataColumns">
+                                                        <structure>
+                                                            <property name="name">COD_DESC</property>
+                                                            <text-property name="displayName">COD_DESC</text-property>
+                                                            <expression name="expression" type="javascript">dataSetRow["COD_DESC"]</expression>
+                                                            <property name="dataType">string</property>
+                                                        </structure>
+                                                        <structure>
+                                                            <property name="name">Column Binding</property>
+                                                            <expression name="expression" type="javascript">dataSetRow["COD_DESC"]</expression>
+                                                            <property name="dataType">string</property>
+                                                            <property name="allowExport">true</property>
+                                                        </structure>
+                                                    </list-property>
+                                                    <property name="resultSetColumn">Column Binding</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                            <row id="3441">
+                                <cell id="3442">
+                                    <grid id="3461">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="width">4.489583333333333in</property>
+                                        <column id="3462">
+                                            <property name="width">0.7708333333333334in</property>
+                                        </column>
+                                        <column id="3463">
+                                            <property name="width">0.20833333333333334in</property>
+                                        </column>
+                                        <column id="3464">
+                                            <property name="width">3.5104166666666665in</property>
+                                        </column>
+                                        <row id="3465">
+                                            <cell id="3466">
+                                                <label id="3480">
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Category</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3467">
+                                                <label id="3484">
+                                                    <text-property name="text">:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3468">
+                                                <data id="11143">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">Column Binding</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="3443">
+                                    <grid id="3469">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="width">4.489583333333333in</property>
+                                        <column id="3470">
+                                            <property name="width">1.6354166666666667in</property>
+                                        </column>
+                                        <column id="3471">
+                                            <property name="width">0.1875in</property>
+                                        </column>
+                                        <column id="3472">
+                                            <property name="width">2.6666666666666665in</property>
+                                        </column>
+                                        <row id="3473">
+                                            <cell id="3474">
+                                                <label id="3479">
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Connection Size</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3475">
+                                                <label id="3483">
+                                                    <text-property name="text">:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="3476">
+                                                <data id="11144">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">Column Binding_1</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                            <row id="11145">
+                                <cell id="11146">
+                                    <grid id="11519">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="width">4.489583333333333in</property>
+                                        <column id="11520">
+                                            <property name="width">0.7708333333333334in</property>
+                                        </column>
+                                        <column id="11521">
+                                            <property name="width">0.20833333333333334in</property>
+                                        </column>
+                                        <column id="11522">
+                                            <property name="width">3.5104166666666665in</property>
+                                        </column>
+                                        <row id="11523">
+                                            <cell id="11524">
+                                                <label id="11525">
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">From Date</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="11526">
+                                                <label id="11527">
+                                                    <text-property name="text">:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="11528">
+                                                <data id="11530">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">Column Binding_5</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="11147">
+                                    <grid id="11467">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="width">4.489583333333333in</property>
+                                        <column id="11468">
+                                            <property name="width">1.6354166666666667in</property>
+                                        </column>
+                                        <column id="11469">
+                                            <property name="width">0.1875in</property>
+                                        </column>
+                                        <column id="11470">
+                                            <property name="width">2.6666666666666665in</property>
+                                        </column>
+                                        <row id="11471">
+                                            <cell id="11472">
+                                                <label id="11473">
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">To Date</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="11474">
+                                                <label id="11475">
+                                                    <text-property name="text">:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="11476">
+                                                <data id="11492">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">Column Binding_3</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="2602">
+                    <cell id="2603">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"Verdana"</property>
+                        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="3203">
+                            <property name="cube">Data Cube</property>
+                            <property name="measures">
+                                <extended-item extensionName="MeasureView" id="3219">
+                                    <property name="measure">Water_Tax</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3220">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="width">0.90625in</property>
+                                            <property name="content">
+                                                <data id="3221">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Water_Tax_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3298">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="content">
+                                                <data id="3299">
+                                                    <property name="fontWeight">bold</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Water_Tax_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3222">
+                                            <property name="content">
+                                                <label id="3362">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Water Tax</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="MeasureView" id="3224">
+                                    <property name="measure">Penalty</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3225">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="width">0.8229166666666666in</property>
+                                            <property name="content">
+                                                <data id="3226">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Penalty_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3300">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="content">
+                                                <data id="3301">
+                                                    <property name="fontWeight">bold</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Penalty_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3227">
+                                            <property name="content">
+                                                <label id="3363">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Penalty</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="MeasureView" id="3229">
+                                    <property name="measure">Surcharge</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3230">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="width">0.84375in</property>
+                                            <property name="content">
+                                                <data id="3231">
+                                                    <property name="fontWeight">normal</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Surcharge_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3302">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="content">
+                                                <data id="3303">
+                                                    <property name="fontWeight">bold</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Surcharge_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3232">
+                                            <property name="content">
+                                                <label id="3364">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Surcha-rge</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="MeasureView" id="3234">
+                                    <property name="measure">Work_Contract_Tax</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3235">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="width">0.75in</property>
+                                            <property name="content">
+                                                <data id="3236">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Work_Contract_Tax_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3304">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="content">
+                                                <data id="3305">
+                                                    <property name="fontWeight">bold</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Work_Contract_Tax_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3237">
+                                            <property name="content">
+                                                <label id="3365">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Work Contract Tax</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="MeasureView" id="3239">
+                                    <property name="measure">Advance_Payment</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3240">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="width">0.9791666666666666in</property>
+                                            <property name="content">
+                                                <data id="3241">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Advance_Payment_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3306">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="content">
+                                                <data id="3307">
+                                                    <property name="fontWeight">bold</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Advance_Payment_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3242">
+                                            <property name="content">
+                                                <label id="3366">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Advance Payment</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="MeasureView" id="3244">
+                                    <property name="measure">Demand_Notice_Fee</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3245">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="width">0.8125in</property>
+                                            <property name="content">
+                                                <data id="3246">
+                                                    <property name="fontWeight">normal</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Demand_Notice_Fee_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3308">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="content">
+                                                <data id="3309">
+                                                    <property name="fontWeight">bold</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">Demand_Notice_Fee_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3247">
+                                            <property name="content">
+                                                <label id="3367">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Demand Notice Fee</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="MeasureView" id="3249">
+                                    <property name="measure">Total</property>
+                                    <property name="detail">
+                                        <extended-item extensionName="AggregationCell" id="3250">
+                                            <property name="aggregationOnRow">CCN_DEtails/TAX</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="width">1.2916666666666667in</property>
+                                            <property name="content">
+                                                <data id="3251">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Total_CCN_DEtails/TAX</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregations">
+                                        <extended-item extensionName="AggregationCell" id="3310">
+                                            <property name="aggregationOnRow">CCN_DEtails/cs_ccn</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="content">
+                                                <data id="3311">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Total_CCN_DEtails/cs_ccn</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="header">
+                                        <extended-item extensionName="CrosstabCell" id="3252">
+                                            <property name="content">
+                                                <label id="3368">
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">Total</text-property>
+                                                </label>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                            <property name="rows">
+                                <extended-item extensionName="CrosstabView" id="3205">
+                                    <property name="views">
+                                        <extended-item extensionName="DimensionView" id="3206">
+                                            <property name="dimension">CCN_DEtails</property>
+                                            <property name="levels">
+                                                <extended-item extensionName="LevelView" name="NewLevel View" id="3207">
+                                                    <property name="level">CCN_DEtails/cs_ccn</property>
+                                                    <property name="pageBreakBefore">auto</property>
+                                                    <property name="pageBreakAfter">auto</property>
+                                                    <property name="member">
+                                                        <extended-item extensionName="CrosstabCell" id="3208">
+                                                            <property name="content">
+                                                                <data name="cs_ccn" id="3209">
+                                                                    <property name="fontWeight">normal</property>
+                                                                    <property name="resultSetColumn">cs_ccn</property>
+                                                                </data>
+                                                            </property>
+                                                            <property name="fontWeight">normal</property>
+                                                            <property name="textAlign">right</property>
+                                                            <property name="width">1.0416666666666667in</property>
+                                                        </extended-item>
+                                                    </property>
+                                                    <property name="aggregationHeader">
+                                                        <extended-item extensionName="CrosstabCell" id="3297">
+                                                            <property name="content">
+                                                                <data name="cs_ccn_TOTAL" id="3312">
+                                                                    <property name="textAlign">right</property>
+                                                                    <property name="resultSetColumn">cs_ccn_TOTAL</property>
+                                                                </data>
+                                                            </property>
+                                                            <property name="fontWeight">bold</property>
+                                                        </extended-item>
+                                                    </property>
+                                                    <property name="pageBreakInside">avoid</property>
+                                                </extended-item>
+                                                <extended-item extensionName="LevelView" name="NewLevel View1" id="3210">
+                                                    <property name="level">CCN_DEtails/cs_name</property>
+                                                    <property name="member">
+                                                        <extended-item extensionName="CrosstabCell" id="3211">
+                                                            <property name="content">
+                                                                <data name="cs_name" id="3212">
+                                                                    <property name="display">inline</property>
+                                                                    <property name="resultSetColumn">cs_name</property>
+                                                                </data>
+                                                            </property>
+                                                            <property name="fontWeight">normal</property>
+                                                            <property name="textAlign">left</property>
+                                                            <property name="width">1.1979166666666667in</property>
+                                                        </extended-item>
+                                                    </property>
+                                                </extended-item>
+                                                <extended-item extensionName="LevelView" name="NewLevel View2" id="3213">
+                                                    <property name="level">CCN_DEtails/Tarrif_Type</property>
+                                                    <property name="member">
+                                                        <extended-item extensionName="CrosstabCell" id="3214">
+                                                            <property name="content">
+                                                                <data name="Tarrif_Type" id="3215">
+                                                                    <property name="resultSetColumn">Tarrif_Type</property>
+                                                                </data>
+                                                            </property>
+                                                            <property name="fontWeight">normal</property>
+                                                            <property name="textAlign">left</property>
+                                                            <property name="width">0.71875in</property>
+                                                        </extended-item>
+                                                    </property>
+                                                </extended-item>
+                                                <extended-item extensionName="LevelView" name="NewLevel View3" id="3216">
+                                                    <property name="level">CCN_DEtails/TAX</property>
+                                                    <property name="member">
+                                                        <extended-item extensionName="CrosstabCell" id="3217">
+                                                            <property name="content">
+                                                                <data name="TAX" id="3218">
+                                                                    <property name="resultSetColumn">TAX</property>
+                                                                </data>
+                                                            </property>
+                                                            <property name="fontWeight">normal</property>
+                                                            <property name="textAlign">left</property>
+                                                            <property name="width">1in</property>
+                                                        </extended-item>
+                                                    </property>
+                                                </extended-item>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                            <property name="header">
+                                <extended-item extensionName="CrosstabCell" id="3204">
+                                    <property name="content">
+                                        <label id="3358">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Connection No</text-property>
+                                        </label>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="CrosstabCell" id="3355">
+                                    <property name="content">
+                                        <label id="3359">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Cs Name</text-property>
+                                        </label>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="CrosstabCell" id="3356">
+                                    <property name="content">
+                                        <label id="3360">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Tariff Type</text-property>
+                                        </label>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="CrosstabCell" id="3357">
+                                    <property name="content">
+                                        <label id="3361">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Tax Name</text-property>
+                                        </label>
+                                    </property>
+                                </extended-item>
+                            </property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">cs_ccn</property>
+                                    <expression name="expression">dimension["CCN_DEtails"]["cs_ccn"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cs_name</property>
+                                    <expression name="expression">dimension["CCN_DEtails"]["cs_name"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Tarrif_Type</property>
+                                    <expression name="expression">dimension["CCN_DEtails"]["Tarrif_Type"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">TAX</property>
+                                    <expression name="expression">dimension["CCN_DEtails"]["TAX"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Water_Tax_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Water_Tax"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Penalty_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Penalty"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Surcharge_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Surcharge"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Work_Contract_Tax_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Work_Contract_Tax"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Advance_Payment_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Advance_Payment"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Demand_Notice_Fee_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Demand_Notice_Fee"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Total_CCN_DEtails/TAX</property>
+                                    <expression name="expression">measure["Total"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/TAX</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">SUM</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Water_Tax_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Water_Tax"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Penalty_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Penalty"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Surcharge_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Surcharge"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Work_Contract_Tax_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Work_Contract_Tax"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Advance_Payment_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Advance_Payment"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Demand_Notice_Fee_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Demand_Notice_Fee"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Total_CCN_DEtails/cs_ccn</property>
+                                    <expression name="expression">measure["Total"]</expression>
+                                    <property name="dataType">float</property>
+                                    <simple-property-list name="aggregateOn">
+                                        <value>CCN_DEtails/cs_ccn</value>
+                                    </simple-property-list>
+                                    <property name="aggregateFunction">sum</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cs_ccn_TOTAL</property>
+                                    <expression name="expression" type="javascript">" TOTAL"</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                        </extended-item>
+                    </cell>
+                </row>
+            </header>
+            <footer>
+                <row id="1185">
+                    <cell id="1189">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"Verdana"</property>
+                        <grid id="11494">
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">avoid</property>
+                            <property name="dataSet">TaxInfo</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">COD_DWZID1</property>
+                                    <text-property name="displayName">COD_DWZID1</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["COD_DWZID1"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">COD_DWZID2</property>
+                                    <text-property name="displayName">COD_DWZID2</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["COD_DWZID2"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">orgid</property>
+                                    <text-property name="displayName">orgid</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["orgid"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">O_NLS_ORGNAME</property>
+                                    <text-property name="displayName">O_NLS_ORGNAME</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["O_NLS_ORGNAME"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cs_name</property>
+                                    <text-property name="displayName">cs_name</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["cs_name"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cs_meteredccn</property>
+                                    <text-property name="displayName">cs_meteredccn</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["cs_meteredccn"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Meter_Non_Meter</property>
+                                    <text-property name="displayName">Meter_Non_Meter</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Meter_Non_Meter"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">TRM_GROUP1</property>
+                                    <text-property name="displayName">TRM_GROUP1</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["TRM_GROUP1"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Tarrif_Type</property>
+                                    <text-property name="displayName">Tarrif_Type</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Tarrif_Type"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cs_ccnsize</property>
+                                    <text-property name="displayName">cs_ccnsize</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["cs_ccnsize"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Connection_Ssize</property>
+                                    <text-property name="displayName">Connection_Ssize</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Connection_Ssize"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">CS_IDN</property>
+                                    <text-property name="displayName">CS_IDN</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["CS_IDN"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cs_ccn</property>
+                                    <text-property name="displayName">cs_ccn</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["cs_ccn"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">CS_IDN_1</property>
+                                    <text-property name="displayName">CS_IDN</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["CS_IDN_1"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">TAX</property>
+                                    <text-property name="displayName">TAX</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["TAX"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Water_Tax</property>
+                                    <text-property name="displayName">Water_Tax</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Water_Tax"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Surcharge</property>
+                                    <text-property name="displayName">Surcharge</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Surcharge"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Penalty</property>
+                                    <text-property name="displayName">Penalty</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Penalty"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Advance_Payment</property>
+                                    <text-property name="displayName">Advance_Payment</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Advance_Payment"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Work_Contract_Tax</property>
+                                    <text-property name="displayName">Work_Contract_Tax</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Work_Contract_Tax"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Demand_Notice_Fee</property>
+                                    <text-property name="displayName">Demand_Notice_Fee</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Demand_Notice_Fee"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Aggregation</property>
+                                    <property name="dataType">float</property>
+                                    <property name="aggregateFunction">SUM</property>
+                                    <list-property name="arguments">
+                                        <structure>
+                                            <property name="name">Expression</property>
+                                            <expression name="value" type="javascript">if(dataSetRow["TAX"]=='ARREAR')&#13;
+{&#13;
+dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]&#13;
+}&#13;
+else&#13;
+{&#13;
+0&#13;
+}</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Aggregation_1</property>
+                                    <property name="dataType">float</property>
+                                    <property name="aggregateFunction">SUM</property>
+                                    <list-property name="arguments">
+                                        <structure>
+                                            <property name="name">Expression</property>
+                                            <expression name="value" type="javascript">if(dataSetRow["TAX"]=='CURRENT')&#13;
+{&#13;
+dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]&#13;
+}&#13;
+else&#13;
+{&#13;
+0&#13;
+}</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Aggregation_2</property>
+                                    <property name="dataType">float</property>
+                                    <property name="aggregateFunction">SUM</property>
+                                    <list-property name="arguments">
+                                        <structure>
+                                            <property name="name">Expression</property>
+                                            <expression name="value" type="javascript">if(dataSetRow["TAX"]=='ADJ')&#13;
+{&#13;
+dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]&#13;
+}&#13;
+else&#13;
+{&#13;
+0&#13;
+}</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Aggregation_3</property>
+                                    <property name="dataType">float</property>
+                                    <property name="aggregateFunction">SUM</property>
+                                    <list-property name="arguments">
+                                        <structure>
+                                            <property name="name">Expression</property>
+                                            <expression name="value" type="javascript">if(dataSetRow["TAX"]=='ARREAR')&#13;
+{&#13;
+dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]&#13;
+}&#13;
+else if(dataSetRow["TAX"]=='CURRENT')&#13;
+{&#13;
+dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]&#13;
+}&#13;
+else if(dataSetRow["TAX"]=='ADJ')&#13;
+{&#13;
+dataSetRow["Water_Tax"]+dataSetRow["Surcharge"]+dataSetRow["Penalty"]+dataSetRow["Advance_Payment"]+dataSetRow["Work_Contract_Tax"]+dataSetRow["Demand_Notice_Fee"]&#13;
+}</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <column id="11495">
+                                <property name="width">0.729in</property>
+                            </column>
+                            <column id="11496"/>
+                            <column id="11497">
+                                <property name="width">0.729in</property>
+                            </column>
+                            <column id="11498"/>
+                            <column id="11499"/>
+                            <column id="11500"/>
+                            <column id="11501">
+                                <property name="width">0.729in</property>
+                            </column>
+                            <column id="11502"/>
+                            <row id="11503">
+                                <property name="borderBottomColor">#C0C0C0</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderLeftColor">#C0C0C0</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#C0C0C0</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <property name="borderTopColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="pageBreakBefore">avoid</property>
+                                <cell id="11504">
+                                    <label id="3331">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Arrears:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="11505">
+                                    <data id="11514">
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="resultSetColumn">Aggregation</property>
+                                    </data>
+                                </cell>
+                                <cell id="11506">
+                                    <label id="3332">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Current:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="11507">
+                                    <data id="11515">
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="resultSetColumn">Aggregation_1</property>
+                                    </data>
+                                </cell>
+                                <cell id="11508">
+                                    <label id="3333">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">+ve Adjustment: </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="11509">
+                                    <data id="11516">
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="resultSetColumn">Aggregation_2</property>
+                                    </data>
+                                </cell>
+                                <cell id="11510">
+                                    <label id="3334">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Total:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="11511">
+                                    <data id="11518">
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="resultSetColumn">Aggregation_3</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

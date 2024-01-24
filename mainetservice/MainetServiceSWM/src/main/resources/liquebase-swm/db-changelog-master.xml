@@ -1,0 +1,435 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<include
+		file="src/main/resources/db/mysql/V20180427113431__CR_TB_SW_POPULATION_MAST.sql" />	
+
+	<include
+		file="src/main/resources/db/mysql/V20180427113451__CR_TB_SW_POPULATION_MAST_HIST.sql" />	
+
+	<include
+		file="src/main/resources/db/mysql/V20180430125803__CR_TB_SW_DESPOSAL_MAST.sql" />	
+
+	<include
+		file="src/main/resources/db/mysql/V20180430125744__CR_TB_SW_DESPOSAL_DET.sql" />	
+		
+	<include
+		file="src/main/resources/db/mysql/V20180430125914__CR_TB_SW_VEHICLE_MAST.sql" />	
+		
+	<include
+		file="src/main/resources/db/mysql/V20180430125914__CR_TB_SW_VEHICLE_MAST.sql" />	
+
+			<include
+		file="src/main/resources/db/mysql/V20180504175556__CR_TB_SW_PUMP_FULDET.SQL"/>
+		<!--<include
+		file="src/main/resources/db/mysql/V20180504175616__CR_TB_SW_PUMP_FULDET_HIST.sql"/>-->
+	
+	<!--<include
+		file="src/main/resources/db/mysql/V20180504175750__CR_TB_SW_DISPOSAL_MAST_HIST.sql"/>-->
+			<!--<include
+		file="src/main/resources/db/mysql/V20180504175809__CR_TB_SW_PUMP_MAST_HIST.sql"/>
+			<include
+		file="src/main/resources/db/mysql/V20180504175835__CR_TB_SW_VEHICLE_MAST_HIST.sql"/>-->
+
+<!--<include
+		file="src/main/resources/db/mysql/V20180511154721__CR_TB_SW_DISPOSAL_MAST_11052018.sql" />-->
+		
+<!--<include
+		file="src/main/resources/db/mysql/V20180511154627__CR_TB_SW_DISPOSAL_MAST_HIST_11052018.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/V20180511173525__CR_TB_SW_DESPOSAL_DET_11052018.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/V20180511173544__CR_TB_SW_DISPOSAL_DET_HIST_11052018.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/V20180511154644__CR_TB_SW_PUMP_MAST_11052018.sql"/>	
+<include
+		file="src/main/resources/db/mysql/V20180511154741__CR_TB_SW_PUMP_MAST_HIST_11052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180511155550__CR_TB_SW_ROOT_MAST.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180511160443__CR_TB_SW_ROOT_MAST_HIST.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180511154801__CR_TB_SW_ROOT_DET.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180511155513__CR_TB_SW_ROOT_DET_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180511160327__CR_TB_SW_VEHICLE_MAINTAINANCE.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180511160344__CR_TB_SW_VEHICLE_MAINTAINANCE_HIS.sql" />-->
+
+
+<!--<include
+		file="src/main/resources/db/mysql/V20180518114300__CR_ALL_SWM_TABLES.sql" />-->
+<!--<include
+		file="src/main/resources/db/mysql/V20180518114626__CR_TB_SW_SANITATION_MAST_15052018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180518114803__CR_TB_SW_SANITATION_MAST_HIST_15052018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180529143249__AL_TB_SW_POPULATION_MAST_21052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180529144158__AL_TB_SW_POPULATION_MAST_HIST_21052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180529145452__CR_TB_SW_VEREMEN_MAST_HIST_22052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180529145541__CR_TB_SW_VEHICLEFUEL_MAST_23052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180529145515__CR_TB_SW_VEHICLEFUEL_MAST_HIST_23052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180529145625__CR_TB_SW_VEHICLEFUEL_DET_24052018.sql" />
+<include
+		file="src/main/resources/db/mysql/V20180529145608__CR_TB_SW_VEHICLEFUEL_DET_HIST.sql" />
+
+<include
+		file="src/main/resources/db/mysql/V20180609165344__CR_TB_SW_VEHICLE_SCHEDULING_06062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609164639__CR_TB_SW_VEHICLE_SCHEDULING_HIST_06062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609165444__CR_TB_SW_VEHICLE_SCHEDDET_06062018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180609165402__CR_TB_SW_VEHICLE_SCHEDDET_HIST_06062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609165933__CR_TB_SW_TRIPSHEET_08062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609165527__CR_TB_SW_TRIPSHEET_HIST_08062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609165608__CR_TB_SW_TRIPSHEET_GDET_08062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609165546__CR_TB_SW_TRIPSHEET_GDET_HIST_08062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170032__CR_TB_SW_EMPLOYEE_SCHEDULING_07062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170000__CR_TB_SW_EMPLOYEE_SCHEDULING_HIST_07062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609174013__CR_TB_SW_EMPLOYEE_SCHEDDET_09062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170213__CR_TB_SW_EMPLOYEE_SCHEDDET_HIST_07062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170502__CR_TB_SW_CONTVEND_MAPPING_09062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170300__CR_TB_SW_CONTVEND_MAPPING_HIST_09062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170524__AL_TB_SW_VEHICLE_MAST_04062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170638__al_tb_sw_route_mast.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170616__al_tb_sw_route_mast_hist.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170657__AL_TB_SW_ROUTE_DET_09062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180609170719__AL_TB_SW_PUMP_FULDET_09062018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180609203653__CR_TB_SW_VEHICLE_MAST_HIST.sql"/> -->
+
+<include
+		file="src/main/resources/db/mysql/V20180613155447__DR_ALL_SWMTABLE.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180613154344__AL_CR_SWMTABLE.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180616135317__CR_TB_VEHICLEFUEL_INREC_15062018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180616142911__CR_TB_SW_VEHICLEFUEL_INREC_HIST_15062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180616142413__CR_TB_SW_VEHICLEFUEL_INREC_DET_15062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180616142851__CR_TB_SW_VEHICLEFUEL_INREC_DET_HIST_15062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180616135339__CR_TB_SW_SANISTAFF_TG_14062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180616142118__CR_TB_SW_SANISTAFF_TG_HIST_14062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180616142222__CR_TB_SW_SANISTAFF_TGDET_14062018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180616142322__CR_TB_SW_SANISTAFF_TGDET_HIST_14062018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180616142043__CR_TB_EMPLOYEE_ATTENDANCE_15062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180620173956__AL_tb_sw_sanitation_mast_20062018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180620174039__AL_tb_sw_veremen_mast_20062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180621141714__AL_tb_sw_sanitation_mast_21062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180621143404__AL_tb_sw_employee_scheduling_21062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180623183102__TB_SW_REGISTRATION.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180623183103__TB_SW_REGISTRATION_HIST.sql"/>
+
+		
+<include
+		file="src/main/resources/db/mysql/V20180623183105__TB_SW_BILL_MAS.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180623183106__TB_SW_BILL_MAS_HIST.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180629200228__AL_tb_sw_contvend_mapping_29062018.sql"/>
+
+
+<include
+		file="src/main/resources/db/mysql/V20180629200510__CR_TB_SW_DGARBAGE_COL_28062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180629200228__AL_tb_sw_contvend_mapping_29062018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180629200743__CR_TB_SW_FINECHARGE_COL_29062018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180704205227__AL_TB_SW_VEHICLEFUEL_INREC_DET_04072018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180709142026__AL_TB_SW_VEHICLEFUEL_INREC_06072018.sql"/>
+		
+
+<include
+		file="src/main/resources/db/mysql/V20180712203533__AL_TB_SW_DISPOSAL_MAST_09072018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180712203701__AL_TB_SW_EMPLOYEE_SCHEDDET_10072018.sql"/>
+
+<include
+		file="src/main/resources/db/mysql/V20180712203726__AL_TB_SW_PUMP_MAST_12072018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180712203805__AL_TB_SW_ROUTE_MAST_12072018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180712203830__AL_TB_SW_SANITATION_MAST_12072018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180712203922__AL_tb_sw_tripsheet_12072018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180712203952__AL_tb_sw_wasteseg_12072018.sql"/>
+<include
+		file="src/main/resources/db/mysql/V20180712204015__AL_tb_wms_sanction_det_hist_12072018.sql"/>
+		
+<include
+		file="src/main/resources/db/mysql/V20180720201103__AL_tb_sw_finecharge_col_19072018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20180720201939__AL_TB_SW_VEHICLE_MAST_17072018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180720201922__AL_TB_SW_POPULATION_MAST_16072018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180727121657__AL_tb_sw_contvend_mapping_25072018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180727121754__AL_TB_SW_VEHICLE_SCHEDDET_23072018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180727121818__AL_TB_SW_VEHICLE_SCHEDULING_26072018.sql"/>
+
+
+<include
+file="src/main/resources/db/mysql/V20180727121731__AL_TB_SW_REGISTRATION_23072018.sql"/>
+
+
+<include
+file="src/main/resources/db/mysql/V20180730144950__AL_TB_SW_EMPLOYEE_SCHEDDET_30072018.sql"/>
+
+
+<include
+file="src/main/resources/db/mysql/V20180730145004__AL_tb_sw_employee_scheddet_hist_30072018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180821173935__AL_TB_SW_DISPOSAL_MAST_08082018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180821174151__AL_TB_SW_ROUTE_MAST_08082018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20180821174212__AL_TB_SW_SANITATION_MAST_08082018.sql"/>
+
+
+<include
+file="src/main/resources/db/mysql/V20180829201000__CR_TB_SW_WASTRATE_MAST_29082018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180829201045__CR_TB_SW_WASTRATE_MAST_HIST_29082018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180829200745__AL_tb_sw_sanistaff_tg.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180829200729__AL_TB_SW_DISPOSAL_MAST_24082018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180921192000__CR_TB_SW_BEAT_MAST.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180921192016__CR_TB_SW_BEAT_MAST_HIST.sql"/>
+
+
+<include
+file="src/main/resources/db/mysql/V20180920135042__AL_tb_sw_employee_scheddet_07092018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20180920135104__al_tb_sw_employee_scheddet_hist.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180920144206__AL_tb_sw_vehicle_scheddet_07092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180920144043__AL_tb_sw_tripsheet_10092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180921195808__AL_tb_sw_contvend_mapping_21092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20180921201230__al_tb_sw_vehicle_tgdet_21092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181001145804__CR_TB_SW_MRF_MAST_25092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181001145938__CR_TB_SW_MRF_MAST_HIST_25092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181001145955__CR_TB_SW_MRF_VECHICLE_DET_25092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181001150027__CR_TB_SW_MRF_VECHICLE_DET_HIST_25092018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181001145751__CR_TB_SW_MRF_EMPLOYEE_DET_25092018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181001145826__CR_TB_SW_MRF_EMPLOYEE_DET_HIST_25092018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181001150046__DR_tb_sw_disposal.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181001150046__DR_tb_sw_disposal.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181001145622__AL_MRFID.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181001145732__AL_TB_SW_VEREMEN_MAST_HIST_27092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181001145715__AL_tb_sw_vehicle_mast_hist_28092018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181005150251__AL_TB_SW_VEHICLE_SCHEDDET_05102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181030145931__CR_TB_SW_SURVEY_MAST_25102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181030144517__AL_tb_sw_beat_mast_hist_25102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181030144536__AL_tb_sw_vehicle_mast_25102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181030161913__AL_TB_SW_VEHICLE_MAST_HIST_30102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181101180113__AL_TB_SW_BEAT_MAST_31102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181101180341__CR_TB_SW_EMPLOYEE_31102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181102195412__CR_TB_SW_CONSTDEMO_GARBAGECOLL_25102018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181124184034__AL_tb_sw_beat_mast_20112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181124184105__AL_tb_sw_bill_mas_20112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181124184128__AL_tb_sw_tripsheet_21112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181124182820__AL_TB_SW_CONSTDEMO_GARBAGECOLL_23112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181124183451__AL_TB_SW_REGISTRATION_24112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181124183416__al_tb_sw_employee_scheddet_24112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181129205952__CR_TB_SW_VECHILELOG2_29112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181129205808__CR_TB_SW_ITC_CDWM_29112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181129210146__CR_TB_SW_VECHILELOG1_29112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181129210057__CR_TB_SW_VECHILELOGF_29112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181129205751__CR_TB_SW_GARDEN_BWG_LOGBOOK_29112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181129205826__CR_TB_SW_ITC_DODC_27112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181129205846__CR_TB_SW_ITC_SWEEPINGM_27112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181130112907__CR_TB_SW_ANIMALLOG.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181201142929__CR_TB_SW_CD_WCM_30112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181201143038__CR_TB_SW_SLRM2_30112018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181201143001__CR_TB_SW_SLRM1_30112018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181206180338__CR_TB_SW_ALLFINE_03122018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181206180400__CR_TB_SW_DESLUDGING_03122018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181206180428__CR_TB_SW_UCHC_03122018.sql"/>
+
+<include
+file="src/main/resources/db/mysql/V20181102195412__CR_TB_SW_CONSTDEMO_GARBAGECOLL_25102018.sql"/>
+<include
+file="src/main/resources/db/mysql/V20181212133655__AL_tb_sw_vehicle_scheddet_122018.sql"/>
+
+<include file="src/main/resources/db/mysql/V20181211180505__AL_tb_sw_constdemo_garbagecoll_20112018.sql"/>
+
+<include file="src/main/resources/db/mysql/V20190102133655__AL_TB_SW_CONSTDEMO_GARBAGECOLL_02012019.sql"/>
+<include file="src/main/resources/db/mysql/V20190125191040__AL_TB_SW_BEAT_MAST_HIST_25012019.sql"/>
+
+<include file="src/main/resources/db/mysql/V20190530183054__CR_tb_sw_sell_ent_mast_17052019.sql"/>
+<include file="src/main/resources/db/mysql/V20190530181752__al_tb_sw_registration_28052019.sql"/>
+<include file="src/main/resources/db/mysql/V20190530182253__CR_tb_sw_homecoumpose_28052019.sql"/>
+<include file="src/main/resources/db/mysql/V20190530181626__AL_tb_sw_beat_det_17052019.sql"/>
+<include file="src/main/resources/db/mysql/V20190530181752__al_tb_sw_registration_28052019.sql"/>
+<include file="src/main/resources/db/mysql/V20190607183551__AL_tb_sw_homecoumpose_03062019.sql"/>
+<include file="src/main/resources/db/mysql/V20190618132954__TB_LGL_ARBITORY_FEE.sql"/>
+<include file="src/main/resources/db/mysql/V20190717110849__AL_TB_SW_BEAT_MAST_HIST_16072019.sql"/>
+<include file="src/main/resources/db/mysql/V20190717110903__AL_tb_sw_tripsheet_16072019.sql"/>
+<include file="src/main/resources/db/mysql/V20190717110913__AL_tb_sw_tripsheet_gdet_16072019.sql"/>
+<include file="src/main/resources/db/mysql/V20190717110929__AL_tb_sw_tripsheet_gdet_hist_17072019.sql"/>
+<include file="src/main/resources/db/mysql/V20190717110942__AL_tb_sw_tripsheet_hist_17072019.sql"/>
+<include file="src/main/resources/db/mysql/V20200407123706__AL_tb_sw_mrf_mast_07042020.sql"/>
+<include file="src/main/resources/db/mysql/V20210113201037__AL_TB_SW_VEHICLE_SCHEDULING_hist _130112021.sql"/>
+<include file="src/main/resources/db/mysql/V20210118182109__AL_TB_SW_VEHICLE_SCHEDULING_18012021.sql"/>
+<include file="src/main/resources/db/mysql/V20220215133831__AL_TB_SW_VEHICLE_MAST_15022022.sql"/>
+<include file="src/main/resources/db/mysql/V20220215171530__AL_TB_SW_MRF_VECHICLE_DET_15022022.sql"/>
+<include file="src/main/resources/db/mysql/V20220302164705__AL_TB_SW_TRIPSHEET_GDET_02032022.sql"/>
+<include file="src/main/resources/db/mysql/V20220302165606__AL_TB_SW_TRIPSHEET_GDET_HIST_02032022.sql"/>
+<include file="src/main/resources/db/mysql/V20220304131217__AL_tb_sw_beat_det_04032022.sql"/>
+<include file="src/main/resources/db/mysql/V20220309194505__AL_tb_sw_beat_mast_09032022.sql"/>
+<include file="src/main/resources/db/mysql/V20220728172921__AL_TB_SW_MRF_EMPLOYEE_DET_28072022.sql"/>
+<include file="src/main/resources/db/mysql/V20230221190851__AL_TB_SW_WASTESEG_DET_21022023.sql"/>
+<include file="src/main/resources/db/mysql/V20230809111423__EMPLOYEE_ATTENDANCE_08082023.sql"/>
+<include file="src/main/resources/db/mysql/V20231019131108__CR_tb_sw_employee_18102023.sql"/>
+</databaseChangeLog>

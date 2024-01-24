@@ -1,0 +1,47 @@
+delete from tb_as_pro_assesmnet_detail;
+delete from tb_as_pro_bill_det;
+delete from tb_as_pro_bill_det_hist;
+delete from tb_as_pro_bill_mas;
+delete from tb_as_pro_detail_hist;
+delete from tb_as_pro_owner_dtl_hist;
+delete from tb_as_pro_mast_hist;
+delete from tb_as_pro_factor_dtl_hist;
+delete from tb_as_pro_bill_mas_hist;
+delete from tb_as_pro_assesment_factor_dtl;
+delete from tb_as_pro_assesment_owner_dtl;
+delete from tb_as_pro_assesment_detail;
+delete from tb_as_pro_assesment_mast;
+delete from tb_ast_chart_of_depretn_hist;
+delete from tb_as_not_mas;
+delete from tb_as_excess_amt;
+delete from tb_as_transfer_owner_dtl;
+delete from tb_as_transfer_mst;
+delete from tb_as_detail_hist;
+delete from tb_as_assesment_owner_detail;
+delete from tb_as_owner_dtl_hist;
+delete from tb_as_bill_mas_hist;
+delete from tb_as_assesment_factor_detail;
+delete from tb_as_transfer_publ;
+delete from tb_as_mast_hist;
+delete from tb_as_factor_dtl_hist;
+delete from tb_as_bill_det_hist;
+delete from tb_as_excess_amt_hist;
+delete from tb_as_bill_det;
+delete from tb_as_bill_mas;
+delete from tb_as_bill_schedule_det;
+delete from tb_as_bill_schedule_mast;
+delete from tb_as_assesment_owner_dtl;
+delete from tb_as_assesment_factor_dtl;
+delete from tb_as_prop_det;
+delete from tb_as_prop_factor;
+delete from tb_as_assesment_detail;
+delete from tb_as_assesment_mast;
+delete from tb_as_prop_mas;
+
+delete from _sequences where  name in (select sq_seq_name   from TB_JAVA_SEQ_GENERATION where SQ_TBL_NAME like 'TB_AS_%');
+delete from tb_java_seq_generation where  SQ_TBL_NAME like 'TB_AS_%';    
+
+delete from _sequences where  name in (select sq_seq_name   from TB_SEQ_GENERATION where SQ_TBL_NAME like 'TB_AS_%');
+delete from tb_seq_generation where SQ_TBL_NAME like 'TB_AS_%';
+commit;
+

@@ -1,0 +1,5 @@
+DROP VIEW IF EXISTS VW_PG_BANK_MASTER_PORTAL;
+CREATE VIEW `VW_PG_BANK_MASTER_PORTAL` AS select `a`.`BM_BANKID` AS `bm_bankid`,`b`.`CB_BANKNAME` AS `bm_bankname`,`a`.`PB_MERCHANTID` AS `pb_merchantid`,
+`c`.`PB_BANKURL` AS `pb_bankurl`,`a`.`ORGID` AS `orgid` from ((`TB_PG_BANK` `a` join `TB_CUSTBANKS` `b`) join `TB_PG_BANK_DETAIL` `c`) 
+where ((`a`.`BM_BANKID` = `b`.`CB_BANKCODE`) and (`a`.`ORGID` = `b`.`ORGID`) and (`a`.`ORGID` = `c`.`ORGID`) and (`a`.`BM_BANKID` = `c`.`BM_BANKID`) 
+and (`a`.`BM_ACTIVE` = 'A'));

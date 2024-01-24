@@ -1,0 +1,33 @@
+--liquibase formatted sql
+--changeset nilima:V20181001145938__CR_TB_SW_MRF_MAST_HIST_25092018.sql
+CREATE TABLE TB_SW_MRF_MAST_HIST (
+  MRF_ID_H bigint(12) NOT NULL,
+  MRF_ID bigint(12) ,
+  MRF_PLANTID varchar(50)  COMMENT 'Plant Id',
+  MRF_PLATNAME varchar(500)  COMMENT 'Plant Name',
+  MRF_CATEGORY bigint(12)  COMMENT 'Plant Category',
+  MRF_DATEOFOPEN date  COMMENT 'Date of Open',
+  MRF_DCENTRALISED char(1)  COMMENT 'Centralized-> C , DeCentralized ->  D',
+  MRF_OWNERSHIP char(1)  COMMENT 'Ownership (ULB->U,OutSourcing->O)',
+  LOC_ID bigint(12) ,
+  MRF_PLANTCAP decimal(15,2)  COMMENT 'Plant Capacity',
+  MRF_ISINTEGRATED_PLANT char(1) ,
+  MRF_INTEGRATED_PLANTID varchar(50) ,
+  MRF_ISRDF char(1)  COMMENT 'Is RDF',
+  MRF_RDFQTY decimal(15,2)  COMMENT 'Quantity of RDF',
+  MRF_ISCTC char(1)  COMMENT 'Integrated with CTC',
+  MRF_ISAGRE_INTEGRATED bigint(12) ,
+  PROJ_CODE varchar(13)  COMMENT 'Project Code',
+  PROJ_COST decimal(15,2)  COMMENT 'Project Cost',
+  PROJ_PROGRESS varchar(200)  COMMENT 'Project Progress',
+  ASSET_CODE varchar(45)  COMMENT 'Asset Code',
+  H_STATUS CHAR(1) COMMENT 'Status I->Insert,update',
+  ORGID bigint(12)  COMMENT 'organization id',
+  CREATED_BY bigint(12)  COMMENT 'user id who created the record',
+  CREATED_DATE date  COMMENT 'record creation date',
+  UPDATED_BY bigint(12)  COMMENT 'user id who updated the record',
+  UPDATED_DATE date  COMMENT 'date on which updated the record',
+  LG_IP_MAC varchar(100)  COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD varchar(100)  COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (MRF_ID_H)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset priya:V20180118105546__al_tb_worktime_mas.sql
+ALTER TABLE tb_worktime_mas
+CHANGE COLUMN WR_START_TIME WR_START_TIME DATETIME NOT NULL COMMENT 'Start Time' ,
+CHANGE COLUMN WR_END_TIME WR_END_TIME DATETIME NOT NULL COMMENT 'End Time' ;

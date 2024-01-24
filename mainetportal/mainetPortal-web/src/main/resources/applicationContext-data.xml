@@ -1,0 +1,88 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/jee 
+	    http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/jdbc
+		http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/data/jpa
+		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/data/repository
+        http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd">
+
+	<jpa:repositories
+		base-package="com.abm.mainet.masters.data.repository,com.abm.mainet.common.dao,
+	                                 com.abm.mainet.mobile.repository,com.abm.mainet.cms.dao"
+		entity-manager-factory-ref="entityManagerFactory" />
+
+	<tx:annotation-driven />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="database" value="${database.database}" />
+				<property name="databasePlatform" value="${database.databasePlatform}" />
+				<property name="showSql" value="${database.showSql}" />
+				<property name="generateDdl" value="${database.generateDdl}" />
+			</bean>
+		</property>
+		<property name="packagesToScan">
+			<list>
+			    <value>com.abm.mainet.common.dao</value>
+				<value>com.abm.mainet.common.domain</value>
+				<value>com.abm.mainet.common.checklist.domain</value>
+				<value>com.abm.mainet.payment.domain</value>
+				<value>com.abm.mainet.quartz.domain</value>
+				<value>com.abm.mainet.dms.domain</value>
+				<value>com.abm.mainet.smsemail.domain</value>
+				<value>com.abm.mainet.cms.domain</value>
+				<value>com.abm.mainet.domain</value>
+				<value>com.abm.mainet.common.care.domain</value>
+				<value>com.abm.mainet.common.care.masters</value>
+				<value>com.abm.mainet.common.jbpm.domain</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" 
+		id="dataSource"> <property name="driverClassName" value="${database.driverClassName}" 
+		/> <property name="url" value="${database.url}" /> <property name="username" 
+		value="${database3.username}" /> <property name="password" value="${database3.password}" 
+		/> <property name="testOnBorrow" value="true" /> <property name="testOnReturn" 
+		value="true" /> <property name="testWhileIdle" value="true" /> <property 
+		name="timeBetweenEvictionRunsMillis" value="1800000" /> <property name="numTestsPerEvictionRun" 
+		value="3" /> <property name="minEvictableIdleTimeMillis" value="1800000" 
+		/> <property name="initialSize" value="1" /> <property name="maxActive" value="50" 
+		/> <property name="maxIdle" value="20" /> </bean> -->
+
+
+	<!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> <property name="driverClass" value="${database.driverClassName}" 
+		/> <property name="jdbcUrl" value="${database.url}" /> <property name="user" 
+		value="${database.username}" /> <property name="password" value="${database.password}" 
+		/> <property name="minPoolSize" value="5" /> <property name="maxPoolSize" 
+		value="50" /> <property name="acquireIncrement" value="1" /> <property name="maxStatements" 
+		value="50" /> <property name="idleConnectionTestPeriod" value="3000" /> <property 
+		name="loginTimeout" value="300" /> </bean> -->
+
+	<jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/PortalMySqlDS" expected-type="javax.sql.DataSource" 
+		/>
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/PortalDS"
+		expected-type="javax.sql.DataSource" /> -->
+
+</beans>

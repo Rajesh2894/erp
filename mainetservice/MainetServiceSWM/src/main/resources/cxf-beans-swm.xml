@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="swmSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/swm/rest"></property>
+		<property name="title" value="SWM Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature"
+		class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider" />
+	</bean>
+	<bean id="cxfValidationProvider"
+		class="org.apache.cxf.validation.BeanValidationProvider" />
+	<jaxrs:server address="/swm/rest" id="swm">
+		<jaxrs:serviceBeans>
+			<bean class="com.abm.mainet.swm.service.VehicleMasterService" id="VehicleMasterService" />
+			<bean class="com.abm.mainet.swm.service.SolidWasteConsumerService" id="SolidWasteConsumerService" />
+			<bean class="com.abm.mainet.swm.service.SolidWasteBillMasterService" id="SolidWasteBillMasterService" />
+			<bean class="com.abm.mainet.swm.service.DoorToDoorGarbageCollectionService"	id="DoorToDoorGarbageCollectionService" />
+			<bean class="com.abm.mainet.swm.service.FineChargeCollectionService" id="FineChargeCollectionService" />
+			<bean class="com.abm.mainet.swm.service.TripSheetService" id="TripSheetService" />
+			<bean class="com.abm.mainet.swm.service.WastageSegregationService" id="WastageSegregationService" />
+			<bean class="com.abm.mainet.swm.service.MRFMasterService" id="MRFMasterService" />
+			<bean class="com.abm.mainet.swm.service.BeatMasterService" id="RouteMasterService" />
+			<bean class="com.abm.mainet.swm.service.VehicleScheduleService" id="VehicleScheduleService" />
+			<bean class="com.abm.mainet.swm.service.WasteCollectorServiceImpl" id="WasteCollectorService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<!-- <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" > <property 
+				name="mapper"> <bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper"> 
+				<property name="serializationConfig.dateFormat"> <bean class="java.text.SimpleDateFormat"> 
+				<constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/> </bean> </property> </bean> 
+				</property> </bean> -->
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" />
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler" />
+			<bean id="exceptionMapper"	class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true" />
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="swmSwagger2Feature" />
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint address="/vehicleinfoservice" id="vehicle" implementor="com.abm.mainet.swm.service.VehicleMasterService" />
+	<jaxws:endpoint address="/userregnservice" id="userreg"	implementor="com.abm.mainet.swm.service.SolidWasteConsumerService" />
+	<jaxws:endpoint address="/solidwastebillservice" id="billService" implementor="com.abm.mainet.swm.service.SolidWasteBillMasterService" />
+	<jaxws:endpoint address="/garbageCollectionService"	id="collectionservice" implementor="com.abm.mainet.swm.service.DoorToDoorGarbageCollectionService" />
+	<jaxws:endpoint address="/fineChargeCollectionService" id="fineCollectionService" implementor="com.abm.mainet.swm.service.FineChargeCollectionService" />
+	<jaxws:endpoint address="/tripsheetservice"	id="tripsheetservice" implementor="com.abm.mainet.swm.service.TripSheetService" />
+	<jaxws:endpoint address="/wastagesegregationservice" id="WastageSegregationService" implementor="com.abm.mainet.swm.service.WastageSegregationService"/>
+	<jaxws:endpoint address="/mrfmasterservice" id="mrfmasterservice"	implementor="com.abm.mainet.swm.service.MRFMasterService" />
+	<jaxws:endpoint address="/routemasterservice" id="routemasterservice" implementor="com.abm.mainet.swm.service.BeatMasterService" />
+	<jaxws:endpoint address="/vehiclescheduleservice" id="vehiclescheduleservice" implementor="com.abm.mainet.swm.service.VehicleScheduleService" />
+	<jaxws:endpoint address="wastecollectorservice" id="wastecollectorservice" implementor="com.abm.mainet.swm.service.WasteCollectorServiceImpl" />
+</beans>

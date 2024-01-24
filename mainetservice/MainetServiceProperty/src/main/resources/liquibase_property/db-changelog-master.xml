@@ -1,0 +1,291 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+ 
+   
+ <include
+		file="src/main/resources/db/mysql/Table/V20171214130602__TB_AS_BILL_SCHEDULE_DET.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171220193655__All_tb_as_bill_schedule_det_20171219.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130606__ALL_TB_DROP.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130628__ALL_TB_AS_PRO_ASSESMENT_MAST.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130645__ALL_TB_AS_PRO_ASSESMENT_DETAIL.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130657__ALL_TB_AS_PRO_ASSESMENT_FACTOR_DTL.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130708__ALL_TB_AS_PRO_ASSESMENT_OWNER_DTL.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130725__ALL_TB_AS_PRO_BILL_MAS.sql" />
+		
+ <include
+		file="src/main/resources/db/mysql/Table/V20171227130736__ALL_TB_AS_PRO_BILL_DET.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184351__ALL_TB_DROP.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123183723__TB_AS_BILL_SCHEDULE_DET.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184014__TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123183945__TB_AS_PRO_ASSESMENT_DETAIL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123183850__TB_AS_PRO_ASSESMENT_OWNER_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123183759__TB_AS_PRO_ASSESMENT_FACTOR_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184040__TB_AS_ASSESMENT_MAST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184028__TB_AS_ASSESMENT_DETAIL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123183819__TB_AS_ASSESMENT_OWNER_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123183905__TB_AS_ASSESMENT_FACTOR_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184113__TB_AS_PRO_BILL_MAS.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184058__TB_AS_PRO_BILL_DET.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184144__TB_AS_BILL_MAS.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180123184130__TB_AS_BILL_DET.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180222154948_TB_AS_PRO_ASSESMENT_OWNER_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180403160551__TB_AS_EXCESS_AMT.sql" />
+		
+		
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180100__ALL_TB_DROP.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180101__TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180102__TB_AS_PRO_ASSESMENT_DETAIL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180103__TB_AS_PRO_ASSESMENT_OWNER_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180104__TB_AS_PRO_ASSESMENT_FACTOR_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180105__TB_AS_ASSESMENT_MAST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180106__TB_AS_ASSESMENT_DETAIL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180107__TB_AS_ASSESMENT_OWNER_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180108__TB_AS_ASSESMENT_FACTOR_DTL.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180109__TB_AS_PRO_BILL_MAS.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180110__TB_AS_PRO_BILL_DET.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180111__TB_AS_BILL_MAS.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180112__TB_AS_BILL_DET" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180113__TB_AS_EXCESS_AMT" />
+		
+		
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180500__ALL_TB_DROP.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180508__TB_AS_MAST_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180513__TB_AS_EXCESS_AMT_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180505__TB_AS_FACTOR_DTL_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180501__TB_AS_PRO_FACTOR_DTL_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180512__TB_AS_BILL_MAS_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180511__TB_AS_BILL_DET_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180511__TB_AS_BILL_DET_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180507__TB_AS_DETAIL_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180503__TB_AS_PRO_DETAIL_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180506__TB_AS_OWNER_DTL_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180405180502__TB_AS_PRO_OWNER_DTL_HIST.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/Table/V20180518114319__CR_TB_AS_PRO_ASSESMENT_MAST_15052018.sql" />
+
+<include
+		file="src/main/resources/db/mysql/Table/V20180518114345__CR_TB_AS_PRO_MAST_HIST_15052018.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/Table/V20180517200759__AL_TB_AS_ASSESMENT_MAST_15052018.sql" />
+
+<include
+		file="src/main/resources/db/mysql/Table/V20180511154536__AL_TB_AS_EXCESS_AMT.sql" />
+		
+<include
+		file="src/main/resources/db/mysql/Table/V20180609172910__AL_TB_AS_PRO_ASSESMENT_MAST_29052018.sql" />
+		
+<include file="src/main/resources/db/mysql/Table/V20180627172910_AL_tb_as_assesment_mast.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180627172911_AL_tb_as_mast_hist.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180609172912_AL_TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180609172913_AL_TB_AS_PRO_MAST_HIST.sql" />
+		
+<include file="src/main/resources/db/mysql/Table/V20180629200513__AL_OWNER_MAST_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180712184001__AL_TB_AS_PRO_ASSESMENT_DETAIL.sql" />
+
+<include file="src/main/resources/db/mysql/Table/V20180720200520__TB_AS_PROP_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200521__TB_AS_PROP_DET.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200522__TB_AS_PROP_FACTOR.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200523__TB_AS_TRANSFER_MST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200524__TB_AS_TRANSFER_PUBL.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200525__TB_AS_TRANSFER_OWNER_DTL.sql" />
+
+<include file="src/main/resources/db/mysql/Table/V20180802200532__AL_TB_AST_RETIRE.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180802200533__AL_TB_AST_PURCHASER.sql" />
+
+<include file="src/main/resources/db/mysql/Table/V20180802200534__AL_tb_as_prop_det.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180816130001_AL_TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180903120001_AL_TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180903133000_AL_TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180903133001_AL_TB_AS_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180904202801_AL_TB_AS_PRO_ASSESMENT_DETAIL.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180905140001_AL_TB_AS_PRO_BILL_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180920200105_AL_TB_AS_PROP_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180927120105_TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181004212005_AL_TB_AS_PRO_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181008160005_AL_TB_AS_PRO_ASSESMENT_FACTOR_DTL.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181016150500_AL_TB_AS_PRO_BILL_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181022185505_TB_AS_ASSESMENT_MAST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181024125505_TB_AS_BILL_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181121201501_TB_RECEIPT_DET.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181123110005_AL_TB_AS_PROP_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181126133005_AL_TB_AS_PROP_MAS.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181129120005__TB_AS_MUT_REGISTRATION.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181130181501_AL_TB_AS_MUT_REGISTRATION.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181212163005_AL_TB_AS_BILL_DET_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181226163309__AL_tb_as_try_26122018.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181228200513_TB_AS_TRANSFER_OWNER_DTL.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190108123005_AL_TB_AS_BILL_DET.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190119183002_AL_ADD_INDEX_PROP.sql"/>
+
+<include file="src/main/resources/db/mysql/Table/V20190401190340__al_tb_as_assesment_mast_30032019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190401191705__AL_tb_as_pro_mast_hist_30032019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190401192408__AL_tb_as_prop_mas_01042019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190125133005_AL_TB_AS_NOT_MAS.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190201160101_AL_TB_AS_MUT_REGISTRATION.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190211123007_AL_TB_OBJECTION_MAST.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190227170001_CR_TB_AS_PENALTY.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190417191226__AL_tb_as_assesment_owner_dtl_17042019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190531183010_AL_TB_AS_PENALTY.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190612183010_AL_TB_OBJECTION_MAST.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191016170004__CR_tb_as_temp_pro_bill_mas_16102019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191016170020__CR_tb_as_temp_pro_bill_det_16102019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200213142348__AL_tb_as_prop_det_13022020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200225115452__AL_tb_as_prop_det_25022020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200825120033__AL_tb_as_bill_mas_25082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200831125843__AL_tb_as_assesment_mast_31082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201029135046__AL_tb_as_transfer_mst_29102020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201208202142__CR_tb_as_assesment_owner_dtl_hist_08122020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201222193639__AL_tb_as_assesment_mast_22122020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210115163023__AL_tb_as_assesment_mast_15012021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210115164939__CR_tb_as_assesment_detail_hist_15012021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210119184356__AL_tb_as_penalty_19012021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210121113053__AL_tb_as_pro_assesment_mast_21012021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210121123820__AL_tb_as_prop_mas_21012021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210215134318__AL_tb_as_assesment_mast_15022021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210312135320__AL_tb_as_pro_assesment_mast_12032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317104523__AL_tb_as_assesment_detail_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317105038__AL_tb_as_assesment_factor_dtl_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317105726__AL_tb_as_prop_det_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317110315__AL_tb_as_assesment_mast_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317110638__AL_tb_as_prop_mas_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317110944__CR_tb_as_assesment_room_detail_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210317111400__CR_tb_as_room_det_17032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210318170049__AL_TB_AS_PRO_ASSESMENT_MAST_18032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210318171239__AL_TB_AS_PRO_ASSESMENT_OWNER_DTL_18032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210318175447__AL_TB_AS_PRO_ASSESMENT_DETAIL_18032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210319102206__AL_tb_as_room_det_19032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210401093145__AL_tb_as_assesment_mast_01042021.sql"/>
+
+<include file="src/main/resources/db/mysql/Table/V20210401093731__AL_tb_as_pro_factor_dtl_hist_01042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210401093757__AL_TB_AS_PRO_MAST_HIST_01042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210401093942__CR_tb_as_pro_room_his_01042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210401094025__CR_tb_as_pro_room_det_01042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210408111542__AL_tb_as_assesment_detail_08042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210409194254__AL_tb_as_assesment_owner_dtl_09042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210422105932__AL_tb_as_pro_bill_mas_22042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210422113614__AL_tb_as_assesment_detail_22042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210422135731__CR_TB_AS_NO_DUES_PROP_DETAILS_22042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210422154001__AL_tb_as_no_dues_prop_details_22042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210422194037__AL_tb_as_assesment_mast_22042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210427191057__AL_tb_as_transfer_owner_dtl_27042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210429171434__CR_tb_as_exception_29042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210430135518__AL_tb_as_exception_30042021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210503115148__AL_tb_as_pro_detail_hist_03052021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210520102409__AL_TB_AS_ASSESMENT_OWNER_DTL_HIST_20052021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210531133206__AL_tb_as_assesment_owner_dtl_31052021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210604093546__AL_tb_as_transfer_mst_04062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210607104828__AL_tb_as_excess_amt_07062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210615171559__AL_tb_as_pro_assesment_owner_dtl_15062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210622150244__AL_TB_AS_ASSESMENT_DETAIL_HIST_22062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210622150354__AL_tb_as_transfer_mst_22062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210622150507__AL_TB_AS_ASSESMENT_MAST_HIST_22062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210624114253__CR_tb_as_assesment_mast_hist_24062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210716104822__AL_tb_as_assesment_detail_hist_16072021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210720174649__AL_TB_AS_PRO_BILL_MAS_20072021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210726101810__AL_tb_as_assesment_mast_26072021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210726102627__AL_tb_as_prop_mas_26072021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210813210432__AL_tb_as_bill_mas_13082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210813211223__AL_tb_as_bill_mas_hist_13082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210813211737__AL_tb_as_pro_bill_mas_13082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210813212158__AL_tb_as_pro_bill_mas_hist_13082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210817094102__AL_TB_AS_NO_DUES_PROP_DETAILS_17082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210817174057__AL_tb_as_bill_mas_17082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210817174210__AL_tb_as_pro_bill_mas_hist_17082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210817175808__AL_tb_as_bill_mas_hist_17082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210817180511__AL_TB_AS_PRO_BILL_MAS_17082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210902101045__AL_tb_as_bill_mas_02092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210927154309__AL_tb_as_bill_mas_27092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210927154457__AL_TB_AS_PRO_BILL_MAS_27092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210927141850__AL_tb_as_bill_det_27092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210927160249__AL_TB_AS_PRO_BILL_DET_27092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211006201426__AL_tb_as_pro_bill_mas_hist_06102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211014115746__AL_tb_as_assesment_mast_14102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211014120012__AL_TB_AS_PRO_ASSESMENT_MAST_14102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211014123021__AL_tb_as_prop_mas_14102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211014120414__CR_tb_as_assesment_factor_dtl_hist_14102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220211123533__AL_tb_as_assesment_mast_11022022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220214121009__AL_tb_as_pro_bill_mas_14022022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220217112113__AL_tb_as_pro_assesment_mast_17022022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220422145647__AL_tb_as_assesment_mast_22042022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220428194220__AL_TB_AS_PRO_ASSESMENT_DETAIL_28042022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220627131330__AL_tb_as_bill_mas_27062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220718123248__AL_tb_as_bill_mas_18072022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220722115129__AL_tb_as_bill_det_22072022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220728133848__AL_INDEX_tb_as_bill_det_hist_28072022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220808144136__AL_tb_as_bill_det_hist_08082022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220808144334__AL_tb_as_assesment_detail_hist_08082022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220908133258__AL_tb_as_assesment_owner_dtl_08092022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220912160901__AL_tb_as_assesment_mast_hist_12092022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220913201402__AL_tb_as_assesment_mast_hist_13092022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20221114100808__AL_tb_as_bill_det_14112022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230608182027__AL_tb_As_bill_mas_08062023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230609093052__AL_TB_AS_PRO_ASSESMENT_MAST_09062023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230609153907__AL_tb_as_prop_mas_09062023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230628104113__AL_tb_as_bill_det_28062023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230803184527__AL_TB_AS_PRO_ASSESMENT_DETAIL_03082023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230823111115_AL_TB_AS_PRO_DETAIL_HIST_23082023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230912142544__AL_tb_as_assesment_mast_12092023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20231004174008__AL_TB_AS_ASSESMENT_MAST_HIST_04102023.sql"/>
+</databaseChangeLog>
+

@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset priya:V20180221160310__AL_tb_cfc_application_mst_11122017.sql
+ALTER TABLE tb_cfc_application_mst 
+ADD COLUMN APM_BPL_YEAR_ISSU INT(4) NULL COMMENT 'Year Of Issue' AFTER APM_APPROVE_DATE,
+ADD COLUMN APM_BPL_ISSU_AUT VARCHAR(50) NULL COMMENT '' AFTER APM_BPL_YEAR_ISSU;

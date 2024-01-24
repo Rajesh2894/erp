@@ -1,0 +1,58 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+ 
+
+<!-- <include file="src/main/resources/db/mysql/Table/Testing.sql"/>  -->
+<include file="src/main/resources/db/mysql/Table/V20181228153843__CR_TB_ML_TRADE_MAST_07122018.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181228154612__CR_TB_ML_ITEM_DETAIL_07122018.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181228154547__CR_tb_ml_owner_detail_07122018.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190417191246__AL_tb_ml_owner_detail_17042019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190617174118__AL_tb_ml_item_detail_03062019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190719141910__CR_tb_ml_renewal_mast_19072019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190719141922__CR_tb_ml_renewal_mast_hist_19072019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190919132156__AL_tb_ml_item_detail_19092019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190919132207__AL_tb_ml_trade_mast_19092019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191226195531__CR_tb_ml_item_detail_hist_26122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191226195541__CR_tb_ml_owner_detail_hist_26122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191230151707__AL_tb_ml_trade_mast_30122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200115172739__AL_tb_ml_item_detail_15012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200127160855__AL_tb_ml_trade_mast_27012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200128153144__AL_tb_ml_trade_mast_28012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200212145555__AL_tb_ml_trade_mast_hist_12022020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200213143519__AL_tb_ml_owner_detail_hist_13022020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200327120424__AL_tb_ml_trade_mast_27032020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200529142005__AL_tb_ml_owner_detail_29052020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200529142025__AL_tb_ml_trade_mast_29052020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200601111602__CR_TB_ML_LICFAMDTL_01062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200608153501__AL_tb_ml_owner_detail_08062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200624180024__AL_tb_ml_trade_mast_24062020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200724115055__AL_tb_ml_renewal_mast_24072020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200910174651__AL_tb_ml_trade_mast_10092020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200911093902__AL_tb_ml_trade_mast_11092020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200911094357__AL_tb_ml_trade_mast_hist_11092020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200914101048__AL_tb_ml_trade_mast_14092020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210309110854__AL_TB_ML_TRADE_MAST_09032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210309114625__AL_TB_ML_TRADE_MAST_09032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210315194512__AL_tb_ml_trade_mast_hist_15032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210518145346__AL_tb_ml_trade_mast_18052021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210520105044__AL_tb_ml_trade_mast_20052021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210610122147__AL_tb_ml_trade_mast_hist_10062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210610122718__AL_tb_ml_item_detail_10062021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210726115932__AL_TB_ML_ITEM_DETAIL_26072021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210916124211__AL_TB_ML_TRADE_MAST_16092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211020144715__AL_tb_ml_trade_mast_20102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211109165957__AL_tb_ml_trade_mast_09112021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211117190239__AL_tb_ml_trade_mast_17112021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211202163815__AL_tb_ml_trade_mast_02122021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211229151401__CR_TN_ML_LIC_DEMAND_REG_29122021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211229151323__CR_TB_ML_LIC_DMND_ERR_29122021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220613111926__AL_tb_ml_trade_mast_13062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220613195709__AL_tb_ml_trade_mast_13062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220728135037__AL_TB_ML_ITEM_DETAIL_28072022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230414201154__AL_TB_ML_TRADE_MAST_14042023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230616184422__AL_TB_ML_TRADE_MAST_16062023.sql"/>
+</databaseChangeLog>
+
+

@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="assetSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/rest/asset"></property>
+		<property name="title" value="Asset Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>
+	</bean>
+	<bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+	<jaxrs:server address="/rest/asset" id="asset">
+		<jaxrs:serviceBeans>
+			<bean class="com.abm.mainet.asset.service.AssetGeoServiceImpl" id="AssetGeoService" />
+			<bean class="com.abm.mainet.asset.service.SearchServiceImpl" name="searchServiceRS" id="AssetSearchService" />
+			<bean class="com.abm.mainet.asset.service.AssetInformationServiceImpl"/>
+			<bean class="com.abm.mainet.asset.service.MaintenanceServiceImpl" name="maintenanceServiceeRS" id="AssetMaintenanceService"/>
+			<bean class="com.abm.mainet.asset.service.ChartOfDepreciationMasterServiceImpl" ></bean>
+			<bean class="com.abm.mainet.asset.service.AssetFunctionalLocationMasterServiceImpl" name="functionalLocationMasterServiceImplRS" id="FunctionalLocationMasterService"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" >
+				<property name="mapper">
+					<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+					  <property name="serializationConfig.dateFormat">
+					    <bean class="java.text.SimpleDateFormat">
+					      <constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+					    </bean>
+					  </property>
+					</bean>
+				</property>
+			</bean>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+			<bean id="exception1" class="com.abm.mainet.asset.ui.validator.FrameworkExceptionMapper">
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="assetSwagger2Feature" />
+            <ref bean="commonValidationFeature"/>
+        </jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint  address="/assetgeoservice" id="assetgeo" implementor="com.abm.mainet.asset.service.AssetGeoServiceImpl" />
+	<jaxws:endpoint  address="/assetinfoservice" id="assetinfo" implementor="com.abm.mainet.asset.service.AssetInformationServiceImpl" />
+	<jaxws:endpoint  address="/assetsearchservice" id="assetsearch" implementor="com.abm.mainet.asset.service.SearchServiceImpl" />
+	<jaxws:endpoint  address="/assetmaintenanceservice" id="assetmaintenance" implementor="com.abm.mainet.asset.service.MaintenanceServiceImpl" />
+	<jaxws:endpoint  address="/depremaster" id="depremasterid" implementor="com.abm.mainet.asset.service.ChartOfDepreciationMasterServiceImpl" />
+	<jaxws:endpoint address="/functionallocationmaster" id="funlocmaster" implementor="com.abm.mainet.asset.service.AssetFunctionalLocationMasterServiceImpl" />
+</beans>

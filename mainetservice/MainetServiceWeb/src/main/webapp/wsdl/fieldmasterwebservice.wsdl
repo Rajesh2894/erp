@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="Field_Master">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FIELD_PARENT_ID" type="xsd:double"/>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CODCOFDET_ID" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="FIELD_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="FIELD_STATUS" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="FIELD_DESC" type="xsd:string"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="FIELD_CODE" type="xsd:string"/>
+<xsd:element name="FIELD_COMPCODE" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Field_MasterUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FIELD_PARENT_ID" type="xsd:double"/>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CODCOFDET_ID" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="FIELD_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="FIELD_STATUS" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="FIELD_DESC" type="xsd:string"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="FIELD_CODE" type="xsd:string"/>
+<xsd:element name="FIELD_COMPCODE" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="Field_MasterRequest">
+<part name="parameters" element="tns:Field_Master"/>
+</message>
+<message name="Field_MasterRequestUp">
+<part name="parameters" element="tns:Field_MasterUp"/>
+</message>
+<message name="Field_MasterResponse">
+<part name="parameters" element="tns:Field_Master"/>
+</message>
+<portType name="Field_MasterServer">
+<operation name="Submit">
+<input message="tns:Field_MasterRequest"/>
+<output message="tns:Field_MasterResponse"/>
+</operation>
+<operation name="Update">
+<input message="tns:Field_MasterRequestUp"/>
+<output message="tns:Field_MasterResponse"/>
+</operation>
+</portType>
+<binding name="Field_MasterServer" type="tns:Field_MasterServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="Field_MasterServer">
+<port name="Field_MasterServer" binding="tns:Field_MasterServer">
+<soap:address location="/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/She4fb80618a8d495c92e92935481e4fc0/Ac79bf59b492ad49b29ee32a4bf94f6814/She4fb80618a8d495c92e92935481e4fc0/ws"/>
+</port>
+</service>
+</definitions>

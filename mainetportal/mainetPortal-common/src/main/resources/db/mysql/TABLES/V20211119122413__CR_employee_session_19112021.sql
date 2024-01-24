@@ -1,0 +1,14 @@
+--liquibase formatted sql
+--changeset Kanchan:V20211119122413__CR_employee_session_19112021.sql
+CREATE TABLE `employee_session` (
+  `SESSION_ID` bigint(12) NOT NULL,
+  `EMPID` bigint(12) NOT NULL,
+  `DATE_OF_ACTION` date NOT NULL,
+  `LOGINDATE` datetime DEFAULT NULL,
+  `LOGOUTDATE` datetime DEFAULT NULL,
+  `ORGID` bigint(12) NOT NULL,
+  `TRANS_MODE` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`SESSION_ID`),
+  KEY `FK_EMP_SESSION` (`EMPID`),
+  CONSTRAINT `FK_EMP_SESSION` FOREIGN KEY (`EMPID`) REFERENCES `employee` (`EMPID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ;

@@ -1,0 +1,427 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page errorPage="/jsp/mainet/defaultExceptionView.jsp" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	response.setContentType("text/html;charset=UTF-8");
+%>
+<!DOCTYPE html>
+<c:choose>
+	<c:when test="${userSession.getCurrent().getLanguageId() eq 1}">
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	</c:when>
+	<c:otherwise>
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="hi" dir="ltr">
+	</c:otherwise>
+</c:choose>
+
+<head>
+<meta charset="UTF-8">
+<c:if test="${empty pageName}">
+<title><tiles:insertAttribute name="page-title"/></title>
+</c:if>
+
+<c:if test="${not empty pageName}">
+<title><c:out value="${pageName}"/></title>
+</c:if>
+
+<link rel="shortcut icon" href="assets/img/favicon-tmc.ico">
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- SEO Details -->
+<c:set value="${userSession.getSEOMasterData()}" var="seo"/>
+<c:if test="${metaKeywords eq null}">
+<meta name="keywords" content="${seo.keyWord}">
+</c:if>
+<c:if test="${metaKeywords ne null}">
+<meta name="keywords" content="${seo.keyWord},${metaKeywords}">
+</c:if>
+<meta name="description" content="${seo.description}">
+
+<link href="assets/libs/bootstrap/css/bootstrap.min-theme-1.css" rel="stylesheet" />
+<link href="assets/libs/bootstrap/css/bootstrap-theme.min-theme-1.css" rel="stylesheet" />
+<link href="assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="assets/libs/animate-css/animate.min.css" rel="stylesheet" />
+<!-- <link href="assets/libs/pace/pace.css" rel="stylesheet" /> -->
+<link href="assets/libs/chosen/chosen.css" rel="stylesheet" type="text/css">
+<!-- <link href="assets/css/theme.css" rel="stylesheet" type="text/css" /> -->
+<!-- <link href="assets/css/style-responsive.css" rel="stylesheet" /> -->
+<link href="assets/libs/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/libs/lightbox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="css/mainet/ui.jqgrid.css" rel="stylesheet" type="text/css"/>
+<link href="css/QandA/alertify.css" rel="stylesheet" type="text/css"/>
+<link href="assets/libs/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+<link href="assets/libs/jqueryui/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"/>
+
+<!-- <link href="assets/libs/jquery-datatables/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css"/> -->
+<link href="assets/libs/tmc-plugins/jquery-datatables/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css"/>
+<!-- <link href="assets/libs/jquery-datatables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/> -->
+<link href="assets/libs/tmc-plugins/jquery-datatables/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<link href="assets/libs/jquery-gray/gray.min.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+<style media="screen">
+	html, body{font-size: 93% !important;}
+</style>
+
+<c:choose>
+	<c:when test="${ cookie['accessibilitytextsize'].value =='LGT' }">
+		<style media="screen">
+			/* html, body{font-size:110% !important;} */
+			html, body{font-size: 100% !important;}
+			/* .navigation{height: 485px !important;} */
+			.helpline-main-container .panel .panel-body {
+				height: 143px !important;
+			}
+			#photo-box .photo-video-main .gallery-box a .photo-thumbnail .icon-img i.fa {
+				font-size: 3em !important;
+			}
+			#photo-box .photo-video-main .gallery-box a .video-thumbnail .icon-img i.fa {
+				font-size: 3.9em !important;
+			}
+		</style>
+		
+	</c:when>
+	<c:when test="${ cookie['accessibilitytextsize'].value =='LGR' }">
+		<style media="screen">
+			/* html, body{font-size: 105% !important;} */
+			html, body{font-size: 98% !important;}
+			.service-box .service-icon .front-content .fa-list_AS:before,.service-box .service-icon .front-content .fa-list_WT:before,.service-box .service-icon .front-content .fa-list_RL:before,.service-box .service-icon .front-content .fa-list_AS:before{font-size: 1.2em !important;}
+			
+		</style>
+	</c:when>
+	<c:when test="${ cookie['accessibilitytextsize'].value =='MDM' }">
+		<style media="screen">
+			/* html, body{font-size: 100% !important;} */
+			html, body{font-size: 97% !important;}			
+		</style>
+	</c:when>
+	<c:when test="${ cookie['accessibilitytextsize'].value =='SLR' }">
+		<style media="screen">
+			/* html, body{font-size: 98% !important;} */
+			html, body{font-size: 96% !important;}
+		</style>
+	</c:when>
+	<c:when test="${ cookie['accessibilitytextsize'].value =='SLT' }">
+		<style media="screen">
+			html, body{font-size: 95% !important;}
+		</style>
+	</c:when>
+</c:choose>
+<script src="js/eip/citizen/baseLayout.js" ></script> 
+<!-- <script src="assets/libs/jquery/jquery-1.11.1.min.js" ></script> -->
+<script src="assets/libs/tmc-plugins/jquery/jquery.min.js" ></script>
+<script src="assets/libs/tmc-plugins/jquery/jquery.validate.min.js" ></script> 
+<script src="js/mainet/validation/globalValidation.js" ></script>
+<script src="assets/libs/jqueryui/jquery-ui.min.js" ></script>
+<script src="assets/libs/superfish/superfish.min.js" ></script>
+
+<c:choose>
+	<c:when test="${userSession.getCurrent().getLanguageId() eq 1}">
+		<script src="assets/libs/jqueryui/grid.locale-en.js" ></script>
+	</c:when>
+	<c:otherwise>
+		<script src="assets/libs/jqueryui/grid.locale-hi.js" ></script>
+	</c:otherwise>
+</c:choose>
+
+
+
+<!-- <script src="assets/libs/jqueryui/grid.locale-en.js" ></script> -->
+<script src="assets/libs/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>
+<script src="assets/libs/jqueryui/jquery-ui-timepicker-addon.js" ></script>
+<!--<script  src="js/mainet/commonPhonetic.js"></script>
+
+<c:if test="${userSession.getCurrent().getLanguageId() ne 1}">
+<script  src="js/mainet/hindi.js"></script>
+</c:if>-->
+
+<c:choose>
+<c:when test="${ cookie['accessibilityCol'].value =='B' and cookie['accessibility'].value =='Y'}">
+	<link href="assets/css/style-accessibility-theme-3.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+</c:when>
+<c:when test="${cookie['accessibilityCol'].value =='O' and cookie['accessibility'].value =='Y'}">
+	<link href="assets/css/style-accessibility-theme-3.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+</c:when>
+<c:when test="${cookie['accessibilityCol'].value =='G' and cookie['accessibility'].value =='Y'}">
+	<link href="assets/css/style-accessibility-theme-3.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+</c:when>
+<c:when test="${ request.getParameter('accessibility')=='Y' or cookie['accessibility'].value =='Y'}">
+	<link href="assets/css/style-accessibility-theme-3.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+</c:when>
+<c:when test="${cookie['accessibilityCol'].value =='O' and cookie['accessibility'].value =='M'}">
+	<link href="assets/css/style-orange-theme-2.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+</c:when>
+<c:when test="${cookie['accessibilityCol'].value =='G' and cookie['accessibility'].value =='M'}">
+	<link href="assets/css/style-green-theme-2.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+</c:when>
+<c:when test="${ cookie['accessibility'].value =='M' or empty cookie['accessibility'].value }">
+	<link href="assets/css/style-blue-theme-3.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/dashboard-theme-3.css" rel="stylesheet" type="text/css"  />
+
+		<script>
+	$(document).ready(function($){
+ 	var d = new Date();
+    d.setTime(d.getTime() + (1*24*60*60*1000));
+	var expires = "expires=" + d.toGMTString();
+	document.cookie = "accessibility"+"="+'M'+"; "+expires; 
+	});
+</script>
+</c:when>
+</c:choose>
+<script>
+(function($){
+  $(document).ready(function(){
+	  $('.key-in .list-group').slimScroll({
+		    color: '#000',
+		    size: '10px',
+		    height: '400px',
+		    alwaysVisible: true,
+				
+		});  
+    var example = $('#tabmenuhover').superfish();
+  });
+})(jQuery);
+</script>
+</head>
+<noscript>	
+	<p class="text-center">This page is trying to run JavaScript and your browser either does not support JavaScript or you may have turned-off JavaScript. If you have disabled JavaScript on your computer, please turn on JavaScript, to have proper access to this page.</p>
+</noscript>
+<form:form id="postMethodFormSuccess" method="POST" class="form"></form:form>
+<body>
+	<div id="text-resize">
+	<a tabindex="-1" id="MainContent"></a>
+	
+	
+ 	<tiles:insertAttribute name="app-header"/>
+	
+	 <div class="content-page"><tiles:insertAttribute name="app-body"/> </div>
+
+	<tiles:insertAttribute name="app-footer"/>
+	<!-- Pop up Dilog  -->
+	<div class="msg-dialog-box ok-msg" style="display: none;"></div>
+	<div class="popup-dialog dialog" style="display: none;"></div>
+	<div class="child-popup-dialog dialog" style="display: none;"></div>
+	<div class="online-service-dialog dialog" style="display: none;"></div>
+	<div class="error-dialog" style="display: none;"></div>
+	</div>
+
+<!-- the overlay modal element -->
+<div class="md-overlay"></div>
+<!-- End of eoverlay modal --> 
+<script>
+    var resizefunc = [];
+</script> 
+
+<script  src="assets/libs/bootstrap/js/bootstrap.min.js" ></script> 
+<!-- <script  src="assets/libs/pace/pace.min.js"></script> Loader   -->
+<script  src="assets/js/init.js"></script> <!-- Wedgets Control --> 
+<script  src="assets/libs/lightbox/jquery.fancybox.min.js"></script> <!-- LightBox --> 
+<script  src="assets/js/jquery.scrollbox.min.js"></script><!-- Scroll Announcement plugins --> 
+<!-- <script  src="assets/js/menu.min.js"></script> Top Menu  -->
+<script  src="assets/libs/chosen/chosen.jquery.min.js"></script> 
+<script  src="js/mainet/framework-api.min.js"></script>
+<c:if test="${!empty userSession.employee.emploginname and userSession.employee.emploginname ne 'NOUSER' }">
+<script  src="js/mainet/jquery.jqGrid.min.js"></script>
+<script  src="js/mainet/framework.grid.min.js"></script>
+
+</c:if>
+<script  src="js/mainet/login.js"></script>
+<script  src="js/mainet/script-library.js"></script>
+<script src="js/eip/citizen/landingPage.js" ></script>
+<c:choose>
+	<c:when test="${userSession.getCurrent().getLanguageId() eq 1}">
+		<!-- <script  src="assets/libs/jquery-datatables/js/jquery.dataTables.min.js"></script> -->
+		<script  src="assets/libs/tmc-plugins/jquery-datatables/js/jquery.dataTables.min.js"></script>
+	</c:when>
+	<c:otherwise>
+		<script  src="assets/libs/jquery-datatables/js/jquery.dataTables.hi.min.js"></script>
+	</c:otherwise>
+</c:choose>
+
+<!-- <script src="assets/libs/jquery-datatables/js/dataTables.bootstrap.js"></script> -->
+<script src="assets/libs/tmc-plugins/jquery-datatables/js/dataTables.bootstrap.min.js"></script>
+<!-- <script src="assets/libs/jquery-datatables/js/dataTables.responsive.min.js"></script> -->
+<script src="assets/libs/tmc-plugins/jquery-datatables/js/dataTables.responsive.min.js"></script>
+
+<script src="assets/libs/jquery-gray/jquery.gray.min.js"></script>
+
+<c:if test="${!empty userSession.employee.emploginname and userSession.employee.emploginname eq'NOUSER' }" var="user">
+<input type="hidden" id="gotohome" name="gotohome" value="ULBHome.html?resetULB&orgId=${command.appSession.superUserOrganization.orgid}" />
+<script>
+$(function(){
+	document.onkeyup = function(e) {
+		var hv = $('#gotohome').val();
+		 if ((e.altKey && e.which == 77) || (e.altKey && e.which == 109) ) {		//alt+M/m (Go to home page)
+			  window.location.href=hv;
+			  }
+		};
+	});
+
+</script>
+</c:if>
+
+<!-- Add fancyBox main JS and CSS files --> 
+<script>
+$(document).ready(function() {
+	$('.fancybox').fancybox();
+});
+/* $(window).load(function() { */
+$(window).on('load', function(){
+	 $('.columns-multilevel').slimScroll({
+	   	height: '400px',
+		color: '#fff',
+		alwaysVisible: true
+	});
+});
+</script>
+<c:choose>
+	<c:when test="${ cookie['accessibilitytextsize'].value =='LGT' }">
+	<style>
+	.service-content-new ul li{ font-size: 1em !important;}
+	.service-box .service-icon .front-content .fa-list_AS:before,.service-box .service-icon .front-content .fa-list_WT:before,.service-box .service-icon .front-content .fa-list_RL:before,.service-box .service-icon .front-content .fa-list_AS:before{font-size: 1.2em !important;}
+	.top-line div.last, .top-line div.last a{font-size: 0.9em;}
+	.top-line p, .top-line a{font-size: 1em;}
+	</style>
+	</c:when>
+	</c:choose>
+<c:if test="${ cookie['accessibilitytextsize'].value =='LGT' ||  cookie['accessibilitytextsize'].value =='LGR'}">
+<style>
+	.drag1 .helpline span.list-number {font-size: 1.3em !important;font-weight: 600 !important;}
+</style>
+		
+<script>
+		if ( $(window).width() > 739) {      
+			 	$('.col-lg-6 .dark-blue').slimScroll({
+			    color: '#000',
+			    size: '10px',
+			    height: '390px',
+			    alwaysVisible: true
+				});
+			}
+		</script>
+
+</c:if>
+
+<c:if test="${cookie['accessibility'].value =='Y'}">
+	<script>
+	$(function(){
+	 if ((navigator.userAgent.indexOf('MSIE') != -1) || (navigator.userAgent.match(/Trident\/7\./)) || (navigator.userAgent.indexOf('Edge') != -1))  { 
+			  $('img').addClass('grayscale'); 
+		}
+	});
+	</script>
+</c:if>
+<script>
+setTimeout(function(){
+ 	$('#myCarousel .item').not(':first').removeClass('active'); 
+ 	},100);
+setTimeout(function(){
+ 	$('#myCarousel-1 .item').not(':first').removeClass('active'); 
+ 	},100); 
+</script>
+
+<script>
+	$(window).on("scroll", function() {
+	    if($(window).scrollTop() > 50) {
+	        $(".header").addClass("white-bg");
+	        $(".site-header .navbar .top-line").addClass("white-bg-no-shadow");
+	    } else {
+	        //remove the background property so it comes transparent again (defined in your css)
+	       $(".header").removeClass("white-bg");
+	       $(".site-header .navbar .top-line").removeClass("white-bg-no-shadow");
+	    }
+	});
+</script>
+
+<!-- JS to switch between desktop and mobile version starts -->
+<script>
+$( document ).ready(function() {
+
+   //when we clicking on 'show full version' we are changing viewport and define local variable into the localstorage
+   $("#desktop-version").click(function(){
+      localStorage.setItem('localVar', 'exist');
+      $('meta[name="viewport"]').prop('content', 'width=1024');
+
+      //imitate toggling effect
+      $(this).hide();
+      $('#mobile-version').show();
+  });
+
+  // when we go to other pages there is checking 'if the local variable exist' - if exist then window automatically switched to full version
+  if (localStorage.getItem('localVar') === 'exist') {
+    $('meta[name="viewport"]').prop('content', 'width=1024');
+    $('#desktop-version').hide();
+    $('#mobile-version').show();
+  }
+
+  // when we click on 'Back to mobile version' we are removing local variable from localstorage and restore default viewport
+   $("#mobile-version").click(function(){
+      localStorage.removeItem('localVar', 'exist');
+      $('meta[name="viewport"]').prop('content', 'width=device-width');
+      $(this).hide();
+      $('#desktop-version').show();
+   }); 
+});
+</script>
+<!-- JS to switch between desktop and mobile version ends -->
+
+<!-- JS to Disable Right Click on the website starts -->
+<script>
+  /* Disable right-click of mouse, F12 key, and save key combinations on page */
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+<!-- JS to Disable Right Click on the website ends -->
+
+</body>
+</html>

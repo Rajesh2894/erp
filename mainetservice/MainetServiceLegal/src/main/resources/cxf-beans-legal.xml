@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="legalSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/legal/rest"></property>
+		<property name="title" value="Legal Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>
+	</bean>
+	<bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+	<jaxrs:server address="/legal/rest" id="legal">
+		<jaxrs:serviceBeans>
+			<bean class="com.abm.mainet.legal.service.JudgeMasterService" id="JudgeMasterService" />
+			<bean class="com.abm.mainet.legal.service.CourtMasterService" id="CourtMasterService" />
+			<bean class="com.abm.mainet.legal.service.AdvocateMasterService" id="AdvocateMasterService" />
+			<bean class="com.abm.mainet.legal.service.CaseEntryService" id="CaseEntryService" />
+			<bean class="com.abm.mainet.legal.service.CaseHearingService" id="CaseHearingService" />
+			<bean class="com.abm.mainet.legal.service.ParawiseRemarkService" id="ParawiseRemarkService" />
+			<bean class="com.abm.mainet.legal.service.JudgementDetailService" id="JudgementDetailService" />
+			<bean class="com.abm.mainet.legal.service.CaseReferenceAndLegalOpinionService" id="CaseReferenceAndLegalOpinionService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler" />
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="legalSwagger2Feature" />
+            <ref bean="commonValidationFeature"/>
+        </jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint  address="/judgemasterservice" id="judgemaster" implementor="com.abm.mainet.legal.service.JudgeMasterService" />
+	<jaxws:endpoint  address="/courtmasterservice" id="courtmaster" implementor="com.abm.mainet.legal.service.CourtMasterService" />
+	<jaxws:endpoint  address="/advocatemasterservice" id="advocate" implementor="com.abm.mainet.legal.service.AdvocateMasterService" />
+	<jaxws:endpoint  address="/caseentryservice" id="caseentry" implementor="com.abm.mainet.legal.service.CaseEntryService" />
+	<jaxws:endpoint  address="/casehearingservice" id="casehearing" implementor="com.abm.mainet.legal.service.CaseHearingService" />
+	<jaxws:endpoint  address="/parawiseremarkservice" id="parawiseremark" implementor="com.abm.mainet.legal.service.ParawiseRemarkService" />
+	<jaxws:endpoint  address="/judgementdetailservice" id="judgementdetail" implementor="com.abm.mainet.legal.service.JudgementDetailService" />
+	<jaxws:endpoint  address="/casereferenceAndLegalopinionservice" id="casereferenceandopinion" implementor="com.abm.mainet.legal.service.CaseReferenceAndLegalOpinionService" />
+</beans>

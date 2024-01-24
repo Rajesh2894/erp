@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20210301191243__AL_TB_CARE_DEPARTMENT_ACTION_01032021.sql
+alter table TB_CARE_DEPARTMENT_ACTION add column RSN_TO_FORWD_ID BIGINT(12) NULL DEFAULT NULL;

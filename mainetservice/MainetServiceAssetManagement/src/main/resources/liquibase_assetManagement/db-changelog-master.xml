@@ -1,0 +1,199 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+						
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183022__DROP_TABLE.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183023__TB_AST_INFO_MST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183024__TB_AST_CLASSFCTN.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183025__TB_AST_PURCHASER.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183026__TB_AST_SERVICE_REALESTD.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183027__TB_AST_INSURANCE.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183028__TB_AST_LEASING.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183029__TB_AST_CHART_OF_DEPRETN.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183030__TB_AST_LINEAR.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183031__TB_AST_CHAOFDEP_MAS.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183032__TB_AST_FUNC_LOCATION_MAS.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183040__TB_AST_INFO_MST_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183041__TB_AST_CLASSFCTN_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183042__TB_AST_PURCHASER_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183043__TB_AST_SERVICE_REALESTD_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183044__TB_AST_INSURANCE_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183045__TB_AST_LEASING_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183046__TB_AST_CHART_OF_DEPRETN_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183047__TB_AST_LINEAR_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183048__TB_AST_CHAOFDEP_MAS_HIST.sql" />
+<include
+		file="src/main/resources/db/mysql/Table/V20180316183049__TB_AST_FUNC_LOCATION_MAS_HIST.sql" />
+		
+
+		<include
+		file="src/main/resources/db/mysql/Table/V20180517200814__AL_TB_AST_INFO_MST_16052018.sql" />
+
+		<include
+		file="src/main/resources/db/mysql/Table/V20180517200831__AL_TB_AST_INSURANCE_17052018.sql" />
+		
+<include	file="src/main/resources/db/mysql/Table/V20180605183022__DROP_TABLE.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183023__TB_AST_INFO_MST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183024__TB_AST_CLASSFCTN.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183025__TB_AST_PURCHASER.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183026__TB_AST_SERVICE_REALESTD.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183027__TB_AST_INSURANCE.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183028__TB_AST_LEASING.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183029__TB_AST_CHART_OF_DEPRETN.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183030__TB_AST_LINEAR.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183031__TB_AST_CHAOFDEP_MAS.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183032__TB_AST_FUNC_LOCATION_MAS.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183040__TB_AST_INFO_MST_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183041__TB_AST_CLASSFCTN_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183042__TB_AST_PURCHASER_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183043__TB_AST_SERVICE_REALESTD_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183044__TB_AST_INSURANCE_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183045__TB_AST_LEASING_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183046__TB_AST_CHART_OF_DEPRETN_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183047__TB_AST_LINEAR_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183048__TB_AST_CHAOFDEP_MAS_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183049__TB_AST_FUNC_LOCATION_MAS_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183050__TB_AST_TRANSFER.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183051__TB_AST_TRANSFER_HIST.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183052__TB_AST_RETIRE.sql" />
+<include	file="src/main/resources/db/mysql/Table/V20180605183053__TB_AST_RETIRE_HIST.sql" />
+		
+<include file="src/main/resources/db/mysql/Table/V20180620183022__DROP_TABLE.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183023__TB_AST_INFO_MST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183024__TB_AST_CLASSFCTN.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183025__TB_AST_PURCHASER.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183026__TB_AST_SERVICE_REALESTD.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183027__TB_AST_INSURANCE.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183028__TB_AST_LEASING.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183029__TB_AST_CHART_OF_DEPRETN.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183030__TB_AST_LINEAR.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183031__TB_AST_CHAOFDEP_MAS.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183032__TB_AST_FUNC_LOCATION_MAS.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183040__TB_AST_INFO_MST_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183041__TB_AST_CLASSFCTN_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183042__TB_AST_PURCHASER_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183043__TB_AST_SERVICE_REALESTD_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183044__TB_AST_INSURANCE_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183045__TB_AST_LEASING_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183046__TB_AST_CHART_OF_DEPRETN_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183047__TB_AST_LINEAR_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183048__TB_AST_CHAOFDEP_MAS_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183049__TB_AST_FUNC_LOCATION_MAS_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183050__TB_AST_TRANSFER.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183051__TB_AST_TRANSFER_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183052__TB_AST_RETIRE.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183053__TB_AST_RETIRE_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183054__TB_AST_CLASSFCTN_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183055__TB_AST_VALUATION_DET.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183056__TB_AST_VALUATION_DET_HIST.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183057__TB_AST_INFO_MST_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183058__TB_AST_PURCHASER_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183059__TB_AST_SERVICE_REALESTD_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183100__TB_AST_INSURANCE_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183101__TB_AST_LEASING_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183102__TB_AST_CHART_OF_DEPRETN_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183103__TB_AST_LINEAR_REV.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180620183104__TB_AST_REVAL.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180627183032__TB_AST_FUNC_LOCATION_MAS.sql" /> 
+<include file="src/main/resources/db/mysql/Table/V20180627183049__TB_AST_FUNC_LOCATION_MAS_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180704183049__AL_TB_AST_INFO_MST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180709142010__AL_tb_ast_purchaser_05072018.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200521_TB_AST_ERROR.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200522_TB_AST_ERROR_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200523_AL_TB_AST_TRANSFER.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200524_AL_TB_AST_TRANSFER_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200525_AL_TB_AST_RETIRE.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200526_AL_TB_AST_RETIRE_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200527_AL_TB_AST_REVAL.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200528_AL_TB_AST_SERVICE_REALESTD_REV.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200529_AL_TB_AST_SERVICE_REALESTD.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200530__AL_TB_AST_INSURANCE_REV.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180720200531__AL_TB_AST_INFO_MST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180820151501__AL_TB_AST_INFO_MST.sql" />
+
+<include file="src/main/resources/db/mysql/Table/V20180828151501_AL_tb_ast_func_location_mas.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180828151502_AL_tb_ast_info_mst.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180828151503_AL_tb_ast_insurance.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180828151506_tb_ast_service_realestd_rev.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180828151506_tb_ast_reval.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180828151504_AL_TB_AST_PURCHASER.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180903191507_AL_TB_AST_PURCHASER.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180920200105_TB_AST_REALSTD.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180920200106_TB_AST_REALSTD_HIST.sql" />
+<include file="src/main/resources/db/mysql/Table/V20180920200107_TB_AST_REALSTD_REV.sql" />
+
+<include file="src/main/resources/db/mysql/Table/V20181001125505_tb_ast_info_mst.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181008120005__AL_tb_ast_purchaser.sql" />
+<include file="src/main/resources/db/mysql/Table/V20181015125505_tb_ast_info_mst.sql" />
+
+<include file="src/main/resources/db/mysql/Table/V20181019161339__AL_TB_AST_RETIRE_17102018.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181120123201__AL_TB_AST_PURCHASER_20112018.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181122150500_AL_TB_AST_VALUATION_DET.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181126170000_AL_TB_AST_CLASSFCTN.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181129133005_AL_TB_AST_INFO_MST.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20181204113001_AL_TB_AST_PURCHASER_REV.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20190119183001_AL_TB_AST_CHAOFDEP_MAS.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191213181925__AL_tb_ast_classfctn_13122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191216130510__AL_tb_ast_classfctn_16122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191226195522__AL_tb_ast_purchaser_26122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20191227114733__CR_TB_AST_MAINTENANCE_27122019.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200102130554__AL_tb_ast_service_realestd_02012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200107132355__AL_tb_ast_classfctn_rev_07012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200107132404__AL_tb_ast_purchaser_rev_07012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200107132412__AL_tb_ast_service_realestd_rev_07012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200109162544__CR_TB_AST_REQUISITION_09012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200110103132__AL_tb_ast_requisition_10012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200116145740__CR_TB_AST_ANNUAL_PLAN_16012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200123160138__CR_TB_AST_ANNUAL_PLAN_MST_23012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200123160153__CR_TB_AST_ANNUAL_PLAN_DET_23012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200127110219__AL_tb_ast_annual_plan_mst_27012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200127140122__AL_tb_ast_requisition_27012020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200812154239__AL_tb_ast_info_mst_12082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200812154326__AL_TB_AST_INFO_MST_REV_12082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200824155049__AL_TB_AST_INFO_MST_24082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200824155133__AL_TB_AST_INFO_MST_REV_24082020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201006191520__AL_TB_AST_ANNUAL_PLAN_MST_06102020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201008180259__AL_TB_AST_RETIRE_08102020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201014152625__AL_TB_AST_REQUISITION_14102020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20201209200051__AL_tb_ast_info_mst_09122020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210129124519__AL_tb_ast_info_mst_29012021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210819120316__AL_tb_ast_info_mst_19082021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210907140220__AL_TB_AST_REQUISITION_07092021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211020170101__AL_TB_AST_CLASSFCTN_20102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20211026175547__AL_TB_AST_CLASSFCTN_26102021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220616181335__AL_TB_AST_REQUISITION_16062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220616182020__AL_TB_AST_INFO_MST_16062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220617194700__AL_TB_AST_REQUISITION_17062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220627185713__AL_TB_AST_REQUISITION_27062022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20220711162947__AL_TB_AST_INFO_MST_11072022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20221215125440__AL_TB_AST_REQUISITION_15122022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20221222174636__AL_TB_AST_INFO_MST_22122022.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230106130121__AL_TB_AST_TRANSFER_HIST_06012023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230106131213__AL_TB_AST_CLASSFCTN_06012023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230116201714__AL_TB_AST_REQUISITION_16012023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230130181412__AL_TB_AST_REQUISITION_30012023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230220170449__AL_TB_AST_PURCHASER_20022023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230316122443__AL_TB_AST_PURCHASER_16032023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230614133531__AL_TB_AST_PURCHASER_14062023.sql"/>
+</databaseChangeLog>						

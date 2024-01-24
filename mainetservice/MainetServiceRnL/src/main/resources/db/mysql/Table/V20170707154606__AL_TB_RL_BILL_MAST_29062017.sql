@@ -1,0 +1,2 @@
+ALTER TABLE `TB_RL_BILL_MAST` 
+ADD COLUMN `bm_remark` VARCHAR(45) NULL COMMENT 'Remark' AFTER `bm_type`;

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="WS_BankMaster">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="Bank" type="xsd:string"/>
+<xsd:element name="Address" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Branch" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Bank_Status" type="xsd:string"/>
+<xsd:element name="City" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Contact" type="xsd:string"/>
+<xsd:element name="MICR" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="IFSC_Code" type="xsd:string"/>
+<xsd:element name="State" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="BankId" type="xsd:double"/>
+<xsd:element name="District" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WS_BankMasterUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="Bank" type="xsd:string"/>
+<xsd:element name="Address" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Branch" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Bank_Status" type="xsd:string"/>
+<xsd:element name="City" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Contact" type="xsd:string"/>
+<xsd:element name="MICR" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="IFSC_Code" type="xsd:string"/>
+<xsd:element name="State" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="BankId" type="xsd:double"/>
+<xsd:element name="District" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="WS_BankMasterRequest">
+<part name="parameters" element="tns:WS_BankMaster"/>
+</message>
+<message name="WS_BankMasterRequestUp">
+<part name="parameters" element="tns:WS_BankMasterUp"/>
+</message>
+<message name="WS_BankMasterResponse">
+<part name="parameters" element="tns:WS_BankMaster"/>
+</message>
+<portType name="WS_BankMasterServer">
+<operation name="Submit">
+<input message="tns:WS_BankMasterRequest"/>
+<output message="tns:WS_BankMasterResponse"/>
+</operation>
+<operation name="Update">
+<input message="tns:WS_BankMasterRequestUp"/>
+<output message="tns:WS_BankMasterResponse"/>
+</operation>
+</portType>
+<binding name="WS_BankMasterServer" type="tns:WS_BankMasterServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="WS_BankMasterServer">
+<port name="WS_BankMasterServer" binding="tns:WS_BankMasterServer">
+<soap:address location="http://192.168.100.215:9080/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Sh2c1d396e71f94bcbb6d3b79e2bd6c274/Ac9f61496af4d447e192b85db264c2100f/Sh2c1d396e71f94bcbb6d3b79e2bd6c274/ws"/>
+</port>
+</service>
+</definitions>

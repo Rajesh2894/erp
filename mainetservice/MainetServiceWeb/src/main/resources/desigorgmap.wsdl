@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="DesigOrg_Map">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Map_Id" type="xsd:double"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="DSGID" type="xsd:double"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+<xsd:element name="Map_Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+
+<!-- <xsd:element name="DesigOrg_MapUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Map_Id" type="xsd:double"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="DSGID" type="xsd:double"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+<xsd:element name="Map_Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element> -->
+</xsd:schema>
+</types>
+
+<message name="DesigOrg_MapRequest">
+<part name="parameters" element="tns:DesigOrg_Map"/>
+</message>
+<message name="DesigOrg_MapResponse">
+<part name="parameters" element="tns:DesigOrg_Map"/>
+</message>
+
+<message name="DesigOrg_MapRequestUp">
+<part name="parameters" element="tns:DesigOrg_Map"/>
+</message>
+<message name="DesigOrg_MapResponseUp">
+<part name="parameters" element="tns:DesigOrg_Map"/>
+</message>
+<portType name="DesigOrg_MapServer">
+<operation name="Update">
+<input message="tns:DesigOrg_MapRequestUp"/>
+<output message="tns:DesigOrg_MapResponseUp"/>
+</operation>
+<operation name="Submit">
+<input message="tns:DesigOrg_MapRequest"/>
+<output message="tns:DesigOrg_MapResponse"/>
+</operation>
+</portType>
+<binding name="DesigOrg_MapServer" type="tns:DesigOrg_MapServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="DesigOrg_MapServer">
+<port name="DesigOrg_MapServer" binding="tns:DesigOrg_MapServer">
+<soap:address location="http://192.168.100.13:8080/Ap9c05e72b_e6ca_11e7_9e59_0f492f6da096/1/Sh264ab83a093d479083a2833302fbe1d6/Ac824089520444489f8c386c3cd1860be2/Sh264ab83a093d479083a2833302fbe1d6/ws"/>
+</port>
+</service>
+</definitions>

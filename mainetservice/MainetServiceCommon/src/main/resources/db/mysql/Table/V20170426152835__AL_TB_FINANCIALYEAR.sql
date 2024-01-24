@@ -1,0 +1,11 @@
+alter table TB_FINANCIALYEAR drop column lang_id;
+alter table TB_FINANCIALYEAR modify created_by int(12);
+alter table TB_FINANCIALYEAR modify updated_by int(12);
+alter table TB_FINANCIALYEAR add lg_ip_mac varchar(100) comment 'client machine?s login name | ip address | physical address';
+alter table TB_FINANCIALYEAR add lg_ip_mac_upd varchar(100) comment 'updated client machine?s login name | ip address | physical address';
+alter table TB_FINANCIALYEAR add fa_frommonth int(3) comment 'Fiscale From  Month' ;
+alter table TB_FINANCIALYEAR add fa_tomonth int(3) comment 'Fiscale To  Month';
+alter table TB_FINANCIALYEAR add fa_fromyear int(4) comment 'Fiscale From Year';
+alter table TB_FINANCIALYEAR add fa_toyear int(4) comment 'Fiscale To Year';
+alter table TB_FINANCIALYEAR add fa_monstatus int(12) comment 'Fiscale "SOFT" close';
+alter table TB_FINANCIALYEAR add fa_yearstatus int(12) comment 'Fiscale "Hard" close'; 

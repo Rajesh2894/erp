@@ -1,0 +1,21 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220718112156__CR_tb_location_budget_det_18072022.sql
+CREATE TABLE tb_location_budget_det (
+  PB_ID bigint(12) primary key  NOT NULL,
+  LOC_ID bigint(12) NOT NULL,
+  SAC_HEAD_ID bigint(12) DEFAULT NULL,
+  FA_YEARID bigint(12) DEFAULT NULL,
+  YE_FINANCE_CODE_DESC varchar(500) DEFAULT NULL,
+  YE_BUGEDED_AMOUNT decimal(15,2) DEFAULT NULL,
+  ORGID bigint(12) DEFAULT NULL,
+  CREATED_BY bigint(12) DEFAULT NULL,
+  CREATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) DEFAULT NULL,
+  UPDATED_BY bigint(12) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  YE_ACTIVE char(1) DEFAULT NULL,
+  FIELD_ID bigint(12) DEFAULT NULL,
+  FOREIGN KEY (LOC_ID) REFERENCES TB_LOCATION_MAS (LOC_ID) ,
+  FOREIGN KEY (FA_YEARID) REFERENCES tb_financialyear (FA_YEARID) 
+);

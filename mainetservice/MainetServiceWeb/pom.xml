@@ -1,0 +1,222 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>MainetServiceWeb</artifactId>
+	<groupId>com.abm.mainet</groupId>
+	<version>${mainet.service.web.version}</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>com.abm.mainet</groupId>
+		<artifactId>MainetServiceParent</artifactId>
+		<version>${mainet.service.parent.version}</version>
+	</parent>
+
+
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceCommon</artifactId>
+			<version>${mainet.service.common.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceAccount</artifactId>
+			<version>${mainet.service.account.version}</version>
+		</dependency>
+		 <dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceWater</artifactId>
+			<version>${mainet.service.water.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceAgency</artifactId>
+			<version>${mainet.service.agency.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceMobile</artifactId>
+			<version>${mainet.service.mobile.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceCare</artifactId>
+			<version>${mainet.service.care.version}</version>
+		</dependency> 
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceRnL</artifactId>
+			<version>${mainet.service.rnl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceWorksManagement</artifactId>
+			<version>${mainet.service.workmanagement.version}</version>
+
+		</dependency>
+		 <dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceProperty</artifactId>
+			<version>${mainet.service.property.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceRti</artifactId>
+			<version>${mainet.service.rti.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceAssetManagement</artifactId>
+			<version>${mainet.service.asset.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceSWM</artifactId>
+			<version>${mainet.service.swm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceLegal</artifactId>
+			<version>${mainet.service.legal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceTradeLicense</artifactId>
+			<version>${mainet.service.tradelicense.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceSocialSecurity</artifactId>
+			<version>${mainet.service.socialsecurity.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceCouncil</artifactId>
+			<version>${mainet.service.council.version}</version>
+		</dependency> 
+		  <dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceADH</artifactId>
+			<version>${mainet.service.adh.version}</version>
+		</dependency>  
+		
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceSFAC</artifactId>
+			<version>${mainet.service.sfac.version}</version>
+		</dependency>
+			
+		<!-- <dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceLandEstate</artifactId>
+			<version>${mainet.service.landestate.version}</version>
+		</dependency> -->
+		
+		<!-- Added material mgmt dependancy -->
+	    <!-- <dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceMaterialMgmt</artifactId>
+			<version>${mainet.service.materialmgmt.version}</version>
+		</dependency> --> 
+		
+		<!-- Added Building planning dependancy -->
+	    <!-- <dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceBuildingPlanning</artifactId>
+			<version>${mainet.service.buildingpermission.version}</version>
+		</dependency> --> 
+		
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+
+
+				<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-eclipse-plugin</artifactId> 
+					<configuration> <downloadSources>true</downloadSources> <downloadJavadocs>false</downloadJavadocs> 
+					</configuration> </plugin> -->
+
+
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+
+					<configuration>
+						<!-- get all project dependencies -->
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+					</configuration>
+					<executions>
+
+					</executions>
+				</plugin>
+
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<!-- <plugin> <groupId>org.eclipse.m2e</groupId> <artifactId>lifecycle-mapping</artifactId> 
+					<version>1.0.0</version> <configuration> <lifecycleMappingMetadata> <pluginExecutions> 
+					<pluginExecution> <pluginExecutionFilter> <groupId> org.apache.maven.plugins 
+					</groupId> <artifactId> maven-compiler-plugin </artifactId> <goals> <goal>testCompile</goal> 
+					<goal>compile</goal> </goals> </pluginExecutionFilter> <action> <ignore></ignore> 
+					</action> </pluginExecution> </pluginExecutions> </lifecycleMappingMetadata> 
+					</configuration> </plugin> -->
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>1.1.0.Alpha8</version>
+					<configuration>
+						<force>true</force>
+						<hostname>${hostname}</hostname>
+						<port>${port}</port>
+						<username>${username}</username>
+						<password>${password}</password>
+						<filename>${filename}</filename>
+						<skip>false</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.liquibase</groupId>
+					<artifactId>liquibase-maven-plugin</artifactId>
+					<version>3.5.3</version>
+					<configuration>
+						<skip>true</skip>
+						<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+						<propertyFile>${liquibaseProperty}</propertyFile>
+						<changeLogFile>src/main/resources/liquibase_web/db-changelog-master.xml</changeLogFile>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>process-resources</phase>
+							<goals>
+								<goal>update</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>MainetService</finalName>
+	</build>
+
+</project>

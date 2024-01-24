@@ -1,0 +1,17 @@
+--liquibase formatted sql
+--changeset PramodPatil:V20231205141327__CR_TB_ROLE_DECISION_MST_05122023.sql
+create table TB_ROLE_DECISION_MST
+(
+ROLE_DECISION_ID bigint(20) NOT NULL,
+DP_DEPTID bigint(20) NOT NULL,
+SM_SERVICE_ID bigint(20) NOT NULL,
+GM_ID bigint(20) NOT NULL,
+CPD_ID bigint(20) NOT NULL,
+CREATED_BY bigint(20),
+UPDATED_BY bigint(20),
+UPDATED_DATE DATE,
+IS_ACTIVE char(1) NOT NULL,
+ORGID bigint(20) NOT NULL,
+CREATED_DATE DATE NOT NULL,
+primary key (ROLE_DECISION_ID)
+);

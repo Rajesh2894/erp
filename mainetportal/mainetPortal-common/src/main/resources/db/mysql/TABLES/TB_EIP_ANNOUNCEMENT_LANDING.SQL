@@ -1,0 +1,16 @@
+CREATE TABLE `tb_eip_announcement_landing` (
+  `ANNOUNCE_ID` decimal(12,0) NOT NULL,
+  `ANNOUNCE_DESC_ENG` varchar(4000) NOT NULL,
+  `ANNOUNCE_DESC_REG` varchar(4000) NOT NULL,
+  `ATTACHMENT` varchar(600) DEFAULT NULL,
+  `ISDELETED` varchar(1) NOT NULL,
+  `ORGID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_BY` int(11) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `LG_IP_MAC` varchar(100) DEFAULT NULL,
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

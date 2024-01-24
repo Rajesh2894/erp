@@ -1,0 +1,4 @@
+--liquibase formatted sql
+--changeset Kanchan:V20210520102409__AL_TB_AS_ASSESMENT_OWNER_DTL_HIST_20052021.sql
+ALTER TABLE `TB_AS_ASSESMENT_OWNER_DTL_HIST`
+ADD COLUMN `MN_asso_owner_name_reg` VARCHAR(100) NULL default NULL;

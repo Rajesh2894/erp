@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions  xmlns="http://schemas.xmlsoap.org/wsdl/"  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape"
+ targetNamespace="urn:orangescape" >
+  <types>
+  <xsd:schema elementFormDefault="qualified" targetNamespace="urn:orangescape" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape">
+<xsd:element name="ReceiptMaster">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="DP_DEPTID" type="xsd:double"/>
+<xsd:element name="CREATED_DATE" type="xsd:dateTime"/>
+<xsd:element name="RECEIPT_DEL_ORDER_NO" type="xsd:double"/>
+<xsd:element name="RECEIPT_DEL_FLAG" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="RECEIPT_TYPE_FLAG" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="RM_MANUAL_RCPTNO" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="RM_RCPTID" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="INT_FLAG" type="xsd:string"/>
+<xsd:element name="INT_DATE" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="RM_RECEIPTID" type="xsd:double"/>
+<xsd:element name="FinYearId" type="xsd:double"/>
+<xsd:element name="fieldId" type="xsd:double"/>
+<xsd:element name="CREATED_BY" type="xsd:double"/>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="RM_NARRATION" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Receipt_Ref" type="xsd:string"/>
+<xsd:element name="RM_RECEIPTAMOUNT" type="xsd:double"/>
+<xsd:element name="RM_RECEIPTNO" type="xsd:double"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="RM_RECEIVEDFROM" type="xsd:string"/>
+<xsd:element name="lgIpMac" type="xsd:string"/>
+<xsd:element name="receiptate" type="xsd:string"/>
+<xsd:element name="RM_RECEIPTDATE" type="xsd:dateTime"/>
+<xsd:element name="rmReceiptAmt" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="langId" type="xsd:double"/>
+<xsd:element name="REF_ID" type="xsd:double"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ReceiptMasterSub">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="DP_DEPTID" type="xsd:double"/>
+<xsd:element name="CREATED_DATE" type="xsd:dateTime"/>
+<xsd:element name="RECEIPT_DEL_ORDER_NO" type="xsd:double"/>
+<xsd:element name="RECEIPT_DEL_FLAG" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="RECEIPT_TYPE_FLAG" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="RM_MANUAL_RCPTNO" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="RM_RCPTID" type="xsd:double"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="INT_FLAG" type="xsd:string"/>
+<xsd:element name="INT_DATE" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="RM_RECEIPTID" type="xsd:double"/>
+<xsd:element name="FinYearId" type="xsd:double"/>
+<xsd:element name="fieldId" type="xsd:double"/>
+<xsd:element name="CREATED_BY" type="xsd:double"/>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="RM_NARRATION" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="Receipt_Ref" type="xsd:string"/>
+<xsd:element name="RM_RECEIPTAMOUNT" type="xsd:double"/>
+<xsd:element name="RM_RECEIPTNO" type="xsd:double"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="RM_RECEIVEDFROM" type="xsd:string"/>
+<xsd:element name="lgIpMac" type="xsd:string"/>
+<xsd:element name="receiptate" type="xsd:string"/>
+<xsd:element name="RM_RECEIPTDATE" type="xsd:dateTime"/>
+<xsd:element name="rmReceiptAmt" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="langId" type="xsd:double"/>
+<xsd:element name="REF_ID" type="xsd:double"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="ReceiptMasterRequest">
+<part name="parameters" element="tns:ReceiptMaster"/>
+</message>
+<message name="ReceiptMasterRequestSub">
+<part name="parameters" element="tns:ReceiptMasterSub"/>
+</message>
+<message name="ReceiptMasterResponse">
+<part name="parameters" element="tns:ReceiptMaster"/>
+</message>
+<portType name="ReceiptMasterServer">
+<operation name="Update">
+<input message="tns:ReceiptMasterRequest"/>
+<output message="tns:ReceiptMasterResponse"/>
+</operation>
+<operation name="Submit">
+<input message="tns:ReceiptMasterRequestSub"/>
+<output message="tns:ReceiptMasterResponse"/>
+</operation>
+</portType>
+<binding name="ReceiptMasterServer" type="tns:ReceiptMasterServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="ReceiptMasterServer">
+<port name="ReceiptMasterServer" binding="tns:ReceiptMasterServer">
+<soap:address location="http://192.168.100.215:9080/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Sh7c9e10dc8f184a73907a3e7796a1335f/Ac32c4195ac5684f2b92ed81aa3d2669e6/Sh7c9e10dc8f184a73907a3e7796a1335f/ws"/>
+</port>
+</service>
+</definitions>

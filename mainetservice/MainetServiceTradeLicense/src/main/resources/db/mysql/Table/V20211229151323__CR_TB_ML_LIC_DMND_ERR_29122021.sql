@@ -1,0 +1,13 @@
+--liquibase formatted sql
+--changeset Kanchan:V20211229151323__CR_TB_ML_LIC_DMND_ERR_29122021.sql
+create table TB_ML_LIC_DMND_ERR (
+Lic_DMND_ERR_ID bigint(12) Primary key,
+TRD_ERR_MSG varchar(500) DEFAULT NULL,
+TRD_LICNO varchar(50) DEFAULT NULL,    
+ORGID bigint(12) DEFAULT NULL,
+CREATED_DATE date DEFAULT NULL,
+CREATED_BY bigint(12) DEFAULT NULL,
+UPDATED_DATE date DEFAULT NULL,
+UPDATED_BY bigint(12) DEFAULT NULL,
+LG_IP_MAC varchar(100) DEFAULT NULL,        
+LG_IP_MAC_UPD varchar(100) DEFAULT NULL);

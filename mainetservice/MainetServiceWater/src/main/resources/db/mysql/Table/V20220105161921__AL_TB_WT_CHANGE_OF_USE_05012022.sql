@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220105161921__AL_TB_WT_CHANGE_OF_USE_05012022.sql
+alter table TB_WT_CHANGE_OF_USE add column NEW_METER_TYPE BIGINT(12) DEFAULT NULL AFTER OLD_TRM_GROUP5; 

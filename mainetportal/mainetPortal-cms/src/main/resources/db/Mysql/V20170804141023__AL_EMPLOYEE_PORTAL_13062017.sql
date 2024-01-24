@@ -1,0 +1,3 @@
+ALTER TABLE employee
+CHANGE COLUMN AUT_N1 logged_in_attempt BIGINT(3) NULL DEFAULT NULL COMMENT 'Logged In attempt' ,
+CHANGE COLUMN AUT_D1 lock_date DATETIME NULL DEFAULT NULL COMMENT 'Lock date time' ;

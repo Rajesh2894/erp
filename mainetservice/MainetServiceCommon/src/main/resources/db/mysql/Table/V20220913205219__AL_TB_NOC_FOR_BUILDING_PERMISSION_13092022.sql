@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220913205219__AL_TB_NOC_FOR_BUILDING_PERMISSION_13092022.sql
+alter table TB_NOC_FOR_BUILDING_PERMISSION add  LAND_OWNER CHAR(1) null;
+--liquibase formatted sql
+--changeset Kanchan:V20220913205219__AL_TB_NOC_FOR_BUILDING_PERMISSION_130920221.sql
+alter table TB_NOC_FOR_BUILDING_PERMISSION add  REG_NO VARCHAR(20) null;

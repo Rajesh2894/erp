@@ -1,0 +1,68 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+						http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<bean id="waterSwagger2Feature" class="org.apache.cxf.jaxrs.swagger.Swagger2Feature">
+		<property name="usePathBasedConfig" value="true"></property>
+		<property name="basePath" value="/services/rest/water"></property>
+		<property name="title" value="Water Module API Documentation" />
+	</bean>
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature">
+		<property name="provider" ref="cxfValidationProvider"/>
+	</bean>
+	<bean id="cxfValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+	<jaxrs:server address="/rest/water" id="water">
+		<jaxrs:serviceBeans>
+		 <bean class="com.abm.mainet.water.service.BRMSWaterServiceImpl" id="waterbrmsservice"/>
+		  <bean class="com.abm.mainet.water.service.NewWaterConnectionServiceImpl" id="waterconnectionservice"/>
+		  <bean class="com.abm.mainet.water.service.PlumberLicenseServiceImpl" id="plumberlicenseservice"/>
+		  <bean class="com.abm.mainet.water.service.ChangeOfOwnerShipServiceImpl" id="changeownerservice"/>
+		  <bean class="com.abm.mainet.water.service.ChangeOfUsageServiceImpl" id="changeusageservice"/>
+		   <bean class="com.abm.mainet.water.service.WaterDisconnectionServiceImpl" id="waterdisconnectionservice"/>
+		    <bean class="com.abm.mainet.water.service.BillMasterServiceImpl" id="waterbillservice"/>
+		    <bean class="com.abm.mainet.water.service.WaterReconnectionServiceImpl" id="waterreconnectionservice"/>
+		    <bean class="com.abm.mainet.water.service.DuplicatePlumberLicenseServiceImpl" id="duplicateplumberlicenseservice"/>
+		    <bean class="com.abm.mainet.water.service.ViewWaterDetailsServiceImpl" id="viewwaterdetailservice"/>
+		    <bean class="com.abm.mainet.water.service.WaterDashboardServiceImpl" id="waterDashboard"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<!-- <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" >
+				<property name="mapper">
+					<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+					  <property name="serializationConfig.dateFormat">
+					    <bean class="java.text.SimpleDateFormat">
+					      <constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+					    </bean>
+					  </property>
+					</bean>
+				</property>
+			</bean> -->
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+			<bean class="com.abm.mainet.common.jaxrs.util.JaxrsCorsFilter" />
+			<bean class="com.abm.mainet.common.exception.CXFFrameworkExceptionHandler" />
+			<bean id="exceptionMapper" class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper">
+				<property name="addMessageToResponse" value="true"/>
+			</bean>
+		</jaxrs:providers>
+		<jaxrs:features>
+            <ref bean="waterSwagger2Feature" />
+            <ref bean="commonValidationFeature"/>
+        </jaxrs:features>
+	</jaxrs:server>
+	<jaxws:endpoint address="/brmswaterservice" id="brmswaterservice" implementor="com.abm.mainet.water.service.BRMSWaterServiceImpl" />
+	<jaxws:endpoint address="/waterconnectionservice" id="waterconnectionservice" implementor="com.abm.mainet.water.service.NewWaterConnectionServiceImpl" />
+	<jaxws:endpoint address="/plumberlicenseservice" id="plumberlicenseservice" implementor="com.abm.mainet.water.service.PlumberLicenseServiceImpl" />
+	<jaxws:endpoint address="/changeownerservice" id="changeownerservice" implementor="com.abm.mainet.water.service.ChangeOfOwnerShipServiceImpl" />
+	<jaxws:endpoint address="/changeusageservice" id="changeusageservice" implementor="com.abm.mainet.water.service.ChangeOfUsageServiceImpl" />
+	<jaxws:endpoint address="/waterdisconnectionservice" id="waterdisconnectionservice" implementor="com.abm.mainet.water.service.WaterDisconnectionServiceImpl" />
+	<jaxws:endpoint address="/waterbillservice" id="waterbillservice" implementor="com.abm.mainet.water.service.BillMasterServiceImpl" />
+	<jaxws:endpoint address="/waterreconnectionservice" id="waterreconnectionservice" implementor="com.abm.mainet.water.service.WaterReconnectionServiceImpl" />
+<jaxws:endpoint address="/duplicateplumberlicenseservice" id="duplicateplumberlicenseservice" implementor="com.abm.mainet.water.service.DuplicatePlumberLicenseServiceImpl" />
+<jaxws:endpoint address="/viewwaterdetailservice" id="viewwaterdetailservice" implementor="com.abm.mainet.water.service.ViewWaterDetailsServiceImpl" />
+<jaxws:endpoint address="/waterDashboard" id="waterDashboard" implementor="com.abm.mainet.water.service.WaterDashboardServiceImpl" />
+
+</beans>

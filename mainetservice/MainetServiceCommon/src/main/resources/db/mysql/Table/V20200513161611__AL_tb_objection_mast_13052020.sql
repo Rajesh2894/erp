@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Anil:V20200513161611__AL_tb_objection_mast_13052020.sql
+ALTER TABLE tb_objection_mast 
+CHANGE COLUMN OBJ_DETAIL OBJ_DETAIL VARCHAR(160) NOT NULL,
+ADD COLUMN OBJ_REASON VARCHAR(10) NULL;
+

@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Anil:V20190806120023__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_06082019.sql
+alter table TB_CMT_COUNCIL_PROPOSAL_MAST add column BUDGET_HEAD_DESC Varchar(100) DEFAULT NULL;

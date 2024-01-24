@@ -1,0 +1,171 @@
+<xs:schema xmlns:tns="http://service.soap.account.mainet.abm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.soap.account.mainet.abm.com/">
+  <xs:complexType name="accountReceiptDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="baAccountId" type="xs:long"/>
+      <xs:element name="bankAcList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:long"/>
+                  <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="budgetCodeStatus" type="xs:string"/>
+      <xs:element name="budgetHeadList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:long"/>
+                  <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="cpdFeemode" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdDate" type="xs:dateTime"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="custBankLookUp" nillable="true" type="tns:lookUp"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="departmentLookUp" nillable="true" type="tns:lookUp"/>
+      <xs:element minOccurs="0" name="dpDeptId" type="xs:long"/>
+      <xs:element minOccurs="0" name="emailId" type="xs:string"/>
+      <xs:element minOccurs="0" name="feeAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldId" type="xs:long"/>
+      <xs:element minOccurs="0" name="finYearId" type="xs:long"/>
+      <xs:element name="langId" type="xs:int"/>
+      <xs:element minOccurs="0" name="lgIpMac" type="xs:string"/>
+      <xs:element minOccurs="0" name="lgIpMacUpd" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgId" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="payeeLookUp" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="recPropertytaxRefId" type="xs:long"/>
+      <xs:element minOccurs="0" name="recProperyTaxFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="receiptAmount" type="xs:string"/>
+      <xs:element minOccurs="0" name="receiptDate" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="receiptFeeDetail" nillable="true" type="tns:srcptFeesDetDTO"/>
+      <xs:element minOccurs="0" name="receiptId" type="xs:long"/>
+      <xs:element minOccurs="0" name="receiptModeDetail" type="tns:srcptModesDetDTO"/>
+      <xs:element minOccurs="0" name="receiptNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="receiptNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="receiptPayeeName" type="xs:string"/>
+      <xs:element minOccurs="0" name="rmNarration" type="xs:string"/>
+      <xs:element minOccurs="0" name="rmReceiptAmt" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusId" type="xs:long"/>
+      <xs:element minOccurs="0" name="templateExistsFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="updatedBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="updatedDate" type="xs:dateTime"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="vendorListDetail" nillable="true" type="tns:vendorDTO"/>
+      <xs:element minOccurs="0" name="vendorStatus" type="xs:long"/>
+      <xs:element minOccurs="0" name="vmVendorId" type="xs:long"/>
+      <xs:element minOccurs="0" name="vmVendorIdDesc" type="xs:string"/>
+      <xs:element name="customerBankMap">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:long"/>
+                  <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="defaultVal" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLangFirst" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLangSecond" type="xs:string"/>
+      <xs:element minOccurs="0" name="extraStringField1" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookUpCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookUpDesc" type="xs:string"/>
+      <xs:element name="lookUpExtraLongOne" type="xs:long"/>
+      <xs:element name="lookUpExtraLongTwo" type="xs:long"/>
+      <xs:element name="lookUpId" type="xs:long"/>
+      <xs:element name="lookUpParentId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lookUpType" type="xs:string"/>
+      <xs:element minOccurs="0" name="otherField" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="srcptFeesDetDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="budgetCodeid" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="langId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lgIpMac" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgid" type="xs:long"/>
+      <xs:element minOccurs="0" name="rfFeeamount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="rfFeeid" type="xs:long"/>
+      <xs:element minOccurs="0" name="updatedBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="updatedDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="srcptModesDetDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="baAccountid" type="xs:long"/>
+      <xs:element minOccurs="0" name="baAccountidDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="budgetCodeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="cbBankid" type="xs:long"/>
+      <xs:element minOccurs="0" name="cbBankidDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="cpdFeemode" type="xs:long"/>
+      <xs:element minOccurs="0" name="cpdFeemodeCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="cpdFeemodeDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="rdAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="rdChequedddate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="rdChequedddatetemp" type="xs:string"/>
+      <xs:element minOccurs="0" name="rdDrawnon" type="xs:string"/>
+      <xs:element minOccurs="0" name="rdModesid" type="xs:long"/>
+      <xs:element minOccurs="0" name="tranRefDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="tranRefDatetemp" type="xs:string"/>
+      <xs:element minOccurs="0" name="tranRefNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vendorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="emailId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgid" type="xs:long"/>
+      <xs:element minOccurs="0" name="vmVendorid" type="xs:long"/>
+      <xs:element minOccurs="0" name="vmVendorname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParseException" type="tns:ParseException"/>
+  <xs:complexType name="ParseException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorOffset" type="xs:int"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="saveReceipt" type="tns:saveReceipt"/>
+  <xs:complexType name="saveReceipt">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="accountReceiptDTO" type="tns:accountReceiptDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="saveReceiptResponse" type="tns:saveReceiptResponse"/>
+  <xs:complexType name="saveReceiptResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,33 @@
+***************
+*New organisation creation on blank db
+*script for ORACLE DATABASE
+****************
+set serveroutput on
+prompt "01_SQ_SEQ_GENID.sql"
+@@01_SQ_SEQ_GENID.sql
+prompt "End of 01_SQ_SEQ_GENID.sql"
+
+prompt "02_FN_JAVA_SQ_GENERATION.sql"
+@@02_FN_JAVA_SQ_GENERATION.sql
+prompt "End of 02_FN_JAVA_SQ_GENERATION.sql"
+
+prompt "03_FN_SQ_GENERATION.sql"
+@@03_FN_SQ_GENERATION.sql
+prompt "End of 03_FN_SQ_GENERATION.sql"
+
+prompt "04_CR_ORGANISATION.sql"
+@@04_CR_ORGANISATION.sql
+prompt "End of 04_CR_ORGANISATION.sql"
+
+prompt "05_pr_prefix_upload.sql"
+@@05_pr_prefix_upload.sql
+prompt "End of 05_pr_prefix_upload.sql"
+
+prompt "06_CR_USERCREATION.sql"
+@@06_CR_USERCREATION.sql
+prompt "End of 06_CR_USERCREATION.sql"
+
+
+
+
+

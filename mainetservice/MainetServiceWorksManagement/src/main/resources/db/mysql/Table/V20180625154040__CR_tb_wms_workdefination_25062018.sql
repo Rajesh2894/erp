@@ -1,0 +1,19 @@
+--liquibase formatted sql
+--changeset nilima:V20180625154040__CR_tb_wms_workdefination_25062018.sql
+ALTER TABLE tb_wms_workdefination
+ADD COLUMN WORK_COMPLETION_DT DATE NULL AFTER WORK_CODE,
+ADD COLUMN WORK_COMPLETION_NO VARCHAR(50) NULL AFTER WORK_CODE;
+
+--liquibase formatted sql
+--changeset nilima:V20180625154040__CR_tb_wms_workdefination_250620181.sql
+ALTER TABLE tb_wms_workdefination_hist
+ADD COLUMN WORK_COMPLETION_DT DATE NULL AFTER WORK_CODE,
+ADD COLUMN WORK_COMPLETION_NO VARCHAR(50) NULL AFTER WORK_CODE;
+
+
+
+
+
+
+
+

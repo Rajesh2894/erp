@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AccountWebService" targetNamespace="http://service.soap.account.mainet.abm.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.soap.account.mainet.abm.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service.soap.account.mainet.abm.com/" schemaLocation="accountwebservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="Exception">
+    <wsdl:part name="Exception" element="tns:Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doVoucherPosting">
+    <wsdl:part name="parameters" element="tns:doVoucherPosting">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doVoucherReversePostingResponse">
+    <wsdl:part name="parameters" element="tns:doVoucherReversePostingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doVoucherReversePosting">
+    <wsdl:part name="parameters" element="tns:doVoucherReversePosting">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doVoucherPostingResponse">
+    <wsdl:part name="parameters" element="tns:doVoucherPostingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AccountWebServicePortType">
+    <wsdl:operation name="doVoucherPosting">
+      <wsdl:input name="doVoucherPosting" message="tns:doVoucherPosting">
+    </wsdl:input>
+      <wsdl:output name="doVoucherPostingResponse" message="tns:doVoucherPostingResponse">
+    </wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doVoucherReversePosting">
+      <wsdl:input name="doVoucherReversePosting" message="tns:doVoucherReversePosting">
+    </wsdl:input>
+      <wsdl:output name="doVoucherReversePostingResponse" message="tns:doVoucherReversePostingResponse">
+    </wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountWebServiceSoapBinding" type="tns:AccountWebServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="doVoucherPosting">
+      <soap12:operation soapAction="doVoucherPosting" style="document"/>
+      <wsdl:input name="doVoucherPosting">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doVoucherPostingResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doVoucherReversePosting">
+      <soap12:operation soapAction="doVoucherReversePosting" style="document"/>
+      <wsdl:input name="doVoucherReversePosting">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doVoucherReversePostingResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountWebService">
+    <wsdl:port name="AccountWebServicePort" binding="tns:AccountWebServiceSoapBinding">
+      <soap12:address location="http://localhost/MainetService/services/AccountWebServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

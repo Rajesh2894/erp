@@ -1,0 +1,3 @@
+ALTER TABLE tb_lgl_case_mas
+CHANGE COLUMN cse_sect_appl cse_sect_appl VARCHAR(1000) NULL COMMENT 'Section Act Applied',
+ADD COLUMN CSE_STAT BIGINT(12) NULL AFTER ADDRESS;

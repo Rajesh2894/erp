@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AccountReceiptWebService" targetNamespace="http://service.soap.account.mainet.abm.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.soap.account.mainet.abm.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service.soap.account.mainet.abm.com/" schemaLocation="accountreceiptwebservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="saveReceipt">
+    <wsdl:part name="parameters" element="tns:saveReceipt">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ParseException">
+    <wsdl:part name="ParseException" element="tns:ParseException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveReceiptResponse">
+    <wsdl:part name="parameters" element="tns:saveReceiptResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="Exception" element="tns:Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AccountReceiptWebServicePortType">
+    <wsdl:operation name="saveReceipt">
+      <wsdl:input name="saveReceipt" message="tns:saveReceipt">
+    </wsdl:input>
+      <wsdl:output name="saveReceiptResponse" message="tns:saveReceiptResponse">
+    </wsdl:output>
+      <wsdl:fault name="ParseException" message="tns:ParseException">
+    </wsdl:fault>
+      <wsdl:fault name="Exception" message="tns:Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountReceiptWebServiceSoapBinding" type="tns:AccountReceiptWebServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="saveReceipt">
+      <soap12:operation soapAction="saveReceipt" style="document"/>
+      <wsdl:input name="saveReceipt">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveReceiptResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ParseException">
+        <soap12:fault name="ParseException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="Exception">
+        <soap12:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountReceiptWebService">
+    <wsdl:port name="AccountReceiptWebServicePort" binding="tns:AccountReceiptWebServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/AccountReceiptWebServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

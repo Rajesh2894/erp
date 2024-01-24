@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	
+
+	<context:component-scan base-package="com.abm.mainet.agency.rest.ui.controller,
+	                                      com.abm.mainet.common.integration.rest.ui.controller,
+	                                      com.abm.mainet.common.rest.ui.controller,
+	                                      com.abm.mainet.account.rest.ui.controller,
+	                                      com.abm.mainet.water.rest.ui.controller,
+	                                      com.abm.mainet.mobile.rest.ui.controller,
+	                                      com.abm.mainet.mobile.ui.controller,
+	                                      com.abm.mainet.care.rest.ui.controller,
+										  com.abm.mainet.rnl.rest.ui.controller,
+										  com.abm.mainet.common.workflow.rest.controller,
+										  com.abm.mainet.property.rest.ui.controller,
+										  com.abm.mainet.smsemail.rest.ui.controller,
+										  com.abm.mainet.swm.rest.ui.controller,
+										  com.abm.mainet.common.integration.payment.rest.ui.controller,
+										  com.abm.mainet.rti.rest.ui.controller,
+										  com.abm.mainet.property.rest.ui.controller,
+										  com.abm.mainet.tradeLicense.rest.ui.controller,
+										  com.abm.mainet.workManagement.rest.ui.controller,
+										  com.abm.mainet.adh.rest.ui.controller,
+										  com.abm.mainet.asset.rest.ui.controller,
+										  com.abm.mainet.additionalservices.rest.ui.controller,
+										  com.abm.mainet.common.integration.dms.rest.ui.controller,
+										  com.abm.mainet.common.dashboard.rest.ui.controller,
+										  com.abm.mainet.common.leavemanagement.rest.ui.controller"
+	                                      annotation-config="true">
+	
+	</context:component-scan>
+	
+	<mvc:annotation-driven>
+	 <mvc:message-converters>
+	   <bean  class="com.abm.mainet.common.utility.MappingJackson2HttpMessageConverter">
+	         <property name="supportedMediaTypes" value="application/json"/>
+	         <property name="objectMapper">
+	              <bean class="com.abm.mainet.common.utility.HibernateAwareObjectMapper"/>  
+	        </property>
+	  </bean>
+	</mvc:message-converters>
+
+	</mvc:annotation-driven>
+   
+   <bean id="contentNegotiationManager"  class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+	    <property name="favorPathExtension" value="true" />
+	    <property name="favorParameter" value="false" />
+	    <property name="parameterName" value="mediaType" />
+	    <property name="ignoreAcceptHeader" value="true"/>
+	    <property name="useJaf" value="false"/>
+	    <property name="defaultContentType" value="application/json" />
+	    <property name="mediaTypes">
+	             <map>
+					<entry key="html" value="text/html" />
+					<entry key="json" value="application/json" />
+				</map>
+	    </property>
+    </bean>
+     <mvc:view-controller path="/" view-name="index" />
+     <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver">
+	      <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean>
+	 <bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-defs.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+       <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+         <list>			   		  
+			 <value>classpath:serviceConfiguration.properties</value>			   			   	
+			</list>
+        </property>        
+        <property name="fileEncoding" value="UTF-8"/>
+		<property name="ignoreResourceNotFound" value="false"/>   
+     </bean> 
+	 		   	
+</beans>

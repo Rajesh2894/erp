@@ -1,0 +1,7 @@
+--liquibase formatted sql
+--changeset PramodPatil:V20240104182210__MO_tb_sfac_equity_grant_functional_commt_det_04012024.sql
+alter table tb_sfac_equity_grant_functional_commt_det modify MAJOR_ACTIVITY varchar(1000) null default null;
+
+--liquibase formatted sql
+--changeset PramodPatil:V20240104182210__MO_tb_sfac_equity_grant_functional_commt_det_040120241.sql
+alter table tb_sfac_equity_grant_functional_commt_det_hist modify MAJOR_ACTIVITY varchar(1000) null default null;

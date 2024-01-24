@@ -1,0 +1,53 @@
+--liquibase formatted sql
+--changeset Kanchan:V20210730202125__CR_tb_dms_metadata_reten_30072021.sql
+CREATE TABLE tb_dms_metadata_reten (
+  DMS_ID bigint(12) NOT NULL,
+  DMS_DOC_ID varchar(500) DEFAULT NULL,
+  DMS_DOC_NAME varchar(1000) DEFAULT NULL,
+  DEPT_ID varchar(12) DEFAULT NULL,
+  DOC_DATE datetime DEFAULT NULL,
+  DOC_TYPE varchar(500) DEFAULT NULL,
+  IS_ACTIVE varchar(12) DEFAULT NULL,
+  USER_ROLE_ID varchar(100) DEFAULT NULL,
+  ORGID bigint(12) NOT NULL,
+  CREATED_BY bigint(12) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(12) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  STORAGE_TYPE varchar(100) DEFAULT NULL,
+  ASSIGNED_TO varchar(100) DEFAULT NULL,
+  ZONE bigint(12) DEFAULT NULL,
+  WARD bigint(12) DEFAULT NULL,
+  MOHALLA bigint(12) DEFAULT NULL,
+  DOC_REF_NO varchar(45) DEFAULT NULL,
+  ASSIGNED_DEPT varchar(500) DEFAULT NULL,
+  SEQ_NO varchar(100) DEFAULT NULL,
+  WF_STATUS varchar(100) DEFAULT NULL,
+  REMARKS varchar(500) DEFAULT NULL,
+  STATUS varchar(100) DEFAULT NULL,
+  DOC_RTRVL_DAYS bigint(12) DEFAULT '0',
+  RETEN_DAYS bigint(12) DEFAULT '0',
+  PRIMARY KEY (DMS_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--liquibase formatted sql
+--changeset Kanchan:V20210730202125__CR_tb_dms_metadata_reten_300720211.sql
+CREATE TABLE tb_dms_metadata_reten_det (
+  DMS_DET_ID bigint(12) NOT NULL,
+  DMS_ID bigint(12) NOT NULL,
+  MT_KEY varchar(12) DEFAULT NULL,
+  MT_VAL varchar(1000) DEFAULT NULL,
+  DOC_DESC varchar(1000) DEFAULT NULL,
+  ORGID bigint(12) NOT NULL,
+  CREATED_BY bigint(12) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(12) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (DMS_DET_ID),
+  KEY FKI_DMS_ID3 (DMS_ID),
+  CONSTRAINT FKI_DMS_ID3 FOREIGN KEY (DMS_ID) REFERENCES tb_dms_metadata_reten (DMS_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

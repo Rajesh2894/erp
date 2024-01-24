@@ -1,0 +1,28 @@
+--liquibase formatted sql
+--changeset nilima:V20180609170213__CR_TB_SW_EMPLOYEE_SCHEDDET_HIST_07062018.sql
+CREATE TABLE TB_SW_EMPLOYEE_SCHEDDET_HIST (
+  EMSD_ID_H bigint(12) NOT NULL COMMENT 'Primary Key',
+  EMSD_ID bigint(12)  COMMENT 'Primary Key',
+  EMS_ID bigint(12)  COMMENT 'FK TB_SW_EMPLOYEE_SCHEDULING',
+  EMPID bigint(12)  COMMENT 'FK EMPLOYEE',
+  DE_ID bigint(12)  COMMENT 'FK TB_SW_DESPOSAL_MAST',
+  EMSD_COLL_TYPE bigint(12)  COMMENT 'Collection Type',
+  LOC_ID bigint(12)  COMMENT 'FK TB_LOCATION_MAST',
+  VE_ID bigint(12)  COMMENT 'FK TB_SW_VEHICLE_MAST',
+  RO_ID bigint(12) ,
+  COD_WARD1 bigint(12)  COMMENT 'Ward',
+  COD_WARD2 bigint(12)  COMMENT 'Zone',
+  COD_WARD3 bigint(12)  COMMENT 'Block',
+  COD_WARD4 bigint(12) ,
+  COD_WARD5 bigint(12) ,
+  EMSD_STARTTIME datetime  COMMENT 'From Time',
+  EMSD_ENDTIME datetime  COMMENT 'To Time',
+  H_STATUS char(1)  COMMENT 'Status I->Insert,update',  
+  ORGID bigint(12)  COMMENT 'organization id',
+  CREATED_BY bigint(12) ,
+  UPDATED_BY bigint(12) ,
+  UPDATED_DATE datetime ,
+  LG_IP_MAC varchar(100) ,
+  LG_IP_MAC_UPD varchar(100) ,
+  CREATED_DATE datetime  COMMENT 'datetime ',
+  PRIMARY KEY (EMSD_ID_H)) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,189 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"  
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+
+	 <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+         <list>
+			    <value>classpath:serviceConfiguration.properties</value>
+			    <value>classpath:service-endpoints.properties</value>
+			    <value>classpath:service-classes-configuration.properties</value> 
+	  </list>
+        </property>        
+        <property name="fileEncoding" value="UTF-8"/>
+		<property name="ignoreResourceNotFound" value="false"/>      </bean> 
+		
+		
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+    <bean id="fileSystemResourceLoader" class="org.springframework.core.io.FileSystemResourceLoader"/>  
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+
+			<list>
+			  <!-- <value>file:///${service.ext.config.dir}database</value> -->
+			      <value>classpath:serviceConfiguration</value>
+			      <value>classpath:service-endpoints</value> 	
+			      <value>classpath:service-classes-configuration</value> 	
+			      <value>file:///${filepathxml}messages</value>
+			      <value>file:///${filepathxml}messages_reg</value>
+			      <value>file:///${filepathxml}eip-admin-form-labels</value>
+			      <value>file:///${filepathxml}eip-admin-form-labels_reg</value>
+			      <value>file:///${filepathxml}eip-admin-validation-labels</value>
+			      <value>file:///${filepathxml}field-labels</value>
+			      <value>file:///${filepathxml}eip-citizen-form-labels</value>
+			      <value>file:///${filepathxml}labels</value>
+			      <value>file:///${filepathxml}eip-configuration</value>
+			      <value>file:///${filepathxml}menu</value>
+			      <value>file:///${filepathxml}eip-landingpage-labels</value>
+			      <value>file:///${filepathxml}workflow-labels</value>
+			      <value>file:///${filepathxml}workflow-labels_reg</value>
+			      <value>file:///${filepathxml}common-buttons</value>
+			      <value>file:///${filepathxml}cfc-report-form-labels</value>
+			      <value>file:///${filepathxml}cfc-report-form-validation</value>
+			      <value>file:///${filepathxml}eip-agency-form-labels</value>
+			      <value>file:///${filepathxml}common-challan-serviceurl</value>
+			      <value>file:///${filepathxml}challan-labels</value>
+			      <value>file:///${filepathxml}challan-labels_reg</value>
+			      <value>file:///${filepathxml}cfc-sgrid-form-labels</value>
+			      <value>file:///${filepathxml}cfc-sgrid-form-labels_reg</value>
+			      <value>file:///${filepathxml}heading-bredcrum</value>
+			      <value>file:///${filepathxml}heading-bredcrum_reg</value>
+			      <value>file:///${filepathxml}tp-form-labels</value>
+			      <value>file:///${filepathxml}tp-form-labels_reg</value>			      
+ 				  <value>file:///${filepathxml}tp-form-labels</value>
+			      <value>file:///${filepathxml}legal-form-labels</value>
+			      <value>file:///${filepathxml}legal-form-labels_reg</value>	
+			      <value>file:///${filepathxml}eip-agency-form-labels_reg</value>
+			      <value>file:///${filepathxml}eip-agency-form-labels</value>
+			      <value>file:///${filepathxml}scrutiny-form-labels</value>
+			      <value>file:///${filepathxml}scrutiny-form-labels_reg</value>
+			      <value>file:///${filepathxml}master</value>
+			      <value>file:///${filepathxml}master_reg</value>
+			      <value>file:///${filepathxml}water-form-labels</value>
+			      <value>file:///${filepathxml}water-form-labels_reg</value>
+			      <value>file:///${filepathxml}challan_generation_labels</value>
+				  <value>file:///${filepathxml}challan_generation_labels_reg</value>	
+				  <value>file:///${filepathxml}ValidationMessages</value>
+				  <value>file:///${filepathxml}ValidationMessages_reg</value>
+				  <value>file:///${filepathxml}account-form-labels</value>
+				  <value>file:///${filepathxml}account-form-labels_reg</value>
+				  <value>file:///${filepathxml}number-to-word</value>
+				  <value>file:///${filepathxml}number-to-word_reg</value>
+				  <value>file:///${filepathxml}demand-notice</value>
+				  <value>file:///${filepathxml}demand-notice_reg</value>
+				  <value>file:///${filepathxml}departmentwise-ward-zone-prefix</value>
+				  <value>file:///${filepathxml}bank-form-labels</value>
+				  <value>file:///${filepathxml}bank-form-labels_reg</value>					  			  			  
+				  <value>file:///${filepathxml}mobile-application_reg</value>
+				  <value>file:///${filepathxml}mobile-application</value>						  
+				  <value>file:///${filepathxml}paymentLabel</value>
+				  <value>file:///${filepathxml}task-caller-identify</value>
+				   <value>file:///${filepathxml}rnl-master-labels</value>
+				  <value>file:///${filepathxml}rnl-master-labels_reg</value>
+				  <value>file:///${filepathxml}rnl-master-validation</value>
+				  <value>file:///${filepathxml}rnl-master-validation_reg</value>
+				  <value>file:///${filepathxml}default</value>	
+				  <value>file:///${filepathxml}messages_en_GB</value>
+				  <value>file:///${filepathxml}messages_en_US</value>
+				  <value>file:///${filepathxml}messages_fr_FR</value>	    
+				  <value>file:///${filepathxml}contract-master-labels</value>	 
+				  <value>file:///${filepathxml}contract-master-labels_reg</value>	    
+				  <value>file:///${filepathxml}property-form-label</value>
+				  <value>file:///${filepathxml}property-form-label_reg</value>    
+				  <value>file:///${filepathxml}common-message</value>
+				  <value>file:///${filepathxml}common-message_reg</value>
+				  <value>file:///${filepathxml}common-holidaymaster</value>
+				  <value>file:///${filepathxml}common-holidaymaster_reg</value>
+				  <value>file:///${filepathxml}care</value>
+				  <value>file:///${filepathxml}care_reg</value>
+				  <value>file:///${filepathxml}works-management-labels</value>
+				  <value>file:///${filepathxml}works-management-labels_reg</value>
+				  <value>file:///${filepathxml}quartz-form-labels</value>
+				  <value>file:///${filepathxml}quartz-form-labels_reg</value>
+				  <value>file:///${filepathxml}rti-labels</value>
+				  <value>file:///${filepathxml}rti-labels_reg</value>
+				  <value>file:///${filepathxml}asset</value>
+				  <value>file:///${filepathxml}asset_reg</value>
+				  <value>file:///${filepathxml}solid-waste-management-labels</value>
+				  <value>file:///${filepathxml}solid-waste-management-labels_reg</value>				  
+				  <value>file:///${filepathxml}objection-labels-serviceurls</value>
+				  <value>file:///${filepathxml}objection-labels</value>
+				  <value>file:///${filepathxml}objection-labels_reg</value>		
+				  <value>file:///${filepathxml}bpmbrmdeployment-form-labels</value>
+				  <value>file:///${filepathxml}bpmbrmdeployment-form-labels_reg</value>
+				  <value>file:///${filepathxml}roadcutting</value>
+				  <value>file:///${filepathxml}roadcutting_reg</value>	  
+				  <value>file:///${filepathxml}trade-license-labels</value>
+				  <value>file:///${filepathxml}trade-license-labels_reg</value>
+				  <value>file:///${filepathxml}property-config-lable</value>
+				  <value>file:///${filepathxml}property-config-lable-reg</value>
+				  <value>file:///${filepathxml}social-security</value>
+				  <value>file:///${filepathxml}social-security_reg</value>
+				  <value>file:///${filepathxml}council-form-labels</value>
+				  <value>file:///${filepathxml}council-form-labels_reg</value>
+				  <value>file:///${filepathxml}land-estate-form-labels</value>
+				  <value>file:///${filepathxml}land-estate-form-labels_reg</value>				   
+				  <value>file:///${filepathxml}adh-labels</value>
+				  <value>file:///${filepathxml}adh-labels_reg</value>
+				  <value>file:///${filepathxml}security-management-labels</value>
+				  <value>file:///${filepathxml}security-management-labels_reg</value>
+				  <value>file:///${filepathxml}disaster-management-labels</value>
+				  <value>file:///${filepathxml}disaster-management-labels_reg</value>
+				  <value>file:///${filepathxml}fire-management-labels</value>
+				  <value>file:///${filepathxml}fire-management-labels_reg</value>
+                  <value>file:///${filepathxml}audit-form-labels</value>
+                  <value>file:///${filepathxml}audit-form-labels_reg</value>
+                  <value>file:///${filepathxml}birth-death-labels</value>
+                  <value>file:///${filepathxml}birth-death-labels_reg</value>
+                  <value>file:///${filepathxml}license-validity-labels</value>
+				  <value>file:///${filepathxml}license-validity-labels_reg</value>
+				  <value>file:///${filepathxml}intranet-labels</value>
+                  <value>file:///${filepathxml}intranet-labels_reg</value>
+				  <value>file:///${filepathxml}rts-labels</value>
+				  <value>file:///${filepathxml}rts-labels_reg</value>
+  				  <value>file:///${filepathxml}vehicle-management-labels</value>
+				  <value>file:///${filepathxml}vehicle-management-labels_reg.properties</value>
+				  <value>file:///${filepathxml}lqp-labels</value>
+				  <value>file:///${filepathxml}lqp-labels_reg</value>
+				  <value>file:///${filepathxml}additional-services-labels</value>
+				  <value>file:///${filepathxml}additional-services-labels_reg</value>
+				  <value>file:///${filepathxml}dms-metadata</value>
+				  <value>file:///${filepathxml}dms-metadata_reg</value>
+				  <value>file:///${filepathxml}mrm-labels</value>
+				  <value>file:///${filepathxml}mrm-labels_reg</value>
+				  <value>file:///${filepathxml}mrm-labels</value>
+				  <value>file:///${filepathxml}mrm-labels_reg</value>
+				   <value>file:///${filepathxml}bin-labels</value>
+				  <value>file:///${filepathxml}bin-labels_reg</value>
+				  <value>file:///${filepathxml}material-management-labels</value>
+				  <value>file:///${filepathxml}material-management-labels_reg</value>
+				  <value>file:///${filepathxml}sfac-labels</value>
+				  <value>file:///${filepathxml}sfac-labels_reg</value>
+				  <value>file:///${filepathxml}buildingplan-labels</value>
+				  <value>file:///${filepathxml}buildingplan-labels_reg</value>
+				  
+
+   </list>
+		</property>
+		<property name="cacheSeconds" value="1"/> 
+		<property name="resourceLoader" ref="fileSystemResourceLoader"></property>
+	</bean>
+	
+      
+		 <bean id="webProperties" class="com.abm.mainet.common.utility.WebProperties" >    	
+		<property name="propertiesMap">
+			    <map key-type="java.lang.String" value-type="java.util.Properties">
+				<entry key="ulb.domain.config" value="ulbdomain"/>
+			</map>
+		</property>
+		</bean>
+	</beans>

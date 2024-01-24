@@ -1,0 +1,32 @@
+@media print {
+	body {
+		-webkit-print-color-adjust: exact !important;
+    	color-adjust: exact !important;
+	}
+	
+	/* ----- Complaint Receipt CSS Starts ----- */
+	.background-watermark-1 {
+		text-align: center;
+		opacity: 0.2;
+		position: absolute;
+		z-index: 1;
+		top: 18%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	.background-watermark-1 img {
+		height: 200px !important;
+	}
+	.receipt-main.widget .widget-content .row > div,
+	.receipt-main.widget table {
+		z-index: 2;
+	}
+	.receipt-main.widget table tr th {
+		background: rgba(238, 238, 238, 0.5);
+	}
+	/* ----- Complaint Receipt CSS Ends ----- */
+}

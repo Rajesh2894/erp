@@ -1,0 +1,172 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ldap="http://www.springframework.org/schema/ldap" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/ldap 
+		http://www.springframework.org/schema/ldap/spring-ldap.xsd">
+    <import resource="./cxf-beans-common.xml"/> 
+	<aop:aspectj-autoproxy />
+
+	<bean
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<!-- <value>file:///${service.ext.config.dir}ServiceConfiguration.properties</value> -->
+				<value>classpath:serviceConfiguration.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding" value="UTF-8" />
+		<property name="ignoreResourceNotFound" value="false" />
+	</bean>
+
+	<ldap:context-source id="ldapContextSource" url="${ldap.url}"
+		username="${ldap.securityPrincipal}" password="${ldap.securityCredential}"
+		base="${ldap.userContextParentDN}" anonymous-read-only="false" />
+
+	<ldap:ldap-template id="ldapTemplate"
+		context-source-ref="ldapContextSource" />
+	<bean id="springLDAPAuthModule"
+		class="com.abm.mainet.authentication.ldap.SpringLDAPAuthenticationModule">
+		<property name="ldapTemplate" ref="ldapTemplate" />
+		<property name="userBaseDN">
+			<value>${ldap.userContextParentDN}</value>
+		</property>
+		<property name="userAccountKey">
+			<value>${ldap.userAccountKey}</value>
+		</property>
+	</bean>
+	<bean id="mockAuthModule"
+		class="com.abm.mainet.authentication.ldap.MockAuthenticationModule" />
+	<bean id="authManager"
+		class="com.abm.mainet.authentication.ldap.AuthenticationManager">
+		<property name="authModule" ref="springLDAPAuthModule" />
+		<!-- <property name="authModule" ref="mockAuthModule" /> -->
+		<property name="useLdap">
+			<value>${ldap.enabled}</value>
+		</property>
+		<!-- <property name="jWTManager" ref="jWTManager" /> -->
+	</bean>
+	<!-- <bean id="ldapManager" class="com.abm.mainet.authentication.ldap.MockLDAPManager"/> -->
+	<bean id="ldapManager" class="com.abm.mainet.authentication.ldap.LDAPManager">
+		<property name="ldapTemplate" ref="ldapTemplate" />
+		<property name="userBaseDN">
+			<value>${ldap.userContextParentDN}</value>
+		</property>
+		<property name="userAccountKey">
+			<value>${ldap.userAccountKey}</value>
+		</property>
+		<property name="useLdap">
+			<value>${ldap.enabled}</value>
+		</property>
+	</bean>
+
+	<context:component-scan
+		base-package="com.abm.mainet.security.configuration,com.abm.mainet.common.utility,
+	                                        com.abm.mainet.common.logging,
+	                                        com.abm.mainet.common.service,
+											com.abm.mainet.authentication.admin.service,
+	                                       com.abm.mainet.authentication.admin.ui.model,
+	                                       com.abm.mainet.cfc.challan.dao,
+	                                       com.abm.mainet.cfc.challan.service,
+	                                       com.abm.mainet.cfc.challan.ui.model,
+	                                       com.abm.mainet.cfc.challan.ui.validator,
+	                                       com.abm.mainet.cfc.checklist.ui.model,
+	                                       com.abm.mainet.cfc.checklist.dao,
+	                                       com.abm.mainet.cfc.checklist.modelmapper,
+	                                       com.abm.mainet.cfc.checklist.service,
+	                                       com.abm.mainet.cfc.loi.dao,
+	                                       com.abm.mainet.cfc.loi.mapper,
+	                                       com.abm.mainet.cfc.loi.service,
+	                                       com.abm.mainet.cfc.loi.ui.model,
+	                                       com.abm.mainet.cfc.scrutiny.dao,
+	                                       com.abm.mainet.cfc.scrutiny.service,
+	                                       com.abm.mainet.cfc.scrutiny.ui.model,
+	                                       com.abm.mainet.common.audit.service,
+	                                       com.abm.mainet.common.dao,
+	                                       com.abm.mainet.common.entitlement.dao,
+	                                       com.abm.mainet.common.entitlement.service,
+	                                       com.abm.mainet.common.entitlement.ui.model,
+	                                       com.abm.mainet.common.integration.acccount.dao,
+	                                       com.abm.mainet.common.integration.acccount.mapper,
+	                                       com.abm.mainet.common.integration.acccount.service,
+	                                       com.abm.mainet.common.integration.property.dto,
+	                                       com.abm.mainet.common.integration.dao,	                                       
+	                                       com.abm.mainet.common.integration.dms.ui.model,
+	                                       com.abm.mainet.common.integration.dms.dao,
+	                                       com.abm.mainet.common.integration.dms.service,
+	                                       com.abm.mainet.common.integration.payment.dao,
+	                                       com.abm.mainet.common.integration.payment.service,
+	                                       com.abm.mainet.common.mapper,
+	                                       com.abm.mainet.common.master.dao,
+	                                       com.abm.mainet.common.master.mapper,
+	                                       com.abm.mainet.common.master.service,
+	                                       com.abm.mainet.common.master.ui.model,
+	                                       com.abm.mainet.common.master.ui.validator,
+	                                       com.abm.mainet.common.model.mapping, 
+	                                       com.abm.mainet.common.ui.model,
+	                                       com.abm.mainet.common.ui.validator,
+	                                       com.abm.mainet.common.workflow.dao,
+	                                       com.abm.mainet.common.workflow.mapper,
+	                                       com.abm.mainet.common.workflow.service,
+	                                       com.abm.mainet.common.workflow.ui.model,
+	                                       com.abm.mainet.common.workflow.ui.validator,	                                       
+	                                       com.abm.mainet.common.formbuilder.mapper,
+	                                       com.abm.mainet.common.formbuilder.service,
+	                                       com.abm.mainet.common.formbuilder.ui.model,
+	                                       com.abm.mainet.common.formbuilder.ui.validator,
+	                                       com.abm.mainet.common.formbuilder.dao,
+	                                       com.abm.mainet.complaint.service,
+	                                       com.abm.mainet.complaint.ui.model,
+	                                       com.abm.mainet.smsemail.dao,
+	                                       com.abm.mainet.smsemail.service,
+	                                       com.abm.mainet.common.integration.dms.fileUpload,
+	                                       com.abm.mainet.smsemail.ui.model,
+	                                       com.abm.mainet.smsemail.ui.validator,
+	                                       com.abm.mainet.bill.dao,
+	                                       com.abm.mainet.bill.service,
+	                                       com.abm.mainet.bill.ui.model,
+	                                       com.abm.mainet.cms.ui.model,
+	                                       com.abm.mainet.common.integration.brms.service,
+	                                       com.abm.mainet.quartz.dao,
+                                           com.abm.mainet.quartz.service,
+                                           com.abm.mainet.quartz.ui.model,
+                                           com.abm.mainet.quartz.util,
+                                           com.abm.mainet.quartz.ui.validator,
+                                           com.abm.mainet.common.integration.hrms.jaxws.client,
+                                           com.abm.mainet.cfc.objection.dao,
+                                           com.abm.mainet.cfc.objection.modelmapper,
+                                           com.abm.mainet.cfc.objection.service,                                           
+                                           com.abm.mainet.cfc.objection.ui.model
+                                           com.abm.mainet.cfc.objection.ui.validator,
+                                           com.abm.mainet.validitymaster.ui.model,
+                                           com.abm.mainet.validitymaster.ui.validator,
+                                           com.abm.mainet.validitymaster.service,
+                                           com.abm.mainet.common.integration.dms.ui.validator,
+                                           com.abm.mainet.validitymaster.dao,
+                                           com.abm.mainet.common.integration.payment.ui.model,
+                                           com.abm.mainet.common.exception.service,
+                                           com.abm.mainet.common.dashboard.service,
+                                           com.abm.mainet.common.dashboard.dao,
+                                           com.abm.mainet.common.leavemanagement.service,
+                                           com.abm.mainet.common.leavemanagement.dao,
+                                           com.abm.mainet.orgnization.chart.service,
+                                           com.abm.mainet.orgnization.chart.dao"
+		annotation-config="true">
+
+	</context:component-scan>
+	<bean id="logAspect" class="com.abm.mainet.common.logging.LoggingAspect" />
+	<bean id="loggingFilter"
+		class="com.abm.mainet.common.logging.MainetRequestLoggingFilter"></bean>
+
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" >
+		<property name="validationMessageSource" ref="messageSource"/>
+	</bean>
+
+</beans>

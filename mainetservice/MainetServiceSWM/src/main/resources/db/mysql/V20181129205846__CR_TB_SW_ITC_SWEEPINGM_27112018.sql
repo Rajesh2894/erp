@@ -1,0 +1,25 @@
+--liquibase formatted sql
+--changeset nilima:V20181129205846__CR_TB_SW_ITC_SWEEPINGM_27112018.sql
+CREATE TABLE TB_SW_ITC_SWEEPINGM (
+  ITCM_ID bigint(12) NOT NULL,
+  ITCM_TRANDATE date ,
+  ITCM_EMPNAME varchar(200) ,
+  ITCM_LATE_ARRIVALS varchar(200) ,
+  ITCM_NOT_ARRIVALS varchar(200) ,
+  ITCM_LITERATE_AREA char(1) ,
+  ITCM_LITERATE_AREANAME char(1) ,
+  ITCM_UNIFORM char(1) ,
+  ITCM_BEHCUR char(1) ,
+  ITCM_MOBILE_APPUSAGE char(1) ,
+  ITCM_WTPF char(1) ,
+  ITCM_SCREEN_CLEANNING char(1) ,
+  ITCM_GVP_EYESORE varchar(200) ,
+  ORGID bigint(12) ,
+  CREATED_BY bigint(12) ,
+  CREATED_DATE datetime ,
+  UPDATED_BY bigint(12) ,
+  UPDATED_DATE datetime ,
+  LG_IP_MAC varchar(100) ,
+  LG_IP_MAC_UPD varchar(100) ,
+  PRIMARY KEY (ITCM_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

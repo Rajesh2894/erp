@@ -1,0 +1,179 @@
+<!DOCTYPE html []>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="MarkdownViewer++" />
+    <title>README.md</title>
+    <style type="text/css">
+            
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+
+        </style>
+  </head>
+  <body>
+    <h1 id="jbpm-6.5">jBPM 6.5</h1>
+    <hr />
+    <h2 id="installation-with-wildfly">Installation with Wildfly</h2>
+    <h3 id="part-1-configure-your-server">Part 1 - Configure your server</h3>
+    <ol>
+      <li>Download <a href="http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip">wildfly-10.1.0.Final</a></li>
+      <li>Download <a href="http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar">mysql-connector-java-5.1.6</a></li>
+      <li>Unzip wildfly-10.1.0.Final.zip</li>
+    </ol>
+    <h4 id="db-driver-configuration">DB Driver Configuration</h4>
+    <ol>
+      <li>Make directory “mysql\main”  under “WILDFLY_HOME\modules\system\layers\base\com\”; Ignore this step if folder is already available.</li>
+      <li>Copy driver file mysql-connector-java-5.1.6.jar into WILDFLY_HOME\modules\system\layers\base\com\mysql\main folder.</li>
+      <li>Configure mysql connector details  in an xml configuration file named module.xml with content; Ignore this step if content is already available in xml file.</li>
+    </ol>
+    <pre>
+      <code>	&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+	&lt;module xmlns="urn:jboss:module:1.1" name="com.mysql"&gt;
+		&lt;resources&gt;
+			&lt;resource-root path="mysql-connector-java-5.1.6.jar"/&gt;
+		&lt;/resources&gt;
+		&lt;dependencies&gt;
+			&lt;module name="javax.api"/&gt;
+			&lt;module name="javax.transaction.api"/&gt;
+		&lt;/dependencies&gt;
+	&lt;/module&gt;
+</code>
+    </pre>
+    <ol start="4">
+      <li>Go to standalone configuration folder (WILDFLY_HOME/standalone/configuration/) and edit <strong>standalone-full.xml</strong>. Add MySQL datasource under 'datasources' and driver under 'drivers' tags as given below.</li>
+    </ol>
+    <pre>
+      <code>	&lt;datasources&gt;
+		&lt;datasource jndi-name="java:jboss/datasources/ServiceDS" pool-name="ServiceMySqlDS"enabled="true"use-java-context="true"&gt;
+			&lt;connection-url&gt;jdbc:mysql://&lt;database Ip&gt;:&lt;database port&gt;/&lt;database name&gt;
+			&lt;/connection-url&gt;
+			&lt;driver&gt;mysql&lt;/driver&gt;
+			&lt;pool&gt;
+				&lt;min-pool-size&gt;2&lt;/min-pool-size&gt;
+				&lt;max-pool-size&gt;500&lt;/max-pool-size&gt;
+			&lt;/pool&gt;
+			&lt;security&gt;
+				&lt;user-name&gt;&lt;user Id&gt;&lt;/user-name&gt;
+				&lt;password&gt;&lt;password&gt;&lt;/password&gt;
+			&lt;/security&gt;
+		&lt;/datasource&gt;
+		
+		&lt;drivers&gt;
+			&lt;driver name="mysql" module="com.mysql"&gt;
+				&lt;driver-class&gt;com.mysql.jdbc.Driver&lt;/driver-class&gt;
+			&lt;/driver&gt;
+		&lt;/drivers&gt;
+	&lt;datasources&gt;
+</code>
+    </pre>
+    <h4 id="configure-users">Configure users</h4>
+    <p>Create following user in application realm. <a href="https://docs.jboss.org/author/display/WFLY10/add-user+utility">Reference</a></p>
+    <ul>
+      <li>
+        <p>User 1 - System user for application integration using REST call</p>
+        <ul>
+          <li>name: SysAdmin</li>
+          <li>password: Super@123</li>
+          <li>roles: user,rest-all</li>
+        </ul>
+      </li>
+      <li>
+        <p>User 2 - jBPM platform administrator for processes/rule changes or deployment, user management and to make any changes necessary.</p>
+        <ul>
+          <li>name: admin</li>
+          <li>password: [Secure Password]</li>
+          <li>roles: admin,analyst,kiemgmt,rest-all,kie-server</li>
+        </ul>
+      </li>
+      <li>
+        <p>User 3 - Business administrator.</p>
+        <ul>
+          <li>name: Administrator</li>
+          <li>password: [Secure Password]</li>
+          <li>roles: Administrators,user</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="part-2-deploy-applications">Part 2 - Deploy applications</h3>
+    <h4 id="database-configuration">Database Configuration</h4>
+    <ul>
+      <li>jBPM have it's own predefined set of database tables. These tables must be created before we deploy jBPM war file in to the server.</li>
+      <li>There are two files provided <a href="https://192.168.100.7/svn/ABM_SAAS_Product/trunk/jbpmplatform/baseversion/ddl-scripts/mysqlinnodb">here</a>, one for creating tables and another for dropping tables.</li>
+      <li>To create all tables import or run following SQL file in to the database configured with JNDI 'java:jboss/datasources/ServiceDS'
+<a href="https://192.168.100.7/svn/ABM_SAAS_Product/trunk/jbpmplatform/baseversion/ddl-scripts/mysql5/mysql5-jbpm-schema.sql">https://192.168.100.7/svn/ABM_SAAS_Product/trunk/jbpmplatform/baseversion/ddl-scripts/mysql5/mysql5-jbpm-schema.sql</a></li>
+    </ul>
+    <h4 id="jbpm-application-configuration">jBPM Application Configuration</h4>
+    <ol>
+      <li>Copy kie-wb-distribution-wars-6.5.0.Final-wildfly10.war into WILDFLY_HOME/standalone/deployments, while copying rename it as kie-wb to simplify the context paths that will be used on application server.</li>
+      <li>Find persistence.xml under kie-wb.war/WEB-INF/classes/META-INF/. Find hibernate.dialect and change its value accordingly database configuration.
+<ul><li>For,  <strong>MySql</strong> database, dialect value should be <strong>org.hibernate.dialect.MySQLDialect.</strong></li><li>Also, conform that in persistence.xml file jta-data-source should be same as configured in standalone-full.xml file.</li><li>jta-data-source to point to the newly created data source (JNDI name) for your data  base for ex:- <strong>java:jboss/datasources/ServiceDS</strong>.</li></ul></li>
+    </ol>
+    <pre>
+      <code>	&lt;persistence-unit transaction-type="JTA" name="org.jbpm.domain"&gt;
+	&lt;provider&gt;org.hibernate.ejb.HibernatePersistence&lt;/provider&gt;
+	&lt;jta-data-source&gt;java:jboss/datasources/ServiceDS&lt;/jta-data-source&gt;
+	&lt;mapping-file&gt;META-INF/Taskorm.xml&lt;/mapping-file&gt;
+	&lt;mapping-file&gt;META-INF/JBPMorm.xml&lt;/mapping-file&gt;
+</code>
+    </pre>
+    <ol start="3">
+      <li>Find jboss-deployment-structure.xml under kie-wb.war/WEB-INF/. Add module under 'dependencies' tag as given below.</li>
+    </ol>
+    <pre>
+      <code>	&lt;dependencies&gt;
+		&lt;module name="com.abm.configuration.brms" /&gt;
+	&lt;/dependencies&gt;
+</code>
+    </pre>
+    <ol start="4">
+      <li>Copy directory 'com' from <a href="https://192.168.100.7/svn/ABM_SAAS_Product/trunk/jbpmplatform/baseversion/customization/jboss_module_configuration">https://192.168.100.7/svn/ABM_SAAS_Product/trunk/jbpmplatform/baseversion/customization/jboss_module_configuration</a> and paste under WILDFLY_HOME/modules</li>
+      <li>Open file application.properties and update following properties with actual values to integare with MainetService and MainetBpmService
+<ul><li>mainet.service.rest.url = [protocol]://[host]:[port]/MainetService/rest/</li><li>workflow.rest.url.base = [protocol]://[host]:[port]/mainetbpmservice/rest</li></ul></li>
+    </ol>
+    <h4 id="mainetbpmservice-application-configuration">MainetBpmService Application Configuration</h4>
+    <ul>
+      <li>MainetBpmService can be deploy on same wildfly-10 server where jBPM is running.</li>
+      <li>MainetBpmService will use same JBoss module which we have configured at 4th step of 'jBPM Application Configuration'.</li>
+    </ul>
+    <h4 id="configure-system-properties">Configure system properties</h4>
+    <p>Following list of properties needs to be given to configure JVM tuning considerations and Jboss server system properties in WILDFLY_HOME/bin/<strong>standalone.conf.bat</strong></p>
+    <ul>
+      <li>-Xms10240M -Xmx10240M -XX:MetaspaceSize=5120M -XX:MaxMetaspaceSize=5120M (Heap size can be vary according to usage in production)</li>
+      <li>-verbose:gc -XX:+UseConcMarkSweepGC -Dsun.rmi.dgc.server.gcInterval=360000000 (Optional GC and GC logging)</li>
+      <li>-Djboss.as.management.blocking.timeout=600 (Jboss server startup timeout)</li>
+    </ul>
+    <pre>
+      <code>set "JAVA_OPTS=-Xms10240M -Xmx10240M -XX:MetaspaceSize=5120M -XX:MaxMetaspaceSize=5120M -verbose:gc -XX:+UseConcMarkSweepGC -Dsun.rmi.dgc.server.gcInterval=360000000 -Djboss.as.management.blocking.timeout=600"
+</code>
+    </pre>
+    <p>Following list of properties needs to be given to work smoothly for kie-wb with MainetBpmService</p>
+    <ul>
+      <li>-Dorg.kie.build.disable-project-explorer=true</li>
+      <li>-Dorg.kie.override.deploy.enabled=false</li>
+      <li>-Dorg.kie.task.insecure=true</li>
+    </ul>
+    <h4 id="launching-the-server">Launching the server</h4>
+    <p>Best way is to add system properties into startup command when launching Wildfly server. Go to WILDFLY_HOME/bin and issue following command and wait until the kie workbench comes up.</p>
+    <pre>
+      <code>	standalone.bat -c standalone-full.xml -b [IPAddress] -bmanagement=[IPAddress] -Djboss.socket.binding.port-offset=10 -Dorg.kie.build.disable-project-explorer=true -Dorg.kie.task.insecure=true
+</code>
+    </pre>
+    <ul>
+      <li>
+        <a href="http://IPAddress:8090/kie-wb/">Kie workbench</a>
+      </li>
+      <li>
+        <a href="https://docs.jboss.org/jbpm/release/6.5.0.Final/jbpm-docs/html/pt03.html">Kie workbench documentation</a>
+      </li>
+      <li>
+        <a href="https://github.com/abmindiarepomanager/mainet-workflow">Mainet processes repository</a>
+      </li>
+      <li>
+        <a href="https://github.com/abmindiarepomanager/abm-kie-repo">Mainet rule repository</a>
+      </li>
+    </ul>
+  </body>
+</html>

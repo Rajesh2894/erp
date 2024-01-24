@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" 
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	
+	
+	
+	<!--  Added for testing session management -->
+	
+	  <mvc:interceptors>
+	  <bean class="com.abm.mainet.authentication.security.MultiLoginPreventInterceptor" />
+	  <bean class="com.abm.mainet.ui.OrganisationInterceptor" /> 
+	  <bean class="com.abm.mainet.authentication.security.GlobalRequestInterceptor" />
+      <bean class="com.abm.mainet.authentication.security.AuthenticationRequestInterceptor" />
+        <!--  <bean class="com.abm.mainet.ui.OrganisationInterceptor" /> -->
+	</mvc:interceptors>   
+	
+	<context:property-placeholder location="classpath:portalConfiguration.properties"/>
+	
+	
+	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
+	<mvc:message-converters>
+	   <bean  class="com.abm.mainet.common.util.MappingJackson2HttpMessageConverter">
+	         <property name="supportedMediaTypes" value="application/json"/>
+	         <property name="objectMapper">
+	              <bean class="com.abm.mainet.common.util.HibernateAwareObjectMapper"/>  
+	        </property>
+	  </bean>
+	</mvc:message-converters>
+	</mvc:annotation-driven>
+   <mvc:default-servlet-handler/>
+   <mvc:view-controller path="/uncaughtException"/>
+   <mvc:view-controller path="/resourceNotFound"/>
+   <mvc:view-controller path="/dataAccessFailure"/>
+   
+   <bean id="contentNegotiationManager"  class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+	    <property name="favorPathExtension" value="false" />
+	    <property name="favorParameter" value="true" />
+	    <property name="parameterName" value="mediaType" />
+	    <property name="ignoreAcceptHeader" value="true"/>
+	    <property name="useJaf" value="false"/>
+	    <property name="defaultContentType" value="application/json" />
+	    <property name="mediaTypes">
+	             <map>
+					<entry key="html" value="text/html" />
+					<entry key="json" value="application/json" />
+				</map>
+	    </property>
+    </bean>
+   <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+       <bean id="propertySourcesPlaceholderConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+             
+        <property name="fileEncoding" value="UTF-8"/>
+		<property name="ignoreResourceNotFound" value="false"/>   
+     </bean>
+   <!-- <util:properties id="ulbdomain" location="file:///${filepathxml}uLBDomain.properties" />
+      <bean id="webProperties" class="com.abm.mainet.common.util.WebProperties" >    	
+		<property name="propertiesMap">
+			    <map key-type="java.lang.String" value-type="java.util.Properties">
+				<entry key="ulb.domain.config" value-ref="ulbdomain"/>
+			</map>
+		</property>
+	</bean>   -->
+
+     <context:component-scan
+		base-package="com.abm.mainet.dashboard.citizen.ui.controller,
+		              com.abm.mainet.dashboard.citizen.ui.model,
+		              com.abm.mainet.ui.controller,
+		              com.abm.mainet.label.controller,
+		              com.abm.mainet.label.model"/> 
+
+
+	
+	
+     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver">
+	   <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean> 
+	<bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
+		<property name="definitions">
+			<list>				
+ 				<value>${port.theme}</value>
+			</list>
+		</property>
+	</bean>
+	
+	  <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" p:defaultErrorView="uncaughtException">
+        <property name="exceptionMappings">
+            <props>
+                <prop key=".DataAccessException">dataAccessFailure</prop>
+                <prop key=".NoSuchRequestHandlingMethodException">resourceNotFound</prop>
+                <prop key=".TypeMismatchException">resourceNotFound</prop>
+                <prop key=".MissingServletRequestParameterException">resourceNotFound</prop>
+            </props>
+        </property>
+    </bean>
+    <import resource="classpath:/spring-webmvc-common.xml"/>
+    <import resource="classpath:/spring-webmvc-water.xml"/>
+    <import resource="classpath:/spring-webmvc-authentication.xml"/> 
+    <import resource="classpath:/spring-webmvc-cms.xml"/>
+    <import resource="classpath:/spring-webmvc-mobile.xml"/>
+    <import resource="classpath:/spring-webmvc-property.xml"/>
+    <import resource="classpath:/spring-webmvc-rti.xml"/>
+    <import resource="classpath:/spring-webmvc-rnl.xml"/>
+    <import resource="classpath:/spring-webmvc-care.xml"/>
+   <import resource="classpath:/spring-webmvc-mobile.xml"/>
+  <import resource="classpath:/spring-webmvc-property.xml"/>
+   <import resource="classpath:/spring-webmvc-tradeLicense.xml"/>
+    <import resource="classpath:/spring-webmvc-swm.xml"/>
+   <import resource="classpath:/spring-webmvc-wms.xml"/> 
+    <import resource="classpath:/spring-webmvc-socialSecurity.xml"/> 
+   <mvc:resources mapping="/webjars/**" location="/webjars/"/>
+    <import resource="classpath:/spring-webmvc-adh.xml" />
+    <import resource="classpath:/spring-webmvc-legal.xml"/>
+    <!-- <import resource="classpath:/spring-webmvc-additional.xml"/> -->
+    
+	<!-- <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" p:definitions="/WEB-INF/tiles-defs.xml" /> -->
+</beans>		

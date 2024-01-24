@@ -1,0 +1,16 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<include file="src/main/resources/db/mysql/Table/V20200313161141__CR_TB_RTS_DRN_CON_13032020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20200414171446__AL_tb_rts_drn_con_14042020.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20210303205954__AL_TB_RTS_DRN_CON_03032021.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230103191339__AL_TB_RTS_DRN_CON_03012023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20230119192315__AL_TB_RTS_DRN_CON_19012023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20231016163352__AL_tb_rts_deathregcert_16102023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20231020180849__AL_tb_rts_deathregcert_20102023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20231025180314__AL_tb_rts_deathregcert_25102023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20231110155822__MO_tb_rts_deathregcert_10112023.sql"/>
+<include file="src/main/resources/db/mysql/Table/V20231206101059__AL_TB_RTS_BIRTHREGCERT_06122023.sql"/>
+</databaseChangeLog>

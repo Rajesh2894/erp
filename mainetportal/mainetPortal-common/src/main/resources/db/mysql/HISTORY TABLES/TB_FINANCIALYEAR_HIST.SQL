@@ -1,0 +1,15 @@
+CREATE TABLE `tb_financialyear_hist` (
+  `H_FAYEARID` decimal(12,0) NOT NULL,
+  `FA_YEARID` decimal(12,0) NOT NULL,
+  `FA_FROMDATE` datetime DEFAULT NULL,
+  `FA_TODATE` datetime DEFAULT NULL,
+  `FA_CLOSED` varchar(2) DEFAULT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `LANG_ID` int(11) NOT NULL,
+  `LMODDATE` datetime NOT NULL,
+  `FA_PROVCLOSING` varchar(2) NOT NULL,
+  `UPDATED_BY` int(11) DEFAULT NULL,
+  `UPDATED_DATE` datetime DEFAULT NULL,
+  `H_STATUS` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

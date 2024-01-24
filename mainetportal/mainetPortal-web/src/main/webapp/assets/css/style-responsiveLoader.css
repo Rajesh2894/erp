@@ -1,0 +1,29 @@
+.sloading{
+	width: 100px;
+    height: 100px;
+    background: #fff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    border: 5px solid #7b7b7b;
+    display: none;
+    z-index: 99999;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 3px 2px #7b7b7b;
+    box-shadow: 0px 0px 3px 2px #7b7b7b;
+}
+#loaderdiv{
+	 position: fixed;
+	 display: none;
+	 width: 100%;
+	 height: 100%;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 background-color: rgba(0,0,0,0.2);
+	 z-index: 2;
+}

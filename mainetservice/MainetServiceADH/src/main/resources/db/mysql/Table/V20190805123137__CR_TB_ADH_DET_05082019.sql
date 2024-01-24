@@ -1,0 +1,33 @@
+--liquibase formatted sql
+--changeset Anil:V20190805123137__CR_TB_ADH_DET_05082019.sql
+drop table if exists TB_ADH_DET;
+--liquibase formatted sql
+--changeset Anil:V20190805123137__CR_TB_ADH_DET_050820191.sql
+CREATE TABLE TB_ADH_DET(
+ADHDET_ID bigint(12) NOT NULL COMMENT 'Primary key',
+ADH_ID bigint(12) NOT NULL COMMENT 'Foreign Key',
+ADH_TYPE_ID1 bigint(12) NOT NULL COMMENT 'Prefix Id Level 1',
+ADH_TYPE_ID2 bigint(12) DEFAULT NULL COMMENT 'Prefix Id Level 2',
+ADH_TYPE_ID3 bigint(12) DEFAULT NULL COMMENT 'Prefix Id Level 3',
+ADH_TYPE_ID4 bigint(12) DEFAULT NULL COMMENT 'Prefix Id Level 4',
+ADH_TYPE_ID5 bigint(12) DEFAULT NULL COMMENT 'Prefix Id Level 5',
+ADH_DESC varchar(100) NOT NULL COMMENT 'Text',
+ADH_LENGTH decimal(12,2) DEFAULT NULL COMMENT 'Text',
+ADH_HEIGHT decimal(12,2) DEFAULT NULL COMMENT 'Text',
+ADH_AREA decimal(12,2) DEFAULT NULL COMMENT 'Text',
+ADH_UNIT bigint(10) DEFAULT NULL COMMENT 'Number',
+HRD_ID bigint(10) DEFAULT NULL COMMENT 'Hoarding ID',
+DISPL_TYPID bigint(12) NOT NULL COMMENT 'Prefix id',
+ADH_FEE decimal(12,2) DEFAULT NULL COMMENT 'Number',
+GIS_ID varchar(20) DEFAULT NULL COMMENT 'Number',
+ORGID bigint(12) NOT NULL COMMENT 'Organization id',
+CREATED_BY bigint(12) NOT NULL COMMENT 'User Identity',
+CREATED_DATE DATETIME NOT NULL COMMENT 'Last Modification Date',
+LG_IP_MAC varchar(100) NOT NULL COMMENT 'Client Machine Login Name|IP Address|Physical Address',
+UPDATED_BY bigint(12) DEFAULT NULL COMMENT 'Updated User Identity',
+UPDATED_DATE DATETIME DEFAULT NULL COMMENT 'Updated Modification Date',
+LG_IP_MAC_UPD varchar(100) DEFAULT NULL COMMENT 'Updated Client Machine Login Name|IP Address|Physical Address',
+PRIMARY KEY(ADHDET_ID),
+KEY FK_ADH_ID_idx (ADH_ID) COMMENT 'foregin key',
+CONSTRAINT FK_ADH_ID FOREIGN KEY (ADH_ID) REFERENCES TB_ADH_MAS(ADH_ID) ON DELETE NO ACTION ON UPDATE NO ACTION
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

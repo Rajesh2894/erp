@@ -1,0 +1,1 @@
+ALTER TABLE tb_lgl_case_pddetails ADD COLUMN csed_fname VARCHAR(500) NULL AFTER CSED_PARTY_TYPE;

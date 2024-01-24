@@ -1,0 +1,11 @@
+--liquibase formatted sql
+--changeset Anil:V20190718144041__AL_tb_cmt_council_meeting_mom_18072019.sql
+ALTER TABLE tb_cmt_council_meeting_mom
+DROP FOREIGN KEY FK_MEETING_MOM_PROPOSAL_ID;
+--liquibase formatted sql
+--changeset Anil:V20190718144041__AL_tb_cmt_council_meeting_mom_180720191.sql
+ALTER TABLE tb_cmt_council_meeting_mom 
+DROP COLUMN MOM_STATUS,
+DROP COLUMN PROPOSAL_ID,
+CHANGE COLUMN MOM_RESOLUTION_COMMENTS MOM_COMMENTS VARCHAR(250) NOT NULL COMMENT 'RESOLUTION_REMARKS' ,
+DROP INDEX FK_MEETING_MOM_PROPOSAL_ID ;

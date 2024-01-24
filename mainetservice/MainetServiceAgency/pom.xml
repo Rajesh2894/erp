@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>MainetServiceAgency</artifactId>
+	<version>${mainet.service.agency.version}</version>
+	<groupId>com.abm.mainet</groupId>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.abm.mainet</groupId>
+			<artifactId>MainetServiceCommon</artifactId>
+			<version>${mainet.service.common.version}</version>
+		</dependency>
+	</dependencies>
+
+	<parent>
+		<groupId>com.abm.mainet</groupId>
+		<artifactId>MainetServiceParent</artifactId>
+		<version>${mainet.service.parent.version}</version>
+	</parent>
+
+
+</project>

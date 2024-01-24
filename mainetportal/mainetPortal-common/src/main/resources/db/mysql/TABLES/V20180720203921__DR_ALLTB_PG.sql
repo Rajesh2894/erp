@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset nilima:V20180712184001__AL_TB_OBJECTION_MAST1.sql
+DROP TABLE tb_pg_bank,tb_pg_bank_portal,tb_pg_bank_detail_hist,tb_pg_bank_detail,tb_pg_bankpara_portal_hist,tb_pg_bankparameter_portal;

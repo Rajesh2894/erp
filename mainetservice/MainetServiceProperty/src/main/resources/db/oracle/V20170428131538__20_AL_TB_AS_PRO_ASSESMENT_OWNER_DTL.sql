@@ -1,0 +1,1 @@
+alter table TB_AS_PRO_ASSESMENT_OWNER_DTL modify pro_asso_addharno null;

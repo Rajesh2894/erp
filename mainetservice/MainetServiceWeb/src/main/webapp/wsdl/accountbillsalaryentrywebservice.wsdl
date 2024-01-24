@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AccountBillSalaryEntryWebServiceService" targetNamespace="http://service.soap.account.mainet.abm.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.soap.account.mainet.abm.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://service.soap.account.mainet.abm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://service.soap.account.mainet.abm.com/" version="1.0">
+
+  <xs:element name="saveBillApproval" type="tns:saveBillApproval"/>
+
+  <xs:element name="saveBillApprovalResponse" type="tns:saveBillApprovalResponse"/>
+
+  <xs:complexType name="saveBillApproval">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:vendorBillApprovalDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vendorBillApprovalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actualAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="authorizationMode" type="xs:string"/>
+      <xs:element minOccurs="0" name="authorizationStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="authorizerEmployee" type="xs:string"/>
+      <xs:element minOccurs="0" name="billAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="billAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="billEntryDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="billIntRefId" type="xs:long"/>
+      <xs:element minOccurs="0" name="billNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="billType" type="xs:string"/>
+      <xs:element minOccurs="0" name="billTypeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="budgetCodeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="checkerAuthorization" type="xs:unsignedShort"/>
+      <xs:element minOccurs="0" name="checkerRemarks" type="xs:string"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="createdDate" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dedDetListDto" nillable="true" type="tns:vendorBillDedDetailDTO"/>
+      <xs:element minOccurs="0" name="dedcutionAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="deductions" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="deductionsStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="departmentId" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="departmentList" nillable="true" type="tns:departmentLookUp"/>
+      <xs:element minOccurs="0" name="disallowedAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="disallowedAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="disallowedRemark" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="expDetListDto" nillable="true" type="tns:vendorBillExpDetailDTO"/>
+      <xs:element minOccurs="0" name="expenditureExistsFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldId" type="xs:long"/>
+      <xs:element minOccurs="0" name="fromDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="invoiceAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="invoiceAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="invoiceDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="invoiceNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="languageId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lgIpMacAddress" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="lookUpList" nillable="true" type="tns:lookUp"/>
+      <xs:element minOccurs="0" name="narration" type="xs:string"/>
+      <xs:element minOccurs="0" name="netPayableStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="netPayables" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="netPayablesStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgId" type="xs:long"/>
+      <xs:element minOccurs="0" name="resolutionDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="resolutionNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="salaryBillExitFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="sanctionedAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="sanctionedAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="superOrgId" type="xs:long"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="totalSanctionedAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="vendorDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="vendorId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vendorBillDedDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bchId" type="xs:long"/>
+      <xs:element minOccurs="0" name="budgetCodeDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="budgetCodeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="deductionAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="deductionAmountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="rate" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="departmentLookUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="defaultVal" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLangFirst" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLangSecond" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookUpCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookUpDesc" type="xs:string"/>
+      <xs:element name="lookUpId" type="xs:long"/>
+      <xs:element minOccurs="0" name="prefixVal" type="xs:string"/>
+      <xs:element minOccurs="0" name="shortName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vendorBillExpDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="amountStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="balProvisionAmount" type="xs:string"/>
+      <xs:element minOccurs="0" name="balanceAmount" type="xs:string"/>
+      <xs:element minOccurs="0" name="bmId" type="xs:long"/>
+      <xs:element minOccurs="0" name="budgetCodeDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="budgetCodeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="disallowedAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="disallowedRemark" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="newBalanceAmount" type="xs:string"/>
+      <xs:element minOccurs="0" name="originalEstimate" type="xs:string"/>
+      <xs:element minOccurs="0" name="projectedExpenditureId" type="xs:long"/>
+      <xs:element minOccurs="0" name="sanctionedAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="sanctionedAmountStr" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="defaultVal" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLangFirst" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLangSecond" type="xs:string"/>
+      <xs:element minOccurs="0" name="extraStringField1" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookUpCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookUpDesc" type="xs:string"/>
+      <xs:element name="lookUpExtraLongOne" type="xs:long"/>
+      <xs:element name="lookUpExtraLongTwo" type="xs:long"/>
+      <xs:element name="lookUpId" type="xs:long"/>
+      <xs:element name="lookUpParentId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lookUpType" type="xs:string"/>
+      <xs:element minOccurs="0" name="otherField" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saveBillApprovalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseEntity">
+    <xs:complexContent>
+      <xs:extension base="tns:httpEntity">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="httpEntity">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="saveBillApprovalResponse">
+    <wsdl:part name="parameters" element="tns:saveBillApprovalResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveBillApproval">
+    <wsdl:part name="parameters" element="tns:saveBillApproval">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AccountBillSalaryEntryWebService">
+    <wsdl:operation name="saveBillApproval">
+      <wsdl:input name="saveBillApproval" message="tns:saveBillApproval">
+    </wsdl:input>
+      <wsdl:output name="saveBillApprovalResponse" message="tns:saveBillApprovalResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountBillSalaryEntryWebServiceServiceSoapBinding" type="tns:AccountBillSalaryEntryWebService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="saveBillApproval">
+      <soap12:operation soapAction="saveBillApproval" style="document"/>
+      <wsdl:input name="saveBillApproval">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveBillApprovalResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountBillSalaryEntryWebServiceService">
+    <wsdl:port name="AccountBillSalaryEntryWebServicePort" binding="tns:AccountBillSalaryEntryWebServiceServiceSoapBinding">
+      <soap12:address location="http://localhost:8090/MainetService/services/AccountBillSalaryEntryWebServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

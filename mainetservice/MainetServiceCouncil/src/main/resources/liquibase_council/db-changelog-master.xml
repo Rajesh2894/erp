@@ -1,0 +1,74 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	
+	<include file="src/main/resources/db/mysql/Table/V20190619171857__tb_cmt_council_proposal_mast.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190619180246__tb_cmt_council_proposal_mast_hist.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190619165214__tb_cmt_council_agenda_mast.sql" />
+    <include file="src/main/resources/db/mysql/Table/V20190619165232__tb_cmt_council_agenda_mast_hist.sql" />
+	
+	<include file="src/main/resources/db/mysql/Table/V20190619171857__tb_cmt_council_proposal_mast.sql" />
+
+	<include file="src/main/resources/db/mysql/Table/V20190619180246__tb_cmt_council_proposal_mast_hist.sql" />
+
+	<include file="src/main/resources/db/mysql/Table/V20190619180312__tb_cmt_council_proposal_ward.sql" />
+	
+	<include file="src/main/resources/db/mysql/Table/V20190619165256__tb_cmt_council_meeting_mast.sql" />
+
+	<include file="src/main/resources/db/mysql/Table/V20190619171317__tb_cmt_council_mem_mast.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190619171051__tb_cmt_council_meeting_member.sql" />
+
+	<include file="src/main/resources/db/mysql/Table/V20190619171259__tb_cmt_council_meeting_mom.sql" />
+
+	
+
+	<include file="src/main/resources/db/mysql/Table/V20190619171346__tb_cmt_council_mem_mast_hist.sql" />
+
+	<include file="src/main/resources/db/mysql/Table/V20190619171406__tb_cmt_council_member_committee.sql" />
+
+	
+	<include file="src/main/resources/db/mysql/Table/V20190619180334__tb_cmt_sumoto_resolution.sql" />
+
+	<include file="src/main/resources/db/mysql/Table/V20190705101919__CR_tb_cmt_council_meeting_mast_hist_07042019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190705101928__CR_tb_cmt_council_meeting_mom_hist_07042019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190705101939__CR_tb_cmt_council_member_committee_hist_07042019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190709150853__CR_tb_cmt_council_meeting_member_hist_09072019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190718144041__AL_tb_cmt_council_meeting_mom_18072019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190718171459__CR_TB_CMT_COUNCIL_RESOLUTION_18072019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190718171515__CR_TB_CMT_COUNCIL_RESOLUTION_HIST_18072019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190806120023__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_06082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190806120037__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_HIST_06082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190806120102__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_HIST_06082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190816164404__AL_tb_cmt_council_mem_mast_16082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190816164417__AL_tb_cmt_council_mem_mast_hist_16082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190817110015__AL_tb_cmt_council_member_committee_17082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190817110037__AL_tb_cmt_council_member_committee_hist_17082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190817150436__AL_tb_cmt_council_proposal_mast_17082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190817150448__AL_tb_cmt_council_proposal_mast_hist_17082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190827113030__AL_tb_cmt_council_proposal_mast_27082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190828110713__AL_tb_cmt_council_proposal_mast_28082019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20190905191048__AL_tb_cmt_council_member_committee_05092019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20191108124038__AL_tb_cmt_council_proposal_mast_08112019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20191108124047__AL_tb_cmt_council_proposal_ward_08112019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20191118150239__AL_tb_cmt_council_resolution_18112019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20191211105132__AL_tb_cmt_council_proposal_actiontaken_11122019.sql" />
+	<include file="src/main/resources/db/mysql/Table/V20200629145555__AL_tb_cmt_council_resolution_29062020.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20201210200043__tb_cmt_council_meeting_mast_hist_10122020.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20210405094731__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_HIST_05042021.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20211006184512__AL_TB_CMT_COUNCIL_MEM_MAST_06102021.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20220331192035__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_31032022.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20220405132125__CR_tb_cmt_councilBudet_Det_05042022.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20220613103301__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_13062022.sql" />
+        <include file="src/main/resources/db/mysql/Table/V20221228165843__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_28122022.sql" />
+		<include file="src/main/resources/db/mysql/Table/V20230720195138__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_20072023.sql" />	
+		<include file="src/main/resources/db/mysql/Table/V20230724174422__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_24072023.sql" />
+		<include file="src/main/resources/db/mysql/Table/V20230726162956__AL_TB_CMT_COUNCIL_AGENDA_MAST_26072023.sql" />
+		<include file="src/main/resources/db/mysql/Table/V20230728151439__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_28072023.sql" />
+		<include file="src/main/resources/db/mysql/Table/V20231213121805__AL_tb_cmt_councilBudet_Det_13122023.sql" />
+		<include file="src/main/resources/db/mysql/Table/V20231214095423__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_HIST_14122023.sql" />
+		<include file="src/main/resources/db/mysql/Table/V20240102122017__AL_tb_cmt_councilBudet_Det_02012024.sql" />
+</databaseChangeLog>
+

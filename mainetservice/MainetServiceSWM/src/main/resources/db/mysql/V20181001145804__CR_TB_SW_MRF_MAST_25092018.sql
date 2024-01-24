@@ -1,0 +1,31 @@
+--liquibase formatted sql
+--changeset nilima:V20181001145804__CR_TB_SW_MRF_MAST_25092018.sql
+CREATE TABLE TB_SW_MRF_MAST (
+  MRF_ID bigint(12) NOT NULL,
+  MRF_PLANTID varchar(50) DEFAULT NULL COMMENT 'Plant Id',
+  MRF_PLATNAME varchar(500) DEFAULT NULL COMMENT 'Plant Name',
+  MRF_CATEGORY bigint(12) DEFAULT NULL COMMENT 'Plant Category',
+  MRF_DATEOFOPEN date DEFAULT NULL COMMENT 'Date of Open',
+  MRF_DCENTRALISED char(1) DEFAULT NULL COMMENT 'Centralized-> C , DeCentralized ->  D',
+  MRF_OWNERSHIP char(1) DEFAULT NULL COMMENT 'Ownership (ULB->U,OutSourcing->O)',
+  LOC_ID bigint(12) DEFAULT NULL,
+  MRF_PLANTCAP decimal(15,2) DEFAULT NULL COMMENT 'Plant Capacity',
+  MRF_ISINTEGRATED_PLANT char(1) DEFAULT NULL,
+  MRF_INTEGRATED_PLANTID varchar(50) DEFAULT NULL,
+  MRF_ISRDF char(1) DEFAULT NULL COMMENT 'Is RDF',
+  MRF_RDFQTY decimal(15,2) DEFAULT NULL COMMENT 'Quantity of RDF',
+  MRF_ISCTC char(1) DEFAULT NULL COMMENT 'Integrated with CTC',
+  MRF_ISAGRE_INTEGRATED bigint(12) DEFAULT NULL,
+  PROJ_CODE varchar(13) DEFAULT NULL COMMENT 'Project Code',
+  PROJ_COST decimal(15,2) DEFAULT NULL COMMENT 'Project Cost',
+  PROJ_PROGRESS varchar(200) DEFAULT NULL COMMENT 'Project Progress',
+  ASSET_CODE varchar(45) DEFAULT NULL COMMENT 'Asset Code',
+  ORGID bigint(12) DEFAULT NULL COMMENT 'organization id',
+  CREATED_BY bigint(12) DEFAULT NULL COMMENT 'user id who created the record',
+  CREATED_DATE date DEFAULT NULL COMMENT 'record creation date',
+  UPDATED_BY bigint(12) DEFAULT NULL COMMENT 'user id who updated the record',
+  UPDATED_DATE date DEFAULT NULL COMMENT 'date on which updated the record',
+  LG_IP_MAC varchar(100) DEFAULT NULL COMMENT 'machine ip address from where user has created the record',
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (MRF_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

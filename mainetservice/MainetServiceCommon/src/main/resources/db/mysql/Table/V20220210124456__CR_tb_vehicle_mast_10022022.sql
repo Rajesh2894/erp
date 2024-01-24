@@ -1,0 +1,63 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220210124456__CR_tb_vehicle_mast_10022022.sql
+CREATE TABLE `tb_vehicle_mast` (
+  `VE_ID` bigint(12) NOT NULL COMMENT 'primary key',
+  `VE_GPS_DEVICEID` varchar(15) DEFAULT NULL COMMENT 'Vehicle GPS Tracking Device ID',
+  `VE_VETYPE` bigint(12) DEFAULT NULL COMMENT 'vehicle type (''VHT'')',
+  `VE_REG_NO` varchar(50) DEFAULT NULL COMMENT 'vehicle registration number',
+  `VE_NO` varchar(15) DEFAULT NULL COMMENT 'Vechicle Number',
+  `VE_ENG_SRNO` varchar(100) DEFAULT NULL COMMENT 'vehicle engine serial number',
+  `VE_CAPACITY` decimal(15,2) DEFAULT NULL COMMENT 'vehicle capacity',
+  `VE_STD_WEIGHT` decimal(15,2) DEFAULT NULL COMMENT 'standard weight of vehicle',
+  `VE_CHASIS_SRNO` varchar(55) DEFAULT NULL COMMENT 'vehicle chasis serial number',
+  `VE_MODEL` varchar(200) DEFAULT NULL COMMENT 'make/model/manufacturer of the vehicle',
+  `VE_FLAG` char(1) DEFAULT NULL COMMENT 'department owned vehicle y/n',
+  `VE_PUR_DATE` date DEFAULT NULL COMMENT 'purchase date of the vehicle',
+  `VE_PUR_PRICE` decimal(20,2) DEFAULT NULL COMMENT 'purchase price of the vehicle',
+  `VE_PUR_SOURCE` varchar(200) DEFAULT NULL COMMENT 'source of purchase of the vehicle',
+  `VE_RENT_FROMDATE` date DEFAULT NULL COMMENT 'Rented From Date',
+  `VE_RENT_TODATE` date DEFAULT NULL COMMENT 'Rented To Date',
+  `VM_VENDORID` bigint(12) DEFAULT NULL COMMENT 'Vender Name',
+  `VE_RENTAMT` decimal(15,2) DEFAULT NULL COMMENT 'Vechicle Rent Amount',
+  `VE_REMARKS` varchar(300) DEFAULT NULL COMMENT 'purpose of (purchase/Rent)',
+  `ASSET_ID` bigint(12) DEFAULT NULL COMMENT 'Asset Id',
+  `ASSET_NO` varchar(200) DEFAULT NULL COMMENT 'Asset No',
+  `CONT_ID` bigint(12) DEFAULT NULL,
+  `VE_ACTIVE` char(1) DEFAULT NULL COMMENT 'Vechicle(Active->''Y'',InActive''N'')',
+  `ORGID` bigint(12) NOT NULL COMMENT 'organization id',
+  `CREATED_BY` bigint(12) NOT NULL COMMENT 'user id who created the record',
+  `CREATED_DATE` datetime NOT NULL COMMENT 'record creation date',
+  `UPDATED_BY` bigint(12) DEFAULT NULL COMMENT 'user id who updated the record',
+  `UPDATED_DATE` datetime DEFAULT NULL COMMENT 'date on which updated the record',
+  `LG_IP_MAC` varchar(100) NOT NULL COMMENT 'machine ip address from where user has created the record',
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL COMMENT 'machine ip address from where user has updated the record',
+  `dept_id` bigint(20) DEFAULT NULL,
+  `deployed_location_id` bigint(20) DEFAULT NULL,
+  `vehicle_purpose` varchar(255) NOT NULL,
+  `vehicle_driver` bigint(20) DEFAULT NULL,
+  `vehicle_assigned_to` bigint(20) DEFAULT NULL,
+  `fuel_Type` bigint(12) DEFAULT NULL,
+  `capacity_unit` bigint(12) DEFAULT NULL,
+  `VE_FUEL_CAPACITY` decimal(15,2) DEFAULT NULL,
+  PRIMARY KEY (`VE_ID`)
+) ;
+--liquibase formatted sql
+--changeset Kanchan:V20220210124456__CR_tb_vehicle_mast_100220221.sql
+CREATE TABLE `tb_vehicle_det` (
+  `VED_ID` bigint(12) NOT NULL COMMENT 'primary key',
+  `VE_ID` bigint(12) NOT NULL COMMENT 'Foregin key FK_TB_SW_VEHICLE_MAST',
+  `COD_WAST1` bigint(12) NOT NULL COMMENT 'Waste Type',
+  `VE_CAPACITY` decimal(15,2) NOT NULL COMMENT 'Waste Type Wise Capacity',
+  `VE_ACTIVE` char(1) DEFAULT NULL COMMENT 'Waste Type (Active->''Y'',InActive''N'')',
+  `ORGID` bigint(12) NOT NULL COMMENT 'organization id',
+  `CREATED_BY` bigint(12) NOT NULL COMMENT 'user id who created the record',
+  `CREATED_DATE` datetime NOT NULL COMMENT 'record creation date',
+  `UPDATED_BY` bigint(12) DEFAULT NULL COMMENT 'user id who updated the record',
+  `UPDATED_DATE` datetime DEFAULT NULL COMMENT 'date on which updated the record',
+  `LG_IP_MAC` varchar(100) NOT NULL COMMENT 'machine ip address from where user has created the record',
+  `LG_IP_MAC_UPD` varchar(100) DEFAULT NULL COMMENT 'machine ip address from where user has updated the record',
+  PRIMARY KEY (`VED_ID`),
+  KEY `FK_VEID_idx` (`VE_ID`),
+  CONSTRAINT `FKI_VEID` FOREIGN KEY (`VE_ID`) REFERENCES `tb_vehicle_mast` (`VE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ;
+

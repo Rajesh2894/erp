@@ -1,0 +1,74 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+ 
+ <!--  <include file="src/main/resources/liquibase_common/SampleTable_DDL.sql"/>  -->
+<!--  <include file="src/main/resources/db/mysql/TABLES/V20171101131825__AL_PORTAL_TB_ORGANISATION_14102017.sql"/> -->
+<!--  <include file="src/main/resources/db/mysql/TABLES/V20171101140400__AL_PORTAL_TB_ORGANISATION_30102017.sql"/> -->
+  <include file="src/main/resources/db/mysql/TABLES/V20171101131757__AL_PORTAL_ORGANISATION_31102017.sql"/> 
+    <include file="src/main/resources/db/mysql/TABLES/V20171109201625__cr_portal_tb_organisation_hist_08112017.sql"/> 
+	<include file="src/main/resources/db/mysql/TABLES/V20171109211924__AL_PORTAL_TB_ORGANISATION_09112017.sql"/> 
+	<!--<include file="src/main/resources/db/mysql/TABLES/V20180720202137__CR_PORTAL_TB_PG_BANK_16072018.sql"/> -->
+	<!--<include file="src/main/resources/db/mysql/TABLES/V20180720203831__AL_TB_PG_BANK_PARAMETER_DETAIL_17072018.sql"/>-->
+	<!--<include file="src/main/resources/db/mysql/TABLES/V20180720203921__DR_ALLTB_PG.sql"/>-->
+	<!--<include file="src/main/resources/db/mysql/TABLES/V20180720202137__CR_PORTAL_TB_PG_BANK_16072018.sql"/> 
+	<include file="src/main/resources/db/mysql/TABLES/V20180720203831__AL_TB_PG_BANK_PARAMETER_DETAIL_17072018.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20180720203921__DR_ALLTB_PG.sql"/>-->
+	<!-- <include file="src/main/resources/db/mysql/TABLES/V20180720202137__CR_PORTAL_TB_PG_BANK_16072018.sql"/> 
+	<include file="src/main/resources/db/mysql/TABLES/V20180720203831__AL_TB_PG_BANK_PARAMETER_DETAIL_17072018.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20180720203921__DR_ALLTB_PG.sql"/> -->
+	
+	<include file="src/main/resources/db/mysql/TABLES/V20180906184651__AL_tb_cm_onl_tran_mas_portal_14082018.sql"/>
+	<include file="src/main/resources/db/mysql/VIEW/V20181009150751__AL_vw_eip_quick_link_menu_09102018.sql"/>
+	
+	<include file="src/main/resources/db/mysql/TABLES/V20171109200636__CR_PORTAL_tb_newsletter_scubscription_det_08112017.sql"/>
+	
+	<include file="src/main/resources/db/mysql/TABLES/V20181226133159__CR_tb_com_job_mas_11122017.sql"/>
+
+	<include file="src/main/resources/db/mysql/TABLES/V20190708151425__AL_tb_newsletter_scubscription_det_08072019.sql"/>
+
+	<include file="src/main/resources/db/mysql/TABLES/V20190717170719__AL_tb_newsletter_scubscription_det_17072019.sql"/>
+
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193450__AL_TB_EIP_ABOUTUS_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193501__AL_TB_EIP_ANNOUNCEMENT_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193510__AL_TB_EIP_CONTACT_US_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193520__AL_TB_EIP_FAQ_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193530__AL_TB_EIP_HOME_IMAGES_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193540__AL_TB_EIP_LINKS_MASTER_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193552__AL_TB_EIP_PROFILE_MASTER_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193618__AL_TB_EIP_PUBLIC_NOTICES_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193630__AL_TB_EIP_SUB_LINK_FIELDS_DTL_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190718193642__AL_TB_EIP_SUB_LINKS_MASTER_18072019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20190926184122__AL_tb_eip_sub_link_fields_dtl_26092019.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200417174742__AL_tb_eip_public_notices_17042020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200817180459__AL_tb_eip_announcement_17082020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200817180514__AL_tb_eip_sub_link_field_map_17082020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200817180539__AL_tb_eip_sub_link_field_map_17082020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200817180608__AL_tb_eip_sub_link_fields_dtl_17082020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200929123711__AL_tb_eip_sub_link_fields_dtl_29092020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20200929123746__AL_tb_eip_sub_link_fields_dtl_hist_29092020.sql"/>
+	<include file="src/main/resources/db/mysql/TABLES/V20201026193405__AL_tb_employee_hist_26102020.sql"/>
+         <include file="src/main/resources/db/mysql/TABLES/V20201029200029__AL_exception_log_dtl_29102020.sql"/>
+         <include file="src/main/resources/db/mysql/TABLES/V20201105162658__AL_TB_EIP_ANNOUNCEMENT_05112020.sql"/>
+         <include file="src/main/resources/db/mysql/TABLES/V20201105162658__AL_TB_EIP_ANNOUNCEMENT_05112020.sql"/>
+ <include file="src/main/resources/db/mysql/TABLES/V20201210202053__AL_tb_eip_sub_link_field_map_10122020.sql"/>
+         <include file="src/main/resources/db/mysql/TABLES/V20210111163337__AL_tb_employee_11012021.sql"/>
+         <include file="src/main/resources/db/mysql/TABLES/V20210129093439__AL_tb_eip_feedback_29012021.sql"/>
+          <include file="src/main/resources/db/mysql/TABLES/V20210129110755__CR_tb_opinion_poll_master_29012021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210301192751__AL_tb_eip_announcement_01032021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210312130029__AL_tb_eip_sub_link_fields_dtl_12032021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210315111941__AL_tb_eip_sub_link_fields_dtl_15032021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210409154646__AL_employee_09042021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210422200633__AL_TB_PORTAL_SMS_MAIL_TEMPLATE_22042021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210430111435__AL_tb_eip_profile_master_30042021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210531130848__AL_TB_EIP_FEEDBACK_31052021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210608113704__AL_TB_EIP_USER_CONTACT_US_08062021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210628105521__AL_TB_EIP_FEEDBACK_28062021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210628110630__AL_EMPLOYEE_28062021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20210921153346__AL_tb_eip_faq_21092021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20211118181353__AL_EMPLOYEE_SESSION_18112021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20211119122413__CR_employee_session_19112021.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20221004182208__AL_TB_ORGANISATION_04102022.sql"/>
+            <include file="src/main/resources/db/mysql/TABLES/V20221004182436__AL_TB_ORGANISATION_04102022.sql"/>				
+       </databaseChangeLog>

@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220407154849__AL_TB_WMS_MEASUREMENTBOOK_DET_07042022.sql
+alter table TB_WMS_MEASUREMENTBOOK_DET  add column SORD_SUB_DESCRIPTION varchar(4000) DEFAULT NULL;

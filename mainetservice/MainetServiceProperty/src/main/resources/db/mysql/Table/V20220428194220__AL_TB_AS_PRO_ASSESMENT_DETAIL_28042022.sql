@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Kanchan:V20220428194220__AL_TB_AS_PRO_ASSESMENT_DETAIL_28042022.sql
+alter table TB_AS_PRO_ASSESMENT_DETAIL add column PRO_CONSTRUCT_PERMISSION_DATE datetime;
+--liquibase formatted sql
+--changeset Kanchan:V20220428194220__AL_TB_AS_PRO_ASSESMENT_DETAIL_280420221.sql
+alter table TB_AS_ASSESMENT_DETAIL add column MN_CONSTRUCT_PERMISSION_DATE datetime;

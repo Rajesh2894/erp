@@ -1,0 +1,31 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230417193345__CR_mm_disposal_17042023.sql
+CREATE TABLE mm_disposal (
+  scrapid bigint(12) NOT NULL,
+  scrapno varchar(20) NOT NULL,
+  scrapdate datetime NOT NULL,
+  storeid bigint(12) NOT NULL,
+  initiator bigint(12) NOT NULL,
+  vendorid bigint(12) DEFAULT NULL,
+  workorderid bigint(12) DEFAULT NULL,
+  disposeddate datetime DEFAULT NULL,
+  paymentflag char(1) DEFAULT NULL,
+  receiptamt double(12,2) DEFAULT NULL,
+  mode varchar(10) DEFAULT NULL,
+  bankid bigint(12) DEFAULT NULL,
+  instrumentno bigint(12) DEFAULT NULL,
+  instrumentdate datetime DEFAULT NULL,
+  instrumentamt double(12,2) DEFAULT NULL,
+  Status char(1) NOT NULL,
+  ORGID bigint(4) NOT NULL,
+  USER_ID bigint(7) NOT NULL,
+  LANGID bigint(4) NOT NULL,
+  LMODDATE datetime DEFAULT NULL,
+  UPDATED_BY bigint(7) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) DEFAULT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (scrapid),
+  KEY FK_KEY_93 (storeid),
+  CONSTRAINT FK_KEY_93 FOREIGN KEY (storeid) REFERENCES mm_storemaster (storeid)
+) ;

@@ -1,0 +1,65 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<!-- <include file="src/main/resources/db/oracle/V20170317170551__water_ddl.sql"/> 
+		<include file="src/main/resources/db/oracle/V20170331190947__CR_TB_WT_EXCEPTION_MGAP.sql"/> 
+		<include file="src/main/resources/db/oracle/V20170419114615__AL_TB_WT_DEMAND_NOTICE.sql"/> 
+		<include file="src/main/resources/db/oracle/V20170426124714__AL_TB_WT_EXCEPTION_MGAP_MGAP_REMARK.sql"/> 
+		<include file="src/main/resources/db/oracle/V20170426125444__AL_TB_LOI_MAS.sql"/> 
+		<include file="src/main/resources/db/mysql/Table/V20170515160405__MySql_AL_TB_LOI_MAS_15052017.sql"/> 
+		<include file="src/main/resources/db/mysql/Table/V20170515160336__MySql_AL_TB_LOI_DET_15052017.sql"/> 
+		<include file="src/main/resources/db/mysql/Table/V20170518163841__AL_TB_CSMR_INFO_17052017.sql"/> 
+		<include file="src/main/resources/db/mysql/Table/V20170518163841__AL_TB_CSMR_INFO_17052017.sql"/> -->
+
+	<!-- <include
+		file="src/main/resources/db/mysql/Table/V20170824172646__AL_TB_CSMR_INFO_03082017.sql" />
+	<include
+		file="src/main/resources/db/mysql/Table/V20170824172726__AL_TB_CSMRRCMD_MAS_03082017.sql" />
+	<include
+		file="src/main/resources/db/mysql/Table/V20170824172927__AL_TB_MRDATA_03082017.sql" />
+	<include
+		file="src/main/resources/db/mysql/Table/V20170824173143__AL_TB_WT_BILL_MAS_03082017.sql" />
+	<include
+		file="src/main/resources/db/mysql/Table/V20170824173049__AL_TB_WT_BILL_DET_03082017.sql" /> -->
+		
+	<include file="src/main/resources/db/mysql/Table/V20180920200108_AL_TB_WT_BILL_DET.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20181019200525_TB_WT_BILL_MAS.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20181004004110__AL_tb_csmr_info_03102018.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20181105184518__AL_TB_CSMR_INFO_25102018.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20181205183127__AL_tb_csmr_info_30112018.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20181205183024__AL_tb_csmr_info_03122018.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20181217185327__al_tb_csmr_info_14122018.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190108170000__AL_TB_CSMR_INFO_08012019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190108123007_AL_TB_WT_BILL_GEN_ERROR.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190119183003_AL_ADD_INDEX_WT.sql"/>
+	
+	<include file="src/main/resources/db/mysql/Table/V20190401191738__al_tb_csmr_info_30032019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190417191303__AL_tb_wt_plum_qualification_17042019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190509173016_AL_TB_CSMR_INFO.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190617173835__AL_TB_CSMR_INFO_13062019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190621153136__AL_tb_csmr_info_21062019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190621153149__AL_tb_csmr_info_hist_21062019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190627102725__CR_tb_wt_penalty_26062019.sql"/>
+        <include file="src/main/resources/db/mysql/Table/V20190627183010_AL_TB_WT_BILL_MAS.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190704173834__AL_tb_wt_penalty_07042019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190705131627__AL_tb_wt_penalty_05072019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190705162954__AL_tb_wt_penalty_05072019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190806133411__AL_tb_csmr_info_hist_06082019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20190821131211__AL_tb_csmr_info_hist_21082019.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200309122640__AL_tb_wt_penalty_09032020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200526155224__AL_tb_wt_penalty_26052020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200615154157__AL_tb_wt_csmr_road_types_15062020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200724195222__AL_tb_wt_penalty_24072020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200724195235__CR_tb_wt_penalty_hist_24072020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200727120623__AL_tb_wt_penalty_hist_27072020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200729101908__AL_tb_wt_penalty_hist_29072020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200811170216__AL_tb_wt_excess_amt_11082020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20200813122831__AL_tb_csmr_info_13082020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20201118180728__AL_tb_wt_penalty_18112020.sql"/>
+	<include file="src/main/resources/db/mysql/Table/V20220105161921__AL_TB_WT_CHANGE_OF_USE_05012022.sql"/>
+      
+
+</databaseChangeLog>
+

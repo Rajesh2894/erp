@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Kanchan:V20221006172914__AL_TB_WMS_ROAD_CUTTING_06102022.sql
+ALTER TABLE TB_WMS_ROAD_CUTTING add column RC_COMREPALTMOB BIGINT(12) null;
+--liquibase formatted sql
+--changeset Kanchan:V20221006172914__AL_TB_WMS_ROAD_CUTTING_061020221.sql
+ALTER TABLE TB_WMS_ROAD_CUTTING add column RC_COMLOCREPALTMOB BIGINT(12) null;

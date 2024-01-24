@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="Account_Head">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="Acc_Head_Id" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="SAC_LED_TYPE" type="xsd:double"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="Function_Code" type="xsd:string"/>
+<xsd:element name="STATUS_CPD_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="Acc_Head_Name" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Acc_Desc" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Acc_Head_Code" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Account_HeadUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="Acc_Head_Id" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="SAC_LED_TYPE" type="xsd:double"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="Function_Code" type="xsd:string"/>
+<xsd:element name="STATUS_CPD_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="Acc_Head_Name" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="Acc_Desc" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="Acc_Head_Code" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="Account_HeadRequest">
+<part name="parameters" element="tns:Account_Head"/>
+</message>
+<message name="Account_HeadRequestUp">
+<part name="parameters" element="tns:Account_HeadUp"/>
+</message>
+<message name="Account_HeadResponse">
+<part name="parameters" element="tns:Account_Head"/>
+</message>
+<portType name="Account_HeadServer">
+<operation name="Submit">
+<input message="tns:Account_HeadRequest"/>
+<output message="tns:Account_HeadResponse"/>
+</operation>
+<operation name="Update">
+<input message="tns:Account_HeadRequestUp"/>
+<output message="tns:Account_HeadResponse"/>
+</operation>
+</portType>
+<binding name="Account_HeadServer" type="tns:Account_HeadServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="Account_HeadServer">
+<port name="Account_HeadServer" binding="tns:Account_HeadServer">
+<soap:address location="http://192.168.100.215:9080/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Shd1a3b4a486da44539df6e9d7a4604ae9/Ac377282be4c4f4f94a626b7e248128ffb/Shd1a3b4a486da44539df6e9d7a4604ae9/ws"/>
+</port>
+</service>
+</definitions>

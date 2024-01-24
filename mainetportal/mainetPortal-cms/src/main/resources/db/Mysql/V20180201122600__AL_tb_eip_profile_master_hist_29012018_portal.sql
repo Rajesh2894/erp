@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset priya:V20180201122600__AL_tb_eip_profile_master_hist_29012018_portal.sql
+ALTER TABLE tb_eip_profile_master_hist 
+CHANGE COLUMN IMAGE_NAME IMAGE_NAME VARCHAR(200) NULL DEFAULT NULL COMMENT 'Image name' ,
+ADD COLUMN IMAGE_PATH VARCHAR(1000) NULL DEFAULT NULL COMMENT '' AFTER H_STATUS;

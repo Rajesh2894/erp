@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+<include file="src\main\resources\db\mysql\Table\V20201113174949__AL_TB_MRM_MARRIAGE_13112020.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20201120161416__AL_TB_MRM_HUSBAND_20112020.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20201120164637__AL_TB_MRM_HUSBAND_20112020.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20201127113952__AL_TB_MRM_MARRIAGE_27112020.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20201127200655__AL_TB_MRM_APPOINTMENT_27112020.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20201203173704__AL_TB_MRM_MARRIAGE_HIST_03122020.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210204130056__CR_TB_MRM_MARRIAGE_04022021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210204133145__AL_TB_MRM_MARRIAGE_04022021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210702174859__AL_tb_mrm_witness_det_02072021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210702171331__AL_tb_mrm_husband_02072021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210702192755__AL_tb_mrm_husband_02072021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210702193348__AL_tb_mrm_husband_02072021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210804114806__AL_TB_MRM_MARRIAGE_04082021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210820172014__AL_TB_MRM_WITNESS_DET_20082021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20210902153439__AL_TB_MRM_MARRIAGE_02092021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20211005123005__AL_TB_MRM_MARRIAGE_05102021.sql"/>
+<include file="src\main\resources\db\mysql\Table\V20211109132522__AL_TB_MRM_HUSBAND_09112021.sql"/>
+</databaseChangeLog>
+

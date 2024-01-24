@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+	<aop:aspectj-autoproxy />
+
+
+
+
+
+	<context:component-scan
+		base-package="com.abm.mainet.authentication.admin.ui.controller,
+		              com.abm.mainet.cfc.challan.ui.controller,
+		              com.abm.mainet.cfc.checklist.ui.controller,
+		              com.abm.mainet.cfc.loi.ui.controller,
+		              com.abm.mainet.cfc.scrutiny.ui.controller,
+		              com.abm.mainet.common.entitlement.ui.controller,
+		              com.abm.mainet.common.formbuilder.ui.controller,
+		              com.abm.mainet.common.master.ui.controller,
+		              com.abm.mainet.common.ui.controller,
+		              com.abm.mainet.common.workflow.ui.controller,
+		              com.abm.mainet.complaint.ui.controller,
+		              com.abm.mainet.smsemail.ui.controller,
+		              com.abm.mainet.bill.ui.controller,
+		              com.abm.mainet.cms.ui.controller,
+		              com.abm.mainet.quartz.ui.controller,
+		              com.abm.mainet.cfc.objection.ui.controller,
+		              com.abm.mainet.common.integration.dms.ui.controller,
+		              com.abm.mainet.validitymaster.ui.controller,
+		              com.abm.mainet.common.integration.payment.ui.controller,
+		              com.abm.mainet.orgnization.chart.controller">
+	</context:component-scan>
+
+
+	<bean id="logAspect" class="com.abm.mainet.common.logging.LoggingAspect" />
+
+</beans>		

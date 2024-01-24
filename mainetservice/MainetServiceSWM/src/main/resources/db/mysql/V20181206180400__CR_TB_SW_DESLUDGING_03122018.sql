@@ -1,0 +1,31 @@
+--liquibase formatted sql
+--changeset nilima:V20181206180400__CR_TB_SW_DESLUDGING_03122018.sql
+CREATE TABLE TB_SW_DESLUDGING
+(DES_ID bigint(12) comment 'primary key',
+ DES_MONTH varchar(50) comment 'Sludge_Vehicle_information_for_month',	
+ DES_YEAR  varchar(50) comment 'Sludge_Vehicle_information_for_year',		
+ DES_Date  date comment 'Date',			
+ DES_DRIVER_NAME varchar(200) comment 'Vehicle_driver_name',	
+ DES_VNO varchar(50) comment 'vehicle_No',                 	
+ DES_DRIVER_MOBNO varchar(50) comment 'Vehicle_driver_mobile_no',	
+ DES_APPNAME varchar(600) comment 'Applicants_name',
+ DES_APPADDRESS varchar(1000) comment 'Applicants_address',
+ DES_APPMOBNO varchar(10) comment 'Applicants_mobile_no',
+ DES_TNTRIP bigint(15) comment 'Total_no_of_trips(Count)',
+ DES_TAMT decimal(15) comment 'total_Amount',	
+ DES_CRRECEIPTNO varchar(100) comment 'Reciept_No',	 	
+ DES_NRNO varchar(100) comment 'Nidan_request_no',	
+ DES_SWNAME varchar(100) comment 'Sanitation_worker_Name',	
+ DES_CTOQTY decimal(20,2) comment 'Total_quantity',	
+ DES_PONAME varchar(100) comment 'Plant_operator_Name',	
+ DES_SWCOM decimal(20,2) comment 'solid_waste ( Co Composting)(in Kg)',
+ DES_WWCOM decimal(20,2) comment 'Wet_waste_(Co composting and Gardening)_in_Liter',
+ ORGID bigint(12) ,
+ CREATED_BY bigint(12) ,
+ CREATED_DATE datetime ,
+ UPDATED_BY bigint(12) ,
+ UPDATED_DATE datetime ,
+ LG_IP_MAC varchar(100) ,
+ LG_IP_MAC_UPD varchar(100) ,
+ PRIMARY KEY (DES_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

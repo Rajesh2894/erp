@@ -1,0 +1,48 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230220123854__CR_tb_sfac_committee_member_master_20022023.sql
+CREATE TABLE tb_sfac_committee_member_master (
+  COM_MEM_ID bigint(20) NOT NULL,
+  COMMITTEE_TYPE_ID bigint(20) DEFAULT NULL,
+  DISSOLVE_DATE datetime DEFAULT NULL,
+  FROM_DATE datetime DEFAULT NULL,
+  TO_DATE datetime DEFAULT NULL,
+  STATUS bigint(20) DEFAULT NULL,
+  MEMBER_NAME varchar(250) DEFAULT NULL,
+  DESIGNATION varchar(200) DEFAULT NULL,
+  EMAIL_ID varchar(100) DEFAULT NULL,
+  ORGANIZATION varchar(200) DEFAULT NULL,
+  ORGID bigint(20) NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  CONTACT_NO varchar(12) DEFAULT NULL,
+  PRIMARY KEY (COM_MEM_ID)
+);
+--liquibase formatted sql
+--changeset Kanchan:V20230220123854__CR_tb_sfac_committee_member_master_200220231.sql
+CREATE TABLE tb_sfac_committee_member_mast_hist (
+  COM_MEM_ID_H bigint(20) NOT NULL,
+  COM_MEM_ID bigint(20) NOT NULL,
+  COMMITTEE_TYPE_ID bigint(20) DEFAULT NULL,
+  DISSOLVE_DATE datetime DEFAULT NULL,
+  FROM_DATE datetime DEFAULT NULL,
+  TO_DATE datetime DEFAULT NULL,
+  STATUS bigint(20) DEFAULT NULL,
+  MEMBER_NAME varchar(250) DEFAULT NULL,
+  DESIGNATION varchar(200) DEFAULT NULL,
+  EMAIL_ID varchar(100) DEFAULT NULL,
+  ORGANIZATION varchar(200) DEFAULT NULL,
+  H_STATUS char(1) DEFAULT NULL,
+  ORGID bigint(20) NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  CONTACT_NO varchar(12) DEFAULT NULL,
+  PRIMARY KEY (COM_MEM_ID_H)
+);

@@ -1,0 +1,5 @@
+--liquibase formatted sql
+--changeset Anil:V20190814145008__AL_tb_lgl_court_mast_14082019.sql
+ALTER TABLE tb_lgl_court_mast
+CHANGE COLUMN CRT_PHONE_NO CRT_PHONE_NO VARCHAR(50) NULL COMMENT 'Court Phone No',
+ADD COLUMN CRT_WEBSITE VARCHAR(50) NULL AFTER CRT_EMAIL_ID;

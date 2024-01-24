@@ -1,0 +1,19 @@
+--liquibase formatted sql
+--changeset Kanchan:V20210318175447__AL_TB_AS_PRO_ASSESMENT_DETAIL_18032021.sql
+ALTER Table TB_AS_PRO_ASSESMENT_DETAIL add column
+   PRO_CARPET_AREA decimal(12,2) DEFAULT NULL,
+    add PRO_AGE decimal(12,2) DEFAULT NULL,
+    add PRO_CONSTRUCT_PERMISSION_NUMBER varchar(100) DEFAULT NULL,
+    add PRO_PERMISSION_USE_NO varchar(100) DEFAULT NULL,
+    add PRO_ASSESSMENT_REMARK varchar(100) DEFAULT NULL,
+    add PRO_LEGAL varchar(100) DEFAULT NULL,
+    add PRO_OCCUPIER_NAME_REG varchar(100) DEFAULT NULL,
+    add PRO_ASSE_MOBILENO varchar(100) DEFAULT NULL,
+    add PRO_OCCUPIER_EMAIL varchar(100) DEFAULT NULL,
+    add PRO_ACTUAL_RENT decimal(12,2) DEFAULT NULL;
+  
+--liquibase formatted sql
+--changeset Kanchan:V20210318175447__AL_TB_AS_PRO_ASSESMENT_DETAIL_180320211.sql
+  ALTER table TB_AS_PRO_ASSESMENT_FACTOR_DTL add column
+PRO_assf_factor_date datetime DEFAULT NULL,
+add PRO_assf_factor_remark varchar(100) DEFAULT NULL;

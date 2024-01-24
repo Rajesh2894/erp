@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:orangescape" targetNamespace="urn:orangescape">
+<types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:urn="urn:orangescape" elementFormDefault="qualified" targetNamespace="urn:orangescape">
+<xsd:element name="functionmaster">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CODCOFDET_ID" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="FUNCTION_PARENT_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="FUNCTION_STATUS" type="xsd:double"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="FUNCTION_ID" type="xsd:double"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="FUNCTION_CODE" type="xsd:string"/>
+<xsd:element name="function_desc" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="function_compcode" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="functionmasterUp">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ORGID" type="xsd:double"/>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="CODCOFDET_ID" type="xsd:double"/>
+<xsd:element name="ModifiedIn" type="xsd:string"/>
+<xsd:element name="CreatedBy" type="xsd:string"/>
+<xsd:element name="FUNCTION_PARENT_ID" type="xsd:double"/>
+<xsd:element name="SheetId" type="xsd:string"/>
+<xsd:element name="CreatedAt" type="xsd:dateTime"/>
+<xsd:element name="Metadata" type="xsd:string"/>
+<xsd:element name="FUNCTION_STATUS" type="xsd:double"/>
+<xsd:element name="SheetName" type="xsd:string"/>
+<xsd:element name="ModifiedBy" type="xsd:string"/>
+<xsd:element name="FUNCTION_ID" type="xsd:double"/>
+<xsd:element name="Caption" type="xsd:string"/>
+<xsd:element name="AssignedTo" type="xsd:string"/>
+<xsd:element name="ModifiedAt" type="xsd:dateTime"/>
+<xsd:element name="Tenant" type="xsd:string"/>
+<xsd:element name="FUNCTION_CODE" type="xsd:string"/>
+<xsd:element name="function_desc" type="xsd:string"/>
+<xsd:element name="ULB_Code" type="xsd:string"/>
+<xsd:element name="ProcessInstance" type="xsd:string"/>
+<xsd:element name="function_compcode" type="xsd:string"/>
+<xsd:element name="SheetMetadataName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="functionmasterRequest">
+<part name="parameters" element="tns:functionmaster"/>
+</message>
+<message name="functionmasterRequestUp">
+<part name="parameters" element="tns:functionmasterUp"/>
+</message>
+<message name="functionmasterResponse">
+<part name="parameters" element="tns:functionmaster"/>
+</message>
+<portType name="functionmasterServer">
+<operation name="Submit">
+<input message="tns:functionmasterRequest"/>
+<output message="tns:functionmasterResponse"/>
+</operation>
+<operation name="Update">
+<input message="tns:functionmasterRequestUp"/>
+<output message="tns:functionmasterResponse"/>
+</operation>
+</portType>
+<binding name="functionmasterServer" type="tns:functionmasterServer">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="Update">
+<soap:operation soapAction="Update"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Submit">
+<soap:operation soapAction="Submit"/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="functionmasterServer">
+<port name="functionmasterServer" binding="tns:functionmasterServer">
+<soap:address location="/Apbeab238c_6ab5_11e7_a5f0_eb6c4ed8438b/1/Shf34b4d9d73194809b6ae21c9cfed5aa7/Ac9b48d9bd2a1a49a7a13c3b42b167dada/Shf34b4d9d73194809b6ae21c9cfed5aa7/ws"/>
+</port>
+</service>
+</definitions>

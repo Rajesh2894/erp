@@ -1,0 +1,20 @@
+--liquibase formatted sql
+--changeset PramodPatil:V20230728181809__TB_AC_BILL_MBDET_28072023.sql
+ CREATE TABLE TB_AC_BILL_MBDET (
+  MB_ID bigint(12) NOT NULL,
+  BM_ID bigint(12) DEFAULT NULL,
+  MB_ITEMDESC varchar(300) DEFAULT NULL,
+  MB_ITEMWET decimal(10,2) DEFAULT NULL,
+  MB_ITEMRATE decimal(10,2) DEFAULT NULL,
+  MB_ITEMUNIT decimal(10,2) DEFAULT NULL,
+  MB_ITEMAMT decimal(10,2) DEFAULT NULL,
+  ORGID bigint(19) NOT NULL,
+  CREATED_BY bigint(12) NOT NULL COMMENT 'user id who created the record',
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(10) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (MB_ID),
+  KEY FK_BM_ID_BILLMAS (BM_ID)
+) ;

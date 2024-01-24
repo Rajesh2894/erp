@@ -1,0 +1,42 @@
+--liquibase formatted sql
+--changeset Kanchan:V20221207122423__CR_Tb_Sfac_Fpo_Administrative_Det_07122022.sql
+create table Tb_Sfac_Fpo_Administrative_Det
+(
+AD_ID bigint(20) NOT NULL,
+FPO_ID bigint(20) NOT NULL,
+DSG_ID bigint(20) NULL DEFAULT NULL,
+TITLE_ID bigint(20) NULL DEFAULT NULL,
+NAME varchar(250) NULL DEFAULT NULL,
+EMAIL_ID varchar(250) NULL DEFAULT NULL,
+DARE_OF_JOINING datetime NULL DEFAULT NULL,
+CONTACT_NO Varchar(20) NULL DEFAULT NULL,
+ORGID bigint(20) NOT NULL,
+CREATED_BY bigint(20) NOT NULL,
+CREATED_DATE datetime NOT NULL,
+UPDATED_BY bigint(20) NULL DEFAULT NULL,
+UPDATED_DATE datetime NULL DEFAULT NULL,
+LG_IP_MAC varchar(100) NOT NULL,
+LG_IP_MAC_UPD varchar(100) NULL DEFAULT NULL,
+primary key (AD_ID),
+CONSTRAINT FK_FPO_ID11 FOREIGN KEY (FPO_ID) REFERENCES Tb_SFAC_Fpo_Master (FPO_ID)
+);
+--liquibase formatted sql
+--changeset Kanchan:V20221207122423__CR_Tb_Sfac_Fpo_Administrative_Det_071220221.sql
+create table Tb_Sfac_Fpo_Bank_Det
+(
+BK_ID bigint(20) NOT NULL,
+FPO_ID bigint(20) NOT NULL,
+BANK_NAME Varchar(1000) NULL DEFAULT NULL,
+ACCOUNT_NO varchar(16) NULL DEFAULT NULL,
+IFSC_CODE Varchar(22) NULL DEFAULT NULL,
+BRANCH_NAME varchar(400) NULL DEFAULT NULL,
+ORGID bigint(20) NOT NULL,
+CREATED_BY bigint(20) NOT NULL,
+CREATED_DATE datetime NOT NULL,
+UPDATED_BY bigint(20) NULL DEFAULT NULL,
+UPDATED_DATE datetime NULL DEFAULT NULL,
+LG_IP_MAC varchar(100) NOT NULL,
+LG_IP_MAC_UPD varchar(100) NULL DEFAULT NULL,
+primary key (BK_ID),
+CONSTRAINT FK_FPO_ID12 FOREIGN KEY (FPO_ID) REFERENCES tb_sfac_fpo_master (FPO_ID)
+);

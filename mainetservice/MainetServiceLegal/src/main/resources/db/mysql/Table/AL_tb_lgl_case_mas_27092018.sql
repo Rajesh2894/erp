@@ -1,0 +1,17 @@
+ALTER TABLE tb_lgl_case_mas
+DROP COLUMN cse_matdet_1,
+DROP COLUMN cse_subtyp_id,
+DROP COLUMN cse_typ_id,
+ADD INDEX FK_CRTID_idx (crt_id ASC);
+
+ALTER TABLE tb_lgl_case_mas 
+ADD CONSTRAINT FK_CRTID
+  FOREIGN KEY (crt_id)
+  REFERENCES tb_lgl_court_mast (CRT_ID)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT FK_LOCID
+  FOREIGN KEY ()
+  REFERENCES tb_location_mas ()
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

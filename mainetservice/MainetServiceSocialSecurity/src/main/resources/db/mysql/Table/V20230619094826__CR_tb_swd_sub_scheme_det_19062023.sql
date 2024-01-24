@@ -1,0 +1,19 @@
+--liquibase formatted sql
+--changeset Kanchan:V20230619094826__CR_tb_swd_sub_scheme_det_19062023.sql
+CREATE TABLE tb_swd_sub_scheme_det(
+  SUBSDSCHD_ID bigint(12) NOT NULL,
+  SDSCH_ID bigint(12) NOT NULL,
+  SDSCH_SUB_SER_ID bigint(12) DEFAULT NULL,
+  NO_BENEFICIARY bigint(12) DEFAULT NULL,
+  AMOUNT bigint(12) DEFAULT NULL,
+  TOTAL_AMOUNT bigint(12) DEFAULT NULL,
+  SDSCH_ACTIVE char(1) NOT NULL,
+  ORGID bigint(12) NOT NULL,
+  CREATED_BY bigint(12) NOT NULL,
+  CREATED_DATE datetime NOT NULL,
+  UPDATED_BY bigint(12) DEFAULT NULL,
+  UPDATED_DATE datetime DEFAULT NULL,
+  LG_IP_MAC varchar(100) NOT NULL,
+  LG_IP_MAC_UPD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (SUBSDSCHD_ID)
+);

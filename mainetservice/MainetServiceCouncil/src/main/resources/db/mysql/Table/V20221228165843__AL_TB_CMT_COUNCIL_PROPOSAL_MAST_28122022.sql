@@ -1,0 +1,3 @@
+--liquibase formatted sql
+--changeset Kanchan:V20221228165843__AL_TB_CMT_COUNCIL_PROPOSAL_MAST_28122022.sql
+alter table TB_CMT_COUNCIL_PROPOSAL_MAST add column SUBJECT_NO  Varchar(500) NULL DEFAULT NULL;

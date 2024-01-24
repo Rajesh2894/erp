@@ -1,0 +1,65 @@
+--liquibase formatted sql
+--changeset Kailash:V20170802194510__AL_VW_EIP_QUICK_LINK_MENU_02082017.sql
+CREATE OR REPLACE 
+VIEW VW_EIP_QUICK_LINK_MENU AS
+    SELECT 
+        FN_GET_ROWNUM() AS ROW_NUM,
+        S.ORGID AS ORGID,
+        S.LINK_ID AS LINKID,
+        CONCAT('M',
+                CAST(S.LINK_ID AS CHAR CHARSET LATIN1)) AS LINK_ID,
+        S.LINK_TITLE_EN AS MENU_NM_EN,
+        S.LINK_TITLE_REG AS MENU_NM_REG,
+        'M' AS PARENTID,
+        'M' AS LINK_TYPE,
+        NULL AS HAS_SUB_LINK,
+        S.LINK_PATH AS PAGE_URL,
+        S.LINK_ID AS SORT_ORDER,
+        S.LINK_ORDER AS LINK_ORDER,
+        NULL AS SECTION_TYPE,
+        NULL AS IMG_LINK_TYPE,
+        S.IS_LINK_MODIFY AS IS_LINK_MODIFY,
+        S.CHEKER_FLAG AS Cheker
+    FROM
+        TB_EIP_LINKS_MASTER S
+    WHERE
+        (S.ISDELETED = 'N') 
+    UNION SELECT 
+        FN_GET_ROWNUM() AS ROW_NUM,
+        S.ORGID AS ORGID,
+        D.SUB_LINK_MAS_ID AS LINKID,
+        CONCAT('F',
+                CAST(D.SUB_LINK_MAS_ID AS CHAR CHARSET LATIN1)) AS LINK_ID,
+        D.SUB_LINK_NAME_EN AS MENU_NM_EN,
+        D.SUB_LINK_NAME_RG AS MENU_NM_REG,
+        (CASE
+            WHEN
+                ISNULL(D.SUB_LINK_PAR_ID)
+            THEN
+                CONCAT('M',
+                        CAST(D.LINK_ID AS CHAR CHARSET LATIN1))
+            ELSE CONCAT('F',
+                    CAST(D.SUB_LINK_PAR_ID AS CHAR CHARSET LATIN1))
+        END) AS PARENTID,
+        'F' AS LINK_TYPE,
+        D.HAS_SUB_LINK AS HAS_SUB_LINK,
+        D.PAGE_URL AS PAGE_URL,
+        (S.LINK_ID OR D.SUB_LINK_ORDER) AS SORT_ORDER,
+        S.LINK_ORDER AS LINK_ORDER,
+        FN_GETCPDDESC(D.CPD_SECION_TYPE, 'V', D.ORGID) AS SECTION_TYPE,
+        FN_GETCPDDESC(D.CPD_IMG_LINK_TYPE,
+                'V',
+                D.ORGID) AS IMG_LINK_TYPE,
+        D.IS_LINK_MODIFY AS IS_LINK_MODIFY,
+        S.CHEKER_FLAG AS Cheker
+    FROM
+        (TB_EIP_LINKS_MASTER S
+        JOIN TB_EIP_SUB_LINKS_MASTER D)
+    WHERE
+        ((S.LINK_ID = D.LINK_ID)
+            AND (S.ISDELETED = 'N')
+            AND (D.ISDELETED = 'N')
+            AND (S.ORGID = D.ORGID)
+	    AND (S.CHEKER_FLAG = 'Y')
+	    AND (D.CHEKER_FLAG = 'Y'))
+    ORDER BY ROW_NUM , LINK_ORDER , SORT_ORDER

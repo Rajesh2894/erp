@@ -1,0 +1,6 @@
+--liquibase formatted sql
+--changeset Anil:V20200629145555__AL_tb_cmt_council_resolution_29062020.sql
+ALTER TABLE tb_cmt_council_resolution CHANGE COLUMN RESOLUTION_COMMENTS RESOLUTION_COMMENTS MEDIUMTEXT NOT NULL COMMENT 'RESOLUTION COMMENTS' ;
+--liquibase formatted sql
+--changeset Anil:V20200629145555__AL_tb_cmt_council_resolution_290620201.sql
+ALTER TABLE tb_cmt_council_resolution_hist CHANGE COLUMN RESOLUTION_COMMENTS RESOLUTION_COMMENTS MEDIUMTEXT NOT NULL COMMENT 'RESOLUTION COMMENTS' ;
